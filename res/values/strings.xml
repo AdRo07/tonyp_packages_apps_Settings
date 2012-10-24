@@ -4533,6 +4533,10 @@
     <string name="lockscreen_background_custom_image">Custom image</string>
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 
+    <!-- Lock screen style -->
+    <string name="lockscreen_style_title">Style</string>
+    <string name="lockscreen_style_summary">Choose: Jb, ics, gb or eclair</string>
+
     <!-- Lock screen see through -->
     <string name="lockscreen_see_through_title">See through</string>
     <string name="lockscreen_see_through_summary">Allows to see the activity behind the lock screen. Custom image will disable this preference.</string>

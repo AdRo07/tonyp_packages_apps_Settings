@@ -38,6 +38,14 @@
         android:title="@string/lockscreen_see_through_title"
         android:summary="@string/lockscreen_see_through_summary" />
 
+    <ListPreference
+        android:key="lockscreen_style"
+        android:title="@string/lockscreen_style_title"
+        android:summary="@string/lockscreen_style_summary"
+        android:entries="@array/entries_lockscreen_style"
+        android:entryValues="@array/values_lockscreen_style"
+        android:defaultValue="0"/>
+
      <ListPreference
         android:key="lockscreen_clock_align"
         android:persistent="false"

@@ -1127,6 +1127,20 @@
         <item>@*android:drawable/ic_lockscreen_twitter_normal</item>
     </string-array>
 
+    <string-array name="entries_lockscreen_style">
+        <item>Jellybean</item>
+        <item>Ics</item>
+        <item>Gingerbread</item>
+        <item>Eclair</item>
+    </string-array>
+
+    <string-array name="values_lockscreen_style" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <!-- Profile mode options. -->
     <string-array name="profile_entries">
         <item>On</item>
