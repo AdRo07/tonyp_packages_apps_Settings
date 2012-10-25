@@ -59,6 +59,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     public static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     public static final String KEY_SEE_TRHOUGH_PREF = "lockscreen_see_through";
     public static final String KEY_STYLE_PREF = "lockscreen_style";
+    public static final String KEY_TEXT_COLOR = "lockscreen_custom_text_color";
     private static final int LOCK_STYLE_JB = 0;  
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
@@ -69,6 +70,7 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
     private ListPreference mCustomBackground;
     private CheckBoxPreference mSeeThrough;
     private ListPreference mStylePref;
+    private Preference mTextColor;
     private Preference mWeatherPref;
     private Preference mCalendarPref;
     private ListPreference mBatteryStatus;
@@ -102,6 +104,8 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
 
         mStylePref = (ListPreference) findPreference(KEY_STYLE_PREF);
         mStylePref.setOnPreferenceChangeListener(this);
+
+        mTextColor = (Preference) findPreference(KEY_TEXT_COLOR);
 
         wallpaperImage = new File(mActivity.getFilesDir()+"/lockwallpaper");
         wallpaperTemporary = new File(mActivity.getCacheDir()+"/lockwallpaper.tmp");
@@ -264,6 +268,14 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_SEE_THROUGH, value);
             return true;
+        } else if (preference == mTextColor) {
+            ColorPickerDialog cp = new ColorPickerDialog(getActivity(),
+                    mTextColorListener, Settings.System.getInt(getActivity()
+                    .getApplicationContext()
+                    .getContentResolver(), Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, 0xFFFFFFFF));
+            cp.setDefaultColor(0xFF000000);
+            cp.show();
+            return true;
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -361,4 +373,13 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
         }
         return false;
     }
+    ColorPickerDialog.OnColorChangedListener mTextColorListener =
+        new ColorPickerDialog.OnColorChangedListener() {
+            public void colorChanged(int color) {
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, color);
+            }
+            public void colorUpdate(int color) {
+            }
+    };
 }

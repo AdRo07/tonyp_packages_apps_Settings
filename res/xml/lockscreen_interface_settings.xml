@@ -38,6 +38,12 @@
         android:title="@string/lockscreen_see_through_title"
         android:summary="@string/lockscreen_see_through_summary" />
 
+	
+         <PreferenceScreen
+            android:key="lockscreen_custom_text_color"
+            android:title="@string/lockscreen_text_color_title">
+        </PreferenceScreen>
+
     <ListPreference
         android:key="lockscreen_style"
         android:title="@string/lockscreen_style_title"
