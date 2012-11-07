@@ -1133,6 +1133,7 @@
         <item>Gingerbread</item>
         <item>Eclair</item>
         <item>BlackBerry 10</item>
+        <item>Optimus 4x</item>
     </string-array>
 
     <string-array name="values_lockscreen_style" translatable="false">
@@ -1141,6 +1142,7 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>5</item>
     </string-array>
 
     <!-- Profile mode options. -->
