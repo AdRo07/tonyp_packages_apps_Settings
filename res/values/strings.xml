@@ -4388,6 +4388,12 @@
 
     <string name="lockscreen_text_color_title">Change color of lockscreen text</string>
 
+    <string name="optimus_lock_color_title">Colors for optimus lock</string>
+    <string name="circles_lock_bg_color_title">Background color</string>
+    <string name="circles_lock_ring_color_title">Ring color</string>
+    <string name="circles_lock_halo_color_title">Halo color</string>
+    <string name="circles_lock_wave_color_title">Wave color</string>
+
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware keys</string>
     <string name="key_menu_enabled">Menu Key</string>

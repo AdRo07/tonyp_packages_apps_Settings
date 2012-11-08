@@ -60,12 +60,20 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     public static final String KEY_SEE_TRHOUGH_PREF = "lockscreen_see_through";
     public static final String KEY_STYLE_PREF = "lockscreen_style";
     public static final String KEY_TEXT_COLOR = "lockscreen_custom_text_color";
-    private static final int LOCK_STYLE_JB = 0;  
+    private static final int LOCK_STYLE_JB = 0;
+    private static final int LOCK_STYLE_OP4 = 5;  
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
 
-public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
+    public static final String KEY_CIRCLES_LOCK_BG_COLOR = "circles_lock_bg_color";
+    public static final String KEY_CIRCLES_LOCK_RING_COLOR = "circles_lock_ring_color";
+    public static final String KEY_CIRCLES_LOCK_HALO_COLOR = "circles_lock_halo_color";
+    public static final String KEY_CIRCLES_LOCK_WAVE_COLOR = "circles_lock_wave_color";
+
+
+    public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
+    public static final String KEY_OPTIMUS_COLOR = "optimus_color";
 
     private ListPreference mCustomBackground;
     private CheckBoxPreference mSeeThrough;
@@ -73,6 +81,12 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
     private Preference mTextColor;
     private Preference mWeatherPref;
     private Preference mCalendarPref;
+
+    private Preference mLockBgColor;
+    private Preference mLockRingColor;
+    private Preference mLockHaloColor;
+    private Preference mLockWaveColor;
+
     private ListPreference mBatteryStatus;
     private ListPreference mClockAlign;
     private PreferenceScreen mLockscreenButtons;
@@ -83,6 +97,7 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
     private File wallpaperTemporary;
     private boolean mIsScreenLarge;
     private boolean mUseJbLockscreen;
+    private boolean mUseOp4Lockscreen;
     private int mLockscreenStyle;
 
     @Override
@@ -107,6 +122,12 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
 
         mTextColor = (Preference) findPreference(KEY_TEXT_COLOR);
 
+        mLockBgColor = (Preference) findPreference(KEY_CIRCLES_LOCK_BG_COLOR);
+        mLockRingColor = (Preference) findPreference(KEY_CIRCLES_LOCK_RING_COLOR);
+        mLockHaloColor = (Preference) findPreference(KEY_CIRCLES_LOCK_HALO_COLOR);
+        mLockWaveColor = (Preference) findPreference(KEY_CIRCLES_LOCK_WAVE_COLOR);
+
+
         wallpaperImage = new File(mActivity.getFilesDir()+"/lockwallpaper");
         wallpaperTemporary = new File(mActivity.getCacheDir()+"/lockwallpaper.tmp");
 
@@ -128,7 +149,9 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
             // too bad, so sad, oh mom, oh dad
         }
 	
-	    check_lockscreentarget();
+	check_lockscreentarget();
+	check_optimus();
+
 
         updateCustomBackgroundSummary();
     }
@@ -143,6 +166,18 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
                     getPreferenceScreen().removePreference(lockTargets);
 		}
 	    }
+	}
+
+	private void check_optimus() {
+            mLockscreenStyle = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_STYLE, 0);
+            mUseOp4Lockscreen = (mLockscreenStyle == LOCK_STYLE_OP4);
+//            if (!mUseOp4Lockscreen) {
+                Preference optimusColor = findPreference(KEY_OPTIMUS_COLOR);
+                if (optimusColor != null) {
+                    getPreferenceScreen().removePreference(optimusColor);
+		}
+//	    }
 	}
 
     private void updateCustomBackgroundSummary() {
@@ -276,7 +311,40 @@ public static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
             cp.setDefaultColor(0xFF000000);
             cp.show();
             return true;
+        } else if (preference == mLockBgColor) {
+            ColorPickerDialog cp = new ColorPickerDialog(getActivity(),
+                    mTextColorListener, Settings.System.getInt(getActivity()
+                    .getApplicationContext()
+                    .getContentResolver(), Settings.System.CIRCLES_LOCK_BG_COLOR, 0xD2000000));
+            cp.setDefaultColor(0xD2000000);
+            cp.show();
+            return true;
+        } else if (preference == mLockRingColor) {
+            ColorPickerDialog cp = new ColorPickerDialog(getActivity(),
+                    mTextColorListener, Settings.System.getInt(getActivity()
+                    .getApplicationContext()
+                    .getContentResolver(), Settings.System.CIRCLES_LOCK_RING_COLOR, 0xFFFFFFFF));
+            cp.setDefaultColor(0xFFFFFFFF);
+            cp.show();
+            return true;
+        } else if (preference == mLockHaloColor) {
+            ColorPickerDialog cp = new ColorPickerDialog(getActivity(),
+                    mTextColorListener, Settings.System.getInt(getActivity()
+                    .getApplicationContext()
+                    .getContentResolver(), Settings.System.CIRCLES_LOCK_HALO_COLOR, 0xFFFFFFFF));
+            cp.setDefaultColor(0xFFFFFFFF);
+            cp.show();
+            return true;
+        } else if (preference == mLockWaveColor) {
+            ColorPickerDialog cp = new ColorPickerDialog(getActivity(),
+                    mTextColorListener, Settings.System.getInt(getActivity()
+                    .getApplicationContext()
+                    .getContentResolver(), Settings.System.CIRCLES_LOCK_WAVE_COLOR, 0xD2FFFFFF));
+            cp.setDefaultColor(0xD2FFFFFF);
+            cp.show();
+            return true;
         }
+
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
