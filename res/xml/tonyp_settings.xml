@@ -36,6 +36,12 @@
             android:summary="@string/ad_settings_summary">
         </PreferenceScreen>
 
+        <Preference
+            android:fragment="com.android.settings.slim.NotificationDrawerStyle"
+            android:key="notification_style"
+            android:title="@string/notification_style_title"
+            android:summary="@string/notification_style_summary" />
+
         <ListPreference
             android:key="show_brightness_slider"
             android:title="@string/title_show_brightness_slider"
