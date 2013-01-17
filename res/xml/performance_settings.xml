@@ -50,4 +50,9 @@
         android:entries="@array/dithering_entries"
         android:entryValues="@array/dithering_values"/>
 
+	<CheckBoxPreference
+		android:key="pref_bootanimation"
+		android:title="@string/pref_bootanimation_title"
+		android:summary="@string/pref_bootanimation_summary" />
+
 </PreferenceScreen>

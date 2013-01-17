@@ -5018,4 +5018,9 @@
     <string name="status_bar_rotation_switch_title">Show auto-rotate switch</string>
     <string name="status_bar_rotation_switch_summary">Displays auto-rotate switch in notification drawer</string>
 
+    <!-- Bootanimation option -->
+    <string name="pref_bootanimation_title">Boot animation</string>
+    <string name="pref_bootanimation_summary">Enables/disables boot animation. Speeds up booting when disabled</string>
+
+
 </resources>

@@ -45,9 +45,14 @@ public class PerformanceSettings extends SettingsPreferenceFragment
 
     private static final String USE_16BPP_ALPHA_PROP = "persist.sys.use_16bpp_alpha";
 
+    private static final String PREF_BOOTANIMATION = "pref_bootanimation";
+    private static final String PREF_BOOTANIMATION_PROP = "persist.sys.nobootanimation";
+
     private ListPreference mUseDitheringPref;
 
     private CheckBoxPreference mUse16bppAlphaPref;
+
+    private CheckBoxPreference mBootanimation;
 
     private AlertDialog alertDialog;
 
@@ -70,6 +75,9 @@ public class PerformanceSettings extends SettingsPreferenceFragment
             mUse16bppAlphaPref = (CheckBoxPreference) prefSet.findPreference(USE_16BPP_ALPHA_PREF);
             String use16bppAlpha = SystemProperties.get(USE_16BPP_ALPHA_PROP, "0");
             mUse16bppAlphaPref.setChecked("1".equals(use16bppAlpha));
+
+            mBootanimation = (CheckBoxPreference) prefSet.findPreference(PREF_BOOTANIMATION);
+            mBootanimation.setChecked((SystemProperties.get(PREF_BOOTANIMATION_PROP, "0")).equals("0"));
 
             /* Display the warning dialog */
             alertDialog = new AlertDialog.Builder(getActivity()).create();
@@ -97,6 +105,9 @@ public class PerformanceSettings extends SettingsPreferenceFragment
         if (preference == mUse16bppAlphaPref) {
             SystemProperties.set(USE_16BPP_ALPHA_PROP,
                     mUse16bppAlphaPref.isChecked() ? "1" : "0");
+        } else if (preference == mBootanimation) {
+            SystemProperties.set(PREF_BOOTANIMATION_PROP,
+                    mBootanimation.isChecked() ? "0" : "1");
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
