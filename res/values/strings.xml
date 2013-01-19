@@ -5023,4 +5023,11 @@
     <string name="pref_bootanimation_summary">Enables/disables boot animation. Speeds up booting when disabled</string>
 
 
+    <!-- Low battery warning and sound -->
+    <string name="pref_low_battery_warning_title">Low battery warning</string>
+    <string name="pref_low_battery_warning_summary">Enables/disables displaying of low battery warning dialog</string>
+    <string name="pref_low_battery_sound_title">Low battery sound</string>
+    <string name="pref_low_battery_sound_summary">Whether to play sound when low battery warning dialog pops up</string>
+
+
 </resources>
