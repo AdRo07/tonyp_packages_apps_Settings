@@ -1592,4 +1592,53 @@
         <item>1005</item>
     </string-array>
     <!-- **** CYANOGENMOD EDITS END **** -->
+
+    <!-- C3C0's mods begin -->
+
+    <string-array name="pom_screenshot_delay_entries">
+        <item>1 second</item>
+        <item>2 seconds</item>
+        <item>3 seconds</item>
+        <item>4 seconds</item>
+        <item>5 seconds</item>
+        <item>6 seconds</item>
+        <item>7 seconds</item>
+    </string-array>
+
+    <string-array name="pom_screenshot_delay_values">
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>6000</item>
+        <item>7000</item>
+    </string-array>
+
+    <string-array name="toggle_2g3g_policy_entries">
+        <item>3G+2G (3G preferred)</item>
+        <item>3G only</item>
+    </string-array>
+
+    <string-array name="toggle_2g3g_policy_values">
+        <item>0</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- C3C0's mods end -->
+
+    <string-array name="pref_low_battery_warning_policy_entries">
+        <item>Pop-up and sound</item>
+        <item>Pop-up only</item>
+        <item>Sound only</item>
+        <item>Off</item>
+    </string-array>
+
+    <string-array name="pref_low_battery_warning_policy_values">
+        <item>3</item>
+        <item>1</item>
+        <item>2</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

@@ -53,8 +53,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String STATUS_BAR_SHOW_DAYMONTH = "status_bar_show_daymonth";
     private static final String STATUS_BAR_DAYMONTH_SIZE = "status_bar_daymonth_size";
     private static final String STATUS_BAR_COLOR = "status_bar_color";
-    private static final String PREF_LOW_BATTERY_WARNING = "pref_low_battery_warning";
-    private static final String PREF_LOW_BATTERY_SOUND = "pref_low_battery_sound";
+    private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
 
     private ListPreference mStatusBarAmPmSize;
     private ListPreference mStatusBarBattery;
@@ -74,8 +73,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private CheckBoxPreference mStatusBarDoNotDisturb;
     private PreferenceCategory mPrefCategoryGeneral;
     private PreferenceCategory mPrefCategoryClock;
-    private CheckBoxPreference mLowBatteryWarning;
-    private CheckBoxPreference mLowBatterySound;
+    private ListPreference mLowBatteryWarning;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -105,8 +103,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarColor = (ColorPickerPreference) prefSet.findPreference(STATUS_BAR_COLOR);
         mStatusBarColor.setOnPreferenceChangeListener(this);
         mStatusBarColor.setAlphaSliderEnabled(true);
-        mLowBatteryWarning = (CheckBoxPreference) prefSet.findPreference(PREF_LOW_BATTERY_WARNING);
-        mLowBatterySound = (CheckBoxPreference) prefSet.findPreference(PREF_LOW_BATTERY_SOUND);
+        mLowBatteryWarning = (ListPreference) prefSet.findPreference(PREF_LOW_BATTERY_WARNING_POLICY);
 
         mStatusBarClock.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_BAR_CLOCK, 1) == 1));
@@ -126,11 +123,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                 Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
         mStatusBarDoNotDisturb.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_BAR_DONOTDISTURB, 0) == 1));
-        mLowBatteryWarning.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.POWER_UI_LOW_BATTERY_WARNING, 1) == 1));
-        mLowBatterySound.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.POWER_UI_LOW_BATTERY_SOUND, 1) == 1));
-        mLowBatterySound.setEnabled(mLowBatteryWarning.isChecked());
 
         try {
             if (Settings.System.getInt(getActivity().getContentResolver(),
@@ -192,6 +184,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_BAR_NOTIF_COUNT, 0) == 1));
+
+        int lowBatteryWarning = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, 3);
+        mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
+        mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
+        mLowBatteryWarning.setOnPreferenceChangeListener(this);
 
         mPrefCategoryGeneral = (PreferenceCategory) findPreference(STATUS_BAR_CATEGORY_GENERAL);
         mPrefCategoryClock = (PreferenceCategory) findPreference(STATUS_BAR_CATEGORY_CLOCK);
@@ -270,6 +268,13 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.STATUS_BAR_SIGNAL_TEXT, signalStyle);
             mStatusBarCmSignal.setSummary(mStatusBarCmSignal.getEntries()[index]);
             return true;
+        } else if (preference == mLowBatteryWarning) {
+            int lowBatteryWarning = Integer.valueOf((String) newValue);
+            int index = mLowBatteryWarning.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, lowBatteryWarning);
+            mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
+            return true;
         }
         return false;
     }
@@ -325,17 +330,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             value = mStatusBarNotifCount.isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_NOTIF_COUNT, value ? 1 : 0);
-            return true;
-        } else if (preference == mLowBatteryWarning) {
-            value = mLowBatteryWarning.isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWER_UI_LOW_BATTERY_WARNING, value ? 1 : 0);
-            mLowBatterySound.setEnabled(value);
-            return true;
-        } else if (preference == mLowBatterySound) {
-            value = mLowBatterySound.isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWER_UI_LOW_BATTERY_SOUND, value ? 1 : 0);
             return true;
         }
         return false;
