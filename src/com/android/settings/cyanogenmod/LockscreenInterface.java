@@ -23,6 +23,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -39,6 +40,7 @@ import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.view.Display;
+import android.view.IWindowManager;
 import android.view.Window;
 import android.widget.Toast;
 
@@ -131,9 +133,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
         mBatteryStatus.setOnPreferenceChangeListener(this);
 
+        mIsScreenLarge = Utils.isTablet();
+
         mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
         mClockAlign.setOnPreferenceChangeListener(this);
 
+        mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
         IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
         try {
             if(!wm.hasHardwareKeys()){
@@ -143,7 +148,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             // too bad, so sad, oh mom, oh dad
         }
 
-        mIsScreenLarge = Utils.isTablet();
 	
 	check_lockscreentarget();
 	check_optimus();
