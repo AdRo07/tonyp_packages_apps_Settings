@@ -4386,8 +4386,6 @@
     <string name="navigation_bar_restore_stock_color">Restore color</string>
     <string name="navigation_bar_restore_stock_color_summary">Restores default navigation bar colors</string>
 
-    <string name="lockscreen_text_color_title">Change color of lockscreen text</string>
-
     <string name="optimus_lock_color_title">Colors for optimus lock</string>
     <string name="circles_lock_bg_color_title">Background color</string>
     <string name="circles_lock_ring_color_title">Ring color</string>
