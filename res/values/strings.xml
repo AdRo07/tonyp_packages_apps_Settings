@@ -4654,6 +4654,8 @@
     <string name="profile_choose_app">Choose application</string>
     <string name="profile_settings_header">Profile settings</string>
 
+    <string name="dialog_indicator_color_title">Select color</string>
+    
     <!-- Profiles - system settings -->
     <string name="profile_system_settings_title">System settings</string>
     <string name="profile_lockmode_title">Lock screen mode</string>
