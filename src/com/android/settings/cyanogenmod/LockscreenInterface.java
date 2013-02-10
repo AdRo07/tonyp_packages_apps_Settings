@@ -21,6 +21,7 @@ import java.io.IOException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ColorPickerDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -33,6 +34,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.preference.ColorPickerPreference;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -50,7 +52,7 @@ import com.android.settings.Utils;
 import com.android.settings.notificationlight.ColorPickerView;
 
 public class LockscreenInterface extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+        Preference.OnPreferenceChangeListener, ColorPickerDialog.OnColorChangedListener {
     private static final String TAG = "LockscreenInterface";
     private static final int LOCKSCREEN_BACKGROUND = 1024;
     public static final String KEY_WEATHER_PREF = "lockscreen_weather";
@@ -260,6 +262,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     }
 
     @Override
+    public void onColorChanged(int color) {
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_BACKGROUND, color);
+    }
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == LOCKSCREEN_BACKGROUND) {
             if (resultCode == Activity.RESULT_OK) {
@@ -293,7 +300,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                     Settings.System.LOCKSCREEN_SEE_THROUGH, value);
             return true;
         } else if (preference == mLockBgColor) {
-            ColorPickerDialog cp = new ColorPickerDialog(getActivity(),
+            ColorPickerDialog2 cp = new ColorPickerDialog2(getActivity(),
                     mCirclesBgColorListener, Settings.System.getInt(getActivity()
                     .getApplicationContext()
                     .getContentResolver(), Settings.System.CIRCLES_LOCK_BG_COLOR, 0xD2000000));
@@ -301,7 +308,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             cp.show();
             return true;
         } else if (preference == mLockRingColor) {
-            ColorPickerDialog cp = new ColorPickerDialog(getActivity(),
+            ColorPickerDialog2 cp = new ColorPickerDialog2(getActivity(),
                     mCirclesRingColorListener, Settings.System.getInt(getActivity()
                     .getApplicationContext()
                     .getContentResolver(), Settings.System.CIRCLES_LOCK_RING_COLOR, 0xFFFFFFFF));
@@ -309,7 +316,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             cp.show();
             return true;
         } else if (preference == mLockHaloColor) {
-            ColorPickerDialog cp = new ColorPickerDialog(getActivity(),
+            ColorPickerDialog2 cp = new ColorPickerDialog2(getActivity(),
                     mCirclesHaloColorListener, Settings.System.getInt(getActivity()
                     .getApplicationContext()
                     .getContentResolver(), Settings.System.CIRCLES_LOCK_HALO_COLOR, 0xFFFFFFFF));
@@ -317,7 +324,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             cp.show();
             return true;
         } else if (preference == mLockWaveColor) {
-            ColorPickerDialog cp = new ColorPickerDialog(getActivity(),
+            ColorPickerDialog2 cp = new ColorPickerDialog2(getActivity(),
                     mCirclesWaveColorListener, Settings.System.getInt(getActivity()
                     .getApplicationContext()
                     .getContentResolver(), Settings.System.CIRCLES_LOCK_WAVE_COLOR, 0xD2FFFFFF));
@@ -337,27 +344,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             switch (indexOf) {
                 //Displays color dialog when user has chosen color fill
                 case 0:
-                    final ColorPickerView colorView = new ColorPickerView(mActivity);
                     int currentColor = Settings.System.getInt(getContentResolver(),
                             Settings.System.LOCKSCREEN_BACKGROUND, -1);
-                    if (currentColor != -1) {
-                        colorView.setColor(currentColor);
-                    }
-                    colorView.setAlphaSliderVisible(true);
-                    new AlertDialog.Builder(mActivity)
-                    .setTitle(R.string.lockscreen_custom_background_dialog_title)
-                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener(){
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_BACKGROUND, colorView.getColor());
-                            updateCustomBackgroundSummary();
-                        }
-                    }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener(){
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    }).setView(colorView).show();
+                    ColorPickerDialog picker = new ColorPickerDialog(mActivity, currentColor);
+                    picker.setOnColorChangedListener(this);
+                    picker.setAlphaSliderVisible(true);
+                    picker.show();
                     return false;
                 //Launches intent for user to select an image/crop it to set as background
                 case 1:
@@ -437,8 +429,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         }
         return false;
     }
-    ColorPickerDialog.OnColorChangedListener mCirclesBgColorListener =
-        new ColorPickerDialog.OnColorChangedListener() {
+    ColorPickerDialog2.OnColorChangedListener mCirclesBgColorListener =
+        new ColorPickerDialog2.OnColorChangedListener() {
             public void colorChanged(int color) {
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.CIRCLES_LOCK_BG_COLOR, color);
@@ -446,8 +438,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             public void colorUpdate(int color) {
             }
     };
-    ColorPickerDialog.OnColorChangedListener mCirclesRingColorListener =
-        new ColorPickerDialog.OnColorChangedListener() {
+    ColorPickerDialog2.OnColorChangedListener mCirclesRingColorListener =
+        new ColorPickerDialog2.OnColorChangedListener() {
             public void colorChanged(int color) {
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.CIRCLES_LOCK_RING_COLOR, color);
@@ -455,8 +447,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             public void colorUpdate(int color) {
             }
     };
-    ColorPickerDialog.OnColorChangedListener mCirclesHaloColorListener =
-        new ColorPickerDialog.OnColorChangedListener() {
+    ColorPickerDialog2.OnColorChangedListener mCirclesHaloColorListener =
+        new ColorPickerDialog2.OnColorChangedListener() {
             public void colorChanged(int color) {
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.CIRCLES_LOCK_HALO_COLOR, color);
@@ -464,8 +456,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             public void colorUpdate(int color) {
             }
     };
-    ColorPickerDialog.OnColorChangedListener mCirclesWaveColorListener =
-        new ColorPickerDialog.OnColorChangedListener() {
+    ColorPickerDialog2.OnColorChangedListener mCirclesWaveColorListener =
+        new ColorPickerDialog2.OnColorChangedListener() {
             public void colorChanged(int color) {
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.CIRCLES_LOCK_WAVE_COLOR, color);
