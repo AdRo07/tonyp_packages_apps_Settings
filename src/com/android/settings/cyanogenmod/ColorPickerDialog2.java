@@ -45,7 +45,7 @@ import android.os.SystemClock;
 import android.util.StateSet;
 
 
-public class ColorPickerDialog extends Dialog {
+public class ColorPickerDialog2 extends Dialog {
 
     public interface OnColorChangedListener {
         void colorChanged(int color);
@@ -300,7 +300,7 @@ public class ColorPickerDialog extends Dialog {
     private Button mDefaultButton;
     private int mDefaultColor = 0x00000000;
 
-    public ColorPickerDialog(Context context, OnColorChangedListener listener, int initialColor) {
+    public ColorPickerDialog2(Context context, OnColorChangedListener listener, int initialColor) {
         super(context);
         mContext = context;
         mListener = listener;
