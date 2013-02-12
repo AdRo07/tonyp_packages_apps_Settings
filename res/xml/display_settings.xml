@@ -74,7 +74,7 @@
         <CheckBoxPreference
             android:key="electron_beam_animation_off"
             android:title="@string/display_electron_beam_animation_off_title"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
         <PreferenceCategory
             android:key="category_wakeup_options"
