@@ -41,7 +41,10 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
 
     private static final String HARDWARE_KEYS_CATEGORY_BINDINGS = "hardware_keys_bindings";
     private static final String HARDWARE_KEYS_ENABLE_CUSTOM = "hardware_keys_enable_custom";
+    private static final String HARDWARE_KEYS_HOME_PRESS = "hardware_keys_home_press";
     private static final String HARDWARE_KEYS_HOME_LONG_PRESS = "hardware_keys_home_long_press";
+    private static final String HARDWARE_KEYS_BACK_PRESS = "hardware_keys_back_press";
+    private static final String HARDWARE_KEYS_BACK_LONG_PRESS = "hardware_keys_back_long_press";
     private static final String HARDWARE_KEYS_MENU_PRESS = "hardware_keys_menu_press";
     private static final String HARDWARE_KEYS_MENU_LONG_PRESS = "hardware_keys_menu_long_press";
     private static final String HARDWARE_KEYS_ASSIST_PRESS = "hardware_keys_assist_press";
@@ -57,16 +60,19 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     // Must match values for KEY_HOME_LONG_PRESS_ACTION in:
     // frameworks/base/core/java/android/provider/Settings.java
     private static final int ACTION_NOTHING = 0;
-    private static final int ACTION_MENU = 1;
-    private static final int ACTION_APP_SWITCH = 2;
-    private static final int ACTION_SEARCH = 3;
-    private static final int ACTION_VOICE_SEARCH = 4;
-    private static final int ACTION_IN_APP_SEARCH = 5;
-    private static final int ACTION_LAST_APP = 6;
-    private static final int ACTION_POWER = 7;
-    private static final int ACTION_CUSTOM_APP = 8;
+    private static final int ACTION_HOME = 1;
+    private static final int ACTION_BACK = 2;
+    private static final int ACTION_MENU = 3;
+    private static final int ACTION_APP_SWITCH = 4;
+    private static final int ACTION_SEARCH = 5;
+    private static final int ACTION_VOICE_SEARCH = 6;
+    private static final int ACTION_IN_APP_SEARCH = 7;
+    private static final int ACTION_POWER = 8;
     private static final int ACTION_TORCH = 9;
     private static final int ACTION_SCREENSHOT = 10;
+    private static final int ACTION_KILL_APP = 11;
+    private static final int ACTION_LAST_APP = 12;
+    private static final int ACTION_CUSTOM_APP = 13;
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
@@ -80,7 +86,10 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private CheckBoxPreference mBackKeyEnabled;
     private CheckBoxPreference mHomeKeyEnabled;
     private CheckBoxPreference mEnableCustomBindings;
+    private ListPreference mHomePressAction;
     private ListPreference mHomeLongPressAction;
+    private ListPreference mBackPressAction;
+    private ListPreference mBackLongPressAction;
     private ListPreference mMenuPressAction;
     private ListPreference mMenuLongPressAction;
     private ListPreference mAssistPressAction;
@@ -99,6 +108,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         final int deviceKeys = getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
         final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
+        final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
         final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
         final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
@@ -117,8 +127,14 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         // Use custom binding for hardware keys
         mEnableCustomBindings = (CheckBoxPreference) prefSet.findPreference(
                 HARDWARE_KEYS_ENABLE_CUSTOM);
+        mHomePressAction = (ListPreference) prefSet.findPreference(
+                HARDWARE_KEYS_HOME_PRESS);
         mHomeLongPressAction = (ListPreference) prefSet.findPreference(
                 HARDWARE_KEYS_HOME_LONG_PRESS);
+        mBackPressAction = (ListPreference) prefSet.findPreference(
+                HARDWARE_KEYS_BACK_PRESS);
+        mBackLongPressAction = (ListPreference) prefSet.findPreference(
+                HARDWARE_KEYS_BACK_LONG_PRESS);
         mMenuPressAction = (ListPreference) prefSet.findPreference(
                 HARDWARE_KEYS_MENU_PRESS);
         mMenuLongPressAction = (ListPreference) prefSet.findPreference(
@@ -148,6 +164,22 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
             bindingsCategory.removePreference(mBackKeyEnabled);
 
         if (hasHomeKey) {
+            String homePressAction = Settings.System.getString(getContentResolver(),
+                    Settings.System.KEY_HOME_ACTION);
+            if (homePressAction == null)
+                homePressAction = Integer.toString(ACTION_HOME);
+
+            try {
+                Integer.parseInt(homePressAction);
+                mHomePressAction.setValue(homePressAction);
+                mHomePressAction.setSummary(mHomePressAction.getEntry());
+            } catch (NumberFormatException e) {
+                mHomePressAction.setValue(Integer.toString(ACTION_CUSTOM_APP));
+                mHomePressAction.setSummary(mPicker.getFriendlyNameForUri(homePressAction));
+            }
+
+            mHomePressAction.setOnPreferenceChangeListener(this);
+
             String homeLongPressAction = Settings.System.getString(getContentResolver(),
                     Settings.System.KEY_HOME_LONG_PRESS_ACTION);
             if (hasAppSwitchKey) {
@@ -168,8 +200,45 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
 
             mHomeLongPressAction.setOnPreferenceChangeListener(this);
         } else {
-            bindingsCategory.removePreference(mHomeKeyEnabled);
+            bindingsCategory.removePreference(mHomePressAction);
             bindingsCategory.removePreference(mHomeLongPressAction);
+        }
+
+        if (hasBackKey) {
+            String backPressAction = Settings.System.getString(getContentResolver(),
+                    Settings.System.KEY_BACK_ACTION);
+            if (backPressAction == null)
+                backPressAction = Integer.toString(ACTION_BACK);
+
+            try {
+                Integer.parseInt(backPressAction);
+                mBackPressAction.setValue(backPressAction);
+                mBackPressAction.setSummary(mBackPressAction.getEntry());
+            } catch (NumberFormatException e) {
+                mBackPressAction.setValue(Integer.toString(ACTION_CUSTOM_APP));
+                mBackPressAction.setSummary(mPicker.getFriendlyNameForUri(backPressAction));
+            }
+
+            mBackPressAction.setOnPreferenceChangeListener(this);
+
+            String backLongPressAction = Settings.System.getString(getContentResolver(),
+                    Settings.System.KEY_BACK_LONG_PRESS_ACTION);
+            if (backLongPressAction == null)
+                backLongPressAction = Integer.toString(ACTION_NOTHING);
+
+            try {
+                Integer.parseInt(backLongPressAction);
+                mBackLongPressAction.setValue(backLongPressAction);
+                mBackLongPressAction.setSummary(mBackLongPressAction.getEntry());
+            } catch (NumberFormatException e) {
+                mBackLongPressAction.setValue(Integer.toString(ACTION_CUSTOM_APP));
+                mBackLongPressAction.setSummary(mPicker.getFriendlyNameForUri(backLongPressAction));
+            }
+
+            mBackLongPressAction.setOnPreferenceChangeListener(this);
+        } else {
+            bindingsCategory.removePreference(mBackPressAction);
+            bindingsCategory.removePreference(mBackLongPressAction);
         }
 
         if (hasMenuKey) {
@@ -308,12 +377,33 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
                     getId());
             return true;
         } else {
-            if (preference == mHomeLongPressAction) {
+            if (preference == mHomePressAction) {
+                int index = mHomePressAction.findIndexOfValue((String) newValue);
+                mHomePressAction.setSummary(
+                        mHomePressAction.getEntries()[index]);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.KEY_HOME_ACTION, value);
+                return true;
+            } else if (preference == mHomeLongPressAction) {
                 int index = mHomeLongPressAction.findIndexOfValue((String) newValue);
                 mHomeLongPressAction.setSummary(
                         mHomeLongPressAction.getEntries()[index]);
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.KEY_HOME_LONG_PRESS_ACTION, value);
+                return true;
+            } else if (preference == mBackPressAction) {
+                int index = mBackPressAction.findIndexOfValue((String) newValue);
+                mBackPressAction.setSummary(
+                        mBackPressAction.getEntries()[index]);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.KEY_BACK_ACTION, value);
+                return true;
+            } else if (preference == mBackLongPressAction) {
+                int index = mBackLongPressAction.findIndexOfValue((String) newValue);
+                mBackLongPressAction.setSummary(
+                        mBackLongPressAction.getEntries()[index]);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.KEY_BACK_LONG_PRESS_ACTION, value);
                 return true;
             } else if (preference == mMenuPressAction) {
                 int index = mMenuPressAction.findIndexOfValue((String) newValue);
@@ -402,9 +492,18 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     @Override
     public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
         Preference preference = mCustomAppPreference;
-        if (preference == mHomeLongPressAction) {
+        if (preference == mHomePressAction) {
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.KEY_HOME_ACTION, uri);
+        } else if (preference == mHomeLongPressAction) {
             Settings.System.putString(getContentResolver(),
                     Settings.System.KEY_HOME_LONG_PRESS_ACTION, uri);
+        } else if (preference == mBackPressAction) {
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.KEY_BACK_ACTION, uri);
+        } else if (preference == mBackLongPressAction) {
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.KEY_BACK_LONG_PRESS_ACTION, uri);
         } else if (preference == mMenuPressAction) {
             Settings.System.putString(getContentResolver(),
                     Settings.System.KEY_MENU_ACTION, uri);
