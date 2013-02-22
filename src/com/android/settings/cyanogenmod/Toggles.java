@@ -34,6 +34,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.preference.PreferenceCategory;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -65,6 +66,8 @@ public class Toggles extends SettingsPreferenceFragment implements OnPreferenceC
     private static final String PREF_TOGGLES_LAYOUT = "toggles_layout";
     private static final String PREF_TOGGLES_COLOR = "toggles_color";
     private static final String PREF_TOGGLES_DISABLE_SCROLLING = "disable_scrollbar";
+    private static final String STATUS_BAR_ROTATION_SWITCH = "status_bar_rotation_switch";
+    private static final String PREF_CATEGORY_ADVANCED = "advanced_cat";
 
     private static final int LAYOUT_SWITCH = 0;
     private static final int LAYOUT_TOGGLE = 1;
@@ -105,6 +108,8 @@ public class Toggles extends SettingsPreferenceFragment implements OnPreferenceC
     ColorPickerPreference mTogglesColor;
     ListPreference mTogglesLayout;
     ListPreference mToggleStyle;
+    CheckBoxPreference mStatusBarRotationSwitch;
+    PreferenceCategory mPrefCategoryAdvanced;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -113,6 +118,8 @@ public class Toggles extends SettingsPreferenceFragment implements OnPreferenceC
         addPreferencesFromResource(R.xml.notification_drawer_toggles);
 
         mContext = getActivity();
+
+        mPrefCategoryAdvanced = (PreferenceCategory) findPreference(PREF_CATEGORY_ADVANCED);
 
         mShowToggles = (CheckBoxPreference) findPreference(PREF_SHOW_TOGGLES);
         mShowToggles.setChecked(Settings.System.getInt(mContext.getContentResolver(),
@@ -149,6 +156,12 @@ public class Toggles extends SettingsPreferenceFragment implements OnPreferenceC
         mEnabledToggles = findPreference(PREF_ENABLED_TOGGLES);
 
         mToggleOrder = findPreference(PREF_TOGGLES_ORDER);
+
+        mStatusBarRotationSwitch = (CheckBoxPreference) findPreference(STATUS_BAR_ROTATION_SWITCH);
+        mStatusBarRotationSwitch.setChecked((Settings.System.getInt(mContext.getContentResolver(),
+                                             Settings.System.ROTATE_SWITCH_IN_PHONE_MODE, 1) == 1));
+        if(getActivity().getResources().getConfiguration().smallestScreenWidthDp >= 600)
+            mPrefCategoryAdvanced.removePreference(mStatusBarRotationSwitch);
 
         adjustPreferences(val);
 
@@ -230,6 +243,11 @@ public class Toggles extends SettingsPreferenceFragment implements OnPreferenceC
             ft.addToBackStack(PREF_TOGGLES_ORDER);
             ft.replace(this.getId(), fragment);
             ft.commit();
+            return true;
+        } else if (preference == mStatusBarRotationSwitch) {
+            boolean value = mStatusBarRotationSwitch.isChecked();
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.ROTATE_SWITCH_IN_PHONE_MODE, value ? 1 : 0);
             return true;
         }
         return false;
@@ -434,11 +452,6 @@ public class Toggles extends SettingsPreferenceFragment implements OnPreferenceC
     public static void getAvailableToggleList(String[] entries, String[] values) {
         allEntries = new ArrayList<String>(Arrays.asList(entries));
         allValues = new ArrayList<String>(Arrays.asList(values));
-
-        // Check if device has gyroscope
-        if(!pm.hasSystemFeature(PackageManager.FEATURE_SENSOR_GYROSCOPE)) {
-            removeEntry(values[ROTATE]);
-        }
 
         // Check if device has bluetooth
         if (!pm.hasSystemFeature(PackageManager.FEATURE_BLUETOOTH)) {

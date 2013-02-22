@@ -59,6 +59,12 @@
             android:summary="@string/show_settings_summary"
             android:defaultValue="true" />
 
+        <CheckBoxPreference
+            android:key="status_bar_rotation_switch"
+            android:title="@string/status_bar_rotation_switch_title"
+            android:summary="@string/status_bar_rotation_switch_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

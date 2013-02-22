@@ -5014,4 +5014,8 @@
     <string name="gestures_action_recent">Recent applications</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
+
+    <string name="status_bar_rotation_switch_title">Show auto-rotate switch</string>
+    <string name="status_bar_rotation_switch_summary">Displays auto-rotate switch in notification drawer</string>
+
 </resources>
