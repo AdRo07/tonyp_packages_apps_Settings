@@ -226,6 +226,13 @@
         android:icon="@drawable/ic_settings_dock"
         android:title="@string/dock_settings" />
 
+    <!-- Superuser -->
+    <header
+        android:id="@+id/superuser"
+        android:fragment="com.android.settings.cyanogenmod.superuser.PolicyNativeFragment"
+        android:icon="@drawable/ic_action_permission"
+        android:title="@string/superuser" />
+
     <!-- Date & Time -->
     <header
         android:id="@+id/date_time_settings"
