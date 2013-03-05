@@ -1440,12 +1440,14 @@
         <item>2</item>
     </string-array>
 
-    <string-array name="lockscreen_long_key_press_entries" translatable="false">
+    <string-array name="lockscreen_long_key_press_entries">
         <item>@string/lockscreen_buttons_no_action</item>
         <item>@string/lockscreen_buttons_next</item>
         <item>@string/lockscreen_buttons_previous</item>
         <item>@string/lockscreen_buttons_playpause</item>
         <item>@string/lockscreen_buttons_toggle_sound</item>
+        <item>@string/lockscreen_buttons_camera</item>
+        <item>@string/lockscreen_buttons_power_off</item>
     </string-array>
 
     <string-array name="lockscreen_long_key_press_values" translatable="false">
@@ -1454,6 +1456,8 @@
         <item>PREVIOUS</item>
         <item>PLAYPAUSE</item>
         <item>SOUND</item>
+        <item>CAMERA</item>
+        <item>POWER</item>
     </string-array>
 
     <string-array name="hardware_keys_action_entries" translatable="false">
