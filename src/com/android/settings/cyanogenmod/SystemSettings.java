@@ -45,8 +45,24 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mStatusbarToggles;
     private PreferenceScreen mNavigationBar;
     private PreferenceScreen mHardwareKeys;
+    private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
+    private static final String KEY_BATTERY_LIGHT = "battery_light";
+    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
+    private static final String KEY_NAVIGATION_BAR = "navigation_bar";
+    private static final String KEY_NAVIGATION_RING = "navigation_ring";
+    private static final String KEY_NAVIGATION_BAR_CATEGORY = "navigation_bar_category";
+    private static final String KEY_LOCK_CLOCK = "lock_clock";
+    private static final String KEY_STATUS_BAR = "status_bar";
+    private static final String KEY_QUICK_SETTINGS = "quick_settings_panel";
+    private static final String KEY_NOTIFICATION_DRAWER = "notification_drawer";
+    private static final String KEY_POWER_MENU = "power_menu";
+    private static final String KEY_PIE_CONTROL = "pie_control";
 
     private final Configuration mCurConfig = new Configuration();
+    private PreferenceScreen mNotificationPulse;
+    private PreferenceScreen mBatteryPulse;
+    private PreferenceScreen mPieControl;
+    private boolean mIsPrimary;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -93,6 +109,32 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         // mark the appropriate item in the preferences list
         int index = floatToIndex(mCurConfig.fontScale);
         pref.setValueIndex(index);
+        // Pie controls
+        mPieControl = (PreferenceScreen) findPreference(KEY_PIE_CONTROL);
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        // All users
+        if (mNotificationPulse != null) {
+            updateLightPulseDescription();
+        }
+        if (mPieControl != null) {
+            updatePieControlDescription();
+        }
+
+        // Primary user only
+        if (mIsPrimary && mBatteryPulse != null) {
+            updateBatteryPulseDescription();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
 
         // report the current size in the summary text
         final Resources res = getResources();
@@ -101,16 +143,13 @@ public class SystemSettings extends SettingsPreferenceFragment implements
                 fontSizeNames[index]));
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        updateState();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
+    private void updatePieControlDescription() {
+        if (Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.PIE_CONTROLS, 0) == 1) {
+            mPieControl.setSummary(getString(R.string.pie_control_enabled));
+        } else {
+            mPieControl.setSummary(getString(R.string.pie_control_disabled));
+        }
     }
 
     private void updateState() {
