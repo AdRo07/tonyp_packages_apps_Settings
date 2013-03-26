@@ -404,8 +404,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     mElectronBeamAnimationOn.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mElectronBeamAnimationOff) {
-            Settings.System.putInt(getContentResolver(), Settings.System.ELECTRON_BEAM_ANIMATION_OFF,
-                    mElectronBeamAnimationOff.isChecked() ? 1 : 0);
+            //Settings.System.putInt(getContentResolver(), Settings.System.ELECTRON_BEAM_ANIMATION_OFF,
+            //        mElectronBeamAnimationOff.isChecked() ? 1 : 0);
 
             new AlertDialog.Builder(getActivity())
                     .setMessage("THE CRT ANIMATION IS FLAWKY!\n\nI give you this option as some people rather have a flawky animation than no one.\nDO NOT COMPLAIN ABOUT ITS BROKENNESS IN THE THREAD!")
@@ -414,10 +414,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                                 @Override
                                 public void onClick(DialogInterface dialog,
                                                     int which) {
-                                    preference
-                                            .edit()
-                                            .putBoolean(ELECTRON_BEAM_ANIMATION_OFF,
-                                                    false).apply();
+                                    Settings.System.putInt(getContentResolver(), Settings.System.ELECTRON_BEAM_ANIMATION_OFF,0);
                                     mElectronBeamAnimationOff.setChecked(false);
                                 }
                             })
@@ -426,10 +423,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                                 @Override
                                 public void onClick(DialogInterface dialog,
                                                     int which) {
-                                    preference
-                                            .edit()
-                                            .putBoolean(ELECTRON_BEAM_ANIMATION_OFF,
-                                                    true).apply();
+                                    Settings.System.putInt(getContentResolver(), Settings.System.ELECTRON_BEAM_ANIMATION_OFF,1);
                                     mElectronBeamAnimationOff.setChecked(true);
                                 }
                             }).create().show();
