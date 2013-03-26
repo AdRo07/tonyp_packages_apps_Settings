@@ -19,9 +19,11 @@ package com.android.settings;
 import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
 
 import android.app.ActivityManagerNative;
+import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
@@ -404,6 +406,33 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else if (preference == mElectronBeamAnimationOff) {
             Settings.System.putInt(getContentResolver(), Settings.System.ELECTRON_BEAM_ANIMATION_OFF,
                     mElectronBeamAnimationOff.isChecked() ? 1 : 0);
+
+            new AlertDialog.Builder(getActivity())
+                    .setMessage("THE CRT ANIMATION IS FLAWKY!\n\nI give you this option as some people rather have a flawky animation than no one.\nDO NOT COMPLAIN ABOUT ITS BROKENNESS IN THE THREAD!")
+                    .setNegativeButton("Cancel",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                                    int which) {
+                                    preference
+                                            .edit()
+                                            .putBoolean(ELECTRON_BEAM_ANIMATION_OFF,
+                                                    false).apply();
+                                    mElectronBeamAnimationOff.setChecked(false);
+                                }
+                            })
+                    .setPositiveButton("OK",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                                    int which) {
+                                    preference
+                                            .edit()
+                                            .putBoolean(ELECTRON_BEAM_ANIMATION_OFF,
+                                                    true).apply();
+                                    mElectronBeamAnimationOff.setChecked(true);
+                                }
+                            }).create().show();
             return true;
         } else if (preference == mVolumeWake) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
