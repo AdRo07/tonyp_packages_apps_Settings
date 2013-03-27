@@ -26,6 +26,7 @@ import android.os.ServiceManager;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.IWindowManager;
 
@@ -47,8 +48,6 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mHardwareKeys;
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
-    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
-    private static final String KEY_NAVIGATION_BAR = "navigation_bar";
     private static final String KEY_NAVIGATION_RING = "navigation_ring";
     private static final String KEY_NAVIGATION_BAR_CATEGORY = "navigation_bar_category";
     private static final String KEY_LOCK_CLOCK = "lock_clock";
@@ -117,15 +116,8 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     public void onResume() {
         super.onResume();
         // All users
-        if (mNotificationPulse != null) {
-            updateLightPulseDescription();
-        }
         if (mPieControl != null) {
             updatePieControlDescription();
-        }
-        // Primary user only
-        if (mIsPrimary && mBatteryPulse != null) {
-            updateBatteryPulseDescription();
         }
     }
     @Override
