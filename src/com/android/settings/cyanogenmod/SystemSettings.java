@@ -111,12 +111,11 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         pref.setValueIndex(index);
         // Pie controls
         mPieControl = (PreferenceScreen) findPreference(KEY_PIE_CONTROL);
+    }
 
-
-    @Override
+	    @Override
     public void onResume() {
         super.onResume();
-
         // All users
         if (mNotificationPulse != null) {
             updateLightPulseDescription();
@@ -124,23 +123,14 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         if (mPieControl != null) {
             updatePieControlDescription();
         }
-
         // Primary user only
         if (mIsPrimary && mBatteryPulse != null) {
             updateBatteryPulseDescription();
         }
     }
-
     @Override
     public void onPause() {
         super.onPause();
-    }
-
-        // report the current size in the summary text
-        final Resources res = getResources();
-        String[] fontSizeNames = res.getStringArray(R.array.entries_font_size);
-        pref.setSummary(String.format(res.getString(R.string.summary_font_size),
-                fontSizeNames[index]));
     }
 
     private void updatePieControlDescription() {
