@@ -407,7 +407,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             //Settings.System.putInt(getContentResolver(), Settings.System.ELECTRON_BEAM_ANIMATION_OFF,
             //        mElectronBeamAnimationOff.isChecked() ? 1 : 0);
             if (Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.ELECTRON_BEAM_ANIMATION_OFF, 0) == 1) {
+                Settings.System.ELECTRON_BEAM_ANIMATION_OFF, 0) != 1) {
                 new AlertDialog.Builder(getActivity())
                         .setMessage("THE CRT ANIMATION IS FLAWKY!\n\nIf you want to use it the way it is then do so. If you don't like it then keep it disabled.\n\nBUT DO NOT COMPLAIN ABOUT ITS BROKENNESS IN THE THREAD!")
                         .setNegativeButton("Cancel",
