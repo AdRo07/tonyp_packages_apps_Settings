@@ -55,7 +55,7 @@ public class MemoryManagement extends SettingsPreferenceFragment implements
     
     private static final String TONYP_MINFREE_PREF = "pref_tonyp_minfree";
 
-    private static final String TONYP_MINFREE_PERSIST_PROP = "ro.tonyp.mem_minfree";
+    private static final String TONYP_MINFREE_PERSIST_PROP = "persist.sys.tonyp_mem_minfree";
 
     private static final String TONYP_MINFREE_DEFAULT = "false";
 
