@@ -80,6 +80,8 @@ public class MemoryManagement extends SettingsPreferenceFragment implements
             mzRAM = (ListPreference) prefSet.findPreference(ZRAM_PREF);
             mPurgeableAssetsPref = (CheckBoxPreference) prefSet.findPreference(PURGEABLE_ASSETS_PREF);
             mKSMPref = (CheckBoxPreference) prefSet.findPreference(KSM_PREF);
+            mTonypMinfreePref = (CheckBoxPreference) prefSet.findPreference(TONYP_MINFREE_PREF);
+
 
             if (isSwapAvailable()) {
                 if (SystemProperties.get(ZRAM_PERSIST_PROP) == "1")
