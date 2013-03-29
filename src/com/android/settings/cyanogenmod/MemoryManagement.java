@@ -100,7 +100,7 @@ public class MemoryManagement extends SettingsPreferenceFragment implements
                     PURGEABLE_ASSETS_DEFAULT);
             mPurgeableAssetsPref.setChecked("1".equals(purgeableAssets));
 
-            String tonypMinfree = SystemProperties.get(TONYP_MINFREE_PERSIST_PROP,
+            String tonypMinfreePref = SystemProperties.get(TONYP_MINFREE_PERSIST_PROP,
                     TONYP_MINFREE_DEFAULT);
             mTonypMinfreePref.setChecked("true".equals(tonypMinfree));
 
