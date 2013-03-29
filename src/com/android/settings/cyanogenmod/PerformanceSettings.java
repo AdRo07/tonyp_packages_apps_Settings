@@ -79,7 +79,7 @@ public class PerformanceSettings extends SettingsPreferenceFragment
             mBootanimation = (CheckBoxPreference) prefSet.findPreference(PREF_BOOTANIMATION);
             mBootanimation.setChecked((SystemProperties.get(PREF_BOOTANIMATION_PROP, "0")).equals("0"));
 
-            /* Display the warning dialog */
+            /* Display the warning dialog
             alertDialog = new AlertDialog.Builder(getActivity()).create();
             alertDialog.setTitle(R.string.performance_settings_warning_title);
             alertDialog.setMessage(getResources().getString(R.string.performance_settings_warning));
@@ -97,6 +97,7 @@ public class PerformanceSettings extends SettingsPreferenceFragment
             });
 
             alertDialog.show();
+            */
         }
     }
 
