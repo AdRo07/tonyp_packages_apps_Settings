@@ -52,6 +52,12 @@ public class MemoryManagement extends SettingsPreferenceFragment implements
     private static final String PURGEABLE_ASSETS_PERSIST_PROP = "persist.sys.purgeable_assets";
 
     private static final String PURGEABLE_ASSETS_DEFAULT = "0";
+    
+    private static final String TONYP_MINFREE_PREF = "pref_tonyp_minfree";
+
+    private static final String TONYP_MINFREE_PERSIST_PROP = "ro.tonyp.mem_minfree";
+
+    private static final String TONYP_MINFREE_DEFAULT = "false";
 
     private ListPreference mzRAM;
 
@@ -94,6 +100,10 @@ public class MemoryManagement extends SettingsPreferenceFragment implements
                     PURGEABLE_ASSETS_DEFAULT);
             mPurgeableAssetsPref.setChecked("1".equals(purgeableAssets));
 
+            String tonypMinfree = SystemProperties.get(TONYP_MINFREE_PERSIST_PROP,
+                    TONYP_MINFREE_DEFAULT);
+            mTonypMinfreePref.setChecked("true".equals(tonypMinfree));
+
         }
     }
 
@@ -108,6 +118,11 @@ public class MemoryManagement extends SettingsPreferenceFragment implements
 
         if (preference == mKSMPref) {
             Utils.fileWriteOneLine(KSM_RUN_FILE, mKSMPref.isChecked() ? "1" : "0");
+            return true;
+        }
+
+        if (preference == mTonypMinfreePref) {
+            Utils.fileWriteOneLine(TONYP_MINFREE_PERSIST_PROP, mTonypMinfreePref.isChecked() ? "true" : "false");
             return true;
         }
 
