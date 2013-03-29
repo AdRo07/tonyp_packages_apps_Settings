@@ -64,6 +64,8 @@ public class MemoryManagement extends SettingsPreferenceFragment implements
     private CheckBoxPreference mPurgeableAssetsPref;
 
     private CheckBoxPreference mKSMPref;
+    
+    private CheckBoxPreference mTonypMinfreePref;
 
     private int swapAvailable = -1;
 
@@ -102,7 +104,7 @@ public class MemoryManagement extends SettingsPreferenceFragment implements
                     PURGEABLE_ASSETS_DEFAULT);
             mPurgeableAssetsPref.setChecked("1".equals(purgeableAssets));
 
-            String tonypMinfreePref = SystemProperties.get(TONYP_MINFREE_PERSIST_PROP,
+            String tonypMinfree = SystemProperties.get(TONYP_MINFREE_PERSIST_PROP,
                     TONYP_MINFREE_DEFAULT);
             mTonypMinfreePref.setChecked("true".equals(tonypMinfree));
 
