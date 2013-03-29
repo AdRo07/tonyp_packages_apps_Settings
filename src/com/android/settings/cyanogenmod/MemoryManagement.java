@@ -126,7 +126,7 @@ public class MemoryManagement extends SettingsPreferenceFragment implements
         }
 
         if (preference == mTonypMinfreePref) {
-            Utils.fileWriteOneLine(TONYP_MINFREE_PERSIST_PROP, mTonypMinfreePref.isChecked() ? "true" : "false");
+            SystemProperties.set(TONYP_MINFREE_PERSIST_PROP, mTonypMinfreePref.isChecked() ? "true" : "false");
             return true;
         }
 
