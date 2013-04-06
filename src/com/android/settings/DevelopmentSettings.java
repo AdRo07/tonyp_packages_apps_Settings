@@ -358,7 +358,7 @@ public class DevelopmentSettings extends PreferenceFragment
 
         final ContentResolver cr = getActivity().getContentResolver();
         mLastEnabledState = Settings.Secure.getInt(cr,
-                Settings.Secure.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0;
+                Settings.Secure.DEVELOPMENT_SETTINGS_ENABLED, 1) != 0;
         mEnabledSwitch.setChecked(mLastEnabledState);
         setPrefsEnabledState(mLastEnabledState);
 
