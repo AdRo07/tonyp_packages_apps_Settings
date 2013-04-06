@@ -184,12 +184,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 */
         mElectronBeamAnimationOff = (CheckBoxPreference) findPreference(KEY_ELECTRON_BEAM_ANIMATION_OFF);
         mElectronBeamAnimationOff.setChecked(Settings.System.getInt(resolver,
-                Settings.System.ELECTRON_BEAM_ANIMATION_OFF, 1) == 1);
+                Settings.System.ELECTRON_BEAM_ANIMATION_OFF, 0) == 1);
 
         mElectronBeamAnimationOff = (CheckBoxPreference) findPreference(KEY_ELECTRON_BEAM_ANIMATION_OFF);
         if(getResources().getBoolean(com.android.internal.R.bool.config_screenOffAnimation)) {
             mElectronBeamAnimationOff.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.ELECTRON_BEAM_ANIMATION_OFF, 1) == 1);
+                    Settings.System.ELECTRON_BEAM_ANIMATION_OFF, 0) == 1);
         } else {
             getPreferenceScreen().removePreference(mElectronBeamAnimationOff);
         }
