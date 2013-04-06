@@ -159,7 +159,7 @@ public class Toggles extends SettingsPreferenceFragment implements OnPreferenceC
 
         mStatusBarRotationSwitch = (CheckBoxPreference) findPreference(STATUS_BAR_ROTATION_SWITCH);
         mStatusBarRotationSwitch.setChecked((Settings.System.getInt(mContext.getContentResolver(),
-                                             Settings.System.ROTATE_SWITCH_IN_PHONE_MODE, 1) == 1));
+                                             Settings.System.ROTATE_SWITCH_IN_PHONE_MODE, 0) == 1));
         if(getActivity().getResources().getConfiguration().smallestScreenWidthDp >= 600)
             mPrefCategoryAdvanced.removePreference(mStatusBarRotationSwitch);
 
