@@ -993,4 +993,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_quick_access_linked">Linked layout</string>
     <string name="summary_quick_access_linked">Use the same tiles and layout as the Quick Settings panel</string>
 
+    <!-- Center Clock -->
+    <string name="status_bar_center_clock_title">Center clock</string>
 </resources>
