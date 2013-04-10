@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<!-- Copyright (C) 2007 The Android Open Source Project
+     Copyright (C) 2013 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,8 +20,13 @@
     <string name="yes" msgid="4676390750360727396">"是"</string>
     <string name="no" msgid="6731231425810196216">"无"</string>
     <string name="create" msgid="3578857613172647409">"创建"</string>
+    <string name="allow" msgid="3349662621170855910">"允许"</string>
+    <string name="deny" msgid="6947806159746484865">"拒绝"</string>
     <string name="device_info_default" msgid="7847265875578739287">"未知"</string>
-    <string name="show_dev_countdown" msgid="5521163114237004821">"只需执行 <xliff:g id="STEP_COUNT">%1$d</xliff:g> 步操作即可进入开发者模式。"</string>
+  <plurals name="show_dev_countdown">
+    <item quantity="one" msgid="5295687242294085452">"只需 <xliff:g id="STEP_COUNT">%1$d</xliff:g> 步操作即可进入开发者模式。"</item>
+    <item quantity="other" msgid="6722953419953594148">"只需 <xliff:g id="STEP_COUNT">%1$d</xliff:g> 步操作即可进入开发者模式。"</item>
+  </plurals>
     <string name="show_dev_on" msgid="1110711554982716293">"您现在处于开发者模式！"</string>
     <string name="show_dev_already" msgid="2151632240145446227">"您已处于开发者模式，无需进行此操作。"</string>
     <string name="header_category_wireless_networks" msgid="4944823405420438623">"无线和网络"</string>
@@ -105,14 +111,11 @@
     <string name="battery_info_health_unspecified_failure" msgid="6347021103185471590">"未知错误"</string>
     <string name="battery_info_health_cold" msgid="3835692786176707318">"电量低"</string>
     <string name="bluetooth" msgid="5549625000628014477">"蓝牙"</string>
-    <string name="bluetooth_visibility" msgid="2930835434091839916">"可检测性"</string>
     <string name="bluetooth_is_discoverable" msgid="8373421452106840526">"让附近所有的蓝牙设备均可检测到（<xliff:g id="DISCOVERABLE_TIME_PERIOD">%1$s</xliff:g>）"</string>
     <string name="bluetooth_is_discoverable_always" msgid="2849387702249327748">"让附近所有的蓝牙设备均可检测到"</string>
     <string name="bluetooth_not_visible_to_other_devices" msgid="9120274591523391910">"不让其他蓝牙设备检测到"</string>
     <string name="bluetooth_only_visible_to_paired_devices" msgid="2049983392373296028">"仅让已配对的设备检测到"</string>
-    <string name="bluetooth_not_discoverable" msgid="128269993123955177">"可以检测到设备"</string>
     <string name="bluetooth_visibility_timeout" msgid="8002247464357005429">"检测超时设置"</string>
-    <string name="bluetooth_visibility_timeout_summary" msgid="6483353842671501585">"设置可检测到设备的时间"</string>
     <string name="bluetooth_lock_voice_dialing" msgid="3139322992062086225">"锁定语音拨号"</string>
     <string name="bluetooth_lock_voice_dialing_summary" msgid="4741338867496787042">"屏幕锁定时停止使用蓝牙拨号器"</string>
     <string name="bluetooth_devices" msgid="1886018064039454227">"蓝牙设备"</string>
@@ -146,15 +149,15 @@
     <string name="bluetooth_show_received_files" msgid="5164787486105868895">"显示接收到的文件"</string>
     <string name="device_picker" msgid="8398232791303186677">"蓝牙设备选择器"</string>
     <string name="bluetooth_permission_request" msgid="1523129741266262748">"蓝牙权限请求"</string>
-    <string name="bluetooth_ask_enablement" msgid="5279027758886569301">"某个应用想要打开蓝牙。允许该程序打开蓝牙吗？"</string>
-    <string name="bluetooth_ask_discovery" product="tablet" msgid="4420151924834278808">"您平板电脑上的某个应用想让其他蓝牙设备在 <xliff:g id="TIMEOUT">%1$d</xliff:g> 秒内检测到您的平板电脑。允许该程序执行相应操作吗？"</string>
-    <string name="bluetooth_ask_discovery" product="default" msgid="4478906085771274647">"您手机上的某个应用想让其他蓝牙设备在 <xliff:g id="TIMEOUT">%1$d</xliff:g> 秒内检测到您的手机。允许该程序执行相应操作吗？"</string>
-    <string name="bluetooth_ask_lasting_discovery" product="tablet" msgid="8737516188038252313">"您平板电脑上的某个应用想让其他蓝牙设备“一直可检测到”您的平板电脑。允许该程序执行相应操作吗？"</string>
-    <string name="bluetooth_ask_lasting_discovery" product="default" msgid="7751530664834149084">"您手机上的某个应用想让其他蓝牙设备“一直可检测到”您的手机。允许该程序执行相应操作吗？"</string>
-    <string name="bluetooth_ask_enablement_and_discovery" product="tablet" msgid="8504403125440086020">"您平板电脑上的某个应用想要打开蓝牙，以便其他设备可在 <xliff:g id="TIMEOUT">%1$d</xliff:g> 秒内检测到您的平板电脑。允许该程序打开蓝牙吗？"</string>
-    <string name="bluetooth_ask_enablement_and_discovery" product="default" msgid="3040361003987241057">"您手机上的某个应用想要打开蓝牙，以便其他设备可在 <xliff:g id="TIMEOUT">%1$d</xliff:g> 秒内检测到您的手机。允许该程序打开蓝牙吗？"</string>
-    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="tablet" msgid="7254712987802497615">"您平板电脑上的某个应用想要打开蓝牙，以便其他设备可检测到您的平板电脑。允许该程序打开蓝牙吗？"</string>
-    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="default" msgid="3947789545028519103">"您手机上的某个应用想要打开蓝牙，以便其他设备可检测到您的手机。允许该程序打开蓝牙吗？"</string>
+    <string name="bluetooth_ask_enablement" msgid="637355677176904990">"某个应用想要打开蓝牙。"</string>
+    <string name="bluetooth_ask_discovery" product="tablet" msgid="786921566047356213">"某个应用想让其他蓝牙设备在 <xliff:g id="TIMEOUT">%1$d</xliff:g> 秒内可检测到您的平板电脑。"</string>
+    <string name="bluetooth_ask_discovery" product="default" msgid="5510358858113713272">"某个应用想让其他蓝牙设备在 <xliff:g id="TIMEOUT">%1$d</xliff:g> 秒内可检测到您的手机。"</string>
+    <string name="bluetooth_ask_lasting_discovery" product="tablet" msgid="8863617309580598607">"某个应用想让其他蓝牙设备检测到您的平板电脑。之后，您可以在“蓝牙”设置中更改此设置。"</string>
+    <string name="bluetooth_ask_lasting_discovery" product="default" msgid="6487606808683607975">"某个应用想让其他蓝牙设备检测到您的手机。之后，您可以在“蓝牙”设置中更改此设置。"</string>
+    <string name="bluetooth_ask_enablement_and_discovery" product="tablet" msgid="3346529092809011149">"某个应用想要打开蓝牙，以便其他设备在 <xliff:g id="TIMEOUT">%1$d</xliff:g> 秒内可检测到您的平板电脑。"</string>
+    <string name="bluetooth_ask_enablement_and_discovery" product="default" msgid="4724094889807196118">"某个应用想要打开蓝牙，以便其他设备在 <xliff:g id="TIMEOUT">%1$d</xliff:g> 秒内可检测到您的手机。"</string>
+    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="tablet" msgid="989613204829097159">"某个应用想要打开蓝牙，以便其他设备可检测到您的平板电脑。之后，您可以在“蓝牙”设置中更改此设置。"</string>
+    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="default" msgid="6671615712909139801">"某个应用想要打开蓝牙，以便其他设备可检测到您的手机。之后，您可以在“蓝牙”设置中更改此设置。"</string>
     <string name="bluetooth_turning_on" msgid="4850574877288036646">"正在打开蓝牙..."</string>
     <string name="bluetooth_turning_off" msgid="2337747302892025192">"正在关闭蓝牙…"</string>
     <string name="bluetooth_auto_connect" msgid="40711424456733571">"自动连接"</string>
@@ -164,16 +167,6 @@
     <string name="bluetooth_phonebook_request" msgid="457033227379858269">"电话簿请求"</string>
     <string name="bluetooth_pb_acceptance_dialog_text" msgid="6555508756987053866">"%1$s想访问您的联系人信息和通话记录。要向%2$s授予访问权限吗？"</string>
     <string name="bluetooth_pb_remember_choice" msgid="2901499974259177202">"下次不再询问"</string>
-
-    <!-- Activity label of BluetoothMasPermissionActivity, also used as Strings in the permission dialog [CHAR LIMIT=none] -->
-    <string name="bluetooth_mas_request">"信息访问请求"</string>
-
-    <!-- Bluetooth MAS permission Alert Activity text [CHAR LIMIT=none] -->
-    <string name="bluetooth_mas_acceptance_dialog_text">%1$s 想访问您的信息. 给予 %2$s 访问权限?</string>
-
-    <!-- Bluetooth MAS permission Alert Activity checkbox text [CHAR LIMIT=none] -->
-    <string name="bluetooth_mas_remember_choice">下次不再询问</string>
-
     <string name="date_and_time" msgid="4114084177056654663">"日期和时间设置"</string>
     <string name="choose_timezone" msgid="1362834506479536274">"选择时区"</string>
     <string name="normal_date_format" msgid="7636406984925498359">"所在区域 (<xliff:g id="DATE">%s</xliff:g>)"</string>
@@ -628,15 +621,6 @@
     <string name="wifi_setting_frequency_band_title" msgid="7493768705046080060">"Wi-Fi 频带"</string>
     <string name="wifi_setting_frequency_band_summary" msgid="3250740757118009784">"指定操作的频率范围"</string>
     <string name="wifi_setting_frequency_band_error" msgid="837281974489794378">"设置频带时出现问题。"</string>
-    <string name="wifi_setting_countrycode_title">Wi-Fi 区域代码</string>
-    <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50]-->
-    <string name="wifi_setting_countrycode_summary">指定 Wi-Fi 使用的区域码</string>
-    <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
-    <string name="wifi_setting_countrycode_error">设置区域码时遇到了问题.</string>
-    <!-- Wi-Fi settings screen, advanced, title of the item to set the Wi-Fi priority. -->
-    <string name="wifi_setting_priority_title">Wi-Fi 连接优先</string>
-    <!-- Wi-Fi settings screen, setting summary for setting the Wi-Fi priority-->
-    <string name="wifi_setting_priority_summary">设置各个 Wi-Fi 网络的优先连接顺序</string>
     <string name="wifi_advanced_mac_address_title" msgid="6571335466330978393">"MAC 地址"</string>
     <string name="wifi_advanced_ip_address_title" msgid="6215297094363164846">"IP 地址"</string>
     <string name="wifi_advanced_settings_label" msgid="3654366894867838338">"IP 设置"</string>
@@ -682,11 +666,11 @@
     <string name="musicfx_title" msgid="3415566786340790345">"音乐效果"</string>
     <string name="ring_volume_title" msgid="7938706566797464165">"铃声音量"</string>
     <string name="vibrate_in_silent_title" msgid="3897968069156767036">"静音时振动"</string>
-    <string name="notification_sound_title" msgid="312032901303146002">"默认通知"</string>
+    <string name="notification_sound_title" msgid="5137483249425507572">"默认通知提示音"</string>
     <string name="incoming_call_volume_title" msgid="8073714801365904099">"铃声"</string>
     <string name="notification_volume_title" msgid="2012640760341080408">"通知"</string>
     <string name="checkbox_notification_same_as_incoming_call" msgid="1073644356290338921">"将来电音量用作通知音量"</string>
-    <string name="notification_sound_dialog_title" msgid="9052854168612951170">"选择通知铃声"</string>
+    <string name="notification_sound_dialog_title" msgid="3805140135741385667">"默认通知提示音"</string>
     <string name="media_volume_title" msgid="3576565767317118106">"媒体"</string>
     <string name="media_volume_summary" msgid="5363248930648849974">"设置音乐和视频的音量"</string>
     <string name="alarm_volume_title" msgid="2285597478377758706">"闹钟"</string>
@@ -738,7 +722,7 @@
     <string name="wallpaper_settings_fragment_title" msgid="519078346877860129">"选择壁纸来源"</string>
     <string name="screensaver_settings_title" msgid="3349790120327233241">"互动屏保"</string>
     <string name="screensaver_settings_summary_either_long" msgid="2458481525925378465">"插入基座或休眠且正在充电时"</string>
-    <string name="screensaver_settings_summary_either_short" msgid="6140527286137331478">"任意一种情况"</string>
+    <string name="screensaver_settings_summary_either_short" msgid="6140527286137331478">"以上任一情况"</string>
     <string name="screensaver_settings_summary_sleep" msgid="9086186698140423493">"充电时"</string>
     <string name="screensaver_settings_summary_dock" msgid="2072657401664633283">"插入基座时"</string>
     <string name="screensaver_settings_summary_off" msgid="2481581696365146473">"已关闭"</string>
@@ -800,6 +784,7 @@
     <string name="status_meid_number" msgid="1751442889111731088">"MEID"</string>
     <string name="status_icc_id" msgid="943368755577172747">"ICCID"</string>
     <string name="status_network_type" msgid="3279383550222116235">"手机网络类型"</string>
+    <string name="status_latest_area_info" msgid="7222470836568238054">"运营商信息"</string>
     <string name="status_data_state" msgid="5503181397066522950">"移动网络状态"</string>
     <string name="status_service_state" msgid="2323931627519429503">"服务状态"</string>
     <string name="status_signal_strength" msgid="3732655254188304547">"信号强度"</string>
@@ -1017,7 +1002,7 @@
     <string name="lockpattern_change_lock_pin_label" msgid="266707138486731661">"更改解锁 PIN"</string>
     <string name="lockpattern_need_to_unlock" msgid="757935356911054465">"确认已保存的图案"</string>
     <string name="lockpattern_need_to_unlock_wrong" msgid="4694973540770105678">"请重试："</string>
-    <string name="lockpattern_recording_intro_header" msgid="308287052221942814">"绘制解锁图案"</string>
+    <string name="lockpattern_recording_intro_header" msgid="2063630508212535241">"绘制解锁图案："</string>
     <string name="lockpattern_recording_intro_footer" msgid="1118579101409152113">"按 MENU 获得帮助。"</string>
     <string name="lockpattern_recording_inprogress" msgid="4622772178078818425">"完成后松开手指。"</string>
     <string name="lockpattern_recording_incorrect_too_short" msgid="3103250430366718996">"至少连接 <xliff:g id="NUMBER">%d</xliff:g> 个点，请重试："</string>
@@ -1040,12 +1025,6 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts_header" msgid="819903817323783498">"错误的尝试次数过多！"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts_footer" msgid="6759029360597122873">"<xliff:g id="NUMBER">%d</xliff:g> 秒后重试。"</string>
     <string name="activity_not_found" msgid="5551664692991605325">"您的手机上未安装相应应用。"</string>
-    <string name="skip_button_label" msgid="8680422740354436943">"取消"</string>
-    <string name="next_button_label" msgid="8890792540116568321">"下一步"</string>
-    <string name="lock_title" product="tablet" msgid="2909697418179419990">"保护您的平板电脑"</string>
-    <string name="lock_title" product="default" msgid="4059246467204273930">"手机安全设置"</string>
-    <string name="lock_intro_message" product="tablet" msgid="8616353869251700776">"创建个人屏幕解锁图案可防止他人未经许可使用您的平板电脑。在下一屏幕上用手指以任意顺序连接至少四个点。"\n\n"准备好开始了吗？请触摸“下一步”。"</string>
-    <string name="lock_intro_message" product="default" msgid="8393155371327584659">"创建个人屏幕解锁图案可防止他人未经许可使用您的手机。在下一屏幕上滑动手指以任意顺序连接至少四个点。"\n\n"准备好开始了吗？请触摸“下一步”。"</string>
     <string name="manageapplications_settings_title" msgid="7041951105633616745">"管理应用"</string>
     <string name="manageapplications_settings_summary" msgid="1794401500935451259">"管理和删除已安装的应用"</string>
     <string name="applications_settings" msgid="1721442176406964682">"应用"</string>
@@ -1213,7 +1192,6 @@
     <string name="hardkeyboard_category" msgid="5957168411305769899">"物理键盘设置"</string>
     <string name="auto_punctuate_summary" msgid="4372126865670574837">"按空格键两次可插入句号"</string>
     <string name="show_password" msgid="3001113966880559611">"显示密码"</string>
-    <string name="show_password_summary" msgid="7345931695292850058"></string>
     <string name="ime_security_warning" msgid="4135828934735934248">"此输入法可能会收集您输入的所有文字，包括密码和信用卡号等个人数据。它源自应用“<xliff:g id="IME_APPLICATION_NAME">%1$s</xliff:g>”。要使用此输入法吗？"</string>
     <string name="spellchecker_security_warning" msgid="9060897418527708922">"此拼写检查工具可能会收集您键入的所有文字，包括密码和信用卡号等个人数据。它源自应用“<xliff:g id="SPELLCHECKER_APPLICATION_NAME">%1$s</xliff:g>”。要使用此拼写检查工具吗？"</string>
     <string name="spellchecker_quick_settings" msgid="246728645150092058">"设置"</string>
@@ -1304,16 +1282,6 @@
     <string name="enforce_read_external_summary" product="default" msgid="2750027486786530064">"应用必须请求读取 SD 卡的权限"</string>
     <string name="enforce_read_external_confirm_title" product="default" msgid="273220585729800783">"要对 SD 卡进行读写保护吗？"</string>
     <string name="enforce_read_external_confirm_message" product="default" msgid="3858482712337574407">"如果 SD 卡受到读写保护，则应用必须请求相关权限才能读取外部存储设备中的数据。"\n\n"某些应用需要其开发者更新之后才能正常使用。"</string>
-
-    <!-- Setting checkbox title for root access -->
-    <string name="root_access">Root 授权</string>
-    <string name="root_access_warning_title">允许 Root 授权请求?</string>
-    <string name="root_access_warning_message">允许程序得到超级用户权限是有风险的! 这可能会影响您的系统的安全!</string>
-    <string name="root_access_none">禁用</string>
-    <string name="root_access_apps">限于应用程序</string>
-    <string name="root_access_adb">限于 ADB</string>
-    <string name="root_access_all">应用程序与 ADB</string>
-
     <string name="gadget_picker_title" msgid="98374951396755811">"选择小工具"</string>
     <string name="widget_picker_title" msgid="9130684134213467557">"选择小部件"</string>
     <string name="allow_bind_app_widget_activity_allow_bind_title" msgid="2538303018392590627">"是否允许该应用创建并访问小部件？"</string>
@@ -1564,11 +1532,6 @@
     <string name="sound_category_notification_title" msgid="3502115998790286943">"通知"</string>
     <string name="sound_category_call_ringtone_vibrate_title" msgid="1543777228646645163">"来电铃声和振动"</string>
     <string name="sound_category_system_title" msgid="1480844520622721141">"系统"</string>
-
-    <!-- Category title for headset specific Settings.
-         [CHAR LIMIT=40] -->
-    <string name="headset_category_title">耳机</string>
-
     <string name="wifi_setup_title" msgid="661074868726906436">"Wi-Fi 设置"</string>
     <string name="wifi_setup_title_editing_network" msgid="7304321031985059969">"连接到 Wi-Fi 网络<xliff:g id="NETWORK_NAME">%s</xliff:g>"</string>
     <string name="wifi_setup_title_connecting_network" msgid="3747859666621319757">"正在连接到 Wi-Fi 网络“<xliff:g id="NETWORK_NAME">%s</xliff:g>”..."</string>
@@ -1688,7 +1651,7 @@
     <string name="enable_traces_summary_all" msgid="3950139649125158247">"当前已启用所有跟踪"</string>
     <string name="enable_opengl_traces_title" msgid="6790444011053219871">"启用 OpenGL 跟踪"</string>
     <string name="debug_layout" msgid="5981361776594526155">"显示布局边界"</string>
-    <string name="debug_layout_summary" msgid="2001775315258637682">"显示剪辑边界、边距等。"</string>
+    <string name="debug_layout_summary" msgid="2001775315258637682">"显示剪辑边界、边距等"</string>
     <string name="show_cpu_usage" msgid="2389212910758076024">"显示 CPU 使用情况"</string>
     <string name="show_cpu_usage_summary" msgid="2113341923988958266">"屏幕叠加层显示当前 CPU 使用情况"</string>
     <string name="force_hw_ui" msgid="6426383462520888732">"强制进行 GPU 渲染"</string>
@@ -1705,8 +1668,8 @@
     <string name="immediately_destroy_activities" msgid="8366775083630234121">"不保留活动"</string>
     <string name="immediately_destroy_activities_summary" msgid="3592221124808773368">"用户离开后即销毁每个活动"</string>
     <string name="app_process_limit_title" msgid="4280600650253107163">"后台进程限制"</string>
-    <string name="show_all_anrs" msgid="28462979638729082">"显示所有“应用无响应”(ANR)"</string>
-    <string name="show_all_anrs_summary" msgid="641908614413544127">"为后台应用显示“应用无响应”对话框"</string>
+    <string name="show_all_anrs" msgid="28462979638729082">"显示所有 “应用无响应” (ANR)"</string>
+    <string name="show_all_anrs_summary" msgid="641908614413544127">"为后台应用显示 “应用无响应” 对话框"</string>
     <string name="data_usage_summary_title" msgid="3804110657238092929">"流量使用情况"</string>
     <string name="data_usage_cycle" msgid="5652529796195787949">"流量使用周期"</string>
     <string name="data_usage_menu_roaming" msgid="8042359966835203296">"移动数据网络漫游"</string>
@@ -1871,9 +1834,29 @@
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"请选择要显示的紧急消息类型。"</string>
 
 
-    <!-- CYANOGENMOD EDITS START -->
+    <!-- CYANOGENMOD ADDITIONS START -->
 
     <string name="ok">确定</string>
+
+    <!-- Wi-Fi settings -->
+    <!-- Wi-Fi settings screen, advanced, title of the item to set the Wi-Fi frequency band. -->
+    <string name="wifi_setting_countrycode_title">Wi-Fi 区域代码</string>
+    <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50]-->
+    <string name="wifi_setting_countrycode_summary">指定 Wi-Fi 使用的区域码</string>
+    <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
+    <string name="wifi_setting_countrycode_error">设置区域码时遇到了问题.</string>
+    <!-- Wi-Fi settings screen, advanced, title of the item to set the Wi-Fi priority. -->
+    <string name="wifi_setting_priority_title">Wi-Fi 连接优先</string>
+    <!-- Wi-Fi settings screen, setting summary for setting the Wi-Fi priority-->
+    <string name="wifi_setting_priority_summary">设置各个 Wi-Fi 网络的优先连接顺序</string>
+
+    <!-- Bluetooth settings -->
+    <!-- Activity label of BluetoothMasPermissionActivity, also used as Strings in the permission dialog [CHAR LIMIT=none] -->
+    <string name="bluetooth_mas_request">"信息访问请求"</string>
+    <!-- Bluetooth MAS permission Alert Activity text [CHAR LIMIT=none] -->
+    <string name="bluetooth_mas_acceptance_dialog_text">%1$s 想访问您的信息. 给予 %2$s 访问权限?</string>
+    <!-- Bluetooth MAS permission Alert Activity checkbox text [CHAR LIMIT=none] -->
+    <string name="bluetooth_mas_remember_choice">下次不再询问</string>
 
     <!-- Quiet hours -->
     <string name="quiet_hours_title">安静时段</string>
@@ -2108,6 +2091,11 @@
     <string name="unlock_quick_unlock_control_title">快速解锁</string>
     <string name="unlock_quick_unlock_control_summary">当正确的 PIN 或密码被输入后, 设备将自动解锁</string>
 
+    <!-- Security & location settings screen, setting check box title. This setting controls whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly.  If checked, this line is drawn.  If unchecked, there is nothing drawn so the user does not reveal his pattern while he unlocks the phone.-->
+    <string name="lockpattern_settings_enable_error_path_title">显示图案错误</string>
+    <!-- Security & location settings screen, setting check box title. This setting controls whether the dots will be drawn when using the lockscreen pattern.-->
+    <string name="lockpattern_settings_enable_dots_title">显示图案点</string>
+
     <!-- Slide lock delay -->
     <string name="delay_and_timeout_title">锁定延迟</string>
     <string name="slide_lock_delay_title">延迟屏幕锁定</string>
@@ -2129,7 +2117,7 @@
 
     <!-- Performance Settings : Warning dialog  -->
     <string name="performance_settings_warning_title">请谨慎前进</string>
-    <string name="performance_settings_warning">这些设置完全是用于测试与实验. 这里的改变将直接影响系统性能, 并可能导致系统不稳定, 数据丢失, 与硬件损伤.\n\n如果您更改了这里的设置, 我们请求您不要向我们提交 Bug 报告.</string>
+    <string name="performance_settings_warning">这些设置完全是用于测试与实验. 这里的改变将直接影响系统性能, 并可能导致系统不稳定, 数据丢失, 与硬件损伤.\n\n如果您更改了这里的设置, 我们请求您不要向我们提交错误报告.</string>
 
     <!-- Performance Settings : Processor Settings -->
     <!-- Performance Settings : Processor settings title -->
@@ -2270,7 +2258,7 @@
     <string name="dialog_test">测试</string>
     <string name="dialog_delete_title">删除</string>
     <string name="dialog_delete_message">移除选中的项目?</string>
-    <string name="dialog_test_message">请将屏幕关闭以便测试新的指示灯设置.关闭此对话框将停止测试.</string>
+    <string name="dialog_test_message">请将屏幕关闭以便测试新的指示灯设置. 关闭此对话框将停止测试.</string>
     <string name="dialog_test_button">关闭</string>
 
     <!-- Values for the notification light pulse spinners -->
@@ -2298,7 +2286,6 @@
     <string name="volume_overlay_title">声控面板风格</string>
     <string name="volbtn_music_controls_title">音量键音乐控制</string>
     <string name="volbtn_music_controls_summary">当屏幕关闭时, 长按音量键即可改变音乐曲目</string>
-    <string name="headset_connect_player_title">插入耳机时启动音乐播放器</string>
     <string name="volume_ring_only_description">铃声</string>
     <string name="ring_mode_title">响铃模式</string>
     <string name="ring_mode_normal">正常</string>
@@ -2328,7 +2315,7 @@
     <string name="hardware_keys_action_in_app_search">程序内搜索</string>
 
     <!-- Navigation Bar #CM -->
-    <string name="navigation_bar_title">导航栏</string>
+    <string name="navigation_bar_title">按键与布局</string>
     <string name="navigation_bar_help_text">1 - 点击锁定图标以开始编辑\n\n2 - 点击任何按键以指定或改变它的功能\n\n3 - 长按任何按键以重新排列按键顺序\n\n4 - 再次点击锁定图标将会保存您的改变\n\n5 - 如果您想还原为系统默认值, 请点击重置键\n\n</string>
     <string name="navigation_bar_tips">&#8226; 一个按键只能拥有一个行为\n\n&#8226; Home 键的行为是不能被改变的\n\n&#8226; 侧边按键的位置是不能改变的</string>
     <string name="navigation_bar_tips_title">小提示</string>
@@ -2402,6 +2389,9 @@
     <string name="power_menu_reboot_title">重启菜单</string>
     <string name="power_menu_screenshot_title">屏幕截图</string>
     <string name="power_menu_expanded_desktop">扩展桌面</string>
+    <string name="expanded_desktop_disabled">已禁用</string>
+    <string name="expanded_desktop_status_bar">显示状态栏</string>
+    <string name="expanded_desktop_no_status_bar">隐藏状态栏</string>
     <string name="power_menu_profiles_title">情景模式</string>
     <string name="power_menu_airplane_title">飞行模式</string>
     <string name="power_menu_user_title">用户切换器</string>
@@ -2452,6 +2442,15 @@
 
     <!-- Launches Dev Tools -->
     <string name="development_tools_title">启动开发工具</string>
+
+    <!-- Setting checkbox title for root access -->
+    <string name="root_access">Root 授权</string>
+    <string name="root_access_warning_title">允许 Root 授权请求?</string>
+    <string name="root_access_warning_message">允许程序得到超级用户权限是有风险的! 这可能会影响您的系统的安全!</string>
+    <string name="root_access_none">禁用</string>
+    <string name="root_access_apps">限于应用程序</string>
+    <string name="root_access_adb">限于 ADB</string>
+    <string name="root_access_all">应用程序与 ADB</string>
 
     <!-- USB Mass Storage -->
     <string name="usb_mass_storage_title">USB 大容量存储</string>
@@ -2506,12 +2505,14 @@
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">屏幕超时</string>
     <string name="title_tile_usb_tether">USB 网络共享</string>
+    <string name="title_tile_quiet_hours">安静时段</string>
+    <string name="title_tile_volume">音量</string>
 
     <string name="title_dynamic_tiles">动态按钮</string>
     <string name="dynamic_tiles_note_title">注意</string>
     <string name="dynamic_tiles_note_summary">动态按钮不是随时都会显示的, 它们仅会在有相关的系统事件时显示</string>
     <string name="title_dynamic_alarm">闹钟</string>
-    <string name="title_dynamic_bugreport">Bug 报告</string>
+    <string name="title_dynamic_bugreport">错误报告</string>
     <string name="title_dynamic_ime">输入法更改器</string>
     <string name="title_dynamic_usbtether">USB 网络共享</string>
     <string name="title_dynamic_wifi">Wi-Fi 显示</string>
@@ -2544,7 +2545,7 @@
     <!--- SMS security limit -->
     <string name="app_security_title">应用安全</string>
     <string name="sms_security_check_limit_title">短信限制</string>
-    <string name="sms_security_check_limit_summary">当某个应用频繁性的发送短信时显示一个警告窗口. 目前限制: 15 分钟内发送 %d 条信息</string>
+    <string name="sms_security_check_limit_summary">应用程序在 30 分钟内发送 %d 条信息后需要用户认可才能继续</string>
     <string name="sms_security_check_limit_default">30 (默认)</string>
 
     <!--- Lock clock -->
@@ -2566,6 +2567,69 @@
     <string name="lockscreen_background_color_fill">颜色填充</string>
     <string name="lockscreen_background_custom_image">自定义图片</string>
     <string name="lockscreen_background_default_wallpaper">默认墙纸</string>
+
+    <!-- Sound settings screen, setting check box label -->
+    <string name="volume_adjust_sounds_enable_title">音量调整提示音</string>
+    <!-- Sound settings screen, setting check box summary -->
+    <string name="volume_adjust_sounds_enable_summary">使用音量键调整音量时将播放提示音</string>
+
+    <!-- Launch music player when headset is connected -->
+    <string name="headset_connect_player_title">启动音乐播放器</string>
+    <string name="headset_connect_player_summary">插入耳机时启动默认音乐播放器</string>
+
+    <!-- Category title for headset specific Settings. [CHAR LIMIT=40] -->
+    <string name="headset_category_title">耳机</string>
+
+    <!-- Safe headset volume restore checkbox -->
+    <string name="safe_headset_volume_title">耳机安全音量</string>
+    <string name="safe_headset_volume_summary">第一次插入耳机时防止音量过大</string>
+
+    <!-- Waiver -->
+    <string name="cyanogenmod_waiver_title">弃权声明书</string>
+<string name="cyanogenmod_waiver_body">改变此设置可能在您所在的国家属于非法行为.\n\n选择 \'确定\' 意味着您已读此警告并放弃一切起诉权, 保证 CyanogenMod 及其贡献者免于受罚并且不承担任何法律责任.</string>
+
+    <!-- Automatic brightness customization -->
+    <string name="light_sensor_current_value">目前光线传感器值: <xliff:g id="light_level">%d</xliff:g> lux</string>
+    <string name="auto_brightness_dialog_title">自动亮度级别</string>
+    <string name="auto_brightness_adjust_button">调整</string>
+    <string name="auto_brightness_reset_button">重置</string>
+    <string name="auto_brightness_lux_dialog_title">环境亮度范围</string>
+    <string name="auto_brightness_split_dialog_title">分离亮度级别</string>
+    <string name="auto_brightness_start_lux">范围开始 (lux)</string>
+    <string name="auto_brightness_end_lux">范围结束 (lux)</string>
+    <string name="auto_brightness_reset_dialog_title">重置级别?</string>
+    <string name="auto_brightness_reset_confirmation">所有亮度级别都将被还原为默认值.</string>
+    <string name="auto_brightness_split_lux_format">分离位置 (在 <xliff:g id="min">%1$d</xliff:g> 到 <xliff:g id="max">%2$d</xliff:g> lux 之间选择)</string>
+    <string name="auto_brightness_level_options">亮度级别选项</string>
+    <string name="auto_brightness_menu_edit_lux">环境亮度范围</string>
+    <string name="auto_brightness_menu_split">分离</string>
+    <string name="auto_brightness_menu_remove">删除</string>
+
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">高级重启</string>
+    <string name="advanced_reboot_summary">解锁设备后, 在电源菜单的重启选项下加入重启至恢复模式与引导程序的选择</string>
+
+
+    <!-- Navigation bar buttons and shortcuts category title -->
+    <string name="navigation_bar_category">导航栏</string>
+
+    <!-- Navigation ring shortcuts -->
+    <string name="navigation_ring_title">导航栏快捷方式</string>
+    <string name="navring_target_reset_message">确定删除所有用户创建的导航栏快捷方式并还原为默认值?</string>
+    <string name="navring_target_reset">导航栏快捷方式已还原为默认值</string>
+    <string name="navring_target_save">导航栏快捷方式已保存</string>
+    <string name="navring_action_open_ime_switcher">开启输入法切换器</string>
+    <string name="navring_action_kill_app">终止程序</string>
+    <string name="navring_action_none">无</string>
+    <string name="navring_action_take_screenshot">屏幕截图</string>
+    <string name="navring_action_ring_vibrate">响铃/震动</string>
+    <string name="navring_action_ring_silent">响铃/静音</string>
+    <string name="navring_action_ring_vibrate_silent">响铃/震动/静音</string>
+    <string name="navring_action_screen_off">关闭屏幕</string>
+    <string name="navring_action_torch">手电筒开关</string>
+    <string name="navring_action_google_now">Google 即时</string>
+    <string name="navring_choose_action_title">选择操作</string>
+
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
 
 </resources>

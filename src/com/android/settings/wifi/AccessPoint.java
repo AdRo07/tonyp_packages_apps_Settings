@@ -62,6 +62,8 @@ class AccessPoint extends Preference {
     int security;
     int networkId;
     boolean wpsAvailable = false;
+    boolean isIBSS = false;
+    int frequency;
 
     PskType pskType = PskType.UNKNOWN;
 
@@ -188,6 +190,8 @@ class AccessPoint extends Preference {
         security = getSecurity(config);
         networkId = config.networkId;
         mRssi = Integer.MAX_VALUE;
+        isIBSS = config.isIBSS;
+        frequency = config.frequency;
         mConfig = config;
     }
 
@@ -196,6 +200,8 @@ class AccessPoint extends Preference {
         bssid = result.BSSID;
         security = getSecurity(result);
         wpsAvailable = security != SECURITY_EAP && result.capabilities.contains("WPS");
+        isIBSS = result.capabilities.contains("[IBSS]");
+        frequency = result.frequency;
         if (security == SECURITY_PSK)
             pskType = getPskType(result);
         networkId = -1;
@@ -224,17 +230,19 @@ class AccessPoint extends Preference {
         }
         AccessPoint other = (AccessPoint) preference;
         // Active one goes first.
-        if (mInfo != other.mInfo) {
-            return (mInfo != null) ? -1 : 1;
-        }
+        if (mInfo != null && other.mInfo == null) return -1;
+        if (mInfo == null && other.mInfo != null) return 1;
+
         // Reachable one goes before unreachable one.
-        if ((mRssi ^ other.mRssi) < 0) {
-            return (mRssi != Integer.MAX_VALUE) ? -1 : 1;
-        }
+        if (mRssi != Integer.MAX_VALUE && other.mRssi == Integer.MAX_VALUE) return -1;
+        if (mRssi == Integer.MAX_VALUE && other.mRssi != Integer.MAX_VALUE) return 1;
+
         // Configured one goes before unconfigured one.
-        if ((networkId ^ other.networkId) < 0) {
-            return (networkId != -1) ? -1 : 1;
-        }
+        if (networkId != WifiConfiguration.INVALID_NETWORK_ID
+                && other.networkId == WifiConfiguration.INVALID_NETWORK_ID) return -1;
+        if (networkId == WifiConfiguration.INVALID_NETWORK_ID
+                && other.networkId != WifiConfiguration.INVALID_NETWORK_ID) return 1;
+
         // Sort by signal strength.
         int difference = WifiManager.compareSignalLevel(other.mRssi, mRssi);
         if (difference != 0) {
@@ -242,6 +250,22 @@ class AccessPoint extends Preference {
         }
         // Sort by ssid.
         return ssid.compareToIgnoreCase(other.ssid);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof AccessPoint)) return false;
+        return (this.compareTo((AccessPoint) other) == 0);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 0;
+        if (mInfo != null) result += 13 * mInfo.hashCode();
+        result += 19 * mRssi;
+        result += 23 * networkId;
+        result += 29 * ssid.hashCode();
+        return result;
     }
 
     boolean update(ScanResult result) {
@@ -320,24 +344,28 @@ class AccessPoint extends Preference {
         setTitle(ssid);
 
         Context context = getContext();
+        StringBuilder summary = new StringBuilder();
+
+        if (isIBSS)
+            summary.append(context.getString(R.string.wifi_mode_ibss_short)).append(" ");
+
         if (mState != null) { // This is the active connection
-            setSummary(Summary.get(context, mState));
+            summary.append(Summary.get(context, mState));
         } else if (mRssi == Integer.MAX_VALUE) { // Wifi out of range
-            setSummary(context.getString(R.string.wifi_not_in_range));
+            summary.append(context.getString(R.string.wifi_not_in_range));
         } else if (mConfig != null && mConfig.status == WifiConfiguration.Status.DISABLED) {
             switch (mConfig.disableReason) {
                 case WifiConfiguration.DISABLED_AUTH_FAILURE:
-                    setSummary(context.getString(R.string.wifi_disabled_password_failure));
+                    summary.append(context.getString(R.string.wifi_disabled_password_failure));
                     break;
                 case WifiConfiguration.DISABLED_DHCP_FAILURE:
                 case WifiConfiguration.DISABLED_DNS_FAILURE:
-                    setSummary(context.getString(R.string.wifi_disabled_network_failure));
+                    summary.append(context.getString(R.string.wifi_disabled_network_failure));
                     break;
                 case WifiConfiguration.DISABLED_UNKNOWN_REASON:
-                    setSummary(context.getString(R.string.wifi_disabled_generic));
+                    summary.append(context.getString(R.string.wifi_disabled_generic));
             }
         } else { // In range, not disabled.
-            StringBuilder summary = new StringBuilder();
             if (mConfig != null) { // Is saved network
                 summary.append(context.getString(R.string.wifi_remembered));
             }
@@ -359,8 +387,8 @@ class AccessPoint extends Preference {
                     summary.append(context.getString(R.string.wifi_wps_available_second_item));
                 }
             }
-            setSummary(summary.toString());
         }
+        setSummary(summary.toString());
     }
 
     /**

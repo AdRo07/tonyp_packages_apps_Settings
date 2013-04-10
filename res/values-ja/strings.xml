@@ -19,8 +19,13 @@
     <string name="yes" msgid="4676390750360727396">"はい"</string>
     <string name="no" msgid="6731231425810196216">"いいえ"</string>
     <string name="create" msgid="3578857613172647409">"作成"</string>
+    <string name="allow" msgid="3349662621170855910">"許可"</string>
+    <string name="deny" msgid="6947806159746484865">"許可しない"</string>
     <string name="device_info_default" msgid="7847265875578739287">"不明"</string>
-    <string name="show_dev_countdown" msgid="5521163114237004821">"デベロッパーになるまであと<xliff:g id="STEP_COUNT">%1$d</xliff:g>ステップです。"</string>
+  <plurals name="show_dev_countdown">
+    <item quantity="one" msgid="5295687242294085452">"デベロッパーになるまであと<xliff:g id="STEP_COUNT">%1$d</xliff:g>ステップです。"</item>
+    <item quantity="other" msgid="6722953419953594148">"デベロッパーになるまであと<xliff:g id="STEP_COUNT">%1$d</xliff:g>ステップです。"</item>
+  </plurals>
     <string name="show_dev_on" msgid="1110711554982716293">"これでデベロッパーになりました！"</string>
     <string name="show_dev_already" msgid="2151632240145446227">"必要ありません。既にデベロッパーです。"</string>
     <string name="header_category_wireless_networks" msgid="4944823405420438623">"無線とネットワーク"</string>
@@ -107,14 +112,11 @@
     <string name="battery_info_health_unspecified_failure" msgid="6347021103185471590">"不明なエラー"</string>
     <string name="battery_info_health_cold" msgid="3835692786176707318">"低温"</string>
     <string name="bluetooth" msgid="5549625000628014477">"Bluetooth"</string>
-    <string name="bluetooth_visibility" msgid="2930835434091839916">"検出可能"</string>
     <string name="bluetooth_is_discoverable" msgid="8373421452106840526">"周辺のすべてのBluetoothデバイスに表示（<xliff:g id="DISCOVERABLE_TIME_PERIOD">%1$s</xliff:g>）"</string>
     <string name="bluetooth_is_discoverable_always" msgid="2849387702249327748">"周辺のすべてのBluetoothデバイスに表示"</string>
     <string name="bluetooth_not_visible_to_other_devices" msgid="9120274591523391910">"他のBluetoothデバイスには非表示"</string>
     <string name="bluetooth_only_visible_to_paired_devices" msgid="2049983392373296028">"ペア設定したデバイスにのみ表示"</string>
-    <string name="bluetooth_not_discoverable" msgid="128269993123955177">"この端末の検出を許可する"</string>
     <string name="bluetooth_visibility_timeout" msgid="8002247464357005429">"表示のタイムアウト"</string>
-    <string name="bluetooth_visibility_timeout_summary" msgid="6483353842671501585">"端末の検出可能時間を設定する"</string>
     <string name="bluetooth_lock_voice_dialing" msgid="3139322992062086225">"ボイスダイヤルをロック"</string>
     <string name="bluetooth_lock_voice_dialing_summary" msgid="4741338867496787042">"画面がロックされているときはBluetoothボイスダイヤルを使用しない"</string>
     <string name="bluetooth_devices" msgid="1886018064039454227">"Bluetooth端末"</string>
@@ -148,15 +150,15 @@
     <string name="bluetooth_show_received_files" msgid="5164787486105868895">"受信済みファイルを表示"</string>
     <string name="device_picker" msgid="8398232791303186677">"Bluetoothデバイスの選択"</string>
     <string name="bluetooth_permission_request" msgid="1523129741266262748">"Bluetooth許可リクエスト"</string>
-    <string name="bluetooth_ask_enablement" msgid="5279027758886569301">"アプリがBluetoothをONにしようとしています。許可しますか？"</string>
-    <string name="bluetooth_ask_discovery" product="tablet" msgid="4420151924834278808">"アプリが、<xliff:g id="TIMEOUT">%1$d</xliff:g>秒間他のBluetoothデバイスからこのタブレットを検出可能にしようとしています。許可しますか？"</string>
-    <string name="bluetooth_ask_discovery" product="default" msgid="4478906085771274647">"アプリが、<xliff:g id="TIMEOUT">%1$d</xliff:g>秒間他のBluetoothデバイスからこの携帯端末を検出可能にしようとしています。許可しますか？"</string>
-    <string name="bluetooth_ask_lasting_discovery" product="tablet" msgid="8737516188038252313">"アプリが、このタブレットを他のBluetoothデバイスから「常に検出可能」にしようとしています。許可しますか？"</string>
-    <string name="bluetooth_ask_lasting_discovery" product="default" msgid="7751530664834149084">"アプリが、この端末を他のBluetoothデバイスから「常に検出可能」にしようとしています。許可しますか？"</string>
-    <string name="bluetooth_ask_enablement_and_discovery" product="tablet" msgid="8504403125440086020">"アプリが、<xliff:g id="TIMEOUT">%1$d</xliff:g>秒間BluetoothをONにして他のデバイスからこのタブレットを検出可能にしようとしています。許可しますか？"</string>
-    <string name="bluetooth_ask_enablement_and_discovery" product="default" msgid="3040361003987241057">"アプリが、<xliff:g id="TIMEOUT">%1$d</xliff:g>秒間BluetoothをONにして他のデバイスからこの携帯端末を検出可能にしようとしています。許可しますか？"</string>
-    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="tablet" msgid="7254712987802497615">"アプリが、BluetoothをONにして他のデバイスからこのタブレットを検出可能にしようとしています。許可しますか？"</string>
-    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="default" msgid="3947789545028519103">"アプリが、BluetoothをONにして他のデバイスからこの携帯端末を検出可能にしようとしています。許可しますか？"</string>
+    <string name="bluetooth_ask_enablement" msgid="637355677176904990">"アプリがBluetoothをONにしようとしています。"</string>
+    <string name="bluetooth_ask_discovery" product="tablet" msgid="786921566047356213">"アプリが、<xliff:g id="TIMEOUT">%1$d</xliff:g>秒間他のBluetoothデバイスにこのタブレットを表示しようとしています。"</string>
+    <string name="bluetooth_ask_discovery" product="default" msgid="5510358858113713272">"アプリが、<xliff:g id="TIMEOUT">%1$d</xliff:g>秒間他のBluetoothデバイスにこの携帯端末を表示しようとしています。"</string>
+    <string name="bluetooth_ask_lasting_discovery" product="tablet" msgid="8863617309580598607">"アプリが他のBluetoothデバイスにこのタブレットを表示しようとしています。これは後からBluetoothの設定で変更できます。"</string>
+    <string name="bluetooth_ask_lasting_discovery" product="default" msgid="6487606808683607975">"アプリが他のBluetoothデバイスにこの携帯端末を表示しようとしています。これは後からBluetoothの設定で変更できます。"</string>
+    <string name="bluetooth_ask_enablement_and_discovery" product="tablet" msgid="3346529092809011149">"アプリが、<xliff:g id="TIMEOUT">%1$d</xliff:g>秒間BluetoothをONにして他のデバイスにこのタブレットを表示しようとしています。"</string>
+    <string name="bluetooth_ask_enablement_and_discovery" product="default" msgid="4724094889807196118">"アプリが、<xliff:g id="TIMEOUT">%1$d</xliff:g>秒間BluetoothをONにして他のデバイスにこの携帯端末を表示しようとしています。"</string>
+    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="tablet" msgid="989613204829097159">"アプリがBluetoothをONにして他のデバイスにこのタブレットを表示しようとしています。これは後からBluetoothの設定で変更できます。"</string>
+    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="default" msgid="6671615712909139801">"アプリがBluetoothをONにして他のデバイスにこの携帯端末を表示しようとしています。これは後からBluetoothの設定で変更できます。"</string>
     <string name="bluetooth_turning_on" msgid="4850574877288036646">"BluetoothをONにしています..."</string>
     <string name="bluetooth_turning_off" msgid="2337747302892025192">"BluetoothをOFFにしています..."</string>
     <string name="bluetooth_auto_connect" msgid="40711424456733571">"自動接続"</string>
@@ -665,12 +667,12 @@
     <string name="musicfx_title" msgid="3415566786340790345">"サウンド効果"</string>
     <string name="ring_volume_title" msgid="7938706566797464165">"着信音量"</string>
     <string name="vibrate_in_silent_title" msgid="3897968069156767036">"マナーモード時のバイブレーション"</string>
-    <string name="notification_sound_title" msgid="312032901303146002">"デフォルトの通知音"</string>
+    <string name="notification_sound_title" msgid="5137483249425507572">"デフォルトの通知音"</string>
     <string name="notification_pulse_title" msgid="1247988024534030629">"光を点滅させて通知"</string>
     <string name="incoming_call_volume_title" msgid="8073714801365904099">"着信音"</string>
     <string name="notification_volume_title" msgid="2012640760341080408">"通知"</string>
     <string name="checkbox_notification_same_as_incoming_call" msgid="1073644356290338921">"通知音にも着信音量を適用"</string>
-    <string name="notification_sound_dialog_title" msgid="9052854168612951170">"通知音を選択"</string>
+    <string name="notification_sound_dialog_title" msgid="3805140135741385667">"デフォルトの通知音"</string>
     <string name="media_volume_title" msgid="3576565767317118106">"メディア"</string>
     <string name="media_volume_summary" msgid="5363248930648849974">"音楽や動画の再生音量"</string>
     <string name="alarm_volume_title" msgid="2285597478377758706">"アラーム"</string>
@@ -727,8 +729,8 @@
     <string name="screensaver_settings_summary_dock" msgid="2072657401664633283">"ホルダー装着時"</string>
     <string name="screensaver_settings_summary_off" msgid="2481581696365146473">"OFF"</string>
     <string name="screensaver_settings_disabled_prompt" msgid="3857507943322777651">"携帯端末のホルダー装着時やスリープ時の動作を管理するにはスクリーンセーバーをONにします。"</string>
-    <string name="screensaver_settings_when_to_dream" msgid="8352267826043957746">"スクリーンセーバー開始のタイミング"</string>
-    <string name="screensaver_settings_dream_start" msgid="4998187847985120168">"今すぐ開始"</string>
+    <string name="screensaver_settings_when_to_dream" msgid="8352267826043957746">"起動のタイミング"</string>
+    <string name="screensaver_settings_dream_start" msgid="4998187847985120168">"今すぐ起動"</string>
     <string name="screensaver_settings_button" msgid="7292214707625717013">"設定"</string>
     <string name="automatic_brightness" msgid="5014143533884135461">"明るさを自動調整"</string>
     <string name="title_font_size" msgid="4405544325522105222">"フォントサイズ"</string>
@@ -784,6 +786,7 @@
     <string name="status_meid_number" msgid="1751442889111731088">"MEID"</string>
     <string name="status_icc_id" msgid="943368755577172747">"ICCID"</string>
     <string name="status_network_type" msgid="3279383550222116235">"モバイルネットワークの種類"</string>
+    <string name="status_latest_area_info" msgid="7222470836568238054">"携帯通信会社の情報"</string>
     <string name="status_data_state" msgid="5503181397066522950">"モバイルネットワークの状態"</string>
     <string name="status_service_state" msgid="2323931627519429503">"サービスの状態"</string>
     <string name="status_signal_strength" msgid="3732655254188304547">"電波強度"</string>
@@ -1001,7 +1004,7 @@
     <string name="lockpattern_change_lock_pin_label" msgid="266707138486731661">"ロック解除PINを変更"</string>
     <string name="lockpattern_need_to_unlock" msgid="757935356911054465">"現在のパターンを入力"</string>
     <string name="lockpattern_need_to_unlock_wrong" msgid="4694973540770105678">"もう一度お試しください:"</string>
-    <string name="lockpattern_recording_intro_header" msgid="308287052221942814">"ロック解除パターンを入力"</string>
+    <string name="lockpattern_recording_intro_header" msgid="2063630508212535241">"ロック解除パターンを入力"</string>
     <string name="lockpattern_recording_intro_footer" msgid="1118579101409152113">"MENUキーでヘルプ表示"</string>
     <string name="lockpattern_recording_inprogress" msgid="4622772178078818425">"描き終わりの点で指を離します。"</string>
     <string name="lockpattern_recording_incorrect_too_short" msgid="3103250430366718996">"少なくとも<xliff:g id="NUMBER">%d</xliff:g>つの点を結んでください。"</string>
@@ -1024,12 +1027,6 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts_header" msgid="819903817323783498">"誤った回数が多すぎます。"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts_footer" msgid="6759029360597122873">"<xliff:g id="NUMBER">%d</xliff:g>秒後にやり直してください。"</string>
     <string name="activity_not_found" msgid="5551664692991605325">"アプリは端末にインストールされていません。"</string>
-    <string name="skip_button_label" msgid="8680422740354436943">"キャンセル"</string>
-    <string name="next_button_label" msgid="8890792540116568321">"次へ"</string>
-    <string name="lock_title" product="tablet" msgid="2909697418179419990">"タブレットの保護"</string>
-    <string name="lock_title" product="default" msgid="4059246467204273930">"携帯端末の保護"</string>
-    <string name="lock_intro_message" product="tablet" msgid="8616353869251700776">"秘密の画面ロック解除パターンを作成してタブレットを不正使用から守ります。次の画面で指を使って、4つ以上の点を好きな順序で結んでください。"\n\n"準備ができたら[次へ]をタップしてください。"</string>
-    <string name="lock_intro_message" product="default" msgid="8393155371327584659">"秘密の画面ロック解除パターンを作成して端末を不正使用から守ります。次の画面で指を使って点を好きな順序で結んでください。4つ以上の点を結ぶ必要があります。"\n\n"準備ができたら[次へ]をタップしてください。"</string>
     <string name="manageapplications_settings_title" msgid="7041951105633616745">"アプリを管理"</string>
     <string name="manageapplications_settings_summary" msgid="1794401500935451259">"インストール済みアプリを管理、削除する"</string>
     <string name="applications_settings" msgid="1721442176406964682">"アプリ"</string>
@@ -1197,7 +1194,6 @@
     <string name="hardkeyboard_category" msgid="5957168411305769899">"キーボードの設定"</string>
     <string name="auto_punctuate_summary" msgid="4372126865670574837">"英語: Spaceキー2回でピリオド(.)を挿入"</string>
     <string name="show_password" msgid="3001113966880559611">"パスワードを表示する"</string>
-    <string name="show_password_summary" msgid="7345931695292850058"></string>
     <string name="ime_security_warning" msgid="4135828934735934248">"この入力方法を選択すると、すべての入力内容の収集をアプリ（<xliff:g id="IME_APPLICATION_NAME">%1$s</xliff:g>）に許可することになります。これにはパスワードやクレジットカード番号などの個人情報も含まれます。この入力方法を使用しますか？"</string>
     <string name="spellchecker_security_warning" msgid="9060897418527708922">"このスペルチェッカーを選択すると、入力する全文字列の収集をアプリ（<xliff:g id="SPELLCHECKER_APPLICATION_NAME">%1$s</xliff:g>）に許可することになります。これにはパスワードやクレジットカード番号などの個人情報も含まれます。このスペルチェッカーを使用しますか？"</string>
     <string name="spellchecker_quick_settings" msgid="246728645150092058">"設定"</string>
@@ -1843,6 +1839,11 @@
 
     <!-- ** CYANOGENMOD ADDITIONS ** -->
 
+    <!-- Sound settings screen, setting check box label -->
+    <string name="volume_adjust_sounds_enable_title">音量調整サウンド</string>
+    <!-- Sound settings screen, setting check box summary -->
+    <string name="volume_adjust_sounds_enable_summary">音量ボタンで調整時にサウンドを再生する</string>
+
     <!-- Activity label of BluetoothMasPermissionActivity, also used as Strings in the permission dialog [CHAR LIMIT=none] -->
     <string name="bluetooth_mas_request">"メッセージアクセスリクエスト"</string>
 
@@ -1866,12 +1867,20 @@
     <!-- Category title for headset specific Settings. [CHAR LIMIT=40] -->
     <string name="headset_category_title">ヘッドセット</string>
 
+    <string name="lockpattern_settings_enable_error_path_title">パターンエラーを表示</string>
+    <!-- Security & location settings screen, setting check box title. This setting controls whether the dots will be drawn when using the lockscreen pattern.-->
+    <string name="lockpattern_settings_enable_dots_title">パターンドットを表示</string>
+
     <!-- Wi-Fi settings screen, advanced, title of the item to show the Wi-Fi device's MAC address. -->
     <string name="wifi_setting_countrycode_title">Wi-Fi地域コード</string>
     <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50]-->
     <string name="wifi_setting_countrycode_summary">Wi-Fiの地域コードを指定する</string>
     <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
     <string name="wifi_setting_countrycode_error">地域コードの設定に問題がありました</string>
+
+    <string name="wifi_mode">モード</string>
+    <string name="wifi_mode_ibss">アドホック(IBSS)ネットワーク</string>
+    <string name="wifi_mode_ibss_short">アドホック</string>
 
     <string name="adb_notify">USBデバッグの通知</string>
     <string name="adb_notify_summary">USBデバッグが接続されたときに通知する</string>
@@ -1914,7 +1923,7 @@
     <string name="vibrator_type_ringer">着信</string>
     <string name="vibrator_type_notification">通知</string>
     <string name="volume_overlay_title">音量パネル</string>
-    <string name="headset_connect_player_title">接続時に音楽アプリを起動</string>
+
     <string name="volume_ring_only_description">着信音</string>
     <string name="ring_mode_title">着信音モード</string>
     <string name="ring_mode_normal">ノーマル</string>
@@ -2007,8 +2016,12 @@
     <string name="hardware_keys_action_voice_search">音声検索</string>
     <string name="hardware_keys_action_in_app_search">アプリ内検索</string>
 
-    <!-- Navigation Bar #CM -->
-    <string name="navigation_bar_title">ナビゲーションバー</string>
+    <!-- Swap volume buttons when the screen is rotated -->
+    <string name="swap_volume_buttons_title">音量ボタンを入れ替える</string>
+    <string name="swap_volume_buttons_summary">画面を回転させているとき、音量ボタンを入れ替える</string>
+
+    <!-- Navigation Bar -->
+    <string name="navigation_bar_title">ボタンとレイアウト</string>
     <string name="navigation_bar_help_text">1 - 編集するにはロックアイコンをタップします\n\n2 - 機能の割り当てや変更をするボタンをタップします\n\n3 - 並びを変更するには長押しします\n\n4 - 保存するために再びロックアイコンをタップします\n\n5 - システムのデフォルトに戻すにはリセットボタンをタップします\n\n</string>
     <string name="navigation_bar_tips">&#8226; アクションは一度に一つのボタンにしか割り当てられません\n\n&#8226; ホームボタンは変更できません\n\n&#8226; サイドボタンは並び替えできません</string>
     <string name="navigation_bar_tips_title">クィックチップス</string>
@@ -2397,6 +2410,10 @@
     <string name="start_time_title">開始</string>
     <string name="end_time_title">終了</string>
 
+    <!-- convert sound to vibration toggle -->
+    <string name="notification_convert_sound_to_vibration_title">通知バイブレーション</string>
+    <string name="notification_convert_sound_to_vibration_summary">バイブモード時、個々のアプリ設定を無視して全ての通知でバイブレーションする。</string>
+
     <!-- Display : Rotation #CM -->
     <string name="display_rotation_title">自動回転</string>
     <string name="display_rotation_disabled">無効</string>
@@ -2468,6 +2485,9 @@
     <string name="power_menu_reboot_title">再起動メニュー</string>
     <string name="power_menu_screenshot_title">スクリーンショット</string>
     <string name="power_menu_expanded_desktop">拡張デスクトップ</string>
+    <string name="expanded_desktop_disabled">無効</string>
+    <string name="expanded_desktop_status_bar">ステータスバーを表示</string>
+    <string name="expanded_desktop_no_status_bar">ステータスバーを隠す</string>
     <string name="power_menu_profiles_title">プロファイル切り替え</string>
     <string name="power_menu_airplane_title">機内モード</string>
     <string name="power_menu_user_title">ユーザー切り替え</string>
@@ -2527,6 +2547,8 @@
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">画面のタイムアウト</string>
     <string name="title_tile_usb_tether">USBテザリング</string>
+    <string name="title_tile_quiet_hours">サイレントタイム</string>
+    <string name="title_tile_volume">音量</string>
 
     <string name="title_dynamic_tiles">ダイナミックタイル</string>
     <string name="dynamic_tiles_note_title">ノート</string>
@@ -2575,6 +2597,73 @@
     <string name="lockscreen_background_color_fill">単色で染める</string>
     <string name="lockscreen_background_custom_image">カスタムイメージ</string>
     <string name="lockscreen_background_default_wallpaper">デフォルトの壁紙</string>
+
+    <!-- Launch music player when headset is connected -->
+    <string name="headset_connect_player_title">接続時に音楽アプリを起動</string>
+    <string name="headset_connect_player_summary">ヘッドセットを接続した時に標準の音楽アプリを起動する</string>
+
+    <!-- Safe headset volume restore checkbox -->
+    <string name="safe_headset_volume_title">安全なヘッドセット音量</string>
+    <string name="safe_headset_volume_summary">ヘッドセットを接続したときに大音量になるのを防ぐ</string>
+
+    <!-- Waiver -->
+    <string name="cyanogenmod_waiver_title">権利放棄</string>
+    <string name="cyanogenmod_waiver_body">この設定の変更は条例や法律に反しているかもしれません。\n\n\ここで\'OK\'を選択した場合、あなたはこの警告及び権利の放棄、CyanogenModとその貢献者に対する全ての法的責任からの免責に同意したことになります。</string>
+
+    <!-- Automatic brightness customization -->
+    <string name="light_sensor_current_value">現在の明るさセンサー値: <xliff:g id="light_level">%d</xliff:g> ルクス</string>
+    <string name="auto_brightness_dialog_title">自動明るさレベル</string>
+    <string name="auto_brightness_level_format"><xliff:g id="start_level">%1$s</xliff:g> -\n<xliff:g id="end_level">%2$s</xliff:g> ルクス</string>
+    <string name="auto_brightness_brightness_format"><xliff:g id="percent">%s</xliff:g>%%</string>
+    <string name="auto_brightness_adjust_button">調整</string>
+    <string name="auto_brightness_reset_button">リセット</string>
+    <string name="auto_brightness_lux_dialog_title">周囲の明るさの範囲</string>
+    <string name="auto_brightness_split_dialog_title">明るさのレベルを分割</string>
+    <string name="auto_brightness_start_lux">範囲の開始(ルクス)</string>
+    <string name="auto_brightness_end_lux">範囲の終了(ルクス)</string>
+    <string name="auto_brightness_reset_dialog_title">レベルをリセット?</string>
+    <string name="auto_brightness_reset_confirmation">全ての明るさレベルは初期値にリセットされます。</string>
+    <string name="auto_brightness_split_lux_format">分割位置 (<xliff:g id="min">%1$d</xliff:g> から <xliff:g id="max">%2$d</xliff:g> ルクスの間)</string>
+    <string name="auto_brightness_level_options">明るさレベルのオプション</string>
+    <string name="auto_brightness_menu_edit_lux">周囲の明るさの範囲</string>
+    <string name="auto_brightness_menu_split">分離</string>
+    <string name="auto_brightness_menu_remove">削除</string>
+
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">高度な再起動</string>
+    <string name="advanced_reboot_summary">アンロック時の電源メニューにリカバリモードやブートローダへの再起動オプションを追加します。</string>
+
+    <!-- Navigation bar buttons and shortcuts category title -->
+    <string name="navigation_bar_category">ナビゲーションバー</string>
+
+    <!-- Navigation ring shortcuts -->
+    <string name="navigation_ring_title">クイック起動ショートカット</string>
+    <string name="navring_target_reset_message">作成したナビゲーションバーのショートカットを全て削除してデフォルトに戻しますか?</string>
+    <string name="navring_target_reset">ナビゲーションバーショートカットをリセットしました</string>
+    <string name="navring_target_save">ナビゲーションバーショートカットを保存しました</string>
+    <string name="navring_action_open_ime_switcher">入力方法の切り替え</string>
+    <string name="navring_action_kill_app">アプリの強制終了</string>
+    <string name="navring_action_none">なし</string>
+    <string name="navring_action_take_screenshot">スクリーンショットを撮る</string>
+    <string name="navring_action_ring_vibrate">着信音/バイブレーション</string>
+    <string name="navring_action_ring_silent">着信音/サイレント</string>
+    <string name="navring_action_ring_vibrate_silent">着信音/バイブ/サイレント</string>
+    <string name="navring_action_screen_off">スクリーンオフ</string>
+    <string name="navring_action_torch">トーチ</string>
+    <string name="navring_action_google_now">Google Now</string>
+    <string name="navring_choose_action_title">アクションを選択</string>
+
+    <!-- Quick/Pie Control #CM -->
+    <string name="pie_control_title">パイコントロール</string>
+    <string name="pie_control_enabled">拡張デスクトップが機能しているときに有効</string>
+    <string name="pie_control_disabled">無効</string>
+    <string name="pie_control_size">ナビゲーションキーのサイズ</string>
+    <string name="pie_control_trigger_positions">トリガーの位置</string>
+    <string name="pie_control_trigger_left">スクリーン境界の左側</string>
+    <string name="pie_control_trigger_bottom">スクリーン境界の下側</string>
+    <string name="pie_control_trigger_right">スクリーン境界の右側</string>
+    <string name="pie_control_trigger_top">スクリーン境界の上側</string>
+    <string name="pie_control_trigger_top_summary">上側ではナビゲーションのみ表示されます</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
 </resources>

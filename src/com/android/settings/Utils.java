@@ -312,7 +312,7 @@ public class Utils {
         }
 
         // Did not find a matching activity, so remove the preference
-        if (target.remove(header)) System.err.println("Removed " + header.id);
+        target.remove(header);
 
         return false;
     }
@@ -436,13 +436,20 @@ public class Utils {
         return statusString;
     }
 
+    public static void forcePrepareCustomPreferencesList(
+            ViewGroup parent, View child, ListView list, boolean ignoreSidePadding) {
+        list.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
+        list.setClipToPadding(false);
+        prepareCustomPreferencesList(parent, child, list, ignoreSidePadding);
+    }
+
     /**
      * Prepare a custom preferences layout, moving padding to {@link ListView}
      * when outside scrollbars are requested. Usually used to display
      * {@link ListView} and {@link TabWidget} with correct padding.
      */
     public static void prepareCustomPreferencesList(
-            ViewGroup parent, View child, ListView list, boolean ignoreSidePadding) {
+            ViewGroup parent, View child, View list, boolean ignoreSidePadding) {
         final boolean movePadding = list.getScrollBarStyle() == View.SCROLLBARS_OUTSIDE_OVERLAY;
         if (movePadding && parent instanceof PreferenceFrameLayout) {
             ((PreferenceFrameLayout.LayoutParams) child.getLayoutParams()).removeBorders = true;
@@ -673,5 +680,10 @@ public class Utils {
 
     public static boolean isTablet(Context con) {
         return getScreenType(con) == DEVICE_TABLET;
+    }
+
+    /* returns whether the device has volume rocker or not. */
+    public static boolean hasVolumeRocker(Context con) {
+        return con.getResources().getBoolean(R.bool.has_volume_rocker);
     }
 }
