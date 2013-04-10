@@ -98,8 +98,6 @@ public class BluetoothPermissionActivity extends AlertActivity implements
             showConnectionDialog();
         } else if (requestType == BluetoothDevice.REQUEST_TYPE_PHONEBOOK_ACCESS) {
             showPhonebookDialog();
-        } else if (requestType == BluetoothDevice.REQUEST_TYPE_MESSAGE_ACCESS) {
-            showMasDialog();
         } else {
             Log.e(TAG, "Error: bad request type: " + requestType);
             finish();
