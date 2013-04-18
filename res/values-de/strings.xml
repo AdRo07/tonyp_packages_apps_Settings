@@ -1865,6 +1865,53 @@
     <string name="system_interface_title">System interface</string>
 
     <!-- Notification Drawer -->
+    <!-- Statusbar Toggles -->
+    <string name="notification_drawer_toggles_title">Schaltflächen in der Benachrichtigungsleiste</string>
+    <string name="enable_toggles_title">Schaltflächen aktivieren</string>
+    <string name="enable_toggles_summary">Zeigt Schaltflächen in der Benachrichtigungsleiste an</string>
+    <string name="toggle_style_title">Aussehen der Schaltflächen</string>
+    <string name="toggle_style_summary">Anzeige von Icons oder Text</string>
+    <string name="toggle_only_icon">Nur Icons</string>
+    <string name="toggle_only_text">Nur Text</string>
+    <string name="toggles_layout_title">Schaltflächenlayout</string>
+    <string name="toggle_layout_switch">Ein- / Ausschalter</string>
+    <string name="toggle_layout_toggle">Schalter Button</string>
+    <string name="toggle_layout_button">Holo Button</string>
+    <string name="toggle_layout_multirow">Mehrreihige Schaltflächen</string>
+    <string name="toggles_color_title">Farbschema</string>
+    <string name="toggles_color_summary">Legt die Farbe fest, welche von den Schaltflächen genutzt wird. Im deaktivierten Zustand sind die Schaltflächen etwas dunkler</string>
+    <string name="enabled_toggles_title">Aktivierte Schaltflächen</string>
+    <string name="enabled_toggles_summary">Wählt die darzustellenden Schaltflächen aus</string>
+    <string name="toggles_display_dialog">Legt die zu nutzenden Schaltflächen fest</string>
+    <string name="toggles_display_close">Schließen</string>
+    <string name="toggles_order_title">Reihenfolge der Schaltflächen</string>
+    <string name="toggles_order_summary">Bestimmt die Reihenfolge, in welcher die Schaltflächen dargestellt werden</string>
+    <string name="toggles_disable_scrolling_title">Scrollen deaktivieren</string>
+    <string name="toggles_disable_scrolling_summary">Ändert die Größe der Schaltflächen abhängig von der Anzahl der aktivierten Elemente</string>
+    <string name="show_brightness_title">Helligkeitsregler anzeigen</string>
+    <string name="show_brightness_summary">Zeigt einen Helligkeitsregler in der Benachrichtigungsleiste an</string>
+    <string name="show_settings_title">Einstellungen anzeigen</string>
+    <string name="show_settings_summary">Zeigt einen Button zum Öffnen der Einstellungen an</string>
+    <string name="status_bar_rotation_switch_title">Automatische Bildschirmausrichtung</string>
+    <string name="status_bar_rotation_switch_summary">Zeigt einen Umschalter für die automatische Bildschirmausrichtung< an</string>
+
+    <!-- Toggle Strings to be called from device overlays -->
+    <string name="toggle_airplane_mode">Flugmodus</string>
+    <string name="toggle_auto_rotate">Automatische Bildschirmausrichtung</string>
+    <string name="toggle_bluetooth">Bluetooth</string>
+    <string name="toggle_gps">GPS</string>
+    <string name="toggle_lte">LTE</string>
+    <string name="toggle_2g">2G</string>
+    <string name="toggle_data">Mobilfunkdaten</string>
+    <string name="toggle_nfc">NFC</string>
+    <string name="toggle_silent">Stumm</string>
+    <string name="toggle_sync">Synchronisation</string>
+    <string name="toggle_torch">Taschenlampe</string>
+    <string name="toggle_vibrate">Vibration</string>
+    <string name="toggle_wifi">WLAN</string>
+    <string name="toggle_wifi_ap">WLAN-Hotspot</string>
+    <string name="toggle_usb_tether">USB Tethering</string>
+    <string name="toggle_donotdisturb">Nicht stören</string>
 
     <!-- Combined Bar -->
     <string name="combined_bar_title">Kombinierte Leiste</string>
@@ -1879,6 +1926,25 @@
     <string name="navigation_bar_reset_message">Die Vorgaben der Navigationsleiste wiederherstellen?</string>
     <string name="navigation_bar_save_message">Die Einstellungen der Navigationsleiste wurden gespeichert</string>
     <string name="navigation_bar_reset_toast">Die Vorgaben der Navigationsleiste wurden wiederhergestellt</string>
+
+    <string name="navigation_bar_button_category">Navigationsleisten Steuerung</string>
+    <string name="navigation_bar_color_category">Farbe der Navigationsleiste</string>
+    <string name="navigation_bar_editor_title">Navigationsleisten Editor</string>
+    <string name="navigation_bar_status_title">Softwarebuttons</string>
+    <string name="navigation_bar_status_summary">Softwarebuttons anzeigen</string>
+    <string name="navigation_bar_tabui_menu_title">Menü-Button teilen</string>
+    <string name="navigation_bar_tabui_menu_summary">Zeigt einen seperaten Menü-Button an</string>
+   
+    <string name="navigation_bar_menu_editable">Änderbar</string>
+    <string name="navigation_bar_menu_locked">Gesperrt</string>
+    <string name="navigation_bar_color_title">Farbe der Navigationsleiste</string>
+    <string name="navigation_bar_color_summary">Ändert die Farbe der Navigationsleiste</string>
+    <string name="navigation_bar_button_color_title">Farbe der Buttons in der Navigationsleiste</string>
+    <string name="navigation_bar_button_color_summary">Ändert die Farbe der Buttons in der Navigationsleiste</string>
+    <string name="navigation_bar_glow_color_title">Farbe des Scheins der Navigationsleiste</string>
+    <string name="navigation_bar_glow_color_summary">Ändert die Farbe des Scheins der Buttons in der Navigationsleiste</string>
+    <string name="navigation_bar_restore_stock_color">Farben wiederherstellen</string>
+    <string name="navigation_bar_restore_stock_color_summary">Stellt die ursprünglichen Farben der Navigationsleiste wieder her</string>
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware-Tasten</string>
@@ -1903,13 +1969,6 @@
     <string name="hardware_keys_action_in_app_search">In-App Suche</string>
 
     <!-- Status bar -->
-    <string name="status_bar_title">Statusleiste</string>
-    <string name="status_bar_clock_small">Klein (Standard)</string>
-    <string name="status_bar_clock_title">Uhrzeit</string>
-    <string name="status_bar_general_title">Allgemein</string>
-    <string name="status_bar_show_clock_title">Zeige Uhr</string>
-    <string name="status_bar_category_am_pm_title">Tageszeitanzeige</string>
-    <string name="status_bar_battery_title">Batteriestatus</string>
     <string name="status_bar_toggle_brightness">Helligkeitsregler</string>
     <string name="status_bar_toggle_brightness_summary">Änderung der Helligkeit durch Wischen über die Statusleiste</string>
     <string name="status_bar_toggle_info">Automatische Helligkeit ist aktiviert</string>
@@ -1920,6 +1979,32 @@
     <string name="status_bar_battery_status_percentage">Symbol &amp; Prozent</string>
     <string name="status_bar_battery_status_circle">Kreis</string>
     <string name="status_bar_battery_status_circle_percentage">Kreis &amp; Prozent</string>
+    <string name="status_bar_title">Statusleiste</string>
+    <string name="status_bar_clock_small">Klein (Standard)</string>
+    <string name="status_bar_clock_title">Uhrzeit</string>
+    <string name="status_bar_general_title">Allgemein</string>
+    <string name="status_bar_show_clock_title">Zeige Uhr</string>
+    <string name="status_bar_center_clock_title">Uhr zentrieren</string>
+    <string name="status_bar_category_am_pm_title">Tageszeitanzeige</string>
+    <string name="status_bar_show_am_pm_title">AM / PM anzeigen</string>
+    <string name="status_bar_am_pm_size_title">AM / PM Größe</string>
+    <string name="status_bar_category_weekday_title">Wochentag</string>
+    <string name="status_bar_category_daymonth_title">Tag und Monat</string>
+    <string name="status_bar_show_weekday_title">Wochentag anzeigen</string>
+    <string name="status_bar_show_weekday_summary">Zeigt den Wochentag neben der Uhrzeit an</string>
+    <string name="status_bar_weekday_size_title">Wochentag Größe</string>
+    <string name="status_bar_show_daymonth_title">Tag und Monat anzeigen</string>
+    <string name="status_bar_show_daymonth_summary">Zeigt den aktuellen Tag und Monat neben der Uhrzeit an</string>
+    <string name="status_bar_daymonth_size_title">Tag und Monat Größe</string>
+    <string name="status_bar_donotdisturb_title">Nicht stören</string>
+    <string name="status_bar_donotdisturb_summary">Deaktiviert die Ticker-Animation für eingehende Benachrichtigungen</string>
+    <string name="status_bar_battery_status_text">Nur Text</string>
+    <string name="status_bar_color_title">Farbe der Statusleiste</string>
+    <string name="status_bar_color_summary">Ändert die Farbe der Statusleiste</string>
+    <string name="status_bar_battery_title">Batteriestatus</string>
+
+     <!-- Low battery warning and sound -->
+    <string name="pref_low_battery_warning_policy_title">Warnung vor schwacher Batterie</string>
 
     <string name="lock_screen_title">Bildschirmsperre</string>
 
@@ -2129,7 +2214,21 @@
     <string name="vibrator_type_ringer">Anrufe</string>
     <string name="vibrator_type_notification">Benachrichtigungen</string>
 
-    <!-- Connection override toggles (not all are used at this time ) -->
+    <!-- Connection override toggles -->
+    <string name="possibleButtons">Mögliche Buttons</string>
+    <string name="toggleWifi">WLAN</string>
+    <string name="toggleWifiAp">WLAN-Hotspot</string>
+    <string name="toggleData">Mobilfunkdaten</string>
+    <string name="toggleSync">Synchronisierung</string>
+    <string name="toggle2g3g">Netzmodus</string>
+    <string name="toggleSound">Klingelmodus</string>
+    <string name="toggleBrightness">Helligkeit</string>
+    <string name="toggleAutoRotate">Bildschirmausrichtung</string>
+    <string name="toggleScreenTimeout">Bildschirm-Timeout</string>
+    <string name="toggleAirplane">Flugmodus</string>
+    <string name="toggleFlashlight">Taschenlampe</string>
+    <string name="toggleLockScreen">Bildschirmsperre</string>
+    <string name="toggleWimax">WiMAX</string>
 
     <!-- Screen security - Screen security -->
     <string name="screen_security_category">Bildschirm-Sicherheit</string>
@@ -2207,6 +2306,10 @@
     <string name="pref_purgeable_assets_title">Freigabe von Ressourcen</string>
     <string name="pref_purgeable_assets_summary">Erlaubt dem System, Speicherbereiche von nicht mehr benutzten Bildern freizugeben, um mehr RAM bereitzustellen (Neustart erforderlich)</string>
 
+    <!-- tonyp minfree -->
+    <string name="pref_tonyp_minfree_title">tonyp OOM Speicherlimits </string>
+    <string name="pref_tonyp_minfree_summary">Verwende Minfree-Werte des V6 Superchargers</string>
+
     <!-- Performance Settings : Dithering -->
     <string name="pref_use_dithering_title">Grafik-Verbesserung</string>
     <string name="dithering_no_dither">Dithering deaktivieren</string>
@@ -2216,6 +2319,10 @@
     <!-- Performance Settings : 16bpp Alpha -->
     <string name="pref_use_16bpp_alpha_title">16-Bit-Transparenz</string>
     <string name="pref_use_16bpp_alpha_summary">Kann die Performance beim Scrollen verbessern, aber Grafikfehler verursachen (Neustart erforderlich)</string>
+
+    <!-- Bootanimation option -->
+    <string name="pref_bootanimation_title">Bootanimation</string>
+    <string name="pref_bootanimation_summary">Aktiviert / Deaktiviert die Bootanimation. Beschleunigt den Startvorgang, wenn sie deaktiviert ist</string>
 
     <!-- System Updates  -->
     <!-- About device screen, list item title. Takes the user to the screen for seeing and installing system updates. -->
@@ -2463,4 +2570,8 @@ ice shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="gestures_action_recent">Letzte Apps</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
+
+    <!-- Volume adjust sounds -->
+    <string name="volume_adjust_sounds_enable_title">Änderungston</string>
+    <string name="volume_adjust_sounds_enable_summary">Beim Anpassen der Lautstärke mit den Lautstärketasten einen Ton abspielen</string>
 </resources>

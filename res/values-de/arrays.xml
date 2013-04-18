@@ -406,4 +406,12 @@
         <item>Interne GPS-Antenne</item>
     </string-array>
     <!-- **** CYANOGENMOD EDITS END **** -->
+
+    <string-array name="pref_low_battery_warning_policy_entries">
+        <item>Pop-up und Ton</item>
+        <item>Nur Pop-up</item>
+        <item>Nur Ton</item>
+        <item>Aus</item>
+    </string-array>
+
 </resources>
