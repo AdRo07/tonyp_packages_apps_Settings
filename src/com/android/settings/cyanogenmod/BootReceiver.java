@@ -104,13 +104,23 @@ public class BootReceiver extends BroadcastReceiver {
                 frequencies = Arrays.asList(availableFrequenciesLine.split(" "));
             }
             if (maxFrequency != null && frequencies != null && frequencies.contains(maxFrequency)) {
-                Utils.fileWriteOneLine(Processor.FREQ_MAX_FILE, maxFrequency);
+                for (int i = 0; i < Processor.getNumOfCpus(); i++) {
+                    Utils.fileWriteOneLine(Processor.FREQ_MAX_FILE.replace("cpu0", "cpu" + i), maxFrequency);
+                }
+                boolean mIsTegra = Utils.fileExists(Processor.TEGRA_MAX_FREQ_PATH);
+                if (mIsTegra) {
+                    Utils.fileWriteOneLine(Processor.TEGRA_MAX_FREQ_PATH, maxFrequency);
+                }
             }
             if (minFrequency != null && frequencies != null && frequencies.contains(minFrequency)) {
-                Utils.fileWriteOneLine(Processor.FREQ_MIN_FILE, minFrequency);
+                for (int i = 0; i < Processor.getNumOfCpus(); i++) {
+                    Utils.fileWriteOneLine(Processor.FREQ_MIN_FILE.replace("cpu0", "cpu" + i), minFrequency);
+                }
             }
             if (governor != null && governors != null && governors.contains(governor)) {
-                Utils.fileWriteOneLine(Processor.GOV_FILE, governor);
+                for (int i = 0; i < Processor.getNumOfCpus(); i++) {
+                    Utils.fileWriteOneLine(Processor.GOV_FILE.replace("cpu0", "cpu" + i), governor);
+                }
             }
             Log.d(TAG, "CPU settings restored.");
         }
