@@ -1893,7 +1893,7 @@
     <string name="show_settings_title">Einstellungen anzeigen</string>
     <string name="show_settings_summary">Zeigt einen Button zum Öffnen der Einstellungen an</string>
     <string name="status_bar_rotation_switch_title">Automatische Bildschirmausrichtung</string>
-    <string name="status_bar_rotation_switch_summary">Zeigt einen Umschalter für die automatische Bildschirmausrichtung< an</string>
+    <string name="status_bar_rotation_switch_summary">Zeigt einen Umschalter für die automatische Bildschirmausrichtung an</string>
 
     <!-- Toggle Strings to be called from device overlays -->
     <string name="toggle_airplane_mode">Flugmodus</string>
