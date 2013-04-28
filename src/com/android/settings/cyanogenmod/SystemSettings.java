@@ -73,23 +73,6 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
         addPreferencesFromResource(R.xml.system_settings);
         PreferenceScreen prefScreen = getPreferenceScreen();
 
-        // Only show the hardware keys config on a device that does not have a navbar
-        // and the navigation bar config on phones that has a navigation bar
-        boolean removeKeys = false;
-        boolean removeNavbar = false;
-
-        IWindowManager windowManager = IWindowManager.Stub.asInterface(
-                ServiceManager.getService(Context.WINDOW_SERVICE));
-        try {
-            if (windowManager.hasNavigationBar()) {
-                removeKeys = true;
-            } else {
-                removeNavbar = true;
-            }
-        } catch (RemoteException e) {
-            // Do nothing
-        }
-
         // Determine which user is logged in
         mIsPrimary = UserHandle.myUserId() == UserHandle.USER_OWNER;
         if (mIsPrimary) {
@@ -102,6 +85,22 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
                     prefScreen.removePreference(mBatteryPulse);
                     mBatteryPulse = null;
                 }
+            }
+
+            // Only show the hardware keys config on a device that does not have a navbar
+            // and the navigation bar config on phones that has a navigation bar
+            boolean removeKeys = false;
+            boolean removeNavbar = false;
+            IWindowManager windowManager = IWindowManager.Stub.asInterface(
+                    ServiceManager.getService(Context.WINDOW_SERVICE));
+            try {
+                if (windowManager.hasNavigationBar()) {
+                    removeKeys = true;
+                } else {
+                    removeNavbar = true;
+                }
+            } catch (RemoteException e) {
+                // Do nothing
             }
 
             // Act on the above
@@ -138,11 +137,6 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
 
         // Pie controls
         mPieControl = (PreferenceScreen) findPreference(KEY_PIE_CONTROL);
-        if (mPieControl != null && removeNavbar) {
-            // Remove on devices without a navbar to start with
-            prefScreen.removePreference(mPieControl);
-            mPieControl = null;
-        }
 
         // Expanded desktop
         mExpandedDesktopPref = (ListPreference) findPreference(KEY_EXPANDED_DESKTOP);
