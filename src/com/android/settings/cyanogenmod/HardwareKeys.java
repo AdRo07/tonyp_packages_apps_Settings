@@ -18,6 +18,7 @@ package com.android.settings.cyanogenmod;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.Intent.ShortcutIconResource;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -32,11 +33,11 @@ import android.widget.Toast;
 import android.view.ViewConfiguration;
 
 import com.android.settings.R;
-import com.android.settings.util.ShortcutPickerHelper;
+import com.android.settings.cyanogenmod.ShortcutPickHelper;
 import com.android.settings.SettingsPreferenceFragment;
 
 public class HardwareKeys extends SettingsPreferenceFragment implements
-        ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
+        ShortcutPickHelper.OnPickListener, OnPreferenceChangeListener {
 
     private static final String HARDWARE_KEYS_CATEGORY_BINDINGS = "hardware_keys_bindings";
     private static final String HARDWARE_KEYS_ENABLE_CUSTOM = "hardware_keys_enable_custom";
@@ -86,7 +87,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private ListPreference mAppSwitchLongPressAction;
     private CheckBoxPreference mShowActionOverflow;
 
-    private ShortcutPickerHelper mPicker;
+    private ShortcutPickHelper mPicker;
     private Preference mCustomAppPreference;
 
     @Override
@@ -108,7 +109,8 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         mMenuKeyEnabled = (CheckBoxPreference) prefSet.findPreference(KEY_MENU_ENABLED);
         mBackKeyEnabled = (CheckBoxPreference) prefSet.findPreference(KEY_BACK_ENABLED);
         mHomeKeyEnabled = (CheckBoxPreference) prefSet.findPreference(KEY_HOME_ENABLED);
-        mPicker = new ShortcutPickerHelper(this, this);
+
+        mPicker = new ShortcutPickHelper(getActivity(), this);
 
         // Use custom binding for hardware keys
         mEnableCustomBindings = (CheckBoxPreference) prefSet.findPreference(
@@ -295,7 +297,13 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         int value = Integer.valueOf((String) newValue);
         if (value == ACTION_CUSTOM_APP) {
             mCustomAppPreference = preference;
-            mPicker.pickShortcut();
+            final String label = getResources().getString(R.string.lockscreen_target_empty);
+            final ShortcutIconResource iconResource =
+                    ShortcutIconResource.fromContext(getActivity(), android.R.drawable.ic_delete);
+            mPicker.pickShortcut(
+                    new String[] { label },
+                    new ShortcutIconResource[] { iconResource },
+                    getId());
             return true;
         } else {
             if (preference == mHomeLongPressAction) {
@@ -389,7 +397,8 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         return false;
     }
 
-    public void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication) {
+    @Override
+    public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
         Preference preference = mCustomAppPreference;
         if (preference == mHomeLongPressAction) {
             Settings.System.putString(getContentResolver(),
@@ -415,14 +424,9 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         }
         preference.setSummary(friendlyName);
     }
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
-                    || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION
-                    || requestCode == ShortcutPickerHelper.REQUEST_CREATE_SHORTCUT) {
-                mPicker.onActivityResult(requestCode, resultCode, data);
-            }
-        }
+        mPicker.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
     }
 }
