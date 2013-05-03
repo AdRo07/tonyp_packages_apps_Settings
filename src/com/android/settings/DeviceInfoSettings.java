@@ -73,6 +73,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
     private static final String KEY_DEVICE_MEMORY = "device_memory";
     private static final String KEY_CM_UPDATES = "cm_updates";
     private static final String KEY_TONYP_DONATE = "donate"; 
+    private static final String KEY_TONYP_VERSION = "tonyp_version";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
     long[] mHits = new long[3];
@@ -107,6 +108,8 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
         
         findPreference(KEY_TONYP_DONATE).setWidgetLayoutResource(R.layout.donate); 
+        setValueSummary(KEY_TONYP_VERSION, "ro.tonyp.version");
+        findPreference(KEY_TONYP_VERSION).setEnabled(true);
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
@@ -258,6 +261,19 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
                 mDevHitToast = Toast.makeText(getActivity(), R.string.show_dev_already,
                         Toast.LENGTH_LONG);
                 mDevHitToast.show();
+            }
+        } else if (preference.getKey().equals(KEY_TONYP_VERSION)) {
+            System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
+            mHits[mHits.length-1] = SystemClock.uptimeMillis();
+            if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setClassName("com.android.settings",
+                        com.android.settings.tonyp.tonyLogoActivity.class.getName());
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
+                }
             }
         } else if (preference.getKey().equals(KEY_TONYP_DONATE)) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW,
