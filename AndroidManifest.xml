@@ -1747,7 +1747,28 @@
         </activity>
 
         <!-- CyanogenMod activities End -->
-
+        
+        <!-- Based on CyanogenMod's CIDCircus, Android's easteregg -->
+        <activity android:name=".tonyp.tonyLogoActivity"
+                android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
+                android:process=":ui">
+        </activity>
+        <activity
+            android:name=".tonyp.tonyCircus"
+            android:exported="true"
+            android:label="tonyCircus"
+            android:icon="@drawable/empty_icon"
+            android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name=".tonyp.TONYLOGO" />
+            </intent-filter>
+        </activity>
+        
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
