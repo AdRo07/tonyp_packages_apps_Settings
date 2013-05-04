@@ -4773,6 +4773,9 @@
     <!-- Purgeable Assets -->
     <string name="pref_purgeable_assets_title">Allow purging of assets</string>
     <string name="pref_purgeable_assets_summary">Purging of bitmap memory assets allows the freeing of more RAM when needed (requires reboot)</string>
+    <!-- tonyp minfree -->
+    <string name="pref_tonyp_minfree_title">tonyp memory optimizations</string>
+    <string name="pref_tonyp_minfree_summary">Optimize the memory management to minimize lags. Uncheck this to return to stock behaviour (requires reboot)</string>
 
     <!-- Performance Settings : Dithering -->
     <string name="pref_use_dithering_title">Surface improvement</string>
