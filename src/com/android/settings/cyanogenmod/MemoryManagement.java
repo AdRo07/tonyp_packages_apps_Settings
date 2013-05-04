@@ -36,9 +36,13 @@ public class MemoryManagement extends SettingsPreferenceFragment {
     private static final String PURGEABLE_ASSETS_PREF = "pref_purgeable_assets";
     private static final String PURGEABLE_ASSETS_PERSIST_PROP = "persist.sys.purgeable_assets";
 
+    private static final String TONYP_MINFREE_PREF = "pref_tonyp_minfree";
+    private static final String TONYP_MINFREE_PERSIST_PROP = "persist.sys.tonyp_mem_mgmt";
+    private static final String TONYP_MINFREE_DEFAULT = "false";
+
     private CheckBoxPreference mPurgeableAssetsPref;
     private CheckBoxPreference mKSMPref;
-
+    private CheckBoxPreference mTonypMinfreePref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,7 @@ public class MemoryManagement extends SettingsPreferenceFragment {
 
         mPurgeableAssetsPref = (CheckBoxPreference) prefSet.findPreference(PURGEABLE_ASSETS_PREF);
         mKSMPref = (CheckBoxPreference) prefSet.findPreference(KSM_PREF);
+        mTonypMinfreePref = (CheckBoxPreference) prefSet.findPreference(TONYP_MINFREE_PREF);
 
         if (Utils.fileExists(KSM_RUN_FILE)) {
             mKSMPref.setChecked("1".equals(Utils.fileReadOneLine(KSM_RUN_FILE)));
@@ -59,6 +64,9 @@ public class MemoryManagement extends SettingsPreferenceFragment {
 
         String purgeableAssets = SystemProperties.get(PURGEABLE_ASSETS_PERSIST_PROP, "0");
         mPurgeableAssetsPref.setChecked("1".equals(purgeableAssets));
+
+        String tonypMinfree = SystemProperties.get(TONYP_MINFREE_PERSIST_PROP, TONYP_MINFREE_DEFAULT);
+        mTonypMinfreePref.setChecked("true".equals(tonypMinfree));
     }
 
     @Override
@@ -66,6 +74,11 @@ public class MemoryManagement extends SettingsPreferenceFragment {
         if (preference == mPurgeableAssetsPref) {
             SystemProperties.set(PURGEABLE_ASSETS_PERSIST_PROP,
                     mPurgeableAssetsPref.isChecked() ? "1" : "0");
+            return true;
+        }
+        if (preference == mTonypMinfreePref) {
+            SystemProperties.set(TONYP_MINFREE_PERSIST_PROP, 
+                    mTonypMinfreePref.isChecked() ? "true" : "false");
             return true;
         }
         if (preference == mKSMPref) {

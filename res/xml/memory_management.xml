@@ -25,6 +25,11 @@
         android:summary="@string/pref_purgeable_assets_summary" />
 
     <CheckBoxPreference
+        android:key="pref_tonyp_minfree"
+        android:title="@string/pref_tonyp_minfree_title"
+        android:summary="@string/pref_tonyp_minfree_summary" />
+
+    <CheckBoxPreference
         android:key="pref_ksm"
         android:title="@string/pref_ksm_title"
         android:summary="@string/pref_ksm_summary" />
