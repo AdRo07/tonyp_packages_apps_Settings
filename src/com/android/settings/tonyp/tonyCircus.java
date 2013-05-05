@@ -87,7 +87,8 @@ public class tonyCircus extends Activity {
           R.drawable.tony_4,
           R.drawable.tony_5,
           R.drawable.tony_6,
-          R.drawable.tony_7
+          R.drawable.tony_7,
+          R.drawable.tony_8
         };
 
         public class PARANOID extends ImageView {
