@@ -414,11 +414,19 @@
 
     <string-array name="hardware_keys_action_entries" translatable="false">
         <item>@string/hardware_keys_action_nothing</item>
+        <item>@string/hardware_keys_action_home</item>
+        <item>@string/hardware_keys_action_back</item>
         <item>@string/hardware_keys_action_menu</item>
         <item>@string/hardware_keys_action_app_switch</item>
         <item>@string/hardware_keys_action_search</item>
         <item>@string/hardware_keys_action_voice_search</item>
         <item>@string/hardware_keys_action_in_app_search</item>
+        <item>@string/hardware_keys_action_power</item>
+        <item>@string/hardware_keys_action_notifications</item>
+        <item>@string/hardware_keys_action_expanded</item>
+        <item>@string/hardware_keys_action_kill_app</item>
+        <item>@string/hardware_keys_action_last_app</item>
+        <item>@string/hardware_keys_action_custom_app</item>
     </string-array>
 
     <string-array name="hardware_keys_action_values" translatable="false">
@@ -428,14 +436,24 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
     </string-array>
 
-    <string-array name="lockscreen_long_key_press_entries" translatable="false">
+    <string-array name="lockscreen_long_key_press_entries">
         <item>@string/lockscreen_buttons_no_action</item>
         <item>@string/lockscreen_buttons_next</item>
         <item>@string/lockscreen_buttons_previous</item>
         <item>@string/lockscreen_buttons_playpause</item>
         <item>@string/lockscreen_buttons_toggle_sound</item>
+        <item>@string/lockscreen_buttons_camera</item>
+        <item>@string/lockscreen_buttons_power_off</item>
     </string-array>
 
     <string-array name="lockscreen_long_key_press_values" translatable="false">
@@ -444,6 +462,8 @@
         <item>PREVIOUS</item>
         <item>PLAYPAUSE</item>
         <item>SOUND</item>
+        <item>CAMERA</item>
+        <item>POWER</item>
     </string-array>
 
     <!-- Volume key cursor control -->
@@ -542,6 +562,20 @@
         <item>1003</item>
         <item>1004</item>
         <item>1005</item>
+    </string-array>
+
+    <!-- **** TONYP STUFF **** -->
+    <!-- Brightness slider -->
+    <string-array name="brightness_location_entries">
+        <item>@string/brightness_slider_top</item>
+        <item>@string/brightness_slider_bottom</item>
+        <item>@string/brightness_slider_none</item>
+    </string-array>
+
+    <string-array name="brightness_location_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
 </resources>
 
