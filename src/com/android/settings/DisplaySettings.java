@@ -64,6 +64,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
+    private static final String KEY_POWER_CRT_MODE = "system_power_crt_mode";
+    private static final String KEY_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
 
     // Strings used for building the summary
     private static final String ROTATION_ANGLE_0 = "0";
@@ -88,6 +90,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private Preference mWifiDisplayPreference;
 
     private ListPreference mLowBatteryWarning;
+
+    private ListPreference mCrtMode;
+    private CheckBoxPreference mCrtOff;
+
+    private boolean mIsCrtOffChecked = false;    
 
     private ContentObserver mAccelerometerRotationObserver =
             new ContentObserver(new Handler()) {
@@ -162,6 +169,26 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
             }
         }
+
+        // respect device default configuration
+        // true fades while false animates
+        boolean electronBeamFadesConfig = getActivity().getResources().getBoolean(
+                com.android.internal.R.bool.config_animateScreenLights);
+
+        // use this to enable/disable crt on feature
+        mIsCrtOffChecked = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
+               electronBeamFadesConfig ? 0 : 1) == 1;
+
+        mCrtOff = (CheckBoxPreference) findPreference(KEY_POWER_CRT_SCREEN_OFF);
+        mCrtOff.setChecked(mIsCrtOffChecked);
+
+        mCrtMode = (ListPreference) findPreference.findPreference(KEY_POWER_CRT_MODE);
+        int crtMode = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SYSTEM_POWER_CRT_MODE, 0);
+        mCrtMode.setValue(String.valueOf(crtMode));
+        mCrtMode.setSummary(mCrtMode.getEntry());
+        mCrtMode.setOnPreferenceChangeListener(this);
 
     }
 
@@ -398,7 +425,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
                     mVolumeWake.isChecked() ? 1 : 0);
             return true;
-        }
+        } else if (preference == mCrtOff) {
+            mIsCrtOffChecked = mCrtOff.isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
+                    mCrtOff.isChecked() ? 1 : 0);
+            return true;
+        } 
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -425,6 +458,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY,
                     lowBatteryWarning);
             mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
+        } else if (preference == mCrtMode) {
+            int crtMode = Integer.valueOf((String) newValue);
+            int index = mCrtMode.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SYSTEM_POWER_CRT_MODE, crtMode);
+            mCrtMode.setSummary(mCrtMode.getEntries()[index]);
         }
 
         return true;
