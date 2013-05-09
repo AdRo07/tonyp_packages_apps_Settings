@@ -248,16 +248,6 @@
         android:icon="@drawable/ic_settings_performance"
         android:title="@string/performance_settings_title" />
 
-    <!-- GooUpdater -->
-    <header android:id="@+id/gooupdater"
-            android:title="GooUpdater"
-            android:icon="@drawable/ic_settings_backup" >
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.beerbong.gooupdater"
-                android:targetClass="com.beerbong.gooupdater.MainActivity" />
-    </header>
-
     <!-- About Device -->
     <header
         android:id="@+id/about_settings"
