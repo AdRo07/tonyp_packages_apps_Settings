@@ -722,6 +722,7 @@
     <string name="lockscreen_long_press_back_title">Long press Back button</string>
     <string name="lockscreen_long_press_home_title">Long press Home button</string>
     <string name="lockscreen_long_press_menu_title">Long press Menu button</string>
+    <string name="lockscreen_long_press_assist_title">Long press Search button</string>
     <string name="lockscreen_buttons_no_action">No action</string>
     <string name="lockscreen_buttons_flashlight">Flashlight</string>
     <string name="lockscreen_buttons_next">Next song</string>
