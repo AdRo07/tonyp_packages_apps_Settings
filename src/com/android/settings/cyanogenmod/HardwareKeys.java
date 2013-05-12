@@ -114,7 +114,6 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
         final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
-        final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
 
         addPreferencesFromResource(R.xml.hardware_keys);
         PreferenceScreen prefSet = getPreferenceScreen();
