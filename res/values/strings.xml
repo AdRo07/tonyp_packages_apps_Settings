@@ -4433,6 +4433,7 @@
     <string name="hardware_keys_action_torch">Toggle Torch</string>
     <string name="hardware_keys_action_screenshot">Screenshot</string>
     <string name="hardware_keys_action_quickmemo">Quickmemo</string>
+    <string name="hardware_keys_action_power_menu">Open Power menu</string>
 
     <!-- Status bar  -->
     <string name="combined_status_bar_title">@string/status_bar_title</string>
