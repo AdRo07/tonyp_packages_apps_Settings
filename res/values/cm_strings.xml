@@ -551,6 +551,7 @@
     <string name="hardware_keys_action_torch">Toggle Torch</string>
     <string name="hardware_keys_action_screenshot">Screenshot</string>
     <string name="hardware_keys_action_quickmemo">Quickmemo</string>
+    <string name="hardware_keys_action_power_menu">Open Power menu</string>
 
     <!-- Swap volume buttons when the screen is rotated -->
     <string name="swap_volume_buttons_title">Swap volume buttons</string>

@@ -444,6 +444,7 @@
         <item>@string/hardware_keys_action_torch</item>
         <item>@string/hardware_keys_action_screenshot</item>
         <item>@string/hardware_keys_action_quickmemo</item>
+        <item>@string/hardware_keys_action_power_menu</item>
     </string-array>
 
     <string-array name="hardware_keys_action_values" translatable="false">
@@ -464,6 +465,7 @@
         <item>14</item>
         <item>15</item>
         <item>16</item>
+        <item>17</item>
     </string-array>
 
     <string-array name="lockscreen_long_key_press_entries">
