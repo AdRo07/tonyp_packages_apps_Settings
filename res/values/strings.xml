@@ -4398,6 +4398,9 @@
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware keys</string>
+    <string name="key_menu_enabled">Menu Key</string>
+    <string name="key_back_enabled">Back Key</string>
+    <string name="key_home_enabled">Home Key</string>
     <string name="hardware_keys_bindings_title">Key actions</string>
     <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
     <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
