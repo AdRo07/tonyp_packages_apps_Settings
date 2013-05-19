@@ -4581,8 +4581,6 @@
     <string name="lockscreen_buttons_previous">Previous song</string>
     <string name="lockscreen_buttons_playpause">Play/Pause music</string>
     <string name="lockscreen_buttons_toggle_sound">Toggle sound</string>
-    <string name="lockscreen_buttons_camera">Launch camera</string>
-    <string name="lockscreen_buttons_power_off">Power off</string>
 
     <!-- Profiles settings  -->
     <string name="profiles_settings_title">Profiles</string>
