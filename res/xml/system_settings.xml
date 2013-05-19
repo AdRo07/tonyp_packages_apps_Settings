@@ -70,11 +70,21 @@
         android:key="battery_light"
         android:title="@string/battery_light_title"
         android:fragment="com.android.settings.notificationlight.BatteryLightSettings" />
+    
+    <PreferenceScreen
+        android:key="pie_control"
+        android:fragment="com.android.settings.cyanogenmod.PieControl"
+        android:title="@string/pie_control_title" />
 
     <PreferenceScreen
         android:key="hardware_keys"
         android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
         android:title="@string/hardware_keys_title" />
+
+    <PreferenceScreen
+        android:key="user_interface"
+        android:fragment="com.android.settings.cyanogenmod.UserInterfaceSettings"
+        android:title="@string/user_interface_title" />
 
     <PreferenceCategory
         android:key="navigation_bar_category"
@@ -90,10 +100,5 @@
             android:fragment="com.android.settings.cyanogenmod.NavRing"
             android:title="@string/navigation_ring_title" />
     </PreferenceCategory>
-    
-    <PreferenceScreen
-        android:key="pie_control"
-        android:fragment="com.android.settings.cyanogenmod.PieControl"
-        android:title="@string/pie_control_title" />
 
 </PreferenceScreen>

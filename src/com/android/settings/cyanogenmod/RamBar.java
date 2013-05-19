@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim;
+package com.android.settings.cyanogenmod;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -116,7 +116,7 @@ public class RamBar extends SettingsPreferenceFragment implements OnPreferenceCh
             case R.id.help:
                 final Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(EXPLANATION_URL));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                mContext.startActivity(intent);
+                getActivity().startActivity(intent);
                 return true;
             case R.id.reset:
                 ramBarColorReset();
