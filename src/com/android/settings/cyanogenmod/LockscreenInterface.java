@@ -168,7 +168,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
             if (mCameraWidget != null) {
                 mCameraWidget.setChecked(Settings.System.getInt(cr,
-                        Settings.System.KG_CAMERA_WIDGET, 0) == 1);
+                        Settings.System.KG_CAMERA_WIDGET, 1) == 1);
             }
         }
     }
