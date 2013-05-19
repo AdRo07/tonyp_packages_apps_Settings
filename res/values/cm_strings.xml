@@ -1018,4 +1018,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty one to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom carrier text currently not set</string>
 
+    <!-- Lockscreen Camera widget toggle -->
+    <string name="lockscreen_camera_widget_title">Camera widget</string>
+    <string name="lockscreen_camera_widget_summary">Show the camera widget on the lock screen</string>
+
 </resources>
