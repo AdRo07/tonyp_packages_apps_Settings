@@ -103,6 +103,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             }
 
             mCameraWidget = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_CAMERA_WIDGET);
+            mCameraWidget.setOnPreferenceChangeListener(this);
 
             PreferenceScreen lockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
             if (!hasButtons()) {
