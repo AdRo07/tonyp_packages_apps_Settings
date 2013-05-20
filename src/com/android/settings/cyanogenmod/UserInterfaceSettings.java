@@ -48,13 +48,11 @@ public class UserInterfaceSettings extends SettingsPreferenceFragment implements
 
     private static final String MISC_SETTINGS = "misc";
     private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
-    private static final String KEY_HIGH_END_GFX = "high_end_gfx";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
 
     private PreferenceCategory mMisc;
     private Preference mRamBar;
-    private CheckBoxPreference mHighEndGfx;
     private Preference mCustomLabel;
     private ListPreference mLowBatteryWarning;
 
@@ -85,20 +83,6 @@ public class UserInterfaceSettings extends SettingsPreferenceFragment implements
                                     Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, 0);
         mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
         mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
-
-        mHighEndGfx = (CheckBoxPreference) findPreference(KEY_HIGH_END_GFX);
-        mHighEndGfx.setOnPreferenceChangeListener(this);
-
-        if (!ActivityManager.isHighEndGfx()) {
-            // Only show this if the device does not have HighEndGfx enabled natively
-            try {
-                mHighEndGfx.setChecked(Settings.System.getInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED) == 1);
-            } catch (Exception e) {
-                Settings.System.putInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED, mHighEndGfx.isChecked() ? 1 : 0 );
-            }
-        } else {
-            mMisc.removePreference(mHighEndGfx);
-        }
     }
 
     private void updateRamBar() {
@@ -141,11 +125,6 @@ public class UserInterfaceSettings extends SettingsPreferenceFragment implements
                     lowBatteryWarning);
             mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
             return true;
-        } else if (preference == mHighEndGfx) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.HIGH_END_GFX_ENABLED,
-                    (Boolean) newValue ? 1 : 0);
-            mHighEndGfx.setChecked((Boolean)newValue);
         }
         return false;
     }
