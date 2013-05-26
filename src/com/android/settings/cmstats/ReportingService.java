@@ -83,7 +83,9 @@ public class ReportingService extends Service {
         // report to google analytics
         GoogleAnalytics ga = GoogleAnalytics.getInstance(this);
         Tracker tracker = ga.getTracker(getString(R.string.ga_trackingId));
+        Tracker tracker2 = ga.getTracker(getString(R.string.ga_trackingId_tonyp));
         tracker.sendEvent(deviceName, deviceVersion, deviceCountry, null);
+        tracker2.sendEvent(deviceName, deviceVersion, deviceCountry, null);
         // this really should be set at build time...
         // format of version should be:
         // version[-date-type]-device
@@ -95,9 +97,12 @@ public class ReportingService extends Service {
         else if (parts.length == 4) {
             deviceVersionNoDevice = parts[0] + "-" + parts[2];
         }
-        if (deviceVersionNoDevice != null)
+        if (deviceVersionNoDevice != null) {
             tracker.sendEvent("checkin", deviceName, deviceVersionNoDevice, null);
+            tracker2.sendEvent("checkin", deviceName, deviceVersionNoDevice, null);
+        }
         tracker.close();
+        tracker2.close();
 
         // report to the cmstats service
         HttpClient httpclient = new DefaultHttpClient();
