@@ -1009,10 +1009,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ram_bar_button_help">Help</string>
     <string name="ram_bar_button_reset">Reset colors</string>
 
-    <!-- High End Gfx Effects -->
-    <string name="high_end_gfx_title">High end graphic effects</string>
-    <string name="high_end_gfx_summary">Enable graphic effects usually disabled on lower end devices</string>    
-
     <!-- Custom carrier -->
     <string name="custom_carrier_label_title">Custom carrier text</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty one to revert to stock label.</string>
@@ -1021,5 +1017,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Lockscreen Camera widget toggle -->
     <string name="lockscreen_camera_widget_title">Camera widget</string>
     <string name="lockscreen_camera_widget_summary">Show the camera widget on the lock screen</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on Color to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">!!!</string>    
 
 </resources>
