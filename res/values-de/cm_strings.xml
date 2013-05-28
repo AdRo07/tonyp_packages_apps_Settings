@@ -89,6 +89,11 @@
     <string name="lockscreen_battery_status_title">Batteriestatus anzeigen</string>
     <string name="lockscreen_battery_status_charging">Nur beim Laden</string>
     <string name="lockscreen_battery_status_alwayson">Immer</string>
+    <string name="power_widget_additional_options_cat">Zusätzliche Optionen</string>
+    <string name="brightness_location_title">Position des Helligkeitsreglers</string>
+    <string name="brightness_slider_top">Oben</string>
+    <string name="brightness_slider_bottom">Unten</string>
+    <string name="brightness_slider_none">Nicht zeigen</string>
     <string name="profiles_settings_title">Profile</string>
     <string name="profiles_general_title">Allgemein</string>
     <string name="profiles_add">Hinzufügen</string>
@@ -352,6 +357,22 @@
     <string name="hardware_keys_action_search">Suchassistent</string>
     <string name="hardware_keys_action_voice_search">Sprachsuche</string>
     <string name="hardware_keys_action_in_app_search">In-App-Suche</string>
+    <string name="hardware_keys_home_press_title">Home</string>
+    <string name="hardware_keys_back_press_title">Zurück</string>
+    <string name="hardware_keys_action_home">Home</string>
+    <string name="hardware_keys_action_back">Zurück</string>
+    <string name="hardware_keys_action_menu">Menü</string>
+    <string name="hardware_keys_back_long_press_title">Zurück (gedrückt halten)</string>
+    <string name="hardware_keys_action_power">Bildschirm ausschalten</string>
+    <string name="hardware_keys_action_notifications">Benachrichtigungsanzeige öffnen</string>
+    <string name="hardware_keys_action_expanded">Erweiterten Desktop aktivieren</string>
+    <string name="hardware_keys_action_kill_app">Aktive App beenden</string>
+    <string name="hardware_keys_action_last_app">Zur letzten App wechseln</string>
+    <string name="hardware_keys_action_custom_app">Benutzerdefinierte App</string>
+    <string name="hardware_keys_action_torch">Taschenlampe</string>
+    <string name="hardware_keys_action_screenshot">Bildschirmfoto</string>
+    <string name="hardware_keys_action_quickmemo">Quickmemo</string>
+    <string name="hardware_keys_action_power_menu">Ausschalten-Menü öffnen</string>
     <string name="swap_volume_buttons_title">Lautstärketasten umkehren</string>
     <string name="swap_volume_buttons_summary">Belegung der Lautstärketasten umkehren, wenn das Gerät gedreht wird</string>
     <string name="power_widget_title">Energie-Widget</string>
@@ -364,6 +385,24 @@
     <string name="summary_widget_picker">Schaltflächen auswählen</string>
     <string name="title_widget_order">Reihenfolge</string>
     <string name="summary_widget_order">Anordnung der Schaltflächen ändern</string>
+    <!-- Advanced low battery indicator -->
+    <string name="pref_low_battery_warning_policy_title">Warnung bei niedrigem Batteriestand</string>
+    <string name="pref_low_battery_warning_policy_dialog_title">Anzeige der Warnung bei niedrigem Batteriestand mittels</string>
+    <string name="low_battery_warning_policy_popup_sound">Pop-Up und Ton</string><
+    <string name="low_battery_warning_policy_notif_sound">Benachrichtigung und Ton</string>
+    <string name="low_battery_warning_policy_popup">Nur Pop-Up</string>
+    <string name="low_battery_warning_policy_notif">Nur Benachrichtigung</string>
+    <string name="low_battery_warning_policy_sound">Nur Ton</string>
+    <string name="low_battery_warning_policy_disabled">Deaktiviert</string>
+    <!-- Display : Animation options -->
+    <string name="display_category_animation_options_title">Animationseinstellungen</string>
+    <string name="system_power_crt_screen_off_title">CRT beim Ausschalten des Bildschirms</string>
+    <string name="system_power_crt_screen_off_summary">Der Bildschirm animiert einen Elektronenstrahl beim Ausschalten</string>
+    <string name="system_power_crt_mode_title">CRT Animationsmodus</string>
+    <string name="system_power_crt_mode_dialog_title">CRT Animation zeigen</string>
+    <string name="system_power_crt_mode_horizontal">Hochformat horizontal</string>
+    <string name="system_power_crt_mode_vertical">Hochformat vertikal</string>
+    <string name="system_power_crt_mode_both">Abhängig von der Bildschirmausrichtung</string>
     <string name="title_buttons">Schaltflächen</string>
     <string name="title_toggle_wifi">WLAN</string>
     <string name="title_toggle_bluetooth">Bluetooth</string>
@@ -425,11 +464,16 @@
     <string name="ime_switcher_notify_summary">Benachrichtigung zur Auswahl der Eingabemethode in der Statusleiste anzeigen</string>
     <string name="status_bar_title">Statusleiste</string>
     <string name="status_bar_clock_title">Uhrzeit</string>
+    <string name="status_bar_clock_style_title">Art der Uhr</string>
+    <string name="clock_style_noclock">Uhr nicht zeigen</string>
+    <string name="clock_style_right">Rechte Seite</string>
+    <string name="clock_style_center">Uhr zentrieren</string>
     <string name="status_bar_general_title">Allgemein</string>
     <string name="status_bar_show_clock_title">Uhr anzeigen</string>
     <string name="status_bar_am_pm_title">Tageszeitanzeige</string>
     <string name="status_bar_am_pm_info">24-Stunden-Modus ist aktiviert</string>
     <string name="status_bar_battery_title">Akkustand</string>
+    <string name="status_bar_battery_status_text">Nur Text</string>
     <string name="status_bar_toggle_brightness">Helligkeitssteuerung</string>
     <string name="status_bar_toggle_brightness_summary">Helligkeit durch Wischen über die Statusleiste ändern</string>
     <string name="status_bar_toggle_info">Automatische Helligkeit ist aktiviert</string>
@@ -469,6 +513,8 @@
     <string name="lockscreen_buttons_previous">Medien: Vorheriger Titel</string>
     <string name="lockscreen_buttons_playpause">Medien: Play/Pause</string>
     <string name="lockscreen_buttons_toggle_sound">Klingelmodus</string>
+    <string name="lockscreen_buttons_camera">Kamera starten</string>
+    <string name="lockscreen_buttons_power_off">Ausschalten</string>
     <string name="quick_settings_panel_title">Schnelleinstellungen</string>
     <string name="quick_settings_title">Schnelleinstellungen</string>
     <string name="title_static_tiles">Statische Kacheln</string>
@@ -518,6 +564,8 @@
     <string name="quick_pulldown_off">Deaktiviert</string>
     <string name="quick_pulldown_left">Linke Seite</string>
     <string name="quick_pulldown_right">Rechte Seite</string>
+    <string name="title_no_notifications_pulldown">Schnelles Öffnen ohne Benachrichtigungen</string>
+    <string name="summary_no_notifications_pulldown">Schnelles Öffnen der Schnelleinstellungen, wenn keine Benachrichtigungen verfügbar sind</string>
     <string name="title_collapse_panel">Automatisch schließen</string>
     <string name="summary_collapse_panel">Schnelleinstellungen nach Auswahl automatisch schließen</string>
     <string name="tiles_reset_title">Zurücksetzen</string>
@@ -683,4 +731,56 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="power_notifications_vibrate_title">Vibrieren</string>
     <string name="power_notifications_ringtone_title">Benachrichtigungston</string>
     <string name="power_notifications_ringtone_silent">Kein Ton</string>
+    
+    <!-- **** TONYP STUFF **** -->
+    <!-- tonyp minfree -->
+    <string name="pref_tonyp_minfree_title">Tonyp Speicheroptimierungen</string>
+    <string name="pref_tonyp_minfree_summary">Optimiert die Speicherverwaltung um Verzögerungen zu minimieren. Diese Option deaktivieren, um zum Ursprungszustand zurückzukehren (benötigt Neustart)</string>
+    
+    <!-- Breathing Notifications -->
+    <string name="status_bar_breathing_notif_title">Animierte Benachrichtigungen</string>
+    <string name="mms_breath">Animierte SMS</string>
+    <string name="mms_breath_summary">Animiert die Benachrichtigung in der Statusleiste bei einer verpassten SMS</string>
+    <string name="missed_call_breath">Animierter verpasster Anruf</string>
+    <string name="missed_call_breath_summary">Animiert die Benachrichtigung in der Statusleiste bei einem verpassten Anruf</string>
+
+    <!-- User Interface Settings -->
+    <string name="user_interface_title">Benutzeroberflächen-Einstellungen</string>
+    
+    <!-- High End Gfx Effects -->
+    <string name="high_end_gfx_title">High-End-Grafik-Effekte</string>
+    <string name="high_end_gfx_summary">Aktiviert Grafik-Effekte, welche normalerweise auf einfachen Geräten deaktiviert sind</string>  
+    
+    <!-- Recents Ram Bar -->
+    <string name="ram_bar">Speicherauslastung-Leiste</string>
+    <string name="ram_bar_note_title">Hinweis</string>
+    <string name="ram_bar_note_summary">Diese Speicherauslastung-Leiste zeigt, wie Android wirklich den verfügbaren Arbeitsspeicher nutzt. Bitte beachten, dass im Hintergrund geöffnete und gecachte Apps dem Gerät helfen, Apps schneller zu öffnen. Für weitere Erklärungen, wie die Android-Speicherverwaltung funktioniert, bitte dem Hilfe-Button im Menü folgen.</string>
+    <string name="ram_bar_mode_title">Art der Speicherauslastung-Leiste</string>
+    <string name="ram_bar_mode_dialog_title">Speicherauslastung-Leiste anzeigen</string>
+    <string name="ram_bar_none">Keine</string>
+    <string name="ram_bar_apps">Anwendungen</string>
+    <string name="ram_bar_cache">Anwendungen und Cache</string>
+    <string name="ram_bar_other">Anwendungen, Cache und andere</string>
+    <string name="ram_bar_style_cat">Aussehen der Speicherauslastung-Leiste</string>
+    <string name="ram_bar_color_app_mem_color">Farbe des Arbeitsspeichers für Anwendungen</string>
+    <string name="ram_bar_color_cache_mem_color">Farbe des Arbeitsspeichers für den Cache</string>
+    <string name="ram_bar_color_total_mem_color">Farbe des Arbeitsspeichers für Sonstiges</string>
+    <string name="ram_bar_color_enabled">Aktiviert</string>
+    <string name="ram_bar_color_disabled">Deaktiviert</string>
+    <string name="ram_bar_button_help">Hilfe</string>
+    <string name="ram_bar_button_reset">Farben zurücksetzen</string>
+    
+    <!-- Custom carrier -->
+    <string name="custom_carrier_label_title">Benutzerdefinierte Netzbetreiber-Bezeichnung</string>
+    <string name="custom_carrier_label_explain">Bitte eine neue Bezeichnung eingeben. Eine leere Bezeichnung eingeben, um zum Ursprungszustand zurückzukehren</string>
+    <string name="custom_carrier_label_notset">Eine benutzerdefinierte Netzbetreiber-Bezeichnung ist momentan nicht eingestellt</string>  
+    
+    <!-- Lockscreen Camera widget toggle -->
+    <string name="lockscreen_camera_widget_title">Kamera-Widget</string>
+    <string name="lockscreen_camera_widget_summary">Kamera-Widget auf dem Sperrbildschirm anzeigen</string>
+    
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Farbauswahl</string>
+    <string name="press_color_to_apply">Farbe durch Drücken auswählen</string>
+    <string name="set">Einstellen</string>
 </resources>
