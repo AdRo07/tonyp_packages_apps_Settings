@@ -38,7 +38,7 @@ public class AnonymousStats extends SettingsPreferenceFragment
 
     private static final String VIEW_STATS = "pref_view_stats";
 
-    protected static final String ANONYMOUS_OPT_IN = "pref_anonymous_opt_in";
+    protected static final String ANONYMOUS_OPT_IN = "pref_anonymous_opt_in_new";
 
     protected static final String ANONYMOUS_LAST_CHECKED = "pref_anonymous_checked_in";
 

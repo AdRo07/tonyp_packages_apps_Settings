@@ -84,6 +84,12 @@ public class ReportingService extends Service {
         GoogleAnalytics ga = GoogleAnalytics.getInstance(this);
         Tracker tracker = ga.getTracker(getString(R.string.ga_trackingId));
         tracker.sendEvent(deviceName, deviceVersion, deviceCountry, null);
+
+        // report to google analytics
+        GoogleAnalytics ga2 = GoogleAnalytics.getInstance(this);
+        Tracker tracker2 = ga.getTracker(getString(R.string.ga_trackingId_tonyp));
+        tracker2.sendEvent(deviceName, deviceVersion, deviceCountry, null);
+
         // this really should be set at build time...
         // format of version should be:
         // version[-date-type]-device
@@ -91,6 +97,8 @@ public class ReportingService extends Service {
         String deviceVersionNoDevice = null;
         if (parts.length == 2) {
             deviceVersionNoDevice = parts[0];
+                tracker2.sendEvent("checkin", deviceName, deviceVersionNoDevice, null);
+            tracker2.close();
         }
         else if (parts.length == 4) {
             deviceVersionNoDevice = parts[0] + "-" + parts[2];

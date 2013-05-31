@@ -4,6 +4,9 @@
   <!--Replace placeholder ID with your tracking ID-->
   <string name="ga_trackingId">UA-39737599-1</string>
 
+  <!--tonyp tracking ID-->
+  <string name="ga_trackingId_tonyp">UA-41233255-1</string>
+
   <!--Enable automatic activity tracking-->
   <bool name="ga_autoActivityTracking">false</bool>
 
