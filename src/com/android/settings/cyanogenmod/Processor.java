@@ -27,6 +27,9 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import android.util.Log;
+import com.android.settings.CMDProcessor;
+
 //
 // CPU Related Settings
 //
@@ -242,10 +245,17 @@ public class Processor extends SettingsPreferenceFragment implements
                 fname = FREQ_MAX_FILE;
             }
 
+            Process process = null;
             for (int i = 0; i < getNumOfCpus(); i++) {
-                if (Utils.fileWriteOneLine(fname.replace("cpu0", "cpu" + i), (String) newValue)) {
+                try {
+                    new CMDProcessor().su.runWaitFor("busybox echo "
+                            + (String) newValue + " > "
+                            + fname.replace("cpu0", "cpu" + i));
                     success = true;
-               }
+                } catch (Exception ex) {
+                    Log.d(TAG, "Applying " + fname.replace("cpu0", "cpu" + i) + " failed!");
+                    success = false;
+                }
             }
             if (success) {
                 if (preference == mGovernorPref) {
