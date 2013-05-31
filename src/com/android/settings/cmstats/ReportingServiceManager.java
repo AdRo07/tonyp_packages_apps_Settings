@@ -43,12 +43,10 @@ public class ReportingServiceManager extends BroadcastReceiver {
 
     protected static void setAlarm (Context ctx) {
         SharedPreferences prefs = ctx.getSharedPreferences("CMStats", 0);
-        /*
         boolean optedIn = prefs.getBoolean(AnonymousStats.ANONYMOUS_OPT_IN, true);
         if (!optedIn) {
             return;
         }
-        */
         long lastSynced = prefs.getLong(AnonymousStats.ANONYMOUS_LAST_CHECKED, 0);
         if (lastSynced == 0) {
             // never synced, so let's fake out that the last sync was just now.
@@ -73,13 +71,10 @@ public class ReportingServiceManager extends BroadcastReceiver {
             return;
         }
         SharedPreferences prefs = ctx.getSharedPreferences("CMStats", 0);
-        /*
         boolean optedIn = prefs.getBoolean(AnonymousStats.ANONYMOUS_OPT_IN, true);
         if (!optedIn) {
             return;
         }
-        */
-        /*
         long lastSynced = prefs.getLong(AnonymousStats.ANONYMOUS_LAST_CHECKED, 0);
         if (lastSynced == 0) {
             setAlarm(ctx);
@@ -90,7 +85,6 @@ public class ReportingServiceManager extends BroadcastReceiver {
             Log.d(ReportingService.TAG, "Waiting for next sync : " + timeLeft * 24 / dMill + " hours");
             return;
         }
-        */
         Intent sIntent = new Intent();
         sIntent.setComponent(new ComponentName(ctx.getPackageName(), ReportingService.class.getName()));
         ctx.startService(sIntent);
