@@ -388,7 +388,7 @@
     <!-- Advanced low battery indicator -->
     <string name="pref_low_battery_warning_policy_title">Warnung bei niedrigem Batteriestand</string>
     <string name="pref_low_battery_warning_policy_dialog_title">Anzeige der Warnung bei niedrigem Batteriestand mittels</string>
-    <string name="low_battery_warning_policy_popup_sound">Pop-Up und Ton</string><
+    <string name="low_battery_warning_policy_popup_sound">Pop-Up und Ton</string>
     <string name="low_battery_warning_policy_notif_sound">Benachrichtigung und Ton</string>
     <string name="low_battery_warning_policy_popup">Nur Pop-Up</string>
     <string name="low_battery_warning_policy_notif">Nur Benachrichtigung</string>
@@ -396,8 +396,8 @@
     <string name="low_battery_warning_policy_disabled">Deaktiviert</string>
     <!-- Display : Animation options -->
     <string name="display_category_animation_options_title">Animationseinstellungen</string>
-    <string name="system_power_crt_screen_off_title">CRT beim Ausschalten des Bildschirms</string>
-    <string name="system_power_crt_screen_off_summary">Der Bildschirm animiert einen Elektronenstrahl beim Ausschalten</string>
+    <string name="system_power_crt_screen_off_title">CRT-Animation beim Ausschalten</string>
+    <string name="system_power_crt_screen_off_summary">Zeigt die CRT-Animation beim Ausschalten des Bildschirms</string>
     <string name="system_power_crt_mode_title">CRT Animationsmodus</string>
     <string name="system_power_crt_mode_dialog_title">CRT Animation zeigen</string>
     <string name="system_power_crt_mode_horizontal">Hochformat horizontal</string>
@@ -513,7 +513,7 @@
     <string name="lockscreen_buttons_previous">Medien: Vorheriger Titel</string>
     <string name="lockscreen_buttons_playpause">Medien: Play/Pause</string>
     <string name="lockscreen_buttons_toggle_sound">Klingelmodus</string>
-    <string name="lockscreen_buttons_camera">Kamera starten</string>
+    <string name="lockscreen_buttons_camera">Kamera öffnen</string>
     <string name="lockscreen_buttons_power_off">Ausschalten</string>
     <string name="quick_settings_panel_title">Schnelleinstellungen</string>
     <string name="quick_settings_title">Schnelleinstellungen</string>
@@ -746,25 +746,21 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <!-- User Interface Settings -->
     <string name="user_interface_title">Benutzeroberflächen-Einstellungen</string>
-    
-    <!-- High End Gfx Effects -->
-    <string name="high_end_gfx_title">High-End-Grafik-Effekte</string>
-    <string name="high_end_gfx_summary">Aktiviert Grafik-Effekte, welche normalerweise auf einfachen Geräten deaktiviert sind</string>  
-    
+
     <!-- Recents Ram Bar -->
-    <string name="ram_bar">Speicherauslastung-Leiste</string>
+    <string name="ram_bar">RAM-Leiste</string>
     <string name="ram_bar_note_title">Hinweis</string>
-    <string name="ram_bar_note_summary">Diese Speicherauslastung-Leiste zeigt, wie Android wirklich den verfügbaren Arbeitsspeicher nutzt. Bitte beachten, dass im Hintergrund geöffnete und gecachte Apps dem Gerät helfen, Apps schneller zu öffnen. Für weitere Erklärungen, wie die Android-Speicherverwaltung funktioniert, bitte dem Hilfe-Button im Menü folgen.</string>
-    <string name="ram_bar_mode_title">Art der Speicherauslastung-Leiste</string>
-    <string name="ram_bar_mode_dialog_title">Speicherauslastung-Leiste anzeigen</string>
+    <string name="ram_bar_note_summary">Diese RAM-Leiste zeigt, wie Android wirklich den verfügbaren Arbeitsspeicher nutzt. Bitte beachten, dass im Hintergrund geöffnete und gecachte Apps dem Gerät helfen, Apps schneller zu öffnen. Für weitere Erklärungen, wie die Android-Speicherverwaltung funktioniert, bitte dem Hilfe-Button im Menü folgen.</string>
+    <string name="ram_bar_mode_title">Art der RAM-Leiste</string>
+    <string name="ram_bar_mode_dialog_title">RAM-Leiste anzeigen</string>
     <string name="ram_bar_none">Keine</string>
     <string name="ram_bar_apps">Anwendungen</string>
     <string name="ram_bar_cache">Anwendungen und Cache</string>
-    <string name="ram_bar_other">Anwendungen, Cache und andere</string>
-    <string name="ram_bar_style_cat">Aussehen der Speicherauslastung-Leiste</string>
-    <string name="ram_bar_color_app_mem_color">Farbe des Arbeitsspeichers für Anwendungen</string>
-    <string name="ram_bar_color_cache_mem_color">Farbe des Arbeitsspeichers für den Cache</string>
-    <string name="ram_bar_color_total_mem_color">Farbe des Arbeitsspeichers für Sonstiges</string>
+    <string name="ram_bar_other">Anwendungen, Cache und Sonstiges</string>
+    <string name="ram_bar_style_cat">Aussehen der RAM-Leiste</string>
+    <string name="ram_bar_color_app_mem_color">Farbe für Anwendungen</string>
+    <string name="ram_bar_color_cache_mem_color">Farbe für Cache</string>
+    <string name="ram_bar_color_total_mem_color">Farbe für Sonstiges</string>
     <string name="ram_bar_color_enabled">Aktiviert</string>
     <string name="ram_bar_color_disabled">Deaktiviert</string>
     <string name="ram_bar_button_help">Hilfe</string>
@@ -782,5 +778,5 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!-- Color Picker -->
     <string name="dialog_color_picker">Farbauswahl</string>
     <string name="press_color_to_apply">Farbe durch Drücken auswählen</string>
-    <string name="set">Einstellen</string>
+    <string name="set">Festlegen</string>
 </resources>
