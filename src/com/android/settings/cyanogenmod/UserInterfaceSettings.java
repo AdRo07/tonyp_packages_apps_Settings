@@ -17,6 +17,7 @@
 package com.android.settings.cyanogenmod;
 
 import android.app.AlertDialog;
+import android.app.INotificationManager;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
@@ -25,6 +26,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -50,13 +52,21 @@ public class UserInterfaceSettings extends SettingsPreferenceFragment implements
     private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
+    private static final String KEY_HALO_STATE = "halo_state";
+    private static final String KEY_HALO_HIDE = "halo_hide";
+    private static final String KEY_HALO_REVERSED = "halo_reversed";
 
     private PreferenceCategory mMisc;
     private Preference mRamBar;
     private Preference mCustomLabel;
     private ListPreference mLowBatteryWarning;
+    private ListPreference mHaloState;
+    private CheckBoxPreference mHaloHide;
+    private CheckBoxPreference mHaloReversed;
 
     private String mCustomLabelText = null;
+    private Context mContext;
+    private INotificationManager mNotificationManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +75,22 @@ public class UserInterfaceSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.user_interface_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
+        mContext = getActivity();
+
+        mNotificationManager = INotificationManager.Stub.asInterface(
+                ServiceManager.getService(Context.NOTIFICATION_SERVICE));
+
+        mHaloState = (ListPreference) prefs.findPreference(KEY_HALO_STATE);
+        mHaloState.setValue(String.valueOf((isHaloPolicyBlack() ? "1" : "0")));
+        mHaloState.setOnPreferenceChangeListener(this);
+
+        mHaloHide = (CheckBoxPreference) prefs.findPreference(KEY_HALO_HIDE);
+        mHaloHide.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HALO_HIDE, 0) == 1);
+
+        mHaloReversed = (CheckBoxPreference) prefs.findPreference(KEY_HALO_REVERSED);
+        mHaloReversed.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HALO_REVERSED, 1) == 1);
 
         mMisc = (PreferenceCategory) prefs.findPreference(MISC_SETTINGS);
 
@@ -83,6 +109,15 @@ public class UserInterfaceSettings extends SettingsPreferenceFragment implements
                                     Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, 0);
         mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
         mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
+    }
+
+    private boolean isHaloPolicyBlack() {
+        try {
+            return mNotificationManager.isHaloPolicyBlack();
+        } catch (android.os.RemoteException ex) {
+                // System dead
+        }
+        return true;
     }
 
     private void updateRamBar() {
@@ -125,8 +160,30 @@ public class UserInterfaceSettings extends SettingsPreferenceFragment implements
                     lowBatteryWarning);
             mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
             return true;
+        } else if (preference == mHaloState) {
+            boolean state = Integer.valueOf((String) newValue) == 1;
+            try {
+                mNotificationManager.setHaloPolicyBlack(state);
+            } catch (android.os.RemoteException ex) {
+                // System dead
+            }          
+            return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mHaloHide) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.HALO_HIDE, mHaloHide.isChecked()
+                    ? 1 : 0);
+        } else if (preference == mHaloReversed) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.HALO_REVERSED, mHaloReversed.isChecked()
+                    ? 1 : 0);
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     public OnPreferenceClickListener mCustomLabelClicked = new OnPreferenceClickListener() {
