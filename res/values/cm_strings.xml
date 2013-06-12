@@ -1056,5 +1056,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_state_summary">For black/white-listing notifications pinging through HALO</string>
     <string name="halo_state_black">Black list</string>
     <string name="halo_state_white">White list</string>
+    <string name="display_halo_options_title">HALO options</string>
+    <string name="halo_pause_title">HALO pause active app</string>
+    <string name="halo_pause_summary">When opening an app with HALO to the underlying app will get paused. This is enabled by default on phones with low memory</string>
 
 </resources>
