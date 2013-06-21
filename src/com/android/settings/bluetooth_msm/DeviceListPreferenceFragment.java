@@ -1,6 +1,5 @@
 /*
  * Copyright (C) 2011 The Android Open Source Project
- * Copyright (C) 2013 The Linux Foundation. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,23 +128,6 @@ public abstract class DeviceListPreferenceFragment extends
         }
     }
 
-    void removeOorDevices() {
-        Collection<CachedBluetoothDevice> cachedDevices =
-                mLocalManager.getCachedDeviceManager().getCachedDevicesCopy();
-        for (CachedBluetoothDevice cachedDevice : cachedDevices) {
-             if (cachedDevice.getBondState() == BluetoothDevice.BOND_NONE &&
-                 !cachedDevice.isVisible()) {
-                 Log.d(TAG, "Device Removed " + cachedDevice);
-                 BluetoothDevicePreference preference = mDevicePreferenceMap.get(cachedDevice);
-                 if (preference != null) {
-                     mDeviceListGroup.removePreference(preference);
-                 }
-                 mDevicePreferenceMap.remove(cachedDevice);
-                 cachedDevice.setRemovable(true);
-             }
-         }
-    }
-
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
@@ -207,9 +189,6 @@ public abstract class DeviceListPreferenceFragment extends
     }
 
     public void onScanningStateChanged(boolean started) {
-        if (started == false) {
-          removeOorDevices();
-        }
         updateProgressUi(started);
     }
 
