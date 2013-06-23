@@ -1628,6 +1628,8 @@
         <activity android:name=".cyanogenmod.LockscreenButtons" />
 
         <activity android:name=".cyanogenmod.PowerMenu" />
+        
+        <activity android:name=".cyanogenmod.StatusBarStyle" /> 
 
         <activity android:name=".cyanogenmod.QuickSettings" />
 
