@@ -1130,16 +1130,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="alert_reboot">Reboot needed</string>
     <string name="alert_reboot_message">This change needs a reboot to be applied. Do you want to reboot now?</string>
 
-    <!-- Status Bar alpha mode-->
-    <string-array name="entries_status_bar_alpha_mode">
-        <item>@string/status_bar_alpha_mode_home</item>
-       <item>@string/status_bar_alpha_mode_default</item>
-        <item>@string/status_bar_alpha_mode_always</item>
-    </string-array>
+    <!-- Status bar background style -->
+    <string name="status_bar_transparency_title">Status bar transparency</string>
+    <string name="status_bar_color_title">Status bar color</string>
+    <string name="status_bar_background_style">Background style</string>
+    <string name="status_bar_alpha_mode_dialog_text_title">Show status bar transparency</string>
+    <string name="status_bar_alpha_mode_text_title">Transparency mode</string>
+    <string name="status_bar_alpha_mode_home">on launcher</string>
+    <string name="status_bar_alpha_mode_default">on launcher and keyguard</string>
+    <string name="status_bar_alpha_mode_always">always</string>
+    <string name="status_bar_style_reset">Reset</string>
 
-    <string-array name="values_status_bar_alpha_mode" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
 </resources>
