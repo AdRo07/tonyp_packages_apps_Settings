@@ -823,6 +823,13 @@ public class Settings extends PreferenceDrawerActivity
         } else {
             mLastHeader = header;
         }
+        if (onIsMultiPane()) {
+            try {
+                setTitle(mLastHeader.titleRes);
+            } catch (Throwable t) {
+                setTitle(R.string.settings_label);
+            }
+        }
     }
 
     @Override
