@@ -808,6 +808,13 @@ public class Settings extends PreferenceActivity
         } else {
             mLastHeader = header;
         }
+        if (onIsMultiPane()) {
+            try {
+                setTitle(mLastHeader.titleRes);
+            } catch (Throwable t) {
+                setTitle(R.string.settings_label);
+            }
+        }
     }
 
     @Override
