@@ -1194,4 +1194,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="home_screen_widgets_title">Home screen widgets</string>
     <string name="home_screen_widgets_summary">Allow widgets from the home screen to be added on lock screen</string>
 
+    <!-- OnClick Fliptile animation -->
+    <string name="flip_qs_tiles_title">Flip tiles</string>
+    <string name="flip_qs_tiles_summary">Flips the tiles on touch</string>
+
 </resources>

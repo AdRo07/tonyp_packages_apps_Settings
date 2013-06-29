@@ -61,6 +61,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     private static final String GENERAL_SETTINGS = "pref_general_settings";
     private static final String STATIC_TILES = "static_tiles";
     private static final String DYNAMIC_TILES = "pref_dynamic_tiles";
+    private static final String PREF_FLIP_QS_TILES = "flip_qs_tiles";
 
     MultiSelectListPreference mRingMode;
     ListPreference mNetworkMode;
@@ -73,6 +74,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     CheckBoxPreference mDynamicUsbTether;
     CheckBoxPreference mNoNotificationsPulldown;
     CheckBoxPreference mCollapsePanel;
+    CheckBoxPreference mFlipQsTiles;
     ListPreference mQuickPulldown;
     PreferenceCategory mGeneralSettings;
     PreferenceCategory mStaticTiles;
@@ -122,6 +124,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
             updateSummary(storedRingMode, mRingMode, R.string.pref_ring_mode_summary);
         }
         mRingMode.setOnPreferenceChangeListener(this);
+
+        mFlipQsTiles = (CheckBoxPreference) findPreference(PREF_FLIP_QS_TILES);
+        mFlipQsTiles.setChecked(Settings.System.getInt(resolver,
+                Settings.System.QUICK_SETTINGS_TILES_FLIP, 1) == 1);
 
         // Add the network mode preference
         mNetworkMode = (ListPreference) prefSet.findPreference(EXP_NETWORK_MODE);
@@ -226,6 +232,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
             Settings.System.putInt(resolver, Settings.System.QS_NO_NOTIFICATION_PULLDOWN,
                     mNoNotificationsPulldown.isChecked() ? 1 : 0);
             return true;
+        } else if (preference == mFlipQsTiles) {
+            Settings.System.putInt(resolver,
+                    Settings.System.QUICK_SETTINGS_TILES_FLIP,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true; 
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
