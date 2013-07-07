@@ -97,15 +97,16 @@ public class ReportingService extends Service {
         String deviceVersionNoDevice = null;
         if (parts.length == 2) {
             deviceVersionNoDevice = parts[0];
-                tracker2.sendEvent("checkin", deviceName, deviceVersionNoDevice, null);
-            tracker2.close();
         }
         else if (parts.length == 4) {
             deviceVersionNoDevice = parts[0] + "-" + parts[2];
         }
-        if (deviceVersionNoDevice != null)
+        if (deviceVersionNoDevice != null) {
             tracker.sendEvent("checkin", deviceName, deviceVersionNoDevice, null);
+            tracker2.sendEvent("checkin", deviceName, deviceVersionNoDevice, null);
+        }
         tracker.close();
+        tracker2.close();
 
         // report to the cmstats service
         HttpClient httpclient = new DefaultHttpClient();
