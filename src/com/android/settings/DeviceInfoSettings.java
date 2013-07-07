@@ -97,6 +97,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
         String cpuInfo = getCPUInfo();
         String memInfo = getMemInfo();
 
+        removePreferenceIfPackageNotInstalled(findPreference(KEY_CM_UPDATES));
+
         if (cpuInfo != null) {
             setStringSummary(KEY_DEVICE_CPU, cpuInfo);
         } else {
