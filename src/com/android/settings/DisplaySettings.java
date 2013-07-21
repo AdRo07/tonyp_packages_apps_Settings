@@ -173,7 +173,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mCrtOff = (CheckBoxPreference) findPreference(KEY_POWER_CRT_SCREEN_OFF);
         mCrtOff.setChecked(mIsCrtOffChecked);
 
-        mCrtMode = (ListPreference) findPreference(KEY_POWER_CRT_MODE);
+        mCrtMode = (ListPreference) findPreference.findPreference(KEY_POWER_CRT_MODE);
         int crtMode = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.SYSTEM_POWER_CRT_MODE, 0);
         mCrtMode.setValue(String.valueOf(crtMode));
@@ -442,8 +442,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
 
         if (preference == mCrtMode) {
-            int crtMode = Integer.valueOf((String) objValue);
-            int index = mCrtMode.findIndexOfValue((String) objValue);
+            int crtMode = Integer.valueOf((String) newValue);
+            int index = mCrtMode.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_CRT_MODE, crtMode);
             mCrtMode.setSummary(mCrtMode.getEntries()[index]);
