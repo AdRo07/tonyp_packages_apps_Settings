@@ -1544,7 +1544,6 @@
 
         <!-- CyanogenMod activities Start -->
         <activity android:name=".cyanogenmod.PowerWidget" />
-        <activity android:name=".cyanogenmod.RamBar" />
 
         <activity android:name=".cyanogenmod.SystemSettings" />
         <activity android:name="Settings$SystemSettingsActivity"
@@ -1676,18 +1675,7 @@
                 <category android:name=".tonyp.TONYLOGO" />
             </intent-filter>
         </activity>
-
-        <!-- Pseudo-activity used to provide an intent-filter entry point to ass display rotation config -->
-        <activity android:name="Settings$ASSRamBarActivity"
-                android:label="@string/ram_bar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.RamBar" />
-        </activity>
-
+        
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
