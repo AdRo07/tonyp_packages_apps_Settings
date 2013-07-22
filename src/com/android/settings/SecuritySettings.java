@@ -40,6 +40,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.security.KeyStore;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -93,6 +94,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
     private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
+    private static final String KEY_APP_SECURITY_CATEGORY = "app_security";
 
     DevicePolicyManager mDPM;
 
@@ -393,13 +395,18 @@ public class SecuritySettings extends SettingsPreferenceFragment
                 }
             }
 
-            boolean isTelephony = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
-            if (isTelephony) {
-                addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
+            // App security settings
+            addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
+            mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
+            if (pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
                 mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
                 mSmsSecurityCheck.setOnPreferenceChangeListener(this);
                 int smsSecurityCheck = Integer.valueOf(mSmsSecurityCheck.getValue());
                 updateSmsSecuritySummary(smsSecurityCheck);
+            } else {
+                PreferenceGroup appCategory = (PreferenceGroup)
+                        root.findPreference(KEY_APP_SECURITY_CATEGORY);
+                appCategory.removePreference(mSmsSecurityCheck);
             }
          }
 

@@ -67,6 +67,8 @@
     <string name="end_time_title">Fin</string>
     <string name="notification_convert_sound_to_vibration_title">Vibrer à la notification</string>
     <string name="notification_convert_sound_to_vibration_summary">En mode vibreur, toutes les notifications vibrent indépendamment des paramètres individuels des applications</string>
+    <string name="notification_vibrate_during_calls_title">Vibreur pendant un appel</string>
+    <string name="notification_vibrate_during_calls_summary">Les notifications vibrent légèrement pendant un appel téléphonique</string>
     <string name="device_hostname">Nom d\'hôte de l\'appareil</string>
     <string name="mod_version">Version CyanogenMod</string>
     <string name="mod_version_default">Inconnue</string>
@@ -131,6 +133,9 @@
     <string name="profile_delete_confirm">Supprimer ce profil\u00A0?</string>
     <string name="profile_app_delete_confirm">Supprimer cette application\u00A0?</string>
     <string name="profile_cannot_delete">Vous ne pouvez pas supprimer le profil actif</string>
+    <string name="profile_networkmode_2g">2G</string>
+    <string name="profile_networkmode_3g">3G</string>
+    <string name="profile_networkmode_2g3g">2G/3G</string>
     <string name="profile_connectionoverrides_title">Connexions</string>
     <string name="profile_volumeoverrides_title">Volumes</string>
     <string name="profile_vibratoroverrides_title">Vibrations</string>
@@ -147,6 +152,9 @@
     <string name="profile_appgroup_manage">Gérer le groupe d\'applications</string>
     <string name="profile_settings">Paramètres du Profil</string>
     <string name="profile_name">Nom</string>
+    <string name="profile_trigger_connect">À la connexion</string>
+    <string name="profile_trigger_disconnect">À la déconnexion</string>
+    <string name="profile_trigger_notrigger">Aucune activation</string>
     <string name="sound_mode">Mode de notification</string>
     <string name="ringer_mode">Sonnerie</string>
     <string name="lights_mode">Leds</string>
@@ -298,6 +306,11 @@
     <string name="increasing_ring_interval_3seconds">3 secondes</string>
     <string name="increasing_ring_interval_5seconds">5 secondes</string>
     <string name="increasing_ring_interval_10seconds">10 secondes</string>
+    <string name="profile_trigger_configure">Configurer l\'activation</string>
+    <string name="profile_triggers">Activation</string>
+    <string name="profile_trigger_filter_all">Toutes les activations</string>
+    <string name="profile_trigger_filter_wifi">Activation par Wi-Fi</string>
+    <string name="profile_trigger_filter_bluetooth">Activation par Bluetooth</string>
     <string name="profile_write_nfc_tag">Écrire sur les tags NFC</string>
     <string name="profile_write_touch_tag">Toucher le tag pour écrire</string>
     <string name="profile_write_success">Tag écrit avec succès</string>
@@ -476,6 +489,8 @@
     <string name="status_bar_notif_count_title">Compteur de notifications</string>
     <string name="status_bar_notif_count_summary">Afficher le nombre de notifications en attente dans la barre d\'état</string>
     <string name="display_category_wakeup_options_title">Sortie de veille</string>
+    <string name="pref_home_wake_title">Éveil par bouton Home</string>
+    <string name="pref_home_wake_summary">Permet de rallumer l\'appareil à l\'aide du bouton Home</string>
     <string name="pref_volume_wake_title">Éveil par boutons Volume</string>
     <string name="pref_volume_wake_summary">Permet de rallumer l\'appareil à l\'aide des boutons de volume.</string>
     <string name="adb_notify">Notification débogage USB</string>
@@ -483,6 +498,8 @@
     <string name="development_tools_title">Outils de développement</string>
     <string name="usb_mass_storage_title">Stockage de masse</string>
     <string name="usb_mass_storage_summary">Activer le stockage de masse USB</string>
+    <string name="storage_rescan_media">Analyser les médias du volume de stockage</string>
+    <string name="storage_rescan_media_complete">Analyse terminée</string>
     <string name="adb_over_network">ADB par réseau</string>
     <string name="adb_over_network_summary">Activer le débogage TCP/IP sur toutes les interfaces réseaux (réseaux USB, Wi-Fi et Bluetooth). Ce paramètre est rénitialisé au redémarrage</string>
     <string name="adb_over_network_warning">ATTENTION : Lorsque cette fonction est activée, votre appareil est ouvert aux intrusions sur toutes les réseaux connectées, y compris via le réseau mobile\u00A0!\n\nN\'utilisez cette fontionnalité que sur des réseaux de confiance.\n\nContinuer\u00A0?</string>
@@ -507,6 +524,7 @@
     <string name="title_tile_battery">Batterie</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Luminosité</string>
+    <string name="title_tile_camera">Appareil photo</string>
     <string name="title_tile_sleep">Mise en veille</string>
     <string name="title_tile_gps">GPS</string>
     <string name="title_tile_torch">Lampe</string>
@@ -564,8 +582,15 @@
     <string name="lock_clock_summary">Afficher ou modifier la façon dont \'cLock\' est affiché sur l\'écran d\'accueil ou de verrouillage</string>
     <string name="stylus_icon_enabled_title">Afficher l\'icône quand un stylet est utilisé</string>
     <string name="stylus_icon_enabled_summary">Afficher le pointeur du stylet quand celui-ci approche ou dessine sur l\'écran</string>
+    <string name="lockscreen_widgets_category_title">Widgets</string>
     <string name="lockscreen_maximize_widgets_title">Maximiser les widgets</string>
     <string name="lockscreen_maximize_widgets_summary">Afficher les widgets maximisés et le système de déverrouillage minimisé lorque l\'écran est déverrouillé</string>
+    <string name="lockscreen_enable_widgets_title">Page de widget</string>
+    <string name="lockscreen_enable_widgets_summary">Autorise l\'ajout et la sélection de plusieurs pages de widgets</string>
+    <string name="lockscreen_enable_camera_title">Widget appareil photo</string>
+    <string name="lockscreen_enable_camera_summary">Afficher le widget de l\'appareil photo à droite de l\'écran de verrouillage</string>
+    <string name="lockscreen_music_controls_title">Contrôle de la musique</string>
+    <string name="lockscreen_music_controls_summary">Afficher le contrôleur de musique lors d\'une lecture en cours</string>
     <string name="lockscreen_custom_background_title">Fond d\'écran</string>
     <string name="lockscreen_custom_background_dialog_title">Choisir une couleur</string>
     <string name="lockscreen_background_result_successful">Fond d\'écran changé avec succès</string>
@@ -677,8 +702,27 @@ Des options supplémentaires sont disponibles en appuyant longtemps sur une lign
     <string name="wifi_mhz">MHz</string>
     <string name="power_notifications_category_title">Son d\'alimentation</string>
     <string name="power_notifications_enable_title">Activer</string>
+    <string name="power_notifications_enable_summary">Émettre un son lors de la connexion ou déconnexion du chargeur</string>
     <string name="power_notifications_vibrate_title">Vibreur</string>
     <string name="power_notifications_ringtone_title">Son de notification</string>
     <string name="power_notifications_ringtone_silent">Silencieux</string>
     <string name="intent_sender_data_label"><xliff:g id="data">Données\u00A0:</xliff:g></string>
+    <string name="screen_off_animation_title">Animation à l\'extinction</string>
+    <string name="screen_off_animation_summary">Afficher l\'animation du faisceau d\'électrons lors de l\'extinction de l\'écran</string>
+    <string name="confirm_delete_apn">L\'APN va être supprimé.</string>
+    <string name="privacy_guard_switch_label">Activer la protection des données</string>
+    <string name="privacy_guard_dlg_title">Activer la protection des données\u00A0?</string>
+    <string name="privacy_guard_dlg_text">Lorsque la protection des données est activée, les applications n\'ont pas accès à vos données personnelles telles que les contacts, les messages ou le journal d\'appels.</string>
+    <string name="privacy_guard_dlg_system_app_text">Lorsque la protection des données est activée pour une application système, cette application ne sera pas en mesure d\'accéder ou de fournir des données personnelles. Cela peut provoquer des dysfonctionnements avec d\'autres applications.</string>
+    <string name="privacy_guard_default_title">Protection des données</string>
+    <string name="privacy_guard_default_summary">Activer par défaut la protection des données pour les applications nouvellement installées</string>
+    <string name="privacy_guard_manager_title">Protection des données</string>
+    <string name="privacy_guard_manager_summary">Contrôler l\'accès des applications à vos données personnelles</string>
+    <string name="privacy_guard_no_user_apps">Pas d\'application installée</string>
+    <string name="privacy_guard_filter_does_not_match">Aucune application demandant des autorisations sensibles n\'est installée</string>
+    <string name="privacy_guard_help_title">Aide</string>
+    <string name="privacy_guard_reset_title">Réinitialiser</string>
+    <string name="privacy_guard_help_text">Dans cet écran, vous pouvez sélectionner pour quelles applications la protection des données est activée. Les applications sélectionnées ne seront pas en mesure d\'accéder à vos données personnelles telles que les contacts, les messages ou le journal d\'appels. Obtenez les détails de l\'application par un appui long sur celle-ci.\n\nPar défaut, les applications du système ne sont pas affichées. Si vous voulez les afficher ou ne filtrer que les applications qui demandent une autorisation d\'accès à des données personnelles, sélectionnez les options respectives dans le menu.</string>
+    <string name="privacy_guard_manager_show_system_apps">Afficher les applications système</string>
+    <string name="privacy_guard_manager_filter_permissions">Filtre de permissions</string>
 </resources>
