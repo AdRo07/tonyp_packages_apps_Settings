@@ -62,13 +62,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_LOCKSCREEN_MAXIMIZE_WIDGETS = "lockscreen_maximize_widgets";
     private static final String KEY_BACKGROUND = "lockscreen_background";
     private static final String KEY_SCREEN_SECURITY = "screen_security";
-    private static final String KEY_LOCKSCREEN_CAMERA_WIDGET = "lockscreen_camera_widget";
-
 
     private ListPreference mCustomBackground;
     private ListPreference mBatteryStatus;
     private CheckBoxPreference mMaximizeWidgets;
-    private CheckBoxPreference mCameraWidget;
 
     private File mWallpaperImage;
     private File mWallpaperTemporary;
@@ -102,8 +99,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 mMaximizeWidgets.setOnPreferenceChangeListener(this);
             }
 
-            mCameraWidget = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_CAMERA_WIDGET);
-
             PreferenceScreen lockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
             if (!hasButtons()) {
                 getPreferenceScreen().removePreference(lockscreenButtons);
@@ -115,7 +110,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             prefScreen.removePreference(findPreference(KEY_ALWAYS_BATTERY));
             prefScreen.removePreference(findPreference(KEY_LOCKSCREEN_BUTTONS));
             prefScreen.removePreference(findPreference(KEY_LOCKSCREEN_MAXIMIZE_WIDGETS));
-            prefScreen.removePreference(findPreference(KEY_LOCKSCREEN_CAMERA_WIDGET));
         }
 
         // This applies to all users
@@ -164,11 +158,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 mMaximizeWidgets.setChecked(Settings.System.getInt(cr,
                         Settings.System.LOCKSCREEN_MAXIMIZE_WIDGETS, 0) == 1);
             }
-
-            if (mCameraWidget != null) {
-                mCameraWidget.setChecked(Settings.System.getInt(cr,
-                        Settings.System.KG_CAMERA_WIDGET, 1) == 1);
-            }
         }
     }
 
@@ -210,10 +199,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         } else if (preference == mMaximizeWidgets) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_MAXIMIZE_WIDGETS, value ? 1 : 0);
-            return true;
-        } else if (preference == mCameraWidget) {
-            boolean value = (Boolean) objValue;
-            Settings.System.putInt(cr, Settings.System.KG_CAMERA_WIDGET, value ? 1 : 0);
             return true;
         } else if (preference == mCustomBackground) {
             int selection = mCustomBackground.findIndexOfValue(objValue.toString());
