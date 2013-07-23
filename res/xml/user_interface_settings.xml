@@ -16,7 +16,7 @@
 
     <PreferenceScreen
         android:key="recents_ram_bar"
-        android:fragment="com.android.settings.slim.RamBar"
+        android:fragment="com.android.settings.cyanogenmod.RamBar"
         android:title="@string/ram_bar" />
 
 </PreferenceScreen>
