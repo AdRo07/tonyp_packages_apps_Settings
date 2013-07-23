@@ -47,10 +47,12 @@ public class UserInterfaceSettings extends SettingsPreferenceFragment implements
     public static final String TAG = "UserInterface";
 
     private static final String MISC_SETTINGS = "misc";
+    private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
 
     private PreferenceCategory mMisc;
+    private Preference mRamBar;
     private Preference mCustomLabel;
     private ListPreference mLowBatteryWarning;
 
@@ -71,12 +73,25 @@ public class UserInterfaceSettings extends SettingsPreferenceFragment implements
 
         updateCustomLabelTextSummary();
 
+        mRamBar = findPreference(KEY_RECENTS_RAM_BAR);
+        mRamBar.setOnPreferenceChangeListener(this);
+        updateRamBar();
+
         mLowBatteryWarning = (ListPreference) findPreference(KEY_LOW_BATTERY_WARNING_POLICY);
         mLowBatteryWarning.setOnPreferenceChangeListener(this);
         int lowBatteryWarning = Settings.System.getInt(getActivity().getContentResolver(),
                                     Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, 0);
         mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
         mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
+    }
+
+    private void updateRamBar() {
+        int ramBarMode = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.RECENTS_RAM_BAR_MODE, 0);
+        if (ramBarMode != 0)
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_enabled));
+        else
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_disabled));
     }
 
     private void updateCustomLabelTextSummary() {
@@ -87,6 +102,18 @@ public class UserInterfaceSettings extends SettingsPreferenceFragment implements
         } else {
             mCustomLabel.setSummary(mCustomLabelText);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateRamBar();
+    }
+
+    @Override
+    public void onPause() {
+        super.onResume();
+        updateRamBar();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
