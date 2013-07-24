@@ -25,9 +25,6 @@ public class HybridSettings extends SettingsPreferenceFragment implements
 
     private PreferenceScreen mDpiScreen;
     private PreferenceScreen mAppsDpi;
-    private ListPreference mUimode;
-    private ListPreference mAppsUimode;
-    private Preference mNavbarHeight;
     private CheckBoxPreference mAutoBackup;
     private Preference mBackup;
     private Preference mRestore;
@@ -47,27 +44,6 @@ public class HybridSettings extends SettingsPreferenceFragment implements
 
         mAppsDpi = (PreferenceScreen) findPreference("apps_dpi");
 
-        mUimode = (ListPreference) findPreference("ui_mode");
-
-        int prop = ExtendedPropertiesUtils
-                .getActualProperty("com.android.systemui.layout");
-        mUimode.setValue(String.valueOf(prop));
-        mUimode.setSummary(mUimode.getEntry());
-        mUimode.setOnPreferenceChangeListener(this);
-
-        mAppsUimode = (ListPreference) findPreference("apps_ui_mode");
-
-        int aprop = ExtendedPropertiesUtils
-                .getActualProperty(ExtendedPropertiesUtils.BEERBONG_PREFIX + "user_default_layout");
-        if (aprop == 0) {
-            aprop = prop;
-        }
-        mAppsUimode.setValue(String.valueOf(aprop));
-        mAppsUimode.setSummary(mAppsUimode.getEntry());
-        mAppsUimode.setOnPreferenceChangeListener(this);
-
-        mNavbarHeight = findPreference("navbar_height");
-
         mAutoBackup = (CheckBoxPreference) findPreference("dpi_groups_auto_backup");
         mBackup = findPreference("dpi_groups_backup");
         mRestore = findPreference("dpi_groups_restore");
@@ -85,9 +61,7 @@ public class HybridSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-        if (preference == mNavbarHeight) {
-            showNavbarHeightDialog();
-        } else if (preference == mBackup) {
+        if (preference == mBackup) {
             Applications.backup(mContext);
         } else if (preference == mRestore) {
             Applications.restore(mContext);
@@ -134,73 +108,6 @@ public class HybridSettings extends SettingsPreferenceFragment implements
                 R.string.apps_dpi_summary)
                 + " " + dpi);
 
-        int layout = ExtendedPropertiesUtils
-                .getActualProperty("com.android.systemui.layout");
-        int index = mUimode.findIndexOfValue(String.valueOf(layout));
-        mUimode.setSummary(mUimode.getEntries()[index]);
-
-        int alayout = ExtendedPropertiesUtils
-                .getActualProperty(ExtendedPropertiesUtils.BEERBONG_PREFIX + "user_default_layout");
-        if (alayout == 0) {
-            alayout = layout;
-        }
-        index = mAppsUimode.findIndexOfValue(String.valueOf(alayout));
-        mAppsUimode.setSummary(mAppsUimode.getEntries()[index]);
-
         mRestore.setEnabled(Applications.backupExists());
-    }
-
-    private void showNavbarHeightDialog() {
-        Resources res = getResources();
-        String cancel = res.getString(R.string.cancel);
-        String ok = res.getString(R.string.ok);
-        String title = res.getString(R.string.navbar_height_title);
-        int savedProgress = Integer.parseInt(ExtendedPropertiesUtils
-                .getProperty("com.android.systemui.navbar.dpi")) / 5;
-
-        LayoutInflater factory = LayoutInflater.from(getActivity());
-        final View alphaDialog = factory.inflate(R.layout.seekbar_dialog, null);
-        SeekBar seekbar = (SeekBar) alphaDialog.findViewById(R.id.seek_bar);
-        final TextView seektext = (TextView) alphaDialog
-                .findViewById(R.id.seek_text);
-        OnSeekBarChangeListener seekBarChangeListener = new OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekbar, int progress,
-                    boolean fromUser) {
-                mNavbarHeightProgress = seekbar.getProgress() * 5;
-                seektext.setText(mNavbarHeightProgress + "%");
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekbar) {
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekbar) {
-            }
-        };
-        seektext.setText((savedProgress * 5) + "%");
-        seekbar.setMax(20);
-        seekbar.setProgress(savedProgress);
-        seekbar.setOnSeekBarChangeListener(seekBarChangeListener);
-        new AlertDialog.Builder(getActivity())
-                .setTitle(title)
-                .setView(alphaDialog)
-                .setNegativeButton(cancel,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog,
-                                    int which) {
-                                // nothing
-                            }
-                        })
-                .setPositiveButton(ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Applications.addProperty(mContext,
-                                "com.android.systemui.navbar.dpi",
-                                mNavbarHeightProgress, true);
-                    }
-                }).create().show();
     }
 }
