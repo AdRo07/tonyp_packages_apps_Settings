@@ -6,26 +6,15 @@
         android:key="ui"
         android:title="@string/hybrid_settings_title">
 
-        <ListPreference
-            android:key="ui_mode"
-            android:entries="@array/uimode_entries"
-            android:entryValues="@array/uimode_values"
-            android:title="@string/uimode_title" />
-
         <PreferenceScreen
             android:key="system_dpi"
             android:fragment="com.android.settings.hybrid.DpiPreferences"
             android:title="@string/system_dpi_title"
             android:summary="@string/system_dpi_summary" />
 
-        <ListPreference
-            android:key="apps_ui_mode"
-            android:entries="@array/uimode_entries"
-            android:entryValues="@array/uimode_values"
-            android:title="@string/appsuimode_title" />
-
-        <Preference
+        <PreferenceScreen
             android:key="apps_dpi"
+            android:fragment="com.android.settings.hybrid.AppsDpiPreferences"
             android:title="@string/apps_dpi_title"
             android:summary="@string/apps_dpi_summary" />
 
@@ -40,11 +29,6 @@
             android:fragment="com.android.settings.hybrid.PerAppLayout"
             android:title="@string/per_app_layout_title"
             android:summary="@string/per_app_layout_summary" />
-
-        <Preference
-            android:key="navbar_height"
-            android:title="@string/navbar_height_title"
-            android:summary="@string/navbar_height_summary" />
 
         <PreferenceScreen
             android:key="widgets"
