@@ -65,6 +65,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_LOCKSCREEN_MAXIMIZE_WIDGETS = "lockscreen_maximize_widgets";
+    private static final String KEY_HOME_SCREEN_WIDGETS = "home_screen_widgets";
     private static final String KEY_LOCKSCREEN_MUSIC_CONTROLS = "lockscreen_music_controls";
     private static final String KEY_BACKGROUND = "lockscreen_background";
     private static final String KEY_SCREEN_SECURITY = "screen_security";
@@ -79,6 +80,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private CheckBoxPreference mMaximizeWidgets;
     private CheckBoxPreference mMusicControls;
     private CheckBoxPreference mEnableWidgets;
+    private CheckBoxPreference mHomeScreenWidgets;
     private CheckBoxPreference mEnableCamera;
 
     private File mWallpaperImage;
@@ -116,6 +118,9 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 mMaximizeWidgets.setOnPreferenceChangeListener(this);
             }
 
+            mHomeScreenWidgets = (CheckBoxPreference) findPreference(KEY_HOME_SCREEN_WIDGETS);
+            mHomeScreenWidgets.setOnPreferenceChangeListener(this);
+
             mMusicControls = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_MUSIC_CONTROLS);
             mMusicControls.setOnPreferenceChangeListener(this);
 
@@ -127,6 +132,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             // Secondary user is logged in, remove all primary user specific preferences
             generalCategory.removePreference(findPreference(KEY_SCREEN_SECURITY));
             widgetsCategory.removePreference(findPreference(KEY_LOCKSCREEN_MAXIMIZE_WIDGETS));
+            widgetsCategory.removePreference(findPreference(KEY_HOME_SCREEN_WIDGETS));
             generalCategory.removePreference(findPreference(KEY_ALWAYS_BATTERY));
             generalCategory.removePreference(findPreference(KEY_LOCKSCREEN_BUTTONS));
         }
@@ -188,6 +194,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 mMaximizeWidgets.setChecked(Settings.System.getInt(cr,
                         Settings.System.LOCKSCREEN_MAXIMIZE_WIDGETS, 0) == 1);
             }
+            if (mHomeScreenWidgets != null) {
+                mHomeScreenWidgets.setChecked(Settings.System.getInt(cr,
+                        Settings.System.KEY_HOME_SCREEN_WIDGETS, 0) == 1);
+            }
             if (mMusicControls != null) {
                 mMusicControls.setChecked(Settings.System.getInt(cr,
                         Settings.System.LOCKSCREEN_MUSIC_CONTROLS, 1) == 1);
@@ -233,6 +243,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         } else if (preference == mMaximizeWidgets) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_MAXIMIZE_WIDGETS, value ? 1 : 0);
+            return true;
+        } else if (preference == mHomeScreenWidgets) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(cr, Settings.System.HOME_SCREEN_WIDGETS, value ? 1 : 0);
             return true;
         } else if (preference == mMusicControls) {
             boolean value = (Boolean) objValue;
