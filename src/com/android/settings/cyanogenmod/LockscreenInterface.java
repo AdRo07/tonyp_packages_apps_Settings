@@ -196,7 +196,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             }
             if (mHomeScreenWidgets != null) {
                 mHomeScreenWidgets.setChecked(Settings.System.getInt(cr,
-                        Settings.System.KEY_HOME_SCREEN_WIDGETS, 0) == 1);
+                        Settings.System.HOME_SCREEN_WIDGETS, 0) == 1);
             }
             if (mMusicControls != null) {
                 mMusicControls.setChecked(Settings.System.getInt(cr,
