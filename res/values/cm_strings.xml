@@ -1190,4 +1190,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="status_bar_alpha_mode_always">always</string>
     <string name="status_bar_style_reset">Reset</string>
 
+    <!-- Home screen widgets -->
+    <string name="home_screen_widgets_title">Home screen widgets</string>
+    <string name="home_screen_widgets_summary">Allow widgets from the home screen to be added on lock screen</string>
+
 </resources>
