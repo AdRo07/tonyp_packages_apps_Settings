@@ -1136,7 +1136,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="apps_dpi_custom_summary">Select a density from 120 to 240</string>
 
     <string name="dpi_groups_title">DPI Groups</string>
-    <string name="dpi_groups_summary">Define wich apps should be in each DPI group</string>
+    <string name="dpi_groups_summary">Define DPI group for each app</string>
     <string name="dpi_group_title">DPI Group</string>
     <string name="dpi_groups_apps">applications</string>
     <string name="dpi_group_add_app">Add application</string>
