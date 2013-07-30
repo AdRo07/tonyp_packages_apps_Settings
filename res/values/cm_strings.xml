@@ -890,4 +890,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="cmlicense_title">CyanogenMod Legal</string>
     <string name="settings_cmlicense_activity_title">CyanogenMod Legal</string>
     <string name="settings_cmlicense_activity_unreachable">You don\'t have a data connection. To view this information now, go to %s from any computer connected to the Internet.</string>
+
+    <!-- Donate -->
+    <string name="display_donate_options_title">DONATE</string>
+    <string name="donate_tonyp_title">Donate</string>
+    <string name="donate_tonyp_summary">If you like my work consider to show your support by donating</string>
+    <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick\u0026hosted_button_id=RL7NJSUDNQNZU</string>
 </resources>
