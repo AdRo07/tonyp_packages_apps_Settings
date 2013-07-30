@@ -1202,6 +1202,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="tonyp_settings_title">tonyp settings</string>
     <string name="display_hybrid_options_title">HYBRID</string>
     <string name="display_various_options_title">VARIOUS</string>
+    <string name="display_donate_options_title">DONATE</string>
 
+    
+    <!-- Donate to ChameleonOS -->
+    <string name="donate_tonyp_title">Donate</string>
+    <string name="donate_tonyp_summary">Show your support by donating</string>
+    <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RL7NJSUDNQNZU</string>
     
 </resources>

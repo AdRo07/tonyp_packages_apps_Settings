@@ -3,6 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
+        android:key="category_donate_options"
+        android:title="@string/display_donate_options_title" >
+
+        <Preference
+            android:key="donate"
+            android:title="@string/donate_tonyp_title"
+            android:summary="@string/donate_tonyp_summary" /> 
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="category_hybrid_options"
         android:title="@string/display_hybrid_options_title" >
         
