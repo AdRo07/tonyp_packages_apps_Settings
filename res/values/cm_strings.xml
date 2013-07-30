@@ -1009,4 +1009,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="sensors_motors_title">Sensors &amp; motors</string>
     <string name="display_calibration_title">Display calibration</string>
 
+
+    <!-- Donate -->
+    <string name="display_donate_options_title">DONATE</string>
+    <string name="donate_tonyp_title">Donate</string>
+    <string name="donate_tonyp_summary">If you like my work consider to show your support by donating</string>
+    <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick\u0026hosted_button_id=RL7NJSUDNQNZU</string>
 </resources>

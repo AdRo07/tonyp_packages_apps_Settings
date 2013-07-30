@@ -24,6 +24,15 @@
             <intent android:action="android.settings.SYSTEM_UPDATE_SETTINGS" />
         </PreferenceScreen> -->
 
+    <PreferenceCategory
+        android:key="category_donate_options"
+        android:title="@string/display_donate_options_title" >
+        <Preference
+            android:key="donate"
+            android:title="@string/donate_tonyp_title"
+            android:summary="@string/donate_tonyp_summary" /> 
+    </PreferenceCategory>
+
         <PreferenceScreen android:key="additional_system_update_settings"
                           android:title="@string/additional_system_update_settings_list_item_title">
             <intent android:action="android.intent.action.MAIN"
