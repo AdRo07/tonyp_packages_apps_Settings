@@ -1086,7 +1086,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Label for are-notifications-enabled checkbox in app details [CHAR LIMIT=20] -->
     <string name="app_halo_label_black">Blacklist HALO notifications</string>
     <string name="app_halo_label_white">Whitelist HALO notifications</string>
-    <string name="display_halo_options_title">HALO options</string>
+    <string name="display_halo_options_title">HALO</string>
 
     <!-- HALO -->
     <string name="halo_settings_title">HALO</string>
@@ -1182,11 +1182,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Status bar background style -->
     <string name="status_bar_transparency_title">Status bar transparency</string>
     <string name="status_bar_color_title">Status bar color</string>
-    <string name="status_bar_background_style">Background style</string>
+    <string name="status_bar_background_style">Statusbar transparency</string>
     <string name="status_bar_alpha_mode_dialog_text_title">Show status bar transparency</string>
     <string name="status_bar_alpha_mode_text_title">Transparency mode</string>
     <string name="status_bar_alpha_mode_home">on launcher</string>
-    <string name="status_bar_alpha_mode_default">on launcher and keyguard</string>
+    <string name="status_bar_alpha_mode_default">on launcher and lockscreen</string>
     <string name="status_bar_alpha_mode_always">always</string>
     <string name="status_bar_style_reset">Reset</string>
 
@@ -1200,5 +1200,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- tonyp settings -->
     <string name="tonyp_settings_title">tonyp settings</string>
+    <string name="display_hybrid_options_title">HYBRID</string>
+    <string name="display_various_options_title">VARIOUS</string>
+
     
 </resources>
