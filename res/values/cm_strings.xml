@@ -1087,6 +1087,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_msgbox_animation_none">None</string>
     <string name="halo_msgbox_animation_flip">Flip</string>
 
+    <string name="title_floating_window">Floating window</string>
+    <string name="summary_floating_window">Open Quick Settings tiles in floating window</string> 
+
     <!-- Center Clock -->
     <string name="status_bar_center_clock_title">Center clock</string>
 
