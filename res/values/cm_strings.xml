@@ -1198,4 +1198,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="flip_qs_tiles_title">Flip tiles</string>
     <string name="flip_qs_tiles_summary">Flips the tiles on touch</string>
 
+    <!-- tonyp settings -->
+    <string name="tonyp_settings_title">tonyp settings</string>
+    
 </resources>
