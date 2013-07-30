@@ -63,7 +63,6 @@ public class tonypSettings extends SettingsPreferenceFragment implements OnPrefe
     private PreferenceCategory mMisc;
     private Preference mRamBar;
     private Preference mCustomLabel;
-    private Preference mDonate;
     private ListPreference mLowBatteryWarning;
     private ListPreference mHaloState;
     private ListPreference mHaloSize;
@@ -87,7 +86,7 @@ public class tonypSettings extends SettingsPreferenceFragment implements OnPrefe
         mNotificationManager = INotificationManager.Stub.asInterface(
                 ServiceManager.getService(Context.NOTIFICATION_SERVICE));
 
-        mDonate = prefs.findPreference(KEY_COS_DONATE).setWidgetLayoutResource(R.layout.donate); 
+        prefs.findPreference(KEY_COS_DONATE).setWidgetLayoutResource(R.layout.donate); 
 
         mHaloState = (ListPreference) prefs.findPreference(KEY_HALO_STATE);
         mHaloState.setValue(String.valueOf((isHaloPolicyBlack() ? "1" : "0")));
@@ -215,7 +214,7 @@ public class tonypSettings extends SettingsPreferenceFragment implements OnPrefe
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.HALO_PAUSE, mHaloPause.isChecked()
                     ? 1 : 0);
-        } else if (preference == mDonate) {
+        } else if (preference.getKey().equals(KEY_COS_DONATE)) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW,
                     Uri.parse(getActivity().getString(R.string.donate_link)));
             startActivity(browserIntent); 
