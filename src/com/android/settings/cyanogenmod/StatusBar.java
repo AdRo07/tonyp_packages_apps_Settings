@@ -171,12 +171,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_NOTIF_COUNT, value ? 1 : 0);
             return true;
          } else if (preference == mMMSBreath) {
-            value = mMMSBreath.isChecked();
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.MMS_BREATH, value ? 1 : 0);
             return true;
          } else if (preference == mMissedCallBreath) {
-            value = mMissedCallBreath.isChecked();
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.MISSED_CALL_BREATH, value ? 1 : 0);
             return true;
