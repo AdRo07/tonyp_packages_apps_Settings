@@ -16,6 +16,7 @@
 
 package com.android.settings.cyanogenmod;
 
+import android.content.ContentResolver;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -51,7 +52,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private ListPreference mStatusBarClock;
     private CheckBoxPreference mStatusBarBrightnessControl;
     private CheckBoxPreference mStatusBarNotifCount;
-    private PreferenceCategory mPrefCategoryGeneral;
     private CheckBoxPreference mMMSBreath;
     private CheckBoxPreference mMissedCallBreath;
 
@@ -62,6 +62,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         addPreferencesFromResource(R.xml.status_bar);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
 
         mStatusBarClock = (ListPreference) prefSet.findPreference(STATUS_BAR_CLOCK);
         mStatusBarBrightnessControl = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
@@ -71,8 +72,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mMMSBreath = (CheckBoxPreference) findPreference(KEY_MMS_BREATH);
         mMissedCallBreath = (CheckBoxPreference) findPreference(KEY_MISSED_CALL_BREATH);
 
-        int statusBarClockStyle = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_CLOCK, 1);
+        int statusBarClockStyle = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_CLOCK, 1);
         mStatusBarClock.setValue(String.valueOf(statusBarClockStyle));
         mStatusBarClock.setSummary(mStatusBarClock.getEntry());
         mStatusBarClock.setOnPreferenceChangeListener(this);
@@ -83,7 +83,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                     .removePreference(prefSet.findPreference(STATUS_BAR_AM_PM));
         } else {
             mStatusBarAmPm = (ListPreference) prefSet.findPreference(STATUS_BAR_AM_PM);
-            int statusBarAmPm = Settings.System.getInt(getActivity().getContentResolver(),
+            int statusBarAmPm = Settings.System.getInt(resolver,
                     Settings.System.STATUS_BAR_AM_PM, 2);
 
             mStatusBarAmPm.setValue(String.valueOf(statusBarAmPm));
@@ -91,96 +91,84 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             mStatusBarAmPm.setOnPreferenceChangeListener(this);
         }
 
-        mStatusBarBrightnessControl.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
+        mStatusBarBrightnessControl.setChecked(Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1);
+        mStatusBarBrightnessControl.setOnPreferenceChangeListener(this);
 
         try {
-            if (Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.SCREEN_BRIGHTNESS_MODE) == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC) {
+            if (Settings.System.getInt(resolver, Settings.System.SCREEN_BRIGHTNESS_MODE)
+                    == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC) {
                 mStatusBarBrightnessControl.setEnabled(false);
                 mStatusBarBrightnessControl.setSummary(R.string.status_bar_toggle_info);
             }
         } catch (SettingNotFoundException e) {
         }
 
-        int statusBarBattery = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_BATTERY, 0);
+        int statusBarBattery = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_BATTERY, 0);
         mStatusBarBattery.setValue(String.valueOf(statusBarBattery));
         mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
         mStatusBarBattery.setOnPreferenceChangeListener(this);
 
-        int signalStyle = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_SIGNAL_TEXT, 0);
+        int signalStyle = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_SIGNAL_TEXT, 0);
         mStatusBarCmSignal.setValue(String.valueOf(signalStyle));
         mStatusBarCmSignal.setSummary(mStatusBarCmSignal.getEntry());
         mStatusBarCmSignal.setOnPreferenceChangeListener(this);
 
         mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_NOTIF_COUNT);
-        mStatusBarNotifCount.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_NOTIF_COUNT, 0) == 1));
+        mStatusBarNotifCount.setChecked(Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_NOTIF_COUNT, 0) == 1);
+        mStatusBarNotifCount.setOnPreferenceChangeListener(this);
 
-        mMMSBreath.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.MMS_BREATH, 0) == 1);
-        mMissedCallBreath.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.MISSED_CALL_BREATH, 0) == 1);
+        mMMSBreath.setChecked(Settings.System.getInt(resolver, Settings.System.MMS_BREATH, 0) == 1);
+        mMissedCallBreath.setChecked(resolver, Settings.System.MISSED_CALL_BREATH, 0) == 1);
+        PreferenceCategory generalCategory =
+                (PreferenceCategory) findPreference(STATUS_BAR_CATEGORY_GENERAL);
 
-        mPrefCategoryGeneral = (PreferenceCategory) findPreference(STATUS_BAR_CATEGORY_GENERAL);
 
         if (Utils.isWifiOnly(getActivity())) {
-            mPrefCategoryGeneral.removePreference(mStatusBarCmSignal);
+            generalCategory.removePreference(mStatusBarCmSignal);
         }
 
         if (Utils.isTablet(getActivity())) {
-            mPrefCategoryGeneral.removePreference(mStatusBarBrightnessControl);
+            generalCategory.removePreference(mStatusBarBrightnessControl);
         }
-
     }
 
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mStatusBarClock) {
             int clockStyle = Integer.parseInt((String) newValue);
             int index = mStatusBarClock.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_CLOCK, clockStyle);
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CLOCK, clockStyle);
             mStatusBarClock.setSummary(mStatusBarClock.getEntries()[index]);
             return true;
         } else if (mStatusBarAmPm != null && preference == mStatusBarAmPm) {
             int statusBarAmPm = Integer.valueOf((String) newValue);
             int index = mStatusBarAmPm.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_AM_PM, statusBarAmPm);
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_AM_PM, statusBarAmPm);
             mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntries()[index]);
             return true;
         } else if (preference == mStatusBarBattery) {
             int statusBarBattery = Integer.valueOf((String) newValue);
             int index = mStatusBarBattery.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_BATTERY, statusBarBattery);
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_BATTERY, statusBarBattery);
             mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
             return true;
         } else if (preference == mStatusBarCmSignal) {
             int signalStyle = Integer.valueOf((String) newValue);
             int index = mStatusBarCmSignal.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_SIGNAL_TEXT, signalStyle);
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_SIGNAL_TEXT, signalStyle);
             mStatusBarCmSignal.setSummary(mStatusBarCmSignal.getEntries()[index]);
             return true;
-        }
-        return false;
-    }
-
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        boolean value;
-
-        if (preference == mStatusBarBrightnessControl) {
-            value = mStatusBarBrightnessControl.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+        } else if (preference == mStatusBarBrightnessControl) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
                     Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, value ? 1 : 0);
             return true;
         } else if (preference == mStatusBarNotifCount) {
-            value = mStatusBarNotifCount.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_NOTIF_COUNT, value ? 1 : 0);
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_NOTIF_COUNT, value ? 1 : 0);
             return true;
          } else if (preference == mMMSBreath) {
             value = mMMSBreath.isChecked();
@@ -193,6 +181,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.MISSED_CALL_BREATH, value ? 1 : 0);
             return true;
         }
+
         return false;
     }
 }
