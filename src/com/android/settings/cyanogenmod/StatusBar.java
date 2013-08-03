@@ -120,7 +120,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarNotifCount.setOnPreferenceChangeListener(this);
 
         mMMSBreath.setChecked(Settings.System.getInt(resolver, Settings.System.MMS_BREATH, 0) == 1);
-        mMissedCallBreath.setChecked(resolver, Settings.System.MISSED_CALL_BREATH, 0) == 1);
+        mMissedCallBreath.setChecked(Settings.System.getInt(resolver, Settings.System.MISSED_CALL_BREATH, 0) == 1);
         PreferenceCategory generalCategory =
                 (PreferenceCategory) findPreference(STATUS_BAR_CATEGORY_GENERAL);
 
