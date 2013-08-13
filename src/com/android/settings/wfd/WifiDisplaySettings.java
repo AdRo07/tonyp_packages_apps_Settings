@@ -98,8 +98,6 @@ public final class WifiDisplaySettings extends SettingsPreferenceFragment {
 
         Activity activity = getActivity();
         mActionBarSwitch = new Switch(activity);
-        if (activity instanceof PreferenceDrawerActivity) {
-            PreferenceDrawerActivity preferenceActivity = (PreferenceDrawerActivity) activity;
         mActionBarSwitch.setOnCheckedChangeListener(mSwitchOnCheckedChangedListener);
 
         final int padding = activity.getResources().getDimensionPixelSize(
