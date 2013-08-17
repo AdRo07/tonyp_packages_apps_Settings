@@ -1022,6 +1022,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pref_tonyp_minfree_title">tonyp memory optimizations</string>
     <string name="pref_tonyp_minfree_summary">Optimize the memory management to minimize lags. Uncheck this to return to stock behaviour (requires reboot)</string>
 
+    <!-- Vold Switchable Pair -->
+    <string name="storage_switch_title">Use external SD as primary</string>
+    <string name="storage_switch_summary_off">Using expanded internal storage for apps and media</string>
+    <string name="storage_switch_summary_on">Using SD Card for apps and media</string>
+    <string name="reboot_prompt_title">Reboot required</string>
+    <string name="reboot_prompt_message">In order to apply the changed configuration, a reboot is required.\n\nDo you want to reboot now?</string>
+
     <!-- Donate -->
     <string name="display_donate_options_title">DONATE</string>
     <string name="donate_tonyp_title">Donate</string>
