@@ -36,32 +36,17 @@
     <string name="root_access_apps">Μόνο εφαρμογές</string>
     <string name="root_access_adb">Μόνο ADB</string>
     <string name="root_access_all">Εφαρμογές και ADB</string>
-    <string name="accessibility_home_button_answers_call_prerefence_title">Το κουμπί Home απαντά την κλήση</string>
+    <string name="accessibility_home_button_answers_call_prerefence_title">Το πλήκτρο αρχικής οθόνης απαντά την κλήση</string>
     <string name="headset_category_title">Ακουστικά</string>
     <string name="ok">ΟΚ</string>
     <string name="quiet_hours_title">Ώρες ησυχίας</string>
     <string name="quiet_hours_summary">Δείτε ή αλλάξτε τις ώρες που θέλετε να σιωπά η συσκευή</string>
-    <string name="quiet_hours_note_title">Σημείωση</string>
-    <string name="quiet_hours_note_summary">Οι εισερχόμενες κλήσεις δεν θα επηρεαστούν κατά τις ώρες ησυχίας</string>
+    <string name="quiet_hours_note_summary">Σημείωση: Οι εισερχόμενες κλήσεις δεν θα επηρεαστούν κατά τις ώρες ησυχίας</string>
     <string name="quiet_hours_enabled">Ενεργοποίηση</string>
-    <string name="quiet_hours_enabled_on">Οι ώρες ησυχίας θα τηρούνται</string>
-    <string name="quiet_hours_enabled_off">Οι ειδοποιήσεις δεν θα επηρεαστούν</string>
-    <string name="quiet_hours_start">Έναρξη</string>
-    <string name="quiet_hours_start_summary">Επιλέξτε ώρα έναρξης</string>
-    <string name="quiet_hours_end">Λήξη</string>
-    <string name="quiet_hours_end_summary">Επιλέξτε ώρα λήξης</string>
     <string name="quiet_hours_mute">Σίγαση ειδοποιήσεων</string>
-    <string name="quiet_hours_mute_on">Δεν θα αναπαράγονται ήχοι</string>
-    <string name="quiet_hours_mute_off">Οι ήχοι θα αναπαράγονται κανονικά</string>
     <string name="quiet_hours_still">Απενεργοποίηση δονήσεων</string>
-    <string name="quiet_hours_still_on">Η συσκευή δεν θα δονείται</string>
-    <string name="quiet_hours_still_off">Η συσκευή θα δονείται κανονικά</string>
     <string name="quiet_hours_dim">Απενεργοποίηση LED ειδοποιήσεων</string>
-    <string name="quiet_hours_dim_on">Το LED ειδοποιήσεων θα απενεργοποιείται</string>
-    <string name="quiet_hours_dim_off">Το LED ειδοποιήσεων θα λειτουργεί κανονικά</string>
     <string name="quiet_hours_haptic">Απενεργοποίηση απτικής ανάδρασης</string>
-    <string name="quiet_hours_haptic_on">Η απτική ανάδραση θα απενεργοποιείται</string>
-    <string name="quiet_hours_haptic_off">Η απτική ανάδραση θα λειτουργεί κανονικά</string>
     <string name="quiet_hours_active_from">Ενεργό από</string>
     <string name="quiet_hours_active_to">έως</string>
     <string name="start_time_title">Έναρξη</string>
@@ -94,12 +79,19 @@
     <string name="preview_version_title">Έκδοση</string>
     <string name="preview_country_title">Χώρα</string>
     <string name="preview_carrier_title">Εταιρία δικτύου</string>
-    <string name="header_category_interface">ΔΙΕΠΑΦΗ</string>
-    <string name="launcher_settings_title">Launcher</string>
+    <string name="header_category_interface">Εξατομίκευση</string>
+    <string name="homescreen_settings_title">Αρχική οθόνη</string>
     <string name="themes_settings_title">Θέματα</string>
-    <string name="system_settings_title">Σύστημα</string>
+    <string name="system_settings_title">Διεπαφή</string>
     <string name="system_interface_title">Διεπαφή συστήματος</string>
     <string name="notification_drawer_title">Συρτάρι ειδοποιήσεων</string>
+    <string name="notification_drawer_collapse_on_dismiss_title">Αυτόματο κλείσιμο συρταριού</string>
+    <string name="collapse_on_dismiss_never">Απενεργοποιημένο</string>
+    <string name="collapse_on_dismiss_if_empty">Όταν δεν υπολείπεται καμία</string>
+    <string name="collapse_on_dismiss_if_no_clearable">Όταν δεν υπολείπεται καμία αφαιρούμενη</string>
+    <string name="collapse_on_dismiss_never_summary">Το συρτάρι θα παραμένει ανοιχτό κατά την αφαίρεση των ειδοποιήσεων</string>
+    <string name="collapse_on_dismiss_if_empty_summary">Το συρτάρι θα κλείνει κατά την αφαίρεση της τελευταίας ειδοποίησης</string>
+    <string name="collapse_on_dismiss_if_no_clearable_summary">Το συρτάρι θα κλείνει κατά την αφαίρεση της τελευταίας αφαιρούμενης ειδοποίησης</string>
     <string name="lock_screen_title">Οθόνη κλειδώματος</string>
     <string name="lockscreen_target_info">Σύρετε για να αντιστοιχίσετε συντομεύσεις</string>
     <string name="lockscreen_target_title">Συντομεύσεις</string>
@@ -117,7 +109,6 @@
     <string name="lockscreen_battery_status_charging">Μόνο κατά τη φόρτιση</string>
     <string name="lockscreen_battery_status_alwayson">Πάντα</string>
     <string name="profiles_settings_title">Προφίλ</string>
-    <string name="profiles_general_title">Γενικά</string>
     <string name="profiles_add">Προσθήκη</string>
     <string name="profile_menu_delete">Διαγραφή</string>
     <string name="profile_settings_title">Προφίλ</string>
@@ -126,7 +117,6 @@
     <string name="profile_name_title">Όνομα</string>
     <string name="profile_profile_name_prompt">Εισάγετε όνομα για το νέο προφίλ</string>
     <string name="menu_new_profile">Νέο προφίλ</string>
-    <string name="menu_new_profile_summary">Προσθήκη και ρύθμιση νέου προφίλ</string>
     <string name="new_profile_name">&lt;νέο προφίλ&gt;</string>
     <string name="rename_dialog_title">Μετονομασία</string>
     <string name="rename_dialog_message">Εισάγετε νέο όνομα</string>
@@ -142,20 +132,14 @@
     <string name="profile_networkmode_2g3g">2G/3G</string>
     <string name="profile_connectionoverrides_title">Παράκαμψη σύνδεσης</string>
     <string name="profile_volumeoverrides_title">Παράκαμψη έντασης</string>
-    <string name="profile_vibratoroverrides_title">Παράκαμψη δόνησης</string>
     <string name="connection_state_disabled">Απενεργοποίηση</string>
     <string name="connection_state_enabled">Ενεργοποίηση</string>
     <string name="volume_override_summary">Αλλαγή σε</string>
-    <string name="vibrator_state_disabled">Απενεργοποίηση</string>
-    <string name="vibrator_state_enabled">Ενεργοποίηση</string>
-    <string name="vibrator_state_silent">Μόνο στο αθόρυβο</string>
     <string name="profile_profiles_manage">Προφίλ</string>
     <string name="profile_profile_manage">Διαχείριση προφίλ</string>
-    <string name="profile_applist_manage">Λίστα εφαρμογών</string>
     <string name="profile_appgroups_manage">Γκρουπ εφαρμογών</string>
     <string name="profile_appgroup_manage">Διαχείριση γκρουπ εφαρμογών</string>
     <string name="profile_settings">Ρυθμίσεις προφίλ</string>
-    <string name="profile_name">Όνομα</string>
     <string name="profile_trigger_connect">Κατά τη σύνδεση</string>
     <string name="profile_trigger_disconnect">Κατά την αποσύνδεση</string>
     <string name="profile_trigger_notrigger">Ποτέ</string>
@@ -172,10 +156,7 @@
     <string name="profile_delete_appgroup">Διαγραφή γκρουπ εφαρμογών</string>
     <string name="profile_appgroup_name_prompt">Εισάγετε όνομα για το νέο γκρουπ εφαρμογών</string>
     <string name="profile_appgroup_name_title">Όνομα</string>
-    <string name="profile_add_app">Προσθήκη εφαρμογής</string>
-    <string name="profile_delete_app">Αφαίρεση εφαρμογής</string>
     <string name="profile_choose_app">Επιλέξτε εφαρμογή</string>
-    <string name="profile_settings_header">Ρυθμίσεις προφίλ</string>
     <string name="profile_system_settings_title">Ρυθμίσεις συστήματος</string>
     <string name="profile_lockmode_title">Λειτουργία οθόνης κλειδώματος</string>
     <string name="profile_lockmode_default">Προεπιλογή</string>
@@ -185,10 +166,6 @@
     <string name="profile_lockmode_insecure_summary">Χρήση ανασφαλούς οθόνης κλειδώματος</string>
     <string name="profile_lockmode_disabled_summary">Απενεργοποίηση οθόνης κλειδώματος</string>
     <string name="profile_airplanemode_title">Λειτουργία πτήσης</string>
-    <string name="profile_disable_screen_lock_summary">Απενεργοποίηση οθόνης κλειδώματος όταν είναι επιλεγμένο αυτό το προφίλ</string>
-    <string name="vibrator_type_ringer">Κλήσεις</string>
-    <string name="vibrator_type_notification">Ειδοποιήσεις</string>
-    <string name="possibleButtons">Πιθανά πλήκτρα</string>
     <string name="toggleWifi">Wi-Fi</string>
     <string name="toggleWifiAp">Φορητό σημείο πρόσβασης Wi-Fi</string>
     <string name="toggleBluetooth">Bluetooth</string>
@@ -196,23 +173,16 @@
     <string name="toggleData">Δεδομένα</string>
     <string name="toggleSync">Συγχρονισμός</string>
     <string name="toggle2g3g">2G/3G</string>
-    <string name="toggleSound">Κουδούνισμα</string>
-    <string name="toggleBrightness">Φωτεινότητα</string>
-    <string name="toggleAutoRotate">Προσανατολισμός</string>
-    <string name="toggleScreenTimeout">Χρoνικό όριο οθόνης</string>
-    <string name="toggleAirplane">Λειτουργία πτήσης</string>
-    <string name="toggleFlashlight">Φακός</string>
-    <string name="toggleLockScreen">Οθόνη κλειδώματος</string>
     <string name="toggleWimax">WiMAX</string>
     <string name="toggleNfc">NFC</string>
     <string name="screen_security_category">Ασφάλεια οθόνης</string>
     <string name="screen_security_title">Οθόνη κλειδώματος</string>
     <string name="screen_security_summary">Εμφάνιση ή αλλαγή ρυθμίσεων ασφαλείας, καθυστέρησης και χρονικού ορίου της οθόνης κλειδώματος</string>
     <string name="additional_options_title">Πρόσθετες επιλογές</string>
-    <string name="unlock_menu_unlock_title">Ξεκλείδωμα menu</string>
-    <string name="unlock_menu_unlock_summary">Πατώντας το πλήκτρο menu η συσκευή ξεκλειδώνει</string>
-    <string name="unlock_home_unlock_title">Ξεκλείδωμα home</string>
-    <string name="unlock_home_unlock_summary">Πατώντας το πλήκτρο home η συσκευή ξεκλειδώνει</string>
+    <string name="unlock_menu_unlock_title">Ξεκλείδωμα πλήκτρου μενού</string>
+    <string name="unlock_menu_unlock_summary">Πατώντας το πλήκτρο μενού η συσκευή ξεκλειδώνει</string>
+    <string name="unlock_home_unlock_title">Ξεκλείδωμα πλήκτρου αρχικής οθόνης</string>
+    <string name="unlock_home_unlock_summary">Πατώντας το πλήκτρο αρχικής οθόνης η συσκευή ξεκλειδώνει</string>
     <string name="unlock_quick_unlock_control_title">Γρήγορο ξεκλείδωμα</string>
     <string name="unlock_quick_unlock_control_summary">Αυτόματο ξεκλείδωμα όταν δωθεί το σωστό PIN ή ο σωστός κωδικός</string>
     <string name="delay_and_timeout_title">Καθυστέρηση κλειδώματος</string>
@@ -328,6 +298,8 @@
     <string name="link_volume_ringtones">Σύνδεση εντάσεων</string>
     <string name="link_volume_mutes">Σίγαση ειδοποιήσεων στο Αθόρυβο</string>
     <string name="volume_keys_control_ring_stream">Έλεγχος έντασης κλήσης με πλήκτρα ήχου</string>
+    <string name="display_lights_settings_title">Οθόνη &amp; φωτισμός</string>
+    <string name="lights_category_title">Φωτισμός</string>
     <string name="notification_pulse_title">Φωτεινός παλμός ειδοποίησης</string>
     <string name="notification_light_general_title">Γενικά</string>
     <string name="notification_light_applist_title">Εφαρμογές</string>
@@ -340,7 +312,6 @@
     <string name="notification_light_voicemail_title">Μήνυμα τηλεφωνητή</string>
     <string name="edit_light_settings">Επεξεργασία φωτεινού παλμού</string>
     <string name="pulse_speed_title">Ταχύτητα και μήκος παλμού</string>
-    <string name="picker_arrow">\u2192</string>
     <string name="default_time">Κανονικό</string>
     <string name="custom_time">Προσαρμοσμένο</string>
     <string name="dialog_test">Δοκιμή</string>
@@ -373,16 +344,16 @@
     <string name="ring_mode_normal">Κανονική</string>
     <string name="ring_mode_vibrate">Δόνηση</string>
     <string name="ring_mode_mute">Σίγαση</string>
-    <string name="hardware_keys_title">Πλήκτρα</string>
-    <string name="hardware_keys_bindings_title">Ενέργειες πλήκτρων</string>
+    <string name="automation_effects_title">Αυτοματισμός &amp; Εφέ</string>
+    <string name="button_settings">Πλήκτρα</string>
     <string name="hardware_keys_enable_custom_title">Προσαρμοσμένες ενέργειες</string>
-    <string name="hardware_keys_home_long_press_title">Πλήκτρο Home (παρατεταμένο πάτημα)</string>
-    <string name="hardware_keys_menu_press_title">Πλήκτρο Menu</string>
-    <string name="hardware_keys_menu_long_press_title">Πλήκτρο Menu (παρατεταμένο πάτημα)</string>
-    <string name="hardware_keys_assist_press_title">Πλήκτρο Search</string>
-    <string name="hardware_keys_assist_long_press_title">Πλήκτρο Search (παρατεταμένο πάτημα)</string>
-    <string name="hardware_keys_app_switch_press_title">Πλήκτρο εναλλαγής εφαρμογών</string>
-    <string name="hardware_keys_app_switch_long_press_title">Πλήκτρο εναλλαγής εφαρμογών (παρατεταμένο πάτημα)</string>
+    <string name="hardware_keys_home_key_title">Πλήκτρο αρχικής οθόνης</string>
+    <string name="hardware_keys_menu_key_title">Πλήκτρο μενού</string>
+    <string name="hardware_keys_assist_key_title">Πλήκτρο αναζήτησης</string>
+    <string name="hardware_keys_appswitch_key_title">Πλήκτρο πρόσφατων εφαρμογών</string>
+    <string name="hardware_keys_volume_keys_title">Πλήκτρα έντασης</string>
+    <string name="hardware_keys_short_press_title">Ενέργεια απλής πίεσης</string>
+    <string name="hardware_keys_long_press_title">Ενέργεια παρατεταμένης πίεσης</string>
     <string name="hardware_keys_show_overflow_title">Εμφάνιση action overflow</string>
     <string name="hardware_keys_show_overflow_summary">Εμφανίζει το πλήκτρο overflow με τις 3 τελείες στις εφαρμογές</string>
     <string name="hardware_keys_show_overflow_toast_enable">Το πλήκτρο δεν θα είναι ορατό μέχρι την επανεκκίνηση των εφαρμογών</string>
@@ -393,11 +364,16 @@
     <string name="hardware_keys_action_search">Βοηθός αναζήτησης</string>
     <string name="hardware_keys_action_voice_search">Φωνητική αναζήτηση</string>
     <string name="hardware_keys_action_in_app_search">Αναζήτηση μέσα στην εφαρμογή</string>
+    <string name="home_wake_title">Αφύπνιση με πλήκτρο αρχικής οθόνης</string>
+    <string name="home_wake_summary">Αφύπνιση της συσκευής κατά το πάτημα του πλήκτρου αρχικής οθόνης</string>
+    <string name="volume_wake_title">Αφύπνιση με πλήκτρα έντασης</string>
+    <string name="volume_wake_summary">Αφύπνιση της συσκευής κατά το πάτημα των πλήκτρων έντασης</string>
     <string name="swap_volume_buttons_title">Εναλλαγή πλήκτρων έντασης</string>
     <string name="swap_volume_buttons_summary">Εναλλαγή των πλήκτρων έντασης κατά την περιστροφή της οθόνης</string>
+    <string name="navigation_bar_category">Μπάρα πλοήγησης</string>
     <string name="navigation_bar_title">Πλήκτρα και διάταξη</string>
-    <string name="navigation_bar_help_text">1 - Για να ξεκινήσετε την επεξεργασία, πατήστε το εικονίδιο κλειδώματος\n\n2 - Πατήστε οποιοδήποτε κουμπί για να καθορίσετε ή να αλλάξετε τη λειτουργία του\n\n3 - Πιέστε παρατεταμένα οποιοδήποτε κουμπί για να αλλάξετε τη σειρά\n\n4 - Για αποθήκευση, πατήστε ξανά το εικονίδιο κλειδώματος\n\n5 - Για επαναφορά των προεπιλογών, πατήστε το κουμπί επαναφοράς\n\n</string>
-    <string name="navigation_bar_tips">&#8226; Οι ενέργειες μπορούν να εκχωρηθούν μόνο σε ένα κουμπί τη φορά\n\n&#8226; Το κουμπί home δεν μπορεί να επαναπροσδιοριστεί\n\n&#8226; Τα πλαϊνά κουμπιά δεν μπορούν να επαναπροσδιορισθούν</string>
+    <string name="navigation_bar_help_text">1 - Για να ξεκινήσετε την επεξεργασία, πατήστε το εικονίδιο κλειδώματος\n\n2 - Πατήστε οποιοδήποτε πλήκτρο για να καθορίσετε ή να αλλάξετε τη λειτουργία του\n\n3 - Πιέστε παρατεταμένα οποιοδήποτε πλήκτρο για να αλλάξετε τη σειρά\n\n4 - Για αποθήκευση, πατήστε ξανά το εικονίδιο κλειδώματος\n\n5 - Για επαναφορά των προεπιλογών, πατήστε το πλήκτρο επαναφοράς\n\n</string>
+    <string name="navigation_bar_tips">&#8226; Οι ενέργειες μπορούν να εκχωρηθούν μόνο σε ένα πλήκτρο τη φορά\n\n&#8226; Το πλήκτρο αρχικής οθόνης δεν μπορεί να επαναπροσδιοριστεί\n\n&#8226; Τα πλαϊνά πλήκτρα δεν μπορούν να επαναπροσδιορισθούν</string>
     <string name="navigation_bar_tips_title">Γρήγορες συμβουλές</string>
     <string name="navigation_bar_reset_message">Διαγραφή ρυθμίσεων και επαναφορά στις προεπιλεγμένες;</string>
     <string name="navigation_bar_save_message">Οι ρυθμίσεις της Μπάρας πλοήγησης αποθηκεύτηκαν</string>
@@ -406,7 +382,7 @@
     <string name="navigation_bar_menu_locked">Κλειδωμένο</string>
     <string name="power_widget_title">Power widget</string>
     <string name="title_expanded_widget">Power widget</string>
-    <string name="title_expanded_hide_indicator">Απόκρυψη ένδειξης</string>
+    <string name="title_expanded_hide_onchange">Κλείσιμο συρταριού κατά την αλλαγή</string>
     <string name="title_expanded_hide_scrollbar">Απόκρυψη μπάρας ολίσθισης</string>
     <string name="title_widget_picker">Πλήκτρα widget</string>
     <string name="summary_widget_picker">Επιλέξτε τα πλήκτρα που θα εμφανίζονται στο power widget</string>
@@ -448,14 +424,14 @@
     <string name="cm_sound_mode_soundVibrate">Ήχος &amp; Δόνηση</string>
     <string name="pref_flash_mode_title">Φακός</string>
     <string name="expanded_haptic_feedback_title">Απτική ανάδραση</string>
-    <string name="kill_app_longpress_back">Τερμ. με πλήκτρο back</string>
-    <string name="kill_app_longpress_back_summary">Το κουμπί back τερματίζει την τρέχουσα εφαρμογή</string>
+    <string name="kill_app_longpress_back">Τερμ. με πλήκτρο πίσω</string>
+    <string name="kill_app_longpress_back_summary">Το πλήκτρο πίσω τερματίζει την τρέχουσα εφαρμογή</string>
     <string name="changelog_title">Εμφάνιση αρχείου αλλαγών</string>
     <string name="changelog_loading">Φόρτωση αρχείου αλλαγών\u2026</string>
     <string name="changelog_error">Δεν είναι δυνατή η φόρτωση του αρχείου αλλαγών</string>
     <string name="changelog_unknown">Άγνωστο</string>
     <string name="changelog_version">Έκδοση</string>
-    <string name="power_menu_title">Power menu</string>
+    <string name="power_menu_title">Μενού πλήκτρου απενεργοποίησης</string>
     <string name="power_menu_reboot_title">Επανεκκίνηση</string>
     <string name="power_menu_screenshot_title">Στιγμιότυπο οθόνης</string>
     <string name="power_menu_expanded_desktop">Επέκταση επιφάνειας</string>
@@ -476,7 +452,6 @@
     <string name="status_bar_general_title">Γενικά</string>
     <string name="status_bar_show_clock_title">Εμφάνιση ρολογιού</string>
     <string name="status_bar_am_pm_title">Στυλ ΠΜ/ΜΜ</string>
-    <string name="status_bar_am_pm_info">Μόρφή 24-ώρου ενεργοποιημένη</string>
     <string name="status_bar_battery_title">Στυλ επιπέδου μπαταρίας</string>
     <string name="status_bar_toggle_brightness">Έλεγχος φωτεινότητας</string>
     <string name="status_bar_toggle_brightness_summary">Επιτρέπει τον έλεγχο της φωτεινότητας με ολίσθιση στη μπάρα κατάστασης</string>
@@ -490,11 +465,6 @@
     <string name="status_bar_battery_status_circle_percentage">Κύκλος με ποσοστό</string>
     <string name="status_bar_notif_count_title">Εμφ. αριθμού ειδοποιήσεων</string>
     <string name="status_bar_notif_count_summary">Εμφάνιση του αριθμού των ειδοποιήσεων που εκκρεμούν στη μπάρα κατάστασης</string>
-    <string name="display_category_wakeup_options_title">Επιλογές αφύπνισης</string>
-    <string name="pref_home_wake_title">Πλήκτρο home</string>
-    <string name="pref_home_wake_summary">Αφύπνιση της συσκευής κατά το πάτημα του πλήκτρου home</string>
-    <string name="pref_volume_wake_title">Πληκτρα έντασης</string>
-    <string name="pref_volume_wake_summary">Αφύπνιση της συσκευής κατά το πάτημα των πλήκτρων έντασης</string>
     <string name="adb_notify">Ειδοποίηση εντοπισμού σφαλμάτων USB</string>
     <string name="adb_notify_summary">Εμφάνιση ειδοποίησης όταν ο εντοπισμός σφαλμάτων μέσω USB είναι ενεργοποιημένος</string>
     <string name="development_tools_title">Εκκίνηση εργαλείων</string>
@@ -507,9 +477,9 @@
     <string name="adb_over_network_warning">ΠΡΟΣΟΧΗ: Όταν ο εντοπισμός σφαλμάτων μέσω δικτύου είναι ενεργοποιημένος, το τηλέφωνό σας είναι ανοικτό για εισβολές σε όλα τα συνδεδεμένα δίκτυα, συμπεριλαμβανομένου του δικτύου GSM δεδομένων!\n\nΧρησιμοποιήστε αυτή τη λειτουργία μόνο όταν είστε συνδεδεμένοι σε έμπιστα δίκτυα.\n\nΘέλετε πραγματικά να ενεργοποιήσετε αυτή τη λειτουργία;</string>
     <string name="lockscreen_buttons_title">Πλήκτρα</string>
     <string name="lockscreen_buttons_summary">Ενέργειες κατά την παρατεταμένη πίεση των πλήκτρων στην οθόνη κλειδώματος</string>
-    <string name="lockscreen_long_press_back_title">Πλήκτρο Back</string>
-    <string name="lockscreen_long_press_home_title">Πλήκτρο Home</string>
-    <string name="lockscreen_long_press_menu_title">Πλήκτρο Menu</string>
+    <string name="lockscreen_long_press_back_title">Πλήκτρο πίσω</string>
+    <string name="lockscreen_long_press_home_title">Πλήκτρο αρχικής οθόνης</string>
+    <string name="lockscreen_long_press_menu_title">Πλήκτρο μενού</string>
     <string name="lockscreen_buttons_no_action">Καμία ενέργεια</string>
     <string name="lockscreen_buttons_flashlight">Φακός</string>
     <string name="lockscreen_buttons_next">Επόμενο τραγούδι</string>
@@ -540,12 +510,10 @@
     <string name="title_tile_sync">Συγχρονισμός</string>
     <string name="title_tile_wifiap">Φορητό σημείο πρόσβασης Wi-Fi</string>
     <string name="title_tile_wifi">Wi-Fi</string>
-    <string name="title_tile_wimax">WiMAX</string>
     <string name="title_tile_user">Εναλλαγή χρήστη</string>
     <string name="title_tile_networkmode">Δίκτυο</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Χρ. όριο οθόνης</string>
-    <string name="title_tile_usb_tether">Πρόσδεση USB</string>
     <string name="title_tile_quiet_hours">Ώρες ησυχίας</string>
     <string name="title_tile_volume">Ένταση</string>
     <string name="title_tile_expanded_desktop">Επέκταση επιφάνειας</string>
@@ -603,10 +571,12 @@
     <string name="headset_connect_player_title">Εκκίνηση εφαρμογής μουσικής</string>
     <string name="headset_connect_player_summary">Εκκίνηση της προεπιλεγμένης εφαρμογής μουσικής κατα τη σύνδεση ακουστικών</string>
     <string name="safe_headset_volume_title">Ασφαλής ένταση ακουστικών</string>
-    <string name="safe_headset_volume_summary">Αποτροπή δυνατού επιπέδου έντασης ήχου όταν τα ακουστικά συνδέονται για πρώτη φορά</string>
     <string name="cyanogenmod_waiver_title">Απαλλαγή ευθυνών</string>
     <string name="cyanogenmod_waiver_body">Η αλλαγή αυτής της ρύθμισης μπορεί να είναι ενάντια στη νομοθεσία της πολιτείας ή της κυβέρνησης σας.\n\nΕπιλέγοντας \'OK\' παρακάτω, αποδέχεστε αυτή την προειδοποίηση και απαλλάσετε το CyanogenMod και τους συνεργάτες του από όλες τις νομικές ευθύνες και υποχρεώσεις.</string>
     <string name="light_sensor_current_value">Τρέχουσα τιμή του αισθητήρα φωτός: <xliff:g id="light_level">%d</xliff:g> lux</string>
+    <string name="auto_brightness_setup_title">Αυτόματη φωτεινότητα</string>
+    <string name="auto_brightness_adjustment_title">Ρύθμιση φωτεινότητας</string>
+    <string name="auto_brightness_twilight_adjustment">Ρύθμιση ανατολής και δύσης του ηλίου</string>
     <string name="auto_brightness_dialog_title">Επίπεδα αυτόματης φωτεινότητας</string>
     <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
     <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
@@ -627,6 +597,33 @@
     <string name="auto_brightness_preview">Προεπισκόπιση</string>
     <string name="auto_brightness_preview_dialog_title">Προεπισκόπιση καμπύλης φωτεινότητας</string>
     <string name="auto_brightness_help_dialog_title">Βοήθεια</string>
+    <string name="auto_brightness_help_text"><b>Πώς υπολογίζεται η φωτεινότητα;</b>
+\n\n
+Η καμπύλη φωτεινότητας υπολογίζεται εκτελώντας μια <i>κυβική παρεμβολή spline</i>
+σε ένα δεδομένο αριθμό <i>σημείων ελέγχου</i>. Δεν είναι ένας \'απλός\' υπολογισμός, όπου
+η φωτεινότητα της οθόνης παραμένει σταθερή για ένα συγκεκριμένο εύρος της φωτεινότητας
+του περιβάλλοντος. Με αυτόν τον τρόπο, μικρές αλλαγές στην φωτεινότητα του περιβάλλοντος
+δεν προκαλούν μεγάλο άλμα στην φωτεινότητα της οθόνης. Ωστόσο, είναι λίγο δύσκολο να
+προβλέψει κανείς τις ακριβείς επιπτώσεις της αλλαγής των σημείων ελέγχου.\n
+Για να βοηθήσουμε σε αυτό, υπάρχει διαθέσιμη μια προεπισκόπηση της υπολογισμένης καμπύλης.
+Παρακαλείστε να σημειώσετε ότι η προεπισκόπηση εμφανίζει την καμπύλη σε <i>λογαριθμική</i>
+κλίμακα, έτσι ώστε όλα τα σημεία ελέγχου να εμφανίζονται ξεχωριστά. Χρησιμοποιώντας
+γραμμική κλίμακα, δεν θα ήταν δυνατόν να γίνει διάκριση των πιο σημαντικών σημείων ελέγχου
+στη χαμηλότερη κλίμακα της φωτεινότητας του περιβάλλοντος.
+\n\n
+<b>Πως να επεξεργαστώ την καμπύλη της φωτεινότητας;</b>
+\n\n
+Κάθε γραμμή στη λίστα φωτεινότητας αντιστοιχεί σε ένα <i>σημείο ελέγχου</i> της
+καμπύλης φωτεινότητας. Για να επεξεργαστείτε το επίπεδο φωτεινότητας του σημείου, μπορείτε
+να χρησιμοποιήσετε το ρυθμιστικό που εμφανίζεται σε κάθε γραμμή. Η φωτεινότητα της οθόνης
+θα τροποποιείται αναλόγως όταν αγγίζετε το ρυθμιστικό, για να δείτε την προεπισκόπηση του
+επιπέδου φωτός.\n
+Πρόσθετες επιλογές είναι διαθέσιμες με παρατεταμένο πάτημα σε κάθε γραμμή. Με την επιλογή
+\'Επεξεργασία\', μπορείτε να επεξεργαστείτε το επίπεδο φωτεινότητας περιβάλλοντος του
+σημείου ελέγχου, καθώς και να κάνετε εισαγωγή με το χέρι την επιθυμητή φωτεινότητα της οθόνης.
+Η επιλογή \'Διαχωρισμός\' σας επιτρέπει να να διαχωρίσετε μια γραμμή σε δύο για να προσθέσετε
+επιπλέον σημεία ελέγχου. Η \'Αφαίρεση\' διαγράφει την επιλεγμένη γραμμή.
+    </string>
     <string name="auto_brightness_sensitivity_title">Ευαισθησία εναλλαγής φωτεινότητας</string>
     <string name="auto_brightness_sensitivity_verylow">Πολύ χαμηλή</string>
     <string name="auto_brightness_sensitivity_low">Χαμηλή</string>
@@ -634,8 +631,7 @@
     <string name="auto_brightness_sensitivity_high">Υψηλή</string>
     <string name="auto_brightness_sensitivity_veryhigh">Πολύ υψηλή</string>
     <string name="advanced_reboot_title">Προηγμένη επανεκκίνηση</string>
-    <string name="advanced_reboot_summary">Όταν είναι ενεργή, περιλαμβάνονται στο power menu οι επιλογές επανεκκίνησης σε λειτουργία recovery ή bootloader</string>
-    <string name="navigation_bar_category">Μπάρα πλοήγησης</string>
+    <string name="advanced_reboot_summary">Όταν είναι ενεργή, περιλαμβάνονται στο μενού πλήκτρου απενεργοποίησης οι επιλογές επανεκκίνησης σε λειτουργία recovery ή bootloader</string>
     <string name="navigation_ring_title">Συντομεύσεις γρήγορης εκκίνησης</string>
     <string name="navring_target_reset_message">Διαγραφή όλων των συντομεύσεων της μπάρας πλοήγησης και επαναφορά στις προεπιλεγμένες;</string>
     <string name="navring_target_reset">Έγινε επαναφορά των συντομεύσεων της μπάρας πλοήγησης στις προεπιλογές</string>
@@ -673,21 +669,15 @@
     <string name="enable_spen_summary_head">Επιτρέπει την εκτέλεση προσαρμοσμένων ενεργειών με το πλήκτρο χειρονομιών γραφίδας. Προσοχή: Οι εφαρμογές δεν θα λαμβάνουν εντολές από την γραφίδα το χρονικό διάστημα που είναι πατημένο το πλήκτρο γραφίδας.</string>
     <string name="gestures_subcat_title">Χειρονομίες</string>
     <string name="gestures_left_spen_title_head">Σύρσιμο αριστερά</string>
-    <string name="gestures_left_spen_summary_head">Επιτρέπει προσαρμοσμένη ενέργεια όταν σύρετε προς τα αριστερά</string>
     <string name="gestures_right_spen_title_head">Σύρσιμο δεξιά</string>
-    <string name="gestures_right_spen_summary_head">Επιτρέπει προσαρμοσμένη ενέργεια όταν σύρετε προς τα δεξιά</string>
     <string name="gestures_up_spen_title_head">Σύρσιμο πάνω</string>
-    <string name="gestures_up_spen_summary_head">Επιτρέπει προσαρμοσμένη ενέργεια όταν σύρετε προς τα πάνω</string>
     <string name="gestures_down_spen_title_head">Σύρσιμο κάτω</string>
-    <string name="gestures_down_spen_summary_head">Επιτρέπει προσαρμοσμένη ενέργεια όταν σύρετε προς τα κάτω</string>
     <string name="gestures_long_spen_title_head">Παρατεταμένο πάτημα</string>
-    <string name="gestures_long_spen_summary_head">Επιτρέπει προσαρμοσμένη ενέργεια κατά το παρατεταμένο πάτημα</string>
     <string name="gestures_double_spen_title_head">Διπλό χτύπημα</string>
-    <string name="gestures_double_spen_summary_head">Επιτρέπει προσαρμοσμένη ενέργεια κατά το διπλό χτύπημα</string>
     <string name="gestures_action_empty">Καμία ενέργεια</string>
-    <string name="gestures_action_home">Εξομοίωση πλήκτρου Home</string>
-    <string name="gestures_action_back">Εξομοίωση πλήκτρου Back</string>
-    <string name="gestures_action_menu">Εξομοίωση πλήκτρου Menu</string>
+    <string name="gestures_action_home">Εξομοίωση πλήκτρου αρχικής οθόνης</string>
+    <string name="gestures_action_back">Εξομοίωση πλήκτρου πίσω</string>
+    <string name="gestures_action_menu">Εξομοίωση πλήκτρου μενού</string>
     <string name="gestures_action_search">Αναζήτηση</string>
     <string name="gestures_action_recent">Πρόσφατες εφαρμογές</string>
     <string name="stylus_app_not_installed">Το %s δεν είναι εγκατεστημένο</string>
@@ -702,6 +692,8 @@
     <string name="power_notifications_ringtone_silent">Αθόρυβο</string>
     <string name="screen_off_animation_title">Εφέ σβησίματος οθόνης</string>
     <string name="screen_off_animation_summary">Εμφάνιση του εφέ electron beam κατά το σβήσιμο της οθόνης</string>
+    <string name="wake_when_plugged_or_unplugged_title">Αφύπνιση κατά τη σύνδεση</string>
+    <string name="wake_when_plugged_or_unplugged_summary">Ενεργοποίηση της οθόνης κατά τη σύνδεση ή την αποσύνδεση του φορτιστή</string>
     <string name="confirm_delete_apn">Το σημείο πρόσβασης θα διαγραφεί.</string>
     <string name="privacy_guard_switch_label">Ενεργοποίηση Privacy Guard</string>
     <string name="privacy_guard_dlg_title">Ενεργοποίηση του Privacy Guard;</string>
@@ -718,5 +710,42 @@
     <string name="privacy_guard_help_text">Εδώ μπορείτε να επιλέξετε για ποιές εφαρμογές θα είναι ενεργό το Privacy Guard απλά πιέζοντας πάνω τους. Οι επιλεγμένες εφαρμογές δεν θα μπορούν να έχουν πρόσβαση στα προσωπικά σας δεδομένα, όπως επαφές, μηνύματα ή το αρχείο κλήσεων. Πιέζοντας παρατεταμένα μια επιλογή, ανοίγει η οθόνη λεπτομερειών της εφαρμογής.\n\nΟι ενσωματωμένες εφαρμογές δεν εμφανίζονται από προεπιλογή. Αν θέλετε να τις εμφανίσετε ή να φιλτράρετε τις εφαρμογές που ζητάνε πρόσβαση στα προσωπικά σας δεδομένα από τις άδειες τους, επιλέξτε τις κατάλληλες ρυθμίσεις στο μενού.</string>
     <string name="privacy_guard_manager_show_system_apps">Εμφάνιση ενσωματωμένων εφαρμογών</string>
     <string name="privacy_guard_manager_filter_permissions">Φίλτρο αδειών</string>
+    <string name="blacklist_title">Μαύρη λίστα</string>
+    <string name="blacklist_edit_dialog_title">Επεξεργασία καταχώρισης</string>
+    <string name="blacklist_prefs">Ρυθμίσεις</string>
+    <string name="blacklist_button_delete">Διαγραφή</string>
+    <string name="blacklist_empty_text">Δεν έχετε κανένα αριθμό στη μαύρη λίστα. Προσθέστε μια καταχώριση με το πλήκτρο +.</string>
+    <string name="blacklist_disabled_empty_text">Για φραγή κλήσεων ή/και μηνυμάτων από συγκεκριμένες επαφές, ενεργοποιήστε τη μαύρη λίστα.</string>
+    <string name="blacklist_summary_disabled">Απενεργοποιημένη</string>
+    <string name="blacklist_summary">Εισερχόμενες κλήσεις και μηνύματα από αριθμούς που είναι στη μαύρη λίστα θα απορρίπτονται</string>
+    <string name="blacklist_notify">Εμφάνιση ειδοποίησης</string>
+    <string name="blacklist_private_numbers_title">Απόρρητοι αριθμοί</string>
+    <string name="blacklist_private_numbers_summary_disabled">Να μην γίνεται φραγή κλήσεων από απόρρητους αριθμούς</string>
+    <string name="blacklist_private_numbers_summary">Φραγή εισερχόμενων <xliff:g id="type">%s</xliff:g> από απόρρητους αριθμούς</string>
+    <string name="blacklist_unknown_numbers_title">Άγνωστοι αριθμοί</string>
+    <string name="blacklist_unknown_numbers_summary_disabled">Να μην γίνεται φραγή κλήσεων ή μηνυμάτων από αριθμούς που δεν είναι στη λίστα επαφών</string>
+    <string name="blacklist_unknown_numbers_summary">Φραγή εισερχόμενων <xliff:g id="type">%s</xliff:g> από αριθμούς που δεν είναι στη λίστα επαφών</string>
+    <string name="blacklist_summary_type_calls_only">κλήσεων</string>
+    <string name="blacklist_summary_type_messages_only">μηνυμάτων</string>
+    <string name="blacklist_summary_type_calls_and_messages">κλήσεων και μηνυμάτων</string>
+    <string name="blacklist_regex_title">Χρήση μπαλαντέρ</string>
+    <string name="blacklist_regex_summary">Χρήση . ως μπαλαντέρ και * για επανάληψη. Π.χ. το 123.* μπλοκάρει αριθμούς που ξεκινούν από 123 και το .*123.* μπλοκάρει αριθμούς που περιέχουν το 123</string>
+    <string name="blacklist_policy_block_calls">Φραγή εισερχόμενων κλήσεων</string>
+    <string name="blacklist_policy_block_messages">Φραγή εισερχόμενων μηνυμάτων</string>
+    <string name="add_blacklist_number">Προσθήκη αριθμού</string>
+    <string name="remove_blacklist_number_title">Αφαίρεση αριθμού</string>
+    <string name="remove_blacklist_entry">Θέλετε να αφαιρέσετε αυτή την καταχώριση από τη μαύρη λίστα;</string>
+    <string name="select_contact">Επιλογή επαφής</string>
+    <string name="vibrator_intensity_title">Ένταση δόνησης</string>
+    <string name="vibrator_warning">Δεν συνιστώνται τιμές άνω του %1$d</string>
+    <string name="color_calibration_title">Βελτίωση χρωμάτων</string>
+    <string name="color_calibration_summary">Βελτίωση των χρωμάτων της οθόνης</string>
+    <string name="color_red_title">Κόκκινο</string>
+    <string name="color_green_title">Πράσινο</string>
+    <string name="color_blue_title">Μπλε</string>
+    <string name="more_device_controls_title">Περισσότερα\u2026</string>
+    <string name="more_device_settings_title">Άλλες ρυθμίσεις συσκευής</string>
+    <string name="sensors_motors_title">Αισθητήρες &amp; κινητήρες</string>
+    <string name="display_calibration_title">Βελτίωση οθόνης</string>
     <string name="intent_sender_data_label"><xliff:g id="data">Δεδομένα:</xliff:g></string>
 </resources>
