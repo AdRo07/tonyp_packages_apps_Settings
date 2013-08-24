@@ -326,7 +326,10 @@
     <string name="cpu_min_freq_summary" translatable="false">%s</string>
     <string name="cpu_max_freq_title">Maximum CPU frequency</string>
     <string name="cpu_max_freq_summary" translatable="false">%s</string>
-    <string name="cpu_set_on_boot">Set on boot</string>
+	<string name="pref_cpu_second_core_auto_hotplug_title">2. Core auto hotplug</string>
+	<string name="pref_cpu_second_core_auto_hotplug_summary">When enalbed second core will be turned off, when not needed</string>
+    <string name="pref_cpu_single_core_mode_title">Single core mode</string>
+    <string name="pref_cpu_single_core_mode_summary">When enabled only the first core will be online, others will be shut down</string>
     <string name="cpu_set_on_boot_summary">Restore the processor settings on boot</string>
 
     <!-- Performance Settings : I/O scheduler settings title -->

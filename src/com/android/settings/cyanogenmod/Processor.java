@@ -19,6 +19,7 @@ package com.android.settings.cyanogenmod;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
@@ -43,6 +44,10 @@ public class Processor extends SettingsPreferenceFragment implements
     public static final String FREQ_MIN_PREF = "pref_cpu_freq_min";
     public static final String FREQ_MAX_PREF = "pref_cpu_freq_max";
     public static final String FREQ_LIST_FILE = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies";
+	public static final String SC_AH_FILE = "/sys/kernel/auto_hotplug/auto_hotplug_enabled";
+	public static final String SC_AH = "pref_cpu_second_core_auto_hotplug";
+    public static final String SCM_FILE = "/sys/kernel/auto_hotplug/single_core_mode";
+	public static final String SCM = "pref_cpu_single_core_mode";
     public static String FREQ_MAX_FILE = null;
     public static String FREQ_MIN_FILE = null;
     public static final String SOB_PREF = "pref_cpu_set_on_boot";
@@ -56,6 +61,8 @@ public class Processor extends SettingsPreferenceFragment implements
     private String mMaxFrequencyFormat;
 
     private Preference mCurFrequencyPref;
+    private CheckBoxPreference mAutoHotplugPref;
+    private CheckBoxPreference mSingleCorePref;
     private ListPreference mGovernorPref;
     private ListPreference mMinFrequencyPref;
     private ListPreference mMaxFrequencyPref;
@@ -122,6 +129,8 @@ public class Processor extends SettingsPreferenceFragment implements
         mCurFrequencyPref = (Preference) prefScreen.findPreference(FREQ_CUR_PREF);
         mMinFrequencyPref = (ListPreference) prefScreen.findPreference(FREQ_MIN_PREF);
         mMaxFrequencyPref = (ListPreference) prefScreen.findPreference(FREQ_MAX_PREF);
+		mAutoHotplugPref = (CkeckBoxPreference) prefScreen.findPreference(SC_AH);
+        mSingleCorePref = (CkeckBoxPreference) prefScreen.findPreference(SCM);
 
         /* Governor
         Some systems might not use governors */
@@ -166,9 +175,8 @@ public class Processor extends SettingsPreferenceFragment implements
             // Max frequency
             if (!Utils.fileExists(FREQ_MAX_FILE) || (temp = Utils.fileReadOneLine(FREQ_MAX_FILE)) == null) {
                 mMaxFrequencyPref.setEnabled(false);
-
             } else {
-                mMaxFrequencyPref.setEntryValues(availableFrequencies);
+        	    mMaxFrequencyPref.setEntryValues(availableFrequencies);
                 mMaxFrequencyPref.setEntries(frequencies);
                 mMaxFrequencyPref.setValue(temp);
                 mMaxFrequencyPref.setSummary(String.format(mMaxFrequencyFormat, toMHz(temp)));
@@ -188,6 +196,25 @@ public class Processor extends SettingsPreferenceFragment implements
             mCurFrequencyPref.setSummary(toMHz(temp));
 
             mCurCPUThread.start();
+        }
+
+        boolean autoHotplugActive = false;
+		//Second Core Auto Hotplug 
+        if (!Utils.fileExists(SC_AH_FILE) || (temp = Utils.fileReadOneLine(SC_AH_FILE)) == null) {
+            prefScreen.removePreference(mAutoHotplugPref);
+
+        } else {
+            mAutoHotplugPref.setChecked((temp.equals("1") ? true : false);
+            mAutoHotplugPref.setOnPreferenceChangeListener(this);
+        }
+
+        //Single Core Mode 
+        if (!Utils.fileExists(SCM_FILE) || (temp = Utils.fileReadOneLine(SCM_FILE)) == null) {
+            prefScreen.removePreference(mSingleCorePref);
+
+        } else {
+            mSingleCorePref.setChecked((temp.equals("1") ? true : false);
+            mSingleCorePref.setOnPreferenceChangeListener(this);
         }
     }
 
@@ -236,6 +263,12 @@ public class Processor extends SettingsPreferenceFragment implements
                 fname = FREQ_MIN_FILE;
             } else if (preference == mMaxFrequencyPref) {
                 fname = FREQ_MAX_FILE;
+            } else if (preference == mAutoHotplugPref) {
+                fname = SC_AH_FILE;
+                newValue = newValue.toString().equals("true") ? "1" : "0";
+            } else if (preference == mSingleCorePref) {
+                fname = SCM_FILE;
+                newValue = newValue.toString().equals("true") ? "1" : "0";
             }
 
             if (Utils.fileWriteOneLine(fname, (String) newValue)) {
