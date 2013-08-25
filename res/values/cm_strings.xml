@@ -1028,10 +1028,4 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="storage_switch_summary_on">Using SD Card for apps and media</string>
     <string name="reboot_prompt_title">Reboot required</string>
     <string name="reboot_prompt_message">In order to apply the changed configuration, a reboot is required.\n\nDo you want to reboot now?</string>
-
-    <!-- Donate -->
-    <string name="display_donate_options_title">DONATE</string>
-    <string name="donate_tonyp_title">Donate</string>
-    <string name="donate_tonyp_summary">If you like my work consider to show your support by donating</string>
-    <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick\u0026hosted_button_id=RL7NJSUDNQNZU</string>
 </resources>
