@@ -47,10 +47,23 @@ public class Processor extends SettingsPreferenceFragment implements
 	public static final String SC_AH_FILE = "/sys/kernel/auto_hotplug/auto_hotplug_enabled";
 	public static final String SC_AH = "pref_cpu_second_core_auto_hotplug";
     public static final String SCM_FILE = "/sys/kernel/auto_hotplug/single_core_mode";
-	public static final String SCM = "pref_cpu_single_core_mode";
+    public static final String SCM = "pref_cpu_single_core_mode";
+    public static final String SCHED_PS = "pref_cpu_sched_power_savings";
+    public static final String SCHED_PS_FILE = "/sys/devices/system/cpu/sched_mc_power_savings";
     public static String FREQ_MAX_FILE = null;
     public static String FREQ_MIN_FILE = null;
     public static final String SOB_PREF = "pref_cpu_set_on_boot";
+
+    public static final String[] SCHED_PS_MODES = new String[]{
+        "No power saving load balance",
+        "Fill one thread/core/package first for long running threads",
+        "Also bias task wakeups to semi-idle cpu package for power savings"
+    };
+    public static final String[] SCHED_PS_MODES_SHORT = new String[]{
+        "No load balance",
+        "Mid load balance",
+        "Max load balance"
+    };
 
     protected static boolean freqCapFilesInitialized = false;
 
@@ -66,6 +79,7 @@ public class Processor extends SettingsPreferenceFragment implements
     private ListPreference mGovernorPref;
     private ListPreference mMinFrequencyPref;
     private ListPreference mMaxFrequencyPref;
+    private ListPreference mSchedPSPref;
 
     private class CurCPUThread extends Thread {
         private boolean mInterrupt = false;
@@ -129,8 +143,9 @@ public class Processor extends SettingsPreferenceFragment implements
         mCurFrequencyPref = (Preference) prefScreen.findPreference(FREQ_CUR_PREF);
         mMinFrequencyPref = (ListPreference) prefScreen.findPreference(FREQ_MIN_PREF);
         mMaxFrequencyPref = (ListPreference) prefScreen.findPreference(FREQ_MAX_PREF);
-		mAutoHotplugPref = (CkeckBoxPreference) prefScreen.findPreference(SC_AH);
-        mSingleCorePref = (CkeckBoxPreference) prefScreen.findPreference(SCM);
+        mSchedPSPref = (ListPreference) prefScreen.findPreference(SCHED_PS);
+        mAutoHotplugPref = (CheckBoxPreference) prefScreen.findPreference(SC_AH);
+        mSingleCorePref = (CheckBoxPreference) prefScreen.findPreference(SCM);
 
         /* Governor
         Some systems might not use governors */
@@ -163,7 +178,6 @@ public class Processor extends SettingsPreferenceFragment implements
             // Min frequency
             if (!Utils.fileExists(FREQ_MIN_FILE) || (temp = Utils.fileReadOneLine(FREQ_MIN_FILE)) == null) {
                 mMinFrequencyPref.setEnabled(false);
-
             } else {
                 mMinFrequencyPref.setEntryValues(availableFrequencies);
                 mMinFrequencyPref.setEntries(frequencies);
@@ -191,7 +205,6 @@ public class Processor extends SettingsPreferenceFragment implements
 
         if (!Utils.fileExists(FREQ_CUR_FILE) || (temp = Utils.fileReadOneLine(FREQ_CUR_FILE)) == null) {
             mCurFrequencyPref.setEnabled(false);
-
         } else {
             mCurFrequencyPref.setSummary(toMHz(temp));
 
@@ -202,19 +215,32 @@ public class Processor extends SettingsPreferenceFragment implements
 		//Second Core Auto Hotplug 
         if (!Utils.fileExists(SC_AH_FILE) || (temp = Utils.fileReadOneLine(SC_AH_FILE)) == null) {
             prefScreen.removePreference(mAutoHotplugPref);
-
         } else {
-            mAutoHotplugPref.setChecked((temp.equals("1") ? true : false);
+            mAutoHotplugPref.setChecked(temp.equals("1") ? true : false);
             mAutoHotplugPref.setOnPreferenceChangeListener(this);
         }
 
         //Single Core Mode 
         if (!Utils.fileExists(SCM_FILE) || (temp = Utils.fileReadOneLine(SCM_FILE)) == null) {
             prefScreen.removePreference(mSingleCorePref);
-
         } else {
-            mSingleCorePref.setChecked((temp.equals("1") ? true : false);
+            mSingleCorePref.setChecked(temp.equals("1") ? true : false);
             mSingleCorePref.setOnPreferenceChangeListener(this);
+        }
+
+        //Sched power savings
+        if (!Utils.fileExists(SCHED_PS_FILE) || (temp = Utils.fileReadOneLine(SCHED_PS_FILE)) == null) {
+            prefScreen.removePreference(mSchedPSPref);
+        } else {
+            try {
+                mSchedPSPref.setEntryValues(new String[]{"0", "1", "2"});
+                mSchedPSPref.setEntries(SCHED_PS_MODES_SHORT);
+                mSchedPSPref.setValue(temp);
+                mSchedPSPref.setSummary(SCHED_PS_MODES[Integer.valueOf(temp)]);
+                mSchedPSPref.setOnPreferenceChangeListener(this);
+            } catch (Exception ex){
+                prefScreen.removePreference(mSchedPSPref);
+            }
         }
     }
 
@@ -269,6 +295,8 @@ public class Processor extends SettingsPreferenceFragment implements
             } else if (preference == mSingleCorePref) {
                 fname = SCM_FILE;
                 newValue = newValue.toString().equals("true") ? "1" : "0";
+            } else if (preference == mSchedPSPref) {
+                fname = SCHED_PS_FILE;
             }
 
             if (Utils.fileWriteOneLine(fname, (String) newValue)) {
@@ -280,6 +308,9 @@ public class Processor extends SettingsPreferenceFragment implements
                 } else if (preference == mMaxFrequencyPref) {
                     mMaxFrequencyPref.setSummary(String.format(mMaxFrequencyFormat,
                             toMHz((String) newValue)));
+                } else if (preference == mSchedPSPref) {
+                    int pos = Integer.valueOf((String)newValue);
+                    mSchedPSPref.setSummary(SCHED_PS_MODES[pos] + "\n[" + SCHED_PS_MODES_SHORT[pos] + "]");
                 }
                 return true;
             } else {

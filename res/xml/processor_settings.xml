@@ -40,6 +40,11 @@
         android:dialogTitle="@string/cpu_max_freq_title"
         android:title="@string/cpu_max_freq_title" />
 
+    <ListPreference
+        android:key="pref_cpu_sched_power_savings"
+        android:dialogTitle="@string/cpu_sched_power_savings_title"
+        android:title="@string/cpu_sched_power_savings_title" />
+
 	<CheckBoxPreference
         android:key="pref_cpu_second_core_auto_hotplug"
         android:title="@string/pref_cpu_second_core_auto_hotplug_title"

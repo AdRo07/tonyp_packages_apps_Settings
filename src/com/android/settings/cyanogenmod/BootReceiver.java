@@ -95,10 +95,14 @@ public class BootReceiver extends BroadcastReceiver {
         String governor = prefs.getString(Processor.GOV_PREF, null);
         String minFrequency = prefs.getString(Processor.FREQ_MIN_PREF, null);
         String maxFrequency = prefs.getString(Processor.FREQ_MAX_PREF, null);
+        String schedPS = prefs.getString(Processor.SCHED_PS, null);
         String availableFrequenciesLine = Utils.fileReadOneLine(Processor.FREQ_LIST_FILE);
         String availableGovernorsLine = Utils.fileReadOneLine(Processor.GOV_LIST_FILE);
+        boolean autoHotplug = prefs.getBoolean(Processor.SC_AH, false);
+        boolean singleCoreMode = prefs.getBoolean(Processor.SCM_FILE, false);
         boolean noSettings = ((availableGovernorsLine == null) || (governor == null)) &&
-                             ((availableFrequenciesLine == null) || ((minFrequency == null) && (maxFrequency == null)));
+                             ((availableFrequenciesLine == null) || ((minFrequency == null) && (maxFrequency == null)) &&
+                             (!autoHotplug && !singleCoreMode));
         List<String> frequencies = null;
         List<String> governors = null;
 
@@ -120,6 +124,15 @@ public class BootReceiver extends BroadcastReceiver {
             }
             if (governor != null && governors != null && governors.contains(governor)) {
                 Utils.fileWriteOneLine(Processor.GOV_FILE, governor);
+            }
+            if(schedPS != null) {
+                Utils.fileWriteOneLine(Processor.SCHED_PS_FILE, schedPS);
+            }
+            if(autoHotplug) {
+                Utils.fileWriteOneLine(Processor.SC_AH_FILE, "1");
+            }
+            if(singleCoreMode) {
+                Utils.fileWriteOneLine(Processor.SCM, "1");
             }
             Log.d(TAG, "CPU settings restored.");
         }
