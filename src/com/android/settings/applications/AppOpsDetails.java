@@ -28,7 +28,7 @@ import android.content.pm.PermissionGroupInfo;
 import android.content.pm.PermissionInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceDrawerActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -162,7 +162,7 @@ public class AppOpsDetails extends Fragment {
     private void setIntentAndFinish(boolean finish, boolean appChanged) {
         Intent intent = new Intent();
         intent.putExtra(ManageApplications.APP_CHG, appChanged);
-        PreferenceActivity pa = (PreferenceActivity)getActivity();
+        PreferenceDrawerActivity pa = (PreferenceDrawerActivity)getActivity();
         pa.finishPreferencePanel(this, Activity.RESULT_OK, intent);
     }
 
