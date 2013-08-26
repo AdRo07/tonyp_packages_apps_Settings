@@ -20,10 +20,10 @@ import com.android.settings.ButtonBarHandler;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceDrawerActivity;
 import android.widget.Button;
 
-public class WifiPickerActivity extends PreferenceActivity implements ButtonBarHandler {
+public class WifiPickerActivity extends PreferenceDrawerActivity implements ButtonBarHandler {
 
     // Same as what are in PreferenceDrawerActivity as private.
     private static final String EXTRA_PREFS_SHOW_BUTTON_BAR = "extra_prefs_show_button_bar";
