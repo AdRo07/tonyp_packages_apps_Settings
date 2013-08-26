@@ -977,10 +977,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="sensors_motors_title">Sensors &amp; motors</string>
     <string name="display_calibration_title">Display calibration</string>
 
-    <!-- Memory Management -->
-    <string name="pref_tonyp_minfree_title">tonyp memory optimizations</string>
-    <string name="pref_tonyp_minfree_summary">Optimize the memory management to minimize lags. Uncheck this to return to stock behaviour (requires reboot)</string>
-
     <!-- Vold Switchable Pair -->
     <string name="storage_switch_title">Use external SD as primary</string>
     <string name="storage_switch_summary_off">Using expanded internal storage for apps and media</string>
@@ -993,6 +989,52 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_quick_access">Show in drawer</string>
     <string name="title_quick_access_linked">Linked layout</string>
     <string name="summary_quick_access_linked">Use the same tiles and layout as the Quick Settings panel</string>
+
+    <!-- **** TONYP STUFF **** -->
+    <!-- tonyp minfree -->
+    <string name="pref_tonyp_minfree_title">tonyp memory optimizations</string>
+    <string name="pref_tonyp_minfree_summary">Optimize the memory management to minimize lags. Uncheck this to return to stock behaviour (requires reboot)</string>
+
+    <!-- Custom carrier -->
+    <string name="custom_carrier_label_title">Custom carrier text</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty one to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom carrier text currently not set</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on Color to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">!!!</string>
+    
+    <!-- HALO -->
+    <!-- Label for are-notifications-enabled checkbox in app details [CHAR LIMIT=20] -->
+    <string name="app_halo_label_black">Blacklist HALO notifications</string>
+    <string name="app_halo_label_white">Whitelist HALO notifications</string>
+
+    <string name="halo_settings_title">Halo options</string>
+    <string name="halo_hide_title">Hide HALO after activity</string>
+    <string name="halo_hide_summary">HALO will appear for incoming tasks and scroll out of sight after a while</string>
+    <string name="halo_reversed_title">Reverse HALO</string>
+    <string name="halo_reversed_summary">Applies for task switching and moving gestures</string>
+    <string name="halo_state_title">HALO policy</string>
+    <string name="halo_state_summary">Enables black/white listing notifications</string>
+    <string name="halo_state_black">Black list</string>
+    <string name="halo_state_white">White list</string>
+    <string name="halo_pause_title">Pause active app</string>
+    <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused</string>
+
+    <string name="halo_size_title">HALO size</string>
+    <string name="halo_size_summary">Defines how big HALO is going to be</string>
+    <string name="halo_size_miniscule">Miniscule</string>
+    <string name="halo_size_small">Small</string>
+    <string name="halo_size_default">Normal (default)</string>
+    <string name="halo_size_large">Large</string>
+    <string name="halo_size_gigantic">Gigantic</string>
+    <string name="halo_size_monster">Monster</string>
 
     <!-- Center Clock -->
     <string name="status_bar_center_clock_title">Center clock</string>
@@ -1069,4 +1111,34 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <string name="alert_reboot">Reboot needed</string>
     <string name="alert_reboot_message">This change needs a reboot to be applied. Do you want to reboot now?</string>
+
+    <!-- tonyp settings -->
+    <string name="tonyp_settings_title">tonyp settings</string>
+    <string name="display_hybrid_options_title">HYBRID</string>
+    <string name="display_halo_options_title">HALO</string>
+    <string name="display_various_options_title">VARIOUS</string>
+    <string name="display_donate_options_title">DONATE</string>
+
+    <!-- Donate -->
+    <string name="donate_tonyp_title">Donate</string>
+    <string name="donate_tonyp_summary">If you like my work consider to show your support by donating</string>
+    <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick\u0026hosted_button_id=RL7NJSUDNQNZU</string>
+
+
+    <!-- Brightness Slider -->
+    <string name="power_widget_additional_options_cat">Additional options</string>
+    <string name="brightness_location_title">Brightness slider location</string>
+    <string name="brightness_slider_top">On top</string>
+    <string name="brightness_slider_bottom">On the bottom</string>
+    <string name="brightness_slider_none">Don\'t Show</string>
+
+    <!--  Advanced low battery indicator -->
+    <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
+    <string name="pref_low_battery_warning_policy_dialog_title">Indicate low battery warning with</string>
+    <string name="low_battery_warning_policy_popup_sound">Pop-up and sound</string>
+    <string name="low_battery_warning_policy_notif_sound">Notification and sound</string>
+    <string name="low_battery_warning_policy_popup">Pop-up dialog only</string>
+    <string name="low_battery_warning_policy_notif">Notification only</string>
+    <string name="low_battery_warning_policy_sound">Sound only</string>
+    <string name="low_battery_warning_policy_disabled">Disabled</string>
 </resources>

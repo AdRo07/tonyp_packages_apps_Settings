@@ -62,12 +62,12 @@
     <header android:id="@+id/interface_section"
         android:title="@string/header_category_interface" />
 
-    <!-- Hybrid -->
+    <!-- tonyp -->
     <header
-        android:id="@+id/hybrid_settings"
-        android:title="@string/hybrid_settings_title"
-        android:icon="@drawable/ic_settings_jellybeer"
-        android:fragment="com.android.settings.hybrid.HybridSettings" />
+        android:id="@+id/tonyp_settings"
+        android:title="@string/tonyp_settings_title"
+        android:icon="@drawable/ic_settings_advanced"
+        android:fragment="com.android.settings.tonyp.tonypSettings" />
 
     <!-- Homescreen -->
     <header

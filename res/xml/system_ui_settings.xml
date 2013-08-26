@@ -60,7 +60,7 @@
             android:fragment="com.android.settings.cyanogenmod.NavRing"
             android:title="@string/navigation_ring_title" />
     </PreferenceCategory>
-    
+
     <PreferenceScreen
         android:key="pie_control"
         android:fragment="com.android.settings.cyanogenmod.PieControl"

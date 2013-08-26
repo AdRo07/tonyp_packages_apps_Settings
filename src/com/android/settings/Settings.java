@@ -103,6 +103,7 @@ public class Settings extends PreferenceDrawerActivity
     private Header mFirstHeader;
     private Header mCurrentHeader;
     private Header mParentHeader;
+    private Header tonypHeader;
     private boolean mInLocalHeaderSwitch;
 
     // Show only these settings for restricted users
@@ -445,6 +446,8 @@ public class Settings extends PreferenceDrawerActivity
             int id = (int) header.id;
             if (id == R.id.operator_settings || id == R.id.manufacturer_settings) {
                 Utils.updateHeaderToSpecificActivityFromMetaDataOrRemove(this, target, header);
+            } else if (id == R.id.tonyp_settings) {
+                tonypHeader = header;
             } else if (id == R.id.homescreen_settings) {
                 Intent launcherIntent = new Intent(Intent.ACTION_MAIN);
                 launcherIntent.addCategory(Intent.CATEGORY_HOME);
@@ -530,7 +533,7 @@ public class Settings extends PreferenceDrawerActivity
                 // Hold on to the first header, when we need to reset to the top-level
                 if (mFirstHeader == null &&
                         HeaderAdapter.getHeaderType(header) != HeaderAdapter.HEADER_TYPE_CATEGORY) {
-                    mFirstHeader = header;
+                    mFirstHeader = tonypHeader;
                 }
                 mHeaderIndexMap.put(id, i);
                 i++;
