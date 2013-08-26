@@ -122,12 +122,12 @@ public class Memory extends SettingsPreferenceFragment {
             removePreference(KEY_SWITCH_STORAGE);
         }
 
-        addCategory(StorageVolumePreferenceCategory.buildForInternal(context));
+        //temp hack addCategory(StorageVolumePreferenceCategory.buildForInternal(context));
 
         final StorageVolume[] storageVolumes = mStorageManager.getVolumeList();
         for (StorageVolume volume : storageVolumes) {
             if (!volume.isEmulated()) {
-                addCategory(StorageVolumePreferenceCategory.buildForPhysical(context, volume));
+                //temp hack addCategory(StorageVolumePreferenceCategory.buildForPhysical(context, volume));
             }
         }
 
