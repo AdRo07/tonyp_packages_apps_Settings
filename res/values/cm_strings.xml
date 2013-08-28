@@ -1005,6 +1005,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_quick_access">Show in drawer</string>
     <string name="title_quick_access_linked">Linked layout</string>
     <string name="summary_quick_access_linked">Use the same tiles and layout as the Quick Settings panel</string>
+    <string name="title_show_brightness_slider">Brightness Slider Mode</string>
+
+    <string name="show_brightness_slider_dont">Don\'t show</string>
+    <string name="show_brightness_slider_above">Above Ribbons</string>
+    <string name="show_brightness_slider_below">Below Ribbons</string>
 
     <!-- **** TONYP STUFF **** -->
     <!-- tonyp minfree -->

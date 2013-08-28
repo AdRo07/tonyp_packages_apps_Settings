@@ -28,6 +28,13 @@
         android:key="category_various_options"
         android:title="@string/display_various_options_title" >
 
+        <ListPreference
+            android:key="show_brightness_slider"
+            android:title="@string/title_show_brightness_slider"
+            android:dialogTitle="@string/title_show_brightness_slider"
+            android:entries="@array/show_brightness_slider_entries"
+            android:entryValues="@array/show_brightness_slider_values" />
+
         <PreferenceScreen
             android:key="custom_carrier_label"
             android:title="@string/custom_carrier_label_title" />

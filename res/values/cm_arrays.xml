@@ -600,6 +600,18 @@
         <item>2</item>
     </string-array>
 
+    <string-array name="show_brightness_slider_entries" translatable="false">
+        <item>@string/show_brightness_slider_dont</item>
+        <item>@string/show_brightness_slider_above</item>
+        <item>@string/show_brightness_slider_below</item>
+    </string-array>
+
+    <string-array name="show_brightness_slider_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <string-array name="blacklist_policy_unknown_entries" translatable="false">
         <item>@string/blacklist_policy_block_calls</item>
         <item>@string/blacklist_policy_block_messages</item>
