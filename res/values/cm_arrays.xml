@@ -424,6 +424,11 @@
         <item>@string/hardware_keys_action_search</item>
         <item>@string/hardware_keys_action_voice_search</item>
         <item>@string/hardware_keys_action_in_app_search</item>
+        <item>@string/hardware_keys_action_screen_off</item>
+        <item>@string/hardware_keys_action_power_menu</item>
+        <item>@string/hardware_keys_action_last_app</item>
+        <item>@string/hardware_keys_action_torch</item>
+        <item>@string/hardware_keys_action_screenshot</item>
     </string-array>
 
     <string-array name="hardware_keys_action_values" translatable="false">
@@ -433,7 +438,13 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
     </string-array>
+
 
     <!-- Volume key cursor control -->
     <string-array name="volbtn_cursor_control_entries" translatable="false">
