@@ -20,6 +20,7 @@ import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.RemoteException;
+import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -36,8 +37,10 @@ public class NotificationDrawer extends SettingsPreferenceFragment  implements
     private static final String TAG = "NotificationDrawer";
 
     private static final String UI_COLLAPSE_BEHAVIOUR = "notification_drawer_collapse_on_dismiss";
+    private static final String BRIGHTNESS_SLIDER = "show_brightness_slider";
 
     private ListPreference mCollapseOnDismiss;
+    private ListPreference mShowBrightnessSlider;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,13 @@ public class NotificationDrawer extends SettingsPreferenceFragment  implements
         mCollapseOnDismiss.setValue(String.valueOf(collapseBehaviour));
         mCollapseOnDismiss.setOnPreferenceChangeListener(this);
         updateCollapseBehaviourSummary(collapseBehaviour);
+
+        int mode = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.SHOW_BRIGHTNESS_SLIDER, 0, UserHandle.USER_CURRENT);
+        mCollapseOnDismiss.setValue(String.valueOf(mode));
+        mShowBrightnessSlider = (ListPreference) findPreference(BRIGHTNESS_SLIDER);
+        mShowBrightnessSlider.setOnPreferenceChangeListener(this);
+        updateBrightnessSlider(mode);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
@@ -62,6 +72,12 @@ public class NotificationDrawer extends SettingsPreferenceFragment  implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_COLLAPSE_ON_DISMISS, value);
             updateCollapseBehaviourSummary(value);
+            return true;
+        } else if(preference == mShowBrightnessSlider) {
+            int value = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SHOW_BRIGHTNESS_SLIDER, value);
+            updateBrightnessSlider(value);
             return true;
         }
 
@@ -72,5 +88,11 @@ public class NotificationDrawer extends SettingsPreferenceFragment  implements
         String[] summaries = getResources().getStringArray(
                 R.array.notification_drawer_collapse_on_dismiss_summaries);
         mCollapseOnDismiss.setSummary(summaries[setting]);
+    }
+
+    private void updateBrightnessSlider(int setting) {
+        String[] summaries = getResources().getStringArray(
+                R.array.show_brightness_slider_entries);
+        mShowBrightnessSlider.setSummary(summaries[setting]);
     }
 }
