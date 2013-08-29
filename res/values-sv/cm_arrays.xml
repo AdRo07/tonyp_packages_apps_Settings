@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 The CyanogenMod Project
+<!-- Copyright (C) 2013 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,56 +15,51 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string-array name="wifi_countrycode_entries">
-        <item>Yhdysvallat</item>
+        <item>USA</item>
         <item>Kanada, Taiwan</item>
-        <item>Saksa</item>
-        <item>Eurooppa</item>
-        <item>Japani, Venäjä</item>
-        <item>Australia</item>
-        <item>Kiina</item>
+        <item>Tyskland</item>
+        <item>Europa</item>
+        <item>Japan, Ryssland</item>
+        <item>Australien</item>
+        <item>Kina</item>
         <item>Korea</item>
-        <item>Turkki</item>
+        <item>Turkiet</item>
         <item>Singapore</item>
-        <item>Brasilia</item>
+        <item>Brasilien</item>
     </string-array>
-
     <string-array name="volume_overlay_entries">
-        <item>Yksittäinen</item>
-        <item>Laajennettava</item>
-        <item>Laajennettu</item>
-        <item>Pois käytöstä</item>
+        <item>Enkel</item>
+        <item>Utökningsbar</item>
+        <item>Utökad</item>
+        <item>Ingen</item>
     </string-array>
-
+    <string-array name="pref_zram_size_entries">
+        <item>Avaktiverad</item>
+        <item>10%</item>
+        <item>18% (standard)</item>
+        <item>26%</item>
+    </string-array>
     <string-array name="profile_entries">
-        <item>Päällä</item>
-        <item>Pois päältä</item>
-        <item>Ei ohitusta</item>
+        <item>På</item>
+        <item>Av</item>
+        <item>Ingen åsidosättning</item>
     </string-array>
-
     <string-array name="profile_connection_entries">
-       <item>Pois käytöstä</item>
-       <item>Ota käyttöön</item>
+        <item>Avaktivera</item>
+        <item>Aktivera</item>
     </string-array>
-
-    <string-array name="entries_screentimeout_widget">
-        <item>15s/1m/5m</item>
-        <item>30s/2m/5m</item>
-    </string-array>
-
     <string-array name="entries_flash_widget">
-        <item>Normaali</item>
-        <item>Korkea</item>
+        <item>Normal</item>
+        <item>Hög</item>
     </string-array>
-
     <string-array name="haptic_feedback_entries">
-        <item>Käytä yleisiä asetuksia</item>
-        <item>Päällä</item>
-        <item>Pois päältä</item>
+        <item>Använd global inställning</item>
+        <item>På</item>
+        <item>Av</item>
     </string-array>
-
     <string-array name="entries_status_bar_am_pm">
-        <item>Normaali</item>
-        <item>Pieni</item>
-        <item>Ei käytössä</item>
+        <item>Normal</item>
+        <item>Liten</item>
+        <item>Ingen</item>
     </string-array>
 </resources>

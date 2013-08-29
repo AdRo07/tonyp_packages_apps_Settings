@@ -15,56 +15,55 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string-array name="wifi_countrycode_entries">
-        <item>Yhdysvallat</item>
+        <item>Spojené štáty</item>
         <item>Kanada, Taiwan</item>
-        <item>Saksa</item>
-        <item>Eurooppa</item>
-        <item>Japani, Venäjä</item>
-        <item>Australia</item>
-        <item>Kiina</item>
-        <item>Korea</item>
-        <item>Turkki</item>
-        <item>Singapore</item>
-        <item>Brasilia</item>
+        <item>Nemecko</item>
+        <item>Európa</item>
+        <item>Japonsko, Rusko</item>
+        <item>Austrália</item>
+        <item>Čína</item>
+        <item>Kórea</item>
+        <item>Turecko</item>
+        <item>Singapur</item>
+        <item>Brazília</item>
     </string-array>
-
     <string-array name="volume_overlay_entries">
-        <item>Yksittäinen</item>
-        <item>Laajennettava</item>
-        <item>Laajennettu</item>
-        <item>Pois käytöstä</item>
+        <item>Jednoduchý</item>
+        <item>Rozšíriteľný</item>
+        <item>Rozšírený</item>
+        <item>Žiadny</item>
     </string-array>
-
+    <string-array name="pref_zram_size_entries">
+        <item>Zakázané</item>
+        <item>10%</item>
+        <item>18% (predvolené)</item>
+        <item>26%</item>
+    </string-array>
     <string-array name="profile_entries">
-        <item>Päällä</item>
-        <item>Pois päältä</item>
-        <item>Ei ohitusta</item>
+        <item>Zapnúť</item>
+        <item>Vypnúť</item>
+        <item>Neprepisovať</item>
     </string-array>
-
     <string-array name="profile_connection_entries">
-       <item>Pois käytöstä</item>
-       <item>Ota käyttöön</item>
+        <item>Zakázať</item>
+        <item>Povoliť</item>
     </string-array>
-
     <string-array name="entries_screentimeout_widget">
-        <item>15s/1m/5m</item>
-        <item>30s/2m/5m</item>
+        <item>15 sekúnd | 1 minúta | 5 minút</item>
+        <item>30 sekúnd | 2 minúty | 5 minút</item>
     </string-array>
-
     <string-array name="entries_flash_widget">
-        <item>Normaali</item>
-        <item>Korkea</item>
+        <item>Normálny</item>
+        <item>Vysoký</item>
     </string-array>
-
     <string-array name="haptic_feedback_entries">
-        <item>Käytä yleisiä asetuksia</item>
-        <item>Päällä</item>
-        <item>Pois päältä</item>
+        <item>Použiť globálne nastavenia</item>
+        <item>Zapnúť</item>
+        <item>Vypnúť</item>
     </string-array>
-
     <string-array name="entries_status_bar_am_pm">
-        <item>Normaali</item>
-        <item>Pieni</item>
-        <item>Ei käytössä</item>
+        <item>Normálny</item>
+        <item>Malý</item>
+        <item>Žiadny</item>
     </string-array>
 </resources>

@@ -190,10 +190,6 @@
     <string name="pref_ksm_summary">Kernel-SamePage-Merging (KSM) verringert den Speicherbedarf, benötigt aber mehr Rechenleistung</string>
     <string name="pref_purgeable_assets_title">Freigabe von Ressourcen</string>
     <string name="pref_purgeable_assets_summary">Erlaubt dem System, Speicherbereiche von nicht mehr benutzten Bildern freizugeben, um mehr RAM bereitzustellen (Neustart erforderlich)</string>
-    <string name="pref_use_dithering_title">Grafikverbesserung</string>
-    <string name="dithering_no_dither">Dithering deaktivieren</string>
-    <string name="dithering_color_banding">Streifige Farbverläufe beheben (Standard)</string>
-    <string name="dithering_blur_effect">Streifige Farbverläufe und Unschärfe beheben</string>
     <string name="pref_use_16bpp_alpha_title">16-Bit-Transparenz</string>
     <string name="pref_use_16bpp_alpha_summary">Kann die Performance beim Scrollen verbessern, aber Grafikfehler verursachen (Neustart erforderlich)</string>
     <string name="display_rotation_title">Bildschirmausrichtung</string>
@@ -271,6 +267,8 @@
     <string name="notification_light_default_value">Standard</string>
     <string name="notification_light_missed_call_title">Verpasster Anruf</string>
     <string name="notification_light_voicemail_title">Sprachnachricht</string>
+    <string name="adaptive_backlight_title">Adaptive Beleuchtung</string>
+    <string name="adaptive_backlight_summary">Die Hintergrundbeleuchtung des Bildschirms intelligent regeln, um die Akkulaufzeit zu verbessern</string>
     <string name="edit_light_settings">Farbeinstellungen ändern</string>
     <string name="pulse_speed_title">Pulsdauer und Geschwindigkeit</string>
     <string name="default_time">Normal</string>
@@ -322,40 +320,6 @@
     <string name="hardware_keys_action_in_app_search">In-App-Suche</string>
     <string name="swap_volume_buttons_title">Lautstärketasten umkehren</string>
     <string name="swap_volume_buttons_summary">Belegung der Lautstärketasten umkehren, wenn das Gerät gedreht wird</string>
-    <string name="power_widget_title">Energie-Widget</string>
-    <string name="title_expanded_widget">Energiesteuerung</string>
-    <string name="title_expanded_hide_onchange">Nach Änd. schließen</string>
-    <string name="title_expanded_hide_scrollbar">Scrollbar verbergen</string>
-    <string name="title_widget_picker">Schaltflächen</string>
-    <string name="summary_widget_picker">Schaltflächen auswählen</string>
-    <string name="title_widget_order">Reihenfolge</string>
-    <string name="summary_widget_order">Anordnung der Schaltflächen ändern</string>
-    <string name="title_buttons">Schaltflächen</string>
-    <string name="title_toggle_wifi">WLAN</string>
-    <string name="title_toggle_bluetooth">Bluetooth</string>
-    <string name="title_toggle_gps">GPS</string>
-    <string name="title_toggle_sound">Klingelmodus</string>
-    <string name="title_toggle_brightness">Helligkeit</string>
-    <string name="title_toggle_sync">Synchronisierung</string>
-    <string name="title_toggle_wifiap">WLAN-Hotspot</string>
-    <string name="title_toggle_screentimeout">Bildschirm-Timeout</string>
-    <string name="title_toggle_mobiledata">Mobilfunkdaten</string>
-    <string name="title_toggle_lockscreen">Bildschirmsperre</string>
-    <string name="title_toggle_networkmode">Netzmodus</string>
-    <string name="title_toggle_autorotate">Autom. Ausrichtung</string>
-    <string name="title_toggle_airplane">Flugmodus</string>
-    <string name="title_toggle_flashlight">Taschenlampe</string>
-    <string name="title_toggle_sleep">Standby</string>
-    <string name="title_toggle_media_play_pause">Medien: Play/Pause</string>
-    <string name="title_toggle_media_previous">Medien: Vorheriger Titel</string>
-    <string name="title_toggle_media_next">Medien: Nächster Titel</string>
-    <string name="title_toggle_lte">LTE</string>
-    <string name="title_toggle_wimax">WiMAX</string>
-    <string name="title_button_modes">Schaltflächenfunktionen</string>
-    <string name="pref_brightness_mode_title">Helligkeitsstufen</string>
-    <string name="pref_brightness_mode_summary">Helligkeitsstufen, zwischen denen umgeschaltet wird</string>
-    <string name="cm_brightness_mode_auto">Automatisch</string>
-    <string name="cm_brightness_mode_dim">Dunkel</string>
     <string name="pref_network_mode_title">Netzmodi</string>
     <string name="pref_screentimeout_mode_title">Bildschirm-Timeout</string>
     <string name="pref_ring_mode_title">Klingelmodi</string>
@@ -364,8 +328,6 @@
     <string name="cm_sound_mode_vibrate">Vibration</string>
     <string name="cm_sound_mode_sound">Ton</string>
     <string name="cm_sound_mode_soundVibrate">Ton + Vibration</string>
-    <string name="pref_flash_mode_title">Taschenlampe</string>
-    <string name="expanded_haptic_feedback_title">Haptisches Feedback</string>
     <string name="kill_app_longpress_back">App beenden</string>
     <string name="kill_app_longpress_back_summary">Gedrückt halten der Zurück-Taste beendet die Anwendung im Vordergrund</string>
     <string name="changelog_title">Changelog anzeigen</string>
@@ -417,6 +379,7 @@
     <string name="adb_notify">USB-Debugging-Info</string>
     <string name="adb_notify_summary">Eine Benachrichtigung zeigen, wenn USB-Debugging verbunden ist</string>
     <string name="development_tools_title">Entwickler-Werkzeuge</string>
+    <string name="allow_mock_sms">Simulierte SMS zulassen</string>
     <string name="adb_over_network">ADB über Netzwerk</string>
     <string name="adb_over_network_summary">TCP/IP-Debugging über Netzwerkschnittstellen (WLAN, USB-Netzwerke, \u2026) aktivieren. Diese Einstellung wird beim Neustart zurückgesetzt.</string>
     <string name="adb_over_network_warning">WARNUNG:\n\nWenn ADB über Netzwerk eingeschaltet wird, ist das Gerät anfällig für das Eindringen Fremder aus allen verbundenen Netzwerken - auch Mobilfunknetzwerken.\n\nEine Verbindung sollte nur mit einem vertrauenswürdigen Netzwerk hergestellt werden.\n\nTrotzdem aktivieren?</string>
@@ -432,7 +395,6 @@
     <string name="lockscreen_buttons_playpause">Medien: Play/Pause</string>
     <string name="lockscreen_buttons_toggle_sound">Klingelmodus</string>
     <string name="quick_settings_panel_title">Schnelleinstellungen</string>
-    <string name="quick_settings_title">Schnelleinstellungen</string>
     <string name="title_static_tiles">Statische Kacheln</string>
     <string name="tile_picker_title">Kacheln anordnen</string>
     <string name="tile_picker_summary">Kacheln auswählen oder ihre Reihenfolge ändern</string>
@@ -720,6 +682,20 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="color_red_title">Rot</string>
     <string name="color_green_title">Grün</string>
     <string name="color_blue_title">Blau</string>
+    <string name="button_backlight_title">Hintergrundbeleuchtung</string>
+    <string name="button_backlight_enabled">Tasten beleuchten</string>
+    <string name="keyboard_backlight_enabled">Tastatur beleuchten</string>
+    <string name="button_backlight_seekbar_title">Tasten-Helligkeit</string>
+    <string name="keyboard_backlight_seekbar_title">Tastatur-Helligkeit</string>
+    <string name="backlight_timeout_title">Automatisch abschalten nach</string>
+    <string name="backlight_timeout_unlimited">Nie</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> Sekunde</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> Sekunden</item>
+    </plurals>
+    <string name="backlight_summary_disabled">Deaktiviert</string>
+    <string name="backlight_summary_enabled_with_timeout">Für <xliff:g id="timeout">%s</xliff:g> aktiviert</string>
+    <string name="backlight_summary_enabled">Aktiviert</string>
     <string name="header_category_interface">Personalisierung</string>
     <string name="homescreen_settings_title">Startbildschirm</string>
     <string name="system_settings_title">Oberfläche</string>
@@ -734,14 +710,22 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="hardware_keys_volume_keys_title">Lautstärketasten</string>
     <string name="hardware_keys_short_press_title">Kurzes Drücken</string>
     <string name="hardware_keys_long_press_title">Langes Drücken</string>
+    <string name="hardware_keys_double_tap_title">Doppeltes Drücken</string>
     <string name="home_wake_title">Aufwecken mit Home-Taste</string>
     <string name="home_wake_summary">Drücken der Home-Taste aktiviert den Bildschirm</string>
     <string name="volume_wake_title">Aufwecken mit Lautstärketaste</string>
     <string name="volume_wake_summary">Drücken einer Lautstärketaste aktiviert den Bildschirm</string>
     <string name="navigation_bar_category">Navigationsleiste</string>
     <string name="safe_headset_volume_title">Headset-Lautstärkebegrenzung</string>
+    <string name="button_backlight_title">Helligkeit der Tasten</string>
+    <string name="gamma_tuning_title_head">Gammakorrektur</string>
+    <string name="gamma_tuning_summary_head">Gammawerte einstellen</string>
     <string name="more_device_controls_title">Mehr\u2026</string>
     <string name="more_device_settings_title">Weitere Geräteoptionen</string>
     <string name="display_calibration_title">Displaykalibrierung</string>
     <string name="sensors_motors_title">Sensoren &amp; Vibration</string>
+    <string name="category_quick_access">Schnellzugriffsleiste</string>
+    <string name="title_quick_access">In Benachrichtungsleiste anzeigen</string>
+    <string name="title_quick_access_linked">Anordnung koppeln</string>
+    <string name="summary_quick_access_linked">Kachelauswahl und -anordnung der Schnelleinstellungen verwenden</string>
 </resources>
