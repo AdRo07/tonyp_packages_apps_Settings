@@ -1134,7 +1134,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="alert_reboot_message">This change needs a reboot to be applied. Do you want to reboot now?</string>
 
     <!-- tonyp settings -->
-    <string name="tonyp_settings_title">tonyp settings</string>
+    <string name="tonyp_settings_title">TheROM settings</string>
     <string name="display_hybrid_options_title">HYBRID</string>
     <string name="display_halo_options_title">HALO</string>
     <string name="display_various_options_title">VARIOUS</string>
