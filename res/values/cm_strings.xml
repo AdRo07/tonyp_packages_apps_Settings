@@ -998,6 +998,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_quick_access_linked">Linked layout</string>
     <string name="summary_quick_access_linked">Use the same tiles and layout as the Quick Settings panel</string>
     <string name="title_show_brightness_slider">Brightness Slider Mode</string>
+    <string name="title_show_brightness_slider_transparent">Brightness Slider Transparent</string>
+    <string name="summary_show_brightness_slider_transparent">Make the Brightness Slider Background Transparent</string>
 
     <string name="show_brightness_slider_dont">Don\'t show</string>
     <string name="show_brightness_slider_above">Above Ribbons</string>

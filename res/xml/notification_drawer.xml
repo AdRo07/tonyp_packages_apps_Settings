@@ -58,6 +58,12 @@
             android:entries="@array/show_brightness_slider_entries"
             android:entryValues="@array/show_brightness_slider_values" />
 
+        <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
+            android:key="show_brightness_slider_transparent"
+            android:title="@string/title_show_brightness_slider_transparent"
+            android:summary="@string/summary_show_brightness_slider_transparent"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

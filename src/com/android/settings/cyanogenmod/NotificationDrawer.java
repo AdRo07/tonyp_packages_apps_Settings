@@ -30,6 +30,7 @@ import android.util.Log;
 import android.view.WindowManagerGlobal;
 
 import com.android.settings.R;
+import com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference;
 import com.android.settings.SettingsPreferenceFragment;
 
 public class NotificationDrawer extends SettingsPreferenceFragment  implements
@@ -38,9 +39,11 @@ public class NotificationDrawer extends SettingsPreferenceFragment  implements
 
     private static final String UI_COLLAPSE_BEHAVIOUR = "notification_drawer_collapse_on_dismiss";
     private static final String BRIGHTNESS_SLIDER = "show_brightness_slider";
+    private static final String SLIDER_TRANSPARENT = "show_brightness_slider_transparent";
 
     private ListPreference mCollapseOnDismiss;
     private ListPreference mShowBrightnessSlider;
+    private SystemSettingCheckBoxPreference mSliderTransparent;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,10 +63,17 @@ public class NotificationDrawer extends SettingsPreferenceFragment  implements
 
         int mode = Settings.System.getIntForUser(getContentResolver(),
                     Settings.System.SHOW_BRIGHTNESS_SLIDER, 0, UserHandle.USER_CURRENT);
-        mCollapseOnDismiss.setValue(String.valueOf(mode));
         mShowBrightnessSlider = (ListPreference) findPreference(BRIGHTNESS_SLIDER);
+        mShowBrightnessSlider.setValue(String.valueOf(mode));
         mShowBrightnessSlider.setOnPreferenceChangeListener(this);
         updateBrightnessSlider(mode);
+
+        boolean transparent = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.SHOW_BRIGHTNESS_SLIDER_TRANSPARENT, 0, UserHandle.USER_CURRENT) == 1;
+        mSliderTransparent = (SystemSettingCheckBoxPreference) findPreference(SLIDER_TRANSPARENT);
+        mSliderTransparent.setChecked(transparent);
+        mSliderTransparent.setOnPreferenceChangeListener(this);
+        mSliderTransparent.setEnabled(mode == 1 || mode == 2);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
@@ -78,6 +88,12 @@ public class NotificationDrawer extends SettingsPreferenceFragment  implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.SHOW_BRIGHTNESS_SLIDER, value);
             updateBrightnessSlider(value);
+            mSliderTransparent.setEnabled(value == 1 || value == 2);
+            return true;
+        } else if(preference == mSliderTransparent) {
+            int value = objValue.toString().equals("true") ? 1 : 0;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SHOW_BRIGHTNESS_SLIDER_TRANSPARENT, value);
             return true;
         }
 
