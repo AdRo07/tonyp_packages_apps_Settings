@@ -37,7 +37,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_HOME_DOUBLE_TAP = "hardware_keys_home_double_tap";
     private static final String KEY_MENU_PRESS = "hardware_keys_menu_press";
     private static final String KEY_MENU_LONG_PRESS = "hardware_keys_menu_long_press";
-    private static final String KEY_BACK_LONG_PRESS = "hardware_keys_back_long_press";
     private static final String KEY_ASSIST_PRESS = "hardware_keys_assist_press";
     private static final String KEY_ASSIST_LONG_PRESS = "hardware_keys_assist_long_press";
     private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
@@ -46,7 +45,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
     private static final String CATEGORY_HOME = "home_key";
     private static final String CATEGORY_MENU = "menu_key";
-    private static final String CATEGORY_BACK = "back_key";
     private static final String CATEGORY_ASSIST = "assist_key";
     private static final String CATEGORY_APPSWITCH = "app_switch_key";
     private static final String CATEGORY_VOLUME = "volume_keys";
@@ -74,7 +72,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mHomeDoubleTapAction;
     private ListPreference mMenuPressAction;
     private ListPreference mMenuLongPressAction;
-    private ListPreference mBackLongPressAction;
     private ListPreference mAssistPressAction;
     private ListPreference mAssistLongPressAction;
     private ListPreference mAppSwitchPressAction;
@@ -95,7 +92,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 com.android.internal.R.integer.config_deviceHardwareKeys);
         final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
         final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
-        final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
         final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
 
@@ -104,8 +100,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_HOME);
         final PreferenceCategory menuCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_MENU);
-        final PreferenceCategory backCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_BACK);
         final PreferenceCategory assistCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
         final PreferenceCategory appSwitchCategory =
@@ -161,14 +155,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         } else {
             menuCategory.removePreference(findPreference(KEY_MENU_PRESS));
             menuCategory.removePreference(findPreference(KEY_MENU_LONG_PRESS));
-        }
-
-        if (hasBackKey) {
-            int longPressAction = Settings.System.getInt(resolver,
-                    Settings.System.KEY_BACK_LONG_PRESS_ACTION, ACTION_NOTHING);
-            mBackLongPressAction = initActionList(KEY_BACK_LONG_PRESS, longPressAction);
-
-            hasAnyBindableKey = true;
         }
 
         if (hasAssistKey) {
@@ -274,10 +260,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         } else if (preference == mAppSwitchLongPressAction) {
             handleActionListChange(mAppSwitchLongPressAction, newValue,
                     Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
-            return true;
-        } else if (preference == mBackLongPressAction) {
-            handleActionListChange(mBackLongPressAction, newValue,
-                    Settings.System.KEY_BACK_LONG_PRESS_ACTION);
             return true;
         }
 
