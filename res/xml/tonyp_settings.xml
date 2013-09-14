@@ -28,6 +28,14 @@
         android:key="category_various_options"
         android:title="@string/display_various_options_title" >
 
+        <!-- Active display -->
+        <PreferenceScreen
+            android:key="active_display"
+            android:fragment="com.android.settings.chameleonos.ActiveDisplaySettings"
+            android:title="@string/ad_settings_title"
+            android:summary="@string/ad_settings_summary">
+        </PreferenceScreen>
+
         <ListPreference
             android:key="show_brightness_slider"
             android:title="@string/title_show_brightness_slider"
