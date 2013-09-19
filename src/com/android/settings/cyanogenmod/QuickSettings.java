@@ -26,6 +26,7 @@ import java.util.Set;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.MultiSelectListPreference;
 import android.preference.Preference;
@@ -61,7 +62,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private PreferenceCategory mGeneralSettings;
     private PreferenceCategory mStaticTiles;
     private PreferenceCategory mDynamicTiles;
-    CheckBoxPreference mFloatingWindow;
+    private CheckBoxPreference mFloatingWindow;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
