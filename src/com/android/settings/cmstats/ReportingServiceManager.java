@@ -50,7 +50,7 @@ public class ReportingServiceManager extends BroadcastReceiver {
 
         if (millisFromNow <= 0) {
             long lastSynced = prefs.getLong(AnonymousStats.ANONYMOUS_LAST_CHECKED, 0);
-            if (lastSynced == 0) {
+            if (false && lastSynced == 0) {
                 // never synced, so let's fake out that the last sync was just now.
                 // this will allow the user tFrame time to opt out before it will start
                 // sending up anonymous stats.
