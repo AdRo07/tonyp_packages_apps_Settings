@@ -14,21 +14,14 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="category_halo_options"
-        android:title="@string/display_halo_options_title" >
+        android:key="category_notifications_options"
+        android:title="@string/display_notifications_options_title" >
         
         <PreferenceScreen
             android:key="halo_settings"
             android:title="@string/halo_settings_title"
             android:fragment="com.android.settings.tonyp.Halo" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="category_various_options"
-        android:title="@string/display_various_options_title" >
-
-        <!-- Active display -->
         <PreferenceScreen
             android:key="active_display"
             android:fragment="com.android.settings.chameleonos.ActiveDisplaySettings"
@@ -36,11 +29,11 @@
             android:summary="@string/ad_settings_summary">
         </PreferenceScreen>
 
-        <Preference
-            android:fragment="com.android.settings.slim.NotificationDrawerStyle"
-            android:key="notification_style"
-            android:title="@string/notification_style_title"
-            android:summary="@string/notification_style_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_statusbar_options"
+        android:title="@string/display_statusbar_options_title" >
 
         <ListPreference
             android:key="show_brightness_slider"
@@ -48,6 +41,18 @@
             android:dialogTitle="@string/title_show_brightness_slider"
             android:entries="@array/show_brightness_slider_entries"
             android:entryValues="@array/show_brightness_slider_values" />
+
+        <Preference
+            android:fragment="com.android.settings.slim.NotificationDrawerStyle"
+            android:key="notification_style"
+            android:title="@string/notification_style_title"
+            android:summary="@string/notification_style_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_various_options"
+        android:title="@string/display_various_options_title" >
 
         <PreferenceScreen
             android:key="custom_carrier_label"
