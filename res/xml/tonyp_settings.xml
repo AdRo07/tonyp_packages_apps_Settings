@@ -22,13 +22,6 @@
             android:title="@string/halo_settings_title"
             android:fragment="com.android.settings.tonyp.Halo" />
 
-        <PreferenceScreen
-            android:key="active_display"
-            android:fragment="com.android.settings.chameleonos.ActiveDisplaySettings"
-            android:title="@string/ad_settings_title"
-            android:summary="@string/ad_settings_summary">
-        </PreferenceScreen>
-
     </PreferenceCategory>
 
     <PreferenceCategory
