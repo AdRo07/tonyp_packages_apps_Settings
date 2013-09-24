@@ -34,7 +34,7 @@ import android.content.pm.Signature;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceDrawerActivity;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -265,7 +265,7 @@ public class PrivacyGuardManager extends Fragment
         Bundle args = new Bundle();
         args.putString(AppOpsDetails.ARG_PACKAGE_NAME, app.packageName);
 
-        PreferenceActivity pa = (PreferenceActivity)getActivity();
+        PreferenceDrawerActivity pa = (PreferenceDrawerActivity)getActivity();
         pa.startPreferencePanel(AppOpsDetails.class.getName(), args,
                 R.string.app_ops_settings, null, this, 2);
         return true;
