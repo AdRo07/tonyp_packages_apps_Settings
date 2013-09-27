@@ -55,11 +55,15 @@ public class tonypSettings extends SettingsPreferenceFragment implements OnPrefe
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
     private static final String KEY_COS_DONATE= "donate";
     private static final String BRIGHTNESS_SLIDER = "show_brightness_slider";
+    private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
+    private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
 
     private PreferenceCategory mMisc;
     private Preference mCustomLabel;
     private ListPreference mLowBatteryWarning;
     private ListPreference mShowBrightnessSlider;
+    private ListPreference mListViewAnimation;
+    private ListPreference mListViewInterpolator;
 
     private String mCustomLabelText = null;
     private Context mContext;
@@ -99,6 +103,21 @@ public class tonypSettings extends SettingsPreferenceFragment implements OnPrefe
         mShowBrightnessSlider.setValue(String.valueOf(mode));
         mShowBrightnessSlider.setOnPreferenceChangeListener(this);
         updateBrightnessSlider(mode);
+
+        //ListView Animations
+        mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
+        int listviewanimation = Settings.System.getInt(getActivity().getContentResolver(),
+            Settings.System.LISTVIEW_ANIMATION, 1);
+        mListViewAnimation.setValue(String.valueOf(listviewanimation));
+        mListViewAnimation.setSummary(mListViewAnimation.getEntry());
+        mListViewAnimation.setOnPreferenceChangeListener(this);
+
+        mListViewInterpolator = (ListPreference) findPreference(KEY_LISTVIEW_INTERPOLATOR);
+        int listviewinterpolator = Settings.System.getInt(getActivity().getContentResolver(),
+            Settings.System.LISTVIEW_INTERPOLATOR, 0);
+        mListViewInterpolator.setValue(String.valueOf(listviewinterpolator));
+        mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
+        mListViewInterpolator.setOnPreferenceChangeListener(this);
     }
 
     private void updateCustomLabelTextSummary() {
@@ -125,6 +144,22 @@ public class tonypSettings extends SettingsPreferenceFragment implements OnPrefe
             Settings.System.putInt(getContentResolver(),
                     Settings.System.SHOW_BRIGHTNESS_SLIDER, value);
             updateBrightnessSlider(value);
+            return true;
+        } else if (preference == mListViewAnimation) {
+            int listviewanimation = Integer.valueOf((String) newValue);
+            int index = mListViewAnimation.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LISTVIEW_ANIMATION,
+                    listviewanimation);
+            mListViewAnimation.setSummary(mListViewAnimation.getEntries()[index]);
+            return true;
+        } else if (preference == mListViewInterpolator) {
+            int listviewinterpolator = Integer.valueOf((String) newValue);
+            int index = mListViewInterpolator.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LISTVIEW_INTERPOLATOR,
+                    listviewinterpolator);
+            mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
             return true;
         }
         return false;
