@@ -54,6 +54,8 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.widget.SeekBarPreference;
+
+import com.android.settings.hybrid.Utils;
 import net.margaritov.preference.colorpicker.ColorPickerView;
 
 import java.util.ArrayList;
@@ -68,11 +70,13 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
     private static final String PREF_NOTIFICATION_WALLPAPER_LANDSCAPE = "notification_wallpaper_landscape";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_NOTIFICATION_ALPHA = "notification_alpha";
+    private static final String RESTART_SYSTEMUI = "notification_bg_restart_systemui";
 
     private ListPreference mNotificationWallpaper;
     private ListPreference mNotificationWallpaperLandscape;
     SeekBarPreference mWallpaperAlpha;
     SeekBarPreference mNotifAlpha;
+    private Preference mRestartSystemUI;
 
     private File customnavTemp;
     private File customnavTempLandscape;
@@ -84,6 +88,7 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
 
     private ContentResolver mResolver;
     private Activity mActivity;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -128,6 +133,8 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
         mNotifAlpha.setInitValue((int) (notifTransparency * 100));
         mNotifAlpha.setProperty(Settings.System.NOTIF_ALPHA);
         mNotifAlpha.setOnPreferenceChangeListener(this);
+
+        mRestartSystemUI = findPreference(RESTART_SYSTEMUI);
 
         updateCustomBackgroundSummary();
     }
@@ -248,6 +255,9 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mRestartSystemUI) {
+            Utils.restartUI(getActivity());
+         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
