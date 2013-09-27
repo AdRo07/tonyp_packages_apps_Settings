@@ -19,17 +19,17 @@
     <string name="tonyp_settings_title">TheROM settings</string>
     <string name="display_hybrid_options_title">HYBRID</string>
     <string name="display_notifications_options_title">NOTIFICATIONS</string>
-    <string name="display_statusbar_options_title">NOTIFICATION DRAWER</string>
+    <string name="display_statusbar_options_title">STATUSBAR AND DRAWER</string>
     <string name="display_various_options_title">VARIOUS</string>
-    <string name="display_donate_options_title">DONATE</string>
+    <string name="display_donate_options_title">DONATE &lt;3</string>
     <string name="display_animation_options_title">ANIMATIONS</string>
 
     <string name="hybrid_settings_title">Hybrid settings</string>
-    <string name="title_show_brightness_slider">Brightness Slider Mode</string>
+    <string name="title_show_brightness_slider">Brightness slider</string>
 
     <!-- tonyp minfree -->
-    <string name="pref_tonyp_minfree_title">tonyp memory optimizations</string>
-    <string name="pref_tonyp_minfree_summary">Optimize the memory management to minimize lags. Uncheck this to return to stock behaviour (requires reboot)</string>
+    <string name="pref_tonyp_minfree_title">Memory optimizations</string>
+    <string name="pref_tonyp_minfree_summary">Free memory a bit more aggressively. Only required if you encounter lags while multitasking (requires reboot)</string>
 
     <!-- Custom carrier -->
     <string name="custom_carrier_label_title">Custom carrier text</string>
@@ -169,14 +169,14 @@
     <string name="alert_reboot_message">This change needs a reboot to be applied. Do you want to reboot now?</string>
 
     <!-- Donate -->
-    <string name="donate_tonyp_title">Donate</string>
+    <string name="donate_tonyp_title">Donate to tonyp</string>
     <string name="donate_tonyp_summary">If you like my work consider to show your support by donating</string>
     <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick\u0026hosted_button_id=RL7NJSUDNQNZU</string>
 
     <!-- Brightness Slider -->
-    <string name="show_brightness_slider_dont">Don\'t show</string>
-    <string name="show_brightness_slider_above">Above Ribbons</string>
-    <string name="show_brightness_slider_below">Below Ribbons</string>
+    <string name="show_brightness_slider_dont">Disable</string>
+    <string name="show_brightness_slider_above">Show (above ribbons)</string>
+    <string name="show_brightness_slider_below">Show (below ribbons)</string>
 
     <!--  Advanced low battery indicator -->
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
@@ -283,7 +283,7 @@
     <!-- Status bar background style -->
     <string name="status_bar_transparency_title">Status bar transparency</string>
     <string name="status_bar_color_title">Status bar color</string>
-    <string name="status_bar_background_style">Background style</string>
+    <string name="status_bar_background_style">Status bar style</string>
     <string name="status_bar_alpha_mode_dialog_text_title">Show status bar transparency</string>
     <string name="status_bar_alpha_mode_text_title">Transparency mode</string>
     <string name="status_bar_alpha_mode_home">on launcher</string>
@@ -292,8 +292,8 @@
     <string name="status_bar_style_reset">Reset</string>
 
     <!-- ListView animation -->
-    <string name="listview_animation_title">ListView Animation</string>
-    <string name="listview_off">Off</string>
+    <string name="listview_animation_title">ListView animation</string>
+    <string name="listview_off">Off (Android default)</string>
     <string name="listview_wave_left">Wave (Left)</string>
     <string name="listview_wave_right">Wave (Right)</string>
     <string name="listview_alpha">Alpha</string>
@@ -306,7 +306,7 @@
     <string name="listview_translate_right">Translate (Right)</string>
 
     <!-- ListView interpolator -->
-    <string name="listview_interpolator_title">ListView Interpolator</string>
+    <string name="listview_interpolator_title">ListView interpolator</string>
     <string name="listview_accelerate_interpolator">accelerate_interpolator</string>
     <string name="listview_decelerate_interpolator">decelerate_interpolator</string>
     <string name="listview_accelerate_decelerate_interpolator">accelerate_decelerate_interpolator</string>
