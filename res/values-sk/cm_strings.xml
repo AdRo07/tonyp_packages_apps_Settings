@@ -81,7 +81,6 @@
     <string name="lockscreen_target_title">Skratky posuvníka</string>
     <string name="lockscreen_target_summary">Zobrazí alebo zmení vlastné skratky na uzamykacej obrazovke</string>
     <string name="lockscreen_target_reset">Skratky uzamykacej obrazovky boli znovunastavené na predvolené</string>
-    <string name="lockscreen_target_save">Skratky uzamykacej obrazovky boli uložené</string>
     <string name="lockscreen_target_reset_title">Vrátenie pôvodných skratiek</string>
     <string name="lockscreen_target_reset_message">Odstrániť všetky používateľské skratky uzamykacej obrazovky a obnoviť predvolené?</string>
     <string name="lockscreen_target_empty">Prázdne</string>
@@ -601,7 +600,6 @@ zmaže zvolený riadok.
     <string name="navigation_ring_title">Skratky rýchleho spustenia</string>
     <string name="navring_target_reset_message">Odstrániť všetky používateľom vytvorené skratky v navigačnej lište a obnoviť do predvolených nastavení?</string>
     <string name="navring_target_reset">Skratky navigačnej lišty boli obnovené</string>
-    <string name="navring_target_save">Skratky navigačnej lišty boli uložené</string>
     <string name="navring_action_open_ime_switcher">Otvoriť prepínač IME</string>
     <string name="navring_action_kill_app">Ukončiť aplikáciu</string>
     <string name="navring_action_none">Žiadna</string>
@@ -692,11 +690,35 @@ zmaže zvolený riadok.
     <string name="color_red_title">Červená</string>
     <string name="color_green_title">Zelená</string>
     <string name="color_blue_title">Modrá</string>
-    <string name="key_backlight_title">Podsvietenie</string>
     <string name="button_backlight_title">Jas podsvietenia tlačidiel</string>
-    <string name="keyboard_backlight_title">Jas podsvietenia klávesnice</string>
     <string name="more_device_controls_title">Viac\u2026</string>
     <string name="more_device_settings_title">Ďalšie voľby zariadenia</string>
     <string name="sensors_motors_title">Snímače a motorčeky</string>
     <string name="display_calibration_title">Kalibrácia zariadenia</string>
+    <string name="profile_triggers">Prepínače</string>
+    <string name="intent_sender_data_label"><xliff:g id="data">Dáta:</xliff:g></string>
+    <string name="adaptive_backlight_title">Adaptívne podsvietenie</string>
+    <string name="adaptive_backlight_summary">Inteligentne meniť jas podsvietenia displeja a tým maximalizovať životnosť batérie</string>
+    <string name="allow_mock_sms">Povoliť falošné SMS správy</string>
+    <string name="button_backlight_enabled">Podsvietené tlačidlá</string>
+    <string name="keyboard_backlight_enabled">Podsvietená klávesnica</string>
+    <string name="button_backlight_seekbar_title">Jas tlačidiel</string>
+    <string name="keyboard_backlight_seekbar_title">Jas klávesnice</string>
+    <string name="backlight_timeout_title">Časový limit podsvietenia</string>
+    <string name="backlight_timeout_unlimited">Nevypínať</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> sekunda</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> sekundy</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> sekúnd</item>
+    </plurals>
+    <string name="backlight_summary_disabled">Zakázané</string>
+    <string name="backlight_summary_enabled_with_timeout">Povolené na <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Povolené</string>
+    <string name="gamma_tuning_title_head">Gama kalibrácia</string>
+    <string name="gamma_tuning_summary_head">Zlepšiť gama hodnoty</string>
+    <string name="category_quick_access">Panel rýchleho prístupu</string>
+    <string name="title_quick_access">Zobraziť v ponuke</string>
+    <string name="title_quick_access_linked">Spojené rozloženie</string>
+    <string name="summary_quick_access_linked">Použiť rovnaké dlaždice a rozloženie ako u panela rýchleho nastavenia</string>
+    <string name="font_size_sample">Ukážka</string>
 </resources>

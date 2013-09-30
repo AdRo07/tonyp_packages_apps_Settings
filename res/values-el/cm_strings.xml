@@ -97,7 +97,6 @@
     <string name="lockscreen_target_title">Συντομεύσεις</string>
     <string name="lockscreen_target_summary">Εμφάνιση ή αλλαγή συντομεύσεων οθόνης κλειδώματος</string>
     <string name="lockscreen_target_reset">Έγινε επαναφορά στις προεπιλεγμένες συντομεύσεις</string>
-    <string name="lockscreen_target_save">Οι συντομεύσεις αποθηκεύτηκαν</string>
     <string name="lockscreen_target_reset_title">Επαναφορά</string>
     <string name="lockscreen_target_reset_message">Διαγραφή όλων των αποθηκευμένων συντομεύσεων και επαναφορά στις προεπιλεγμένες;</string>
     <string name="lockscreen_target_empty">Άδειο</string>
@@ -480,6 +479,7 @@
     <string name="title_tile_quiet_hours">Ώρες ησυχίας</string>
     <string name="title_tile_volume">Ένταση</string>
     <string name="title_tile_expanded_desktop">Επέκταση επιφάνειας</string>
+    <string name="title_tile_network_adb">ADB μέσω δικτύου</string>
     <string name="title_dynamic_tiles">Δυναμικά πλακίδια</string>
     <string name="dynamic_tiles_note_title">Σημείωση</string>
     <string name="dynamic_tiles_note_summary">Τα δυναμικά πλακίδια δεν είναι πάντα ορατά και εμφανίζονται μόνο όταν προκληθεί ένα συμβάν του συστήματος</string>
@@ -598,7 +598,6 @@
     <string name="navigation_ring_title">Συντομεύσεις γρήγορης εκκίνησης</string>
     <string name="navring_target_reset_message">Διαγραφή όλων των συντομεύσεων της μπάρας πλοήγησης και επαναφορά στις προεπιλεγμένες;</string>
     <string name="navring_target_reset">Έγινε επαναφορά των συντομεύσεων της μπάρας πλοήγησης στις προεπιλογές</string>
-    <string name="navring_target_save">Οι συντομεύσεις της μπάρας πλοήγησης αποθηκεύτηκαν</string>
     <string name="navring_action_open_ime_switcher">Εναλλαγή μεθόδων εισόδου</string>
     <string name="navring_action_kill_app">Τερματισμός εφαρμογής</string>
     <string name="navring_action_none">Καμία</string>
@@ -731,4 +730,7 @@
     <string name="title_quick_access_linked">Σύνδεση διάταξης εικονιδίων</string>
     <string name="summary_quick_access_linked">Χρησιμοποιήστε τα πλακίδια και τη διάταξη του Πάνελ Γρήγορων ρυθμίσεων</string>
     <string name="intent_sender_data_label"><xliff:g id="data">Δεδομένα:</xliff:g></string>
+    <string name="font_size_sample">Δείγμα</string>
+    <string name="selinux_enable_title">Security Enhanced Android</string>
+    <string name="selinux_enable_warning">Είστε έτοιμοι να ενεργοποιήσετε το SEAndroid, ένα προηγμένο μηχανισμό ασφάλειας, στη συσκευή σας.\n\nΑυτή η επιλογή υπάρχει μόνο για σκοπούς εντοπισμού σφαλμάτων και είναι πολύ πιθανό ότι η συσκευή σας δεν είναι πλήρως προετοιμασμένη για αυτό. Μπορεί να προκληθούν κολλήματα ή να μπλοκάρουν μερικά (ή όλα) τα τμήματα του συστήματος σας. Είστε βέβαιοι ότι θέλετε να συνεχίσετε;</string>
 </resources>

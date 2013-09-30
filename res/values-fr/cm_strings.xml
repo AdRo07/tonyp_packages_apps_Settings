@@ -95,7 +95,6 @@
     <string name="lockscreen_target_title">Raccourcis</string>
     <string name="lockscreen_target_summary">Configurer les raccourcis de l\'écran de verrouillage</string>
     <string name="lockscreen_target_reset">Les raccourcis ont été réinitialisés</string>
-    <string name="lockscreen_target_save">Les raccourcis ont été enregistrés</string>
     <string name="lockscreen_target_reset_title">Réinitialiser</string>
     <string name="lockscreen_target_reset_message">Supprimer tous les raccourcis et revenir à la configuration d\'origine\u00A0?</string>
     <string name="lockscreen_target_empty">Vide</string>
@@ -477,6 +476,7 @@
     <string name="title_tile_quiet_hours">Heures silencieuses</string>
     <string name="title_tile_volume">Volume</string>
     <string name="title_tile_expanded_desktop">Bureau étendu</string>
+    <string name="title_tile_network_adb">ADB réseau</string>
     <string name="title_dynamic_tiles">Raccourcis dynamiques</string>
     <string name="dynamic_tiles_note_title">Note</string>
     <string name="dynamic_tiles_note_summary">Les raccourcis dynamiques ne sont pas toujours visibles et ils ne peuvent s\'afficher que s\'ils sont déclenchés par un événement système</string>
@@ -578,7 +578,6 @@ Des options supplémentaires sont disponibles en appuyant longtemps sur une lign
     <string name="navigation_ring_title">Raccourcis de lancement rapide</string>
     <string name="navring_target_reset_message">Supprimer tous les raccourcis de la barre de navigation et revenir à la configuration d\'origine\u00A0?</string>
     <string name="navring_target_reset">Raccourcis de la barre de navigation réinitialisés</string>
-    <string name="navring_target_save">Raccourcis de la barre de navigation enregistrés</string>
     <string name="navring_action_open_ime_switcher">Changer la méthode de saisie</string>
     <string name="navring_action_kill_app">Fermer les applications</string>
     <string name="navring_action_none">Aucun</string>
@@ -671,7 +670,7 @@ Des options supplémentaires sont disponibles en appuyant longtemps sur une lign
     <string name="blacklist_summary_type_messages_only">messages</string>
     <string name="blacklist_summary_type_calls_and_messages">appels et messages</string>
     <string name="blacklist_regex_title">Utiliser des caractères génériques</string>
-    <string name="blacklist_regex_summary">Utiliser un point comme caractère générique et une astérisque pour le répétition. Exemple, 123.* si le numéro de téléphone commence par 123 et .*123.* si le numéro de téléphone contient 123</string>
+    <string name="blacklist_regex_summary">Utiliser un point comme caractère générique et une astérisque pour la répétition. Exemple, 123.* si le numéro de téléphone commence par 123 et .*123.* si le numéro de téléphone contient 123</string>
     <string name="blacklist_policy_block_calls">Bloquer les appels entrants</string>
     <string name="blacklist_policy_block_messages">Bloquer les messages entrants</string>
     <string name="add_blacklist_number">Ajouter le numéro</string>
@@ -705,4 +704,7 @@ Des options supplémentaires sont disponibles en appuyant longtemps sur une lign
     <string name="title_quick_access">Afficher avec les notifications</string>
     <string name="title_quick_access_linked">Lier la disposition</string>
     <string name="summary_quick_access_linked">Utiliser les mêmes raccourcis et la même disposition que le volet des paramètres</string>
+    <string name="font_size_sample">Exemple</string>
+    <string name="selinux_enable_title">Sécurité renforcée d\'Android</string>
+    <string name="selinux_enable_warning">Vous êtes sur le point d\'activer SEAndroid, un mécanisme de sécurité avancé, sur votre appareil.\n\nCette option existe uniquement à des fins de débogage, et il est très probable que votre appareil ne soit pas entièrement compatible, ce qui peut le bloquer ou le ralentir en partie ou dans sa totalité.\n\nVoulez-vous continuer ?</string>
 </resources>

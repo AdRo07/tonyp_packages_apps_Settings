@@ -93,7 +93,6 @@
     <string name="lockscreen_target_title">Genvägar</string>
     <string name="lockscreen_target_summary">Visa eller ändra egna låsskärmsgenvägar</string>
     <string name="lockscreen_target_reset">Låsskärmsgenvägar återställda</string>
-    <string name="lockscreen_target_save">Låsskärmsgenvägar sparade</string>
     <string name="lockscreen_target_reset_title">Återställ</string>
     <string name="lockscreen_target_reset_message">Ta bort alla användarskapade låsskärmsgenvägar och återställ till standard?</string>
     <string name="lockscreen_target_empty">Tom</string>
@@ -219,10 +218,6 @@
     <string name="pref_ksm_summary">KSM minskar fysiska minneskrav och förbättrar prestanda</string>
     <string name="pref_purgeable_assets_title">Tillåt rensning av tillgångar</string>
     <string name="pref_purgeable_assets_summary">Rensning av bitmapminnestillgångar möjliggör frigörande av mer RAM vid behov (kräver omstart)</string>
-    <string name="pref_use_dithering_title">Ytförbättringar</string>
-    <string name="dithering_no_dither">Avaktivera dithering</string>
-    <string name="dithering_color_banding">Fixa färgbandning (standard)</string>
-    <string name="dithering_blur_effect">Fixa färgbandning och oskärpeeffekt</string>
     <string name="pref_use_16bpp_alpha_title">16bit transparens</string>
     <string name="pref_use_16bpp_alpha_summary">Bättre grafikprestanda, men lägre kvalitet och kan orsaka visuella artefakter (kräver omstart)</string>
     <string name="display_rotation_title">Rotation</string>
@@ -431,6 +426,7 @@
     <string name="adb_notify">USB-felsökningsavisering</string>
     <string name="adb_notify_summary">Visa en avisering när USB-felsökning är ansluten</string>
     <string name="development_tools_title">Starta Dev Tools</string>
+    <string name="allow_mock_sms">Tillåt sken-SMS</string>
     <string name="usb_mass_storage_title">Masslagring</string>
     <string name="usb_mass_storage_summary">Aktivera USB-masslagring</string>
     <string name="storage_rescan_media">Sök om media på lagringsvolymen</string>
@@ -457,7 +453,7 @@
     <string name="title_tile_airplane">Flygplansläge</string>
     <string name="title_tile_battery">Batteristatus</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
-    <string name="title_tile_brightness">Belysning</string>
+    <string name="title_tile_brightness">Ljusstyrka</string>
     <string name="title_tile_camera">Kamera</string>
     <string name="title_tile_sleep">Somna</string>
     <string name="title_tile_gps">GPS</string>
@@ -469,7 +465,7 @@
     <string name="title_tile_autorotate">Orientering</string>
     <string name="title_tile_settings">Inställningar</string>
     <string name="title_tile_sound">Ljud</string>
-    <string name="title_tile_sync">Synkronisering</string>
+    <string name="title_tile_sync">Synk</string>
     <string name="title_tile_wifiap">Wi-Fi-hotspot</string>
     <string name="title_tile_wifi">Wi-Fi</string>
     <string name="title_tile_user">Användarväxlare</string>
@@ -579,7 +575,6 @@ Varje linje i belysningslistan korresponerar med en <i>kontrollpunkt</i> i belys
     <string name="navigation_ring_title">Snabbstartsgenvägar</string>
     <string name="navring_target_reset_message">Ta bort alla användarskapade navigeringsradsgenvägar och återställ till standard?</string>
     <string name="navring_target_reset">Återställ navigeringsradsgenvägar till standard</string>
-    <string name="navring_target_save">Navigeringsradsgenvägar sparade</string>
     <string name="navring_action_open_ime_switcher">Öppna inmatningsväxlare</string>
     <string name="navring_action_kill_app">Tvångsavsluta app</string>
     <string name="navring_action_none">Ingen</string>
@@ -687,9 +682,7 @@ Varje linje i belysningslistan korresponerar med en <i>kontrollpunkt</i> i belys
     <string name="color_red_title">Röd</string>
     <string name="color_green_title">Grön</string>
     <string name="color_blue_title">Blå</string>
-    <string name="key_backlight_title">Knappbelysning</string>
     <string name="button_backlight_title">Ljusstyrka för knappbelysning</string>
-    <string name="keyboard_backlight_title">Ljusstyrka för tangentbordsbelysning</string>
     <string name="gamma_tuning_title_head">Gammakalibrering</string>
     <string name="gamma_tuning_summary_head">Justera gammavärden</string>
     <string name="more_device_controls_title">Mer\u2026</string>

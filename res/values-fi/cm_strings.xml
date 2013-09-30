@@ -94,7 +94,6 @@
     <string name="lockscreen_target_title">Lukitusnäytön pikakuvakkeet</string>
     <string name="lockscreen_target_summary">Katso tai muokkaa omia lukitusnäytön pikakuvakkeita</string>
     <string name="lockscreen_target_reset">Nollaa pikakuvakkeet oletuksiin</string>
-    <string name="lockscreen_target_save">Lukitusnäytön pikakuvakkeet tallennettu</string>
     <string name="lockscreen_target_reset_title">Nollaa</string>
     <string name="lockscreen_target_reset_message">Poista kaikki käyttäjän luomat pikakuvakkeet ja palauta oletukset?</string>
     <string name="lockscreen_target_empty">Tyhjä</string>
@@ -554,7 +553,6 @@ Lisää asetuksia on saaavilla painamalla riviä pitkään. Valitsemalla \'Muokk
     <string name="navigation_ring_title">Pikakäynnistyksen kuvakkeet</string>
     <string name="navring_target_reset_message">Poista kaikki käyttäjän luomat navigointipalkin pikakuvakkeet ja palauta oletukset?</string>
     <string name="navring_target_reset">Navigointipalkin pikakuvakkeet palautettu oletuksiinsa</string>
-    <string name="navring_target_save">Navigationpalkin pikakuvakkeet tallenettu</string>
     <string name="navring_action_open_ime_switcher">Avaa syöttötavan valinta</string>
     <string name="navring_action_kill_app">Tapa sovellus</string>
     <string name="navring_action_none">Ei mitään</string>
@@ -662,9 +660,7 @@ Lisää asetuksia on saaavilla painamalla riviä pitkään. Valitsemalla \'Muokk
     <string name="color_red_title">Punainen</string>
     <string name="color_green_title">Vihreä</string>
     <string name="color_blue_title">Sininen</string>
-    <string name="key_backlight_title">Taustavalo</string>
     <string name="button_backlight_title">Näppäinten taustavalon kirkkaus</string>
-    <string name="keyboard_backlight_title">Näppäimistön taustavalon kirkkaus</string>
     <string name="gamma_tuning_title_head">Gamma-kalibrointi</string>
     <string name="gamma_tuning_summary_head">Muokkaa gamma-arvoja</string>
     <string name="more_device_controls_title">Lisää\u2026</string>

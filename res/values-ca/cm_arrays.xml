@@ -14,56 +14,64 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="wifi_countrycode_entries">
+        <item>Estats Units</item>
+        <item>Canadà, Taiwan</item>
+        <item>Alemanya</item>
+        <item>Europa</item>
+        <item>Japan, Rússia</item>
+        <item>Austràlia</item>
+        <item>Xina</item>
+        <item>Corea</item>
+        <item>Turquia</item>
+        <item>Singapur</item>
+        <item>Brasil</item>
+    </string-array>
     <string-array name="volume_overlay_entries">
-        <item>Simples</item>
-        <item>Expansível</item>
-        <item>Expandido</item>
-        <item>Nenhum</item>
+        <item>Individual</item>
+        <item>Extensible</item>
+        <item>Extès</item>
+        <item>Cap</item>
     </string-array>
     <string-array name="pref_zram_size_entries">
-        <item>Desabilitado</item>
+        <item>Desactivat</item>
         <item>10%</item>
-        <item>18% (padrão)</item>
+        <item>18% (predeterminat)</item>
         <item>26%</item>
     </string-array>
     <string-array name="profile_entries">
-        <item>Ligado</item>
-        <item>Desligado</item>
-        <item>Não substituir</item>
+        <item>On</item>
+        <item>Off</item>
+        <item>No sobreescriguis</item>
     </string-array>
     <string-array name="profile_connection_entries">
-        <item>Desabilitar</item>
-        <item>Habilitar</item>
-    </string-array>
-    <string-array name="entries_flash_widget">
-        <item>Normal</item>
-        <item>Alto / Raio da morte</item>
-    </string-array>
-    <string-array name="haptic_feedback_entries">
-        <item>Configurações globais</item>
-        <item>Ligado</item>
-        <item>Desligado</item>
-    </string-array>
-    <string-array name="entries_status_bar_am_pm">
-        <item>Normal</item>
-        <item>Pequeno</item>
-        <item>Nenhum (padrão)</item>
-    </string-array>
-    <string-array name="wifi_countrycode_entries">
-        <item>Estados Unidos</item>
-        <item>Canadá, Taiwan</item>
-        <item>Alemanha</item>
-        <item>Europa</item>
-        <item>Japão, Rússia</item>
-        <item>Austrália</item>
-        <item>China</item>
-        <item>Coréia</item>
-        <item>Turquia</item>
-        <item>Cingapura</item>
-        <item>Brasil</item>
+        <item>Desactivat</item>
+        <item>Activat</item>
     </string-array>
     <string-array name="entries_screentimeout_widget">
         <item>15s | 1m | 5m</item>
         <item>30s | 2m | 5m</item>
     </string-array>
+    <string-array name="entries_flash_widget">
+        <item>Normal</item>
+        <item>Alt</item>
+    </string-array>
+    <string-array name="haptic_feedback_entries">
+        <item>Utilitza l\'ajust global</item>
+        <item>On</item>
+        <item>Off</item>
+    </string-array>
+    <string-array name="entries_status_bar_am_pm">
+        <item>Normal</item>
+        <item>Petit</item>
+        <item>Cap</item>
+    </string-array>
+    <integer-array name="auto_brightness_sensitivity_values">
+        <item>150</item>
+        <item>125</item>
+        <item>100</item>
+        <item>50</item>
+        <item>25</item>
+    </integer-array>
 </resources>
+

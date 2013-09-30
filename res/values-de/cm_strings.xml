@@ -64,7 +64,6 @@
     <string name="lockscreen_target_title">Sperrbildschirm-Anwendungen</string>
     <string name="lockscreen_target_summary">Anwendungen zum Sperrbildschirm hinzufügen</string>
     <string name="lockscreen_target_reset">Sperrbildschirm-Anwendungen auf Standard zurückgesetzt</string>
-    <string name="lockscreen_target_save">Sperrbildschirm-Anwendungen gespeichert</string>
     <string name="lockscreen_target_reset_title">Zurücksetzen</string>
     <string name="lockscreen_target_reset_message">Anwendungen vom Sperrbildschirm löschen und auf Standard zurücksetzen?</string>
     <string name="lockscreen_target_empty">Nicht zugewiesen</string>
@@ -296,7 +295,7 @@
     <string name="battery_light_medium_color_title">Laden</string>
     <string name="battery_light_full_color_title">Aufgeladen</string>
     <string name="volume_overlay_title">Lautstärkeregler</string>
-    <string name="volbtn_music_controls_title">Lautstärketasten und Musik</string>
+    <string name="volbtn_music_controls_title">Musiksteuerung</string>
     <string name="volbtn_music_controls_summary">Bei abgeschaltetem Bildschirm durch langen Druck auf Lautstärketasten zum nächsten / vorherigen Titel springen</string>
     <string name="volume_ring_only_description">Klingelton</string>
     <string name="ring_mode_title">Klingelmodus</string>
@@ -423,6 +422,7 @@
     <string name="title_tile_quiet_hours">Ruhige Stunden</string>
     <string name="title_tile_volume">Lautstärke</string>
     <string name="title_tile_expanded_desktop">Erweiterter Desktop</string>
+    <string name="title_tile_network_adb">ADB über Netzwerk</string>
     <string name="title_tile_camera">Kamera</string>
     <string name="title_dynamic_tiles">Dynamische Kacheln</string>
     <string name="dynamic_tiles_note_title">Hinweis</string>
@@ -466,7 +466,7 @@
     <string name="stylus_icon_enabled_summary">Zeiger einblenden, wenn ein Stift verwendet wird</string>
     <string name="accessibility_home_button_answers_call_prerefence_title">Anruf mit Home-Taste annehmen</string>
     <string name="navigation_bar_title">Schaltflächen</string>
-    <string name="navigation_bar_help_text">1 - Schloss-Icon berühren, um zu beginnen\n\n2 - Eine Schaltfläche berühren, um ihr eine Funktion zuzuweisen oder diese zu ändern\n\n3 - Eine Schaltfläche gedrückt halten, um sie zu verschieben\n\n4 - Schloss-Icon erneut berühren, um die Änderungen zu speichern\n\n5 - Reset-Icon berühren, um die Vorgaben wiederherzustellen\n\n</string>
+    <string name="navigation_bar_help_text">1 - Schloss-Symbol berühren, um zu beginnen\n\n2 - Eine Schaltfläche berühren, um ihr eine Funktion zuzuweisen oder diese zu ändern\n\n3 - Eine Schaltfläche gedrückt halten, um sie zu verschieben\n\n4 - Schloss-Symbol erneut berühren, um die Änderungen zu speichern\n\n5 - Zurücksetzen-Symbol berühren, um die Vorgaben wiederherzustellen\n\n</string>
     <string name="navigation_bar_tips">\u2022 Eine Funktion kann nur einer Schaltfläche gleichzeitig zugewiesen werden\n\n\u2022 Die Funktion der Home-Schaltfläche kann nicht verändert werden\n\n\u2022 Die seitlichen Schaltflächen können nicht verschoben werden</string>
     <string name="navigation_bar_tips_title">Schnellhilfe</string>
     <string name="navigation_bar_reset_message">Vorgaben wiederherstellen?</string>
@@ -563,7 +563,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="navigation_ring_title">Schnellstart-Verknüpfungen</string>
     <string name="navring_target_reset_message">Schnellstart-Verknüpfungen auf Standard zurücksetzen?</string>
     <string name="navring_target_reset">Schnellstart-Verknüpfungen zurückgesetzt</string>
-    <string name="navring_target_save">Schnellstart-Verknüpfungen gespeichert</string>
     <string name="navring_action_open_ime_switcher">Eingabemethode wählen</string>
     <string name="navring_action_kill_app">App schließen</string>
     <string name="navring_action_none">Keine</string>
@@ -639,7 +638,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="privacy_guard_filter_does_not_match">Es sind keine Apps mit passenden Berechtigungen installiert</string>
     <string name="privacy_guard_help_title">Hilfe</string>
     <string name="privacy_guard_reset_title">Zurücksetzen</string>
-    <string name="privacy_guard_help_text">An dieser Stelle kann der Datenschutz für einzelne Apps durch einfache Berührung ein- und ausgeschaltet werden. Ausgewählte Apps haben keinen Zugriff auf persönliche Daten wie Kontakte, Nachrichten oder das Anrufprotokoll. Langes Drücken auf einen Eintrag öffnet die Detailanzeige für diese App.\n\nStandardmäßig werden System-Apps nicht angezeigt. Wenn diese angezeigt werden sollen oder Apps, die anhand ihrer Berechtigungen keinen Zugriff auf persönliche Daten anfordern, ausgeblendet werden sollen, kann dies mit der entsprechenden Menü-Option ausgewählt werden.</string>
+    <string name="privacy_guard_help_text">An dieser Stelle kann der Datenschutz für einzelne Apps durch einfache Berührung ein- und ausgeschaltet werden. Ausgewählte Apps haben keinen Zugriff auf persönliche Daten wie Kontakte, Nachrichten oder das Anrufprotokoll. Langes Drücken auf einen Eintrag öffnet die Detailanzeige für diese App.\n\nStandardmäßig werden in das System integrierte Apps nicht angezeigt. Wenn diese angezeigt werden sollen, kann dies mit der entsprechenden Menü-Option ausgewählt werden.</string>
     <string name="privacy_guard_manager_show_system_apps">Integrierte Apps anzeigen</string>
     <string name="privacy_guard_manager_filter_permissions">Berechtigungsfilter</string>
     <string name="blacklist_title">Sperrliste</string>
@@ -725,7 +724,10 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="display_calibration_title">Displaykalibrierung</string>
     <string name="sensors_motors_title">Sensoren &amp; Vibration</string>
     <string name="category_quick_access">Schnellzugriffsleiste</string>
-    <string name="title_quick_access">In Benachrichtungsleiste anzeigen</string>
+    <string name="title_quick_access">In Benachrichtigungsleiste anzeigen</string>
     <string name="title_quick_access_linked">Anordnung koppeln</string>
     <string name="summary_quick_access_linked">Kachelauswahl und -anordnung der Schnelleinstellungen verwenden</string>
+    <string name="font_size_sample">Beispieltext</string>
+    <string name="selinux_enable_title">SE-Android</string>
+    <string name="selinux_enable_warning">Sie sind im Begriff, Security Enhanced Android, einen erweiterten Sicherheitsmechanismus, auf Ihrem Gerät zu aktivieren.\n\nDiese Option dient nur der Fehlersuche. Falls Ihr Gerät noch nicht vollständig kompatibel ist, kann dies zu Fehlfunktionen oder zu Abstürzen führen.\n\nTrotzdem fortfahren?</string>
 </resources>
