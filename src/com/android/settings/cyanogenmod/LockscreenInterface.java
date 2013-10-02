@@ -177,17 +177,18 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     public void onResume() {
         super.onResume();
 
-        if (mIsPrimary && mBatteryStatus != null) {
+        if (mIsPrimary) {
             ContentResolver cr = getActivity().getContentResolver();
-            int batteryStatus = Settings.System.getInt(cr,
-                    Settings.System.LOCKSCREEN_BATTERY_VISIBILITY, 0);
-            mBatteryStatus.setValueIndex(batteryStatus);
-            mBatteryStatus.setSummary(mBatteryStatus.getEntries()[batteryStatus]);
-        }
-        else if (mIsPrimary && mHomeScreenWidgets != null) {
+            if (mBatteryStatus != null) {
+                int batteryStatus = Settings.System.getInt(cr,
+                        Settings.System.LOCKSCREEN_BATTERY_VISIBILITY, 0);
+                mBatteryStatus.setValueIndex(batteryStatus);
+                mBatteryStatus.setSummary(mBatteryStatus.getEntries()[batteryStatus]);        
+            } else if (mHomeScreenWidgets != null) {
                 mHomeScreenWidgets.setChecked(Settings.System.getInt(cr,
                         Settings.System.HOME_SCREEN_WIDGETS, 0) == 1);
             }
+        }
     }
 
     @Override
