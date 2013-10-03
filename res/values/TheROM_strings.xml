@@ -260,7 +260,6 @@
     <string name="status_bar_alpha_mode_text_title">Transparency mode</string>
     <string name="status_bar_alpha_mode_home">on launcher</string>
     <string name="status_bar_alpha_mode_default">on launcher and keyguard</string>
-    <string name="status_bar_alpha_mode_always">always</string>
     <string name="status_bar_style_reset">Reset</string>
 
     <!-- ListView animation -->
