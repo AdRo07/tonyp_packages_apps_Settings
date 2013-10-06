@@ -29,18 +29,18 @@
     <PreferenceCategory
         android:title="@string/category_quick_access" >
 
-        <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
-            android:key="qs_quick_access"
-            android:title="@string/title_quick_access"
-            android:defaultValue="false" />
+        <PreferenceScreen
+            android:key="toggles_picker"
+            android:title="@string/toggles_picker_title"
+            android:summary="@string/toggles_picker_summary"
+            android:fragment="com.android.settings.tonyp.statusbar.StatusBarToggles" >
+        </PreferenceScreen>
 
         <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
             android:key="qs_quick_access_linked"
             android:title="@string/title_quick_access_linked"
             android:summary="@string/summary_quick_access_linked"
-            android:defaultValue="true"
-            android:dependency="qs_quick_access"
-            android:disableDependentsState="true" />
+            android:defaultValue="true" />
 
         <PreferenceScreen
             android:key="tile_picker"
@@ -50,11 +50,13 @@
             android:fragment="com.android.settings.cyanogenmod.QuickSettingsTiles" >
             <extra android:name="config_ribbon" android:value="true" />
         </PreferenceScreen>
-        <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
-            android:key="show_brightness_slider_transparent"
-            android:title="@string/title_show_brightness_slider_transparent"
-            android:summary="@string/summary_show_brightness_slider_transparent"
-            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="volume_slider_input_mode"
+            android:title="@string/title_show_volume_slider_stream"
+            android:dialogTitle="@string/title_show_volume_slider_stream"
+            android:entries="@array/stream_volume_slider_entries"
+            android:entryValues="@array/stream_volume_slider_values" />
 
     </PreferenceCategory>
 

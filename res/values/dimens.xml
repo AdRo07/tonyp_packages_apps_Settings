@@ -69,4 +69,7 @@
     <!-- Minimum width for the popup for updating a user's photo. -->
     <dimen name="update_user_photo_popup_min_width">300dip</dimen>
 
+    <dimen name="drag_grip_ridge_size">4dp</dimen>
+    <dimen name="drag_grip_ridge_gap">2dp</dimen>
+
 </resources>
