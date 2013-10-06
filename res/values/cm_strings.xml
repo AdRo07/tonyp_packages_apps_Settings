@@ -170,6 +170,12 @@
     <string name="lockscreen_target_edit_title">Edit shortcut and icon</string>
     <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
 
+    <!-- App Shortcuts Statusbar-->
+    <string name="shortcut_app_target_info"></string>
+    <string name="shortcut_app_target_title">Slider shortcuts</string>
+    <string name="shortcut_app_target_summary">View or change custom app shortcuts</string>
+    <string name="shortcut_app_target_save">App shortcuts saved</string>
+
     <!-- Lock screen vibrate settings -->
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
     <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
@@ -997,12 +1003,24 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_quick_access">Show in drawer</string>
     <string name="title_quick_access_linked">Linked layout</string>
     <string name="summary_quick_access_linked">Use the same tiles and layout as the Quick Settings panel</string>
-    <string name="title_show_brightness_slider">Brightness Slider Mode</string>
-    <string name="title_show_brightness_slider_transparent">Brightness Slider Transparent</string>
-    <string name="summary_show_brightness_slider_transparent">Make the Brightness Slider Background Transparent</string>
 
-    <string name="show_brightness_slider_dont">Don\'t show</string>
-    <string name="show_brightness_slider_above">Above Ribbons</string>
-    <string name="show_brightness_slider_below">Below Ribbons</string>
+    <string name="summary_quick_access">Show the QuickSettings Ribbon in the Notification Drawer</string>
+
+    <string name="title_brightness_slider">Brightness Slider</string>
+    <string name="summary_brightness_slider">Show a Brightness Slider in Notifications, to control the Brightness through a slider</string>
+
+    <string name="title_volume_slider">Volume Slider</string>
+    <string name="summary_volume_slider">Show a Volume Slider in Notifications, to control the volume of phone, music or alarm</string>
+    <string name="title_show_volume_slider_stream">Volume Slider Mode</string>
+
+    <string name="stream_volume_slider_ring">Ring / Phone</string>
+    <string name="stream_volume_slider_music">Music / Media</string>
+    <string name="stream_volume_slider_notifications">Alarm</string>
+
+    <string name="add_statusbar_toggle">Add Extension</string>
+    <string name="show_as_transparent">Transparent</string>
+
+    <string name="toggles_picker_title">Quick Access Extensions</string>
+    <string name="toggles_picker_summary">Add, delete or change the position of a Extention, like Ribbons or Sliders, in the Notification Drawer</string>
 
 </resources>

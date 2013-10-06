@@ -16,21 +16,14 @@
 
 package com.android.settings.cyanogenmod;
 
-import android.content.ContentResolver;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.RemoteException;
 import android.os.UserHandle;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.util.Log;
-import android.view.WindowManagerGlobal;
 
 import com.android.settings.R;
-import com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference;
 import com.android.settings.SettingsPreferenceFragment;
 
 public class NotificationDrawer extends SettingsPreferenceFragment  implements
@@ -38,12 +31,13 @@ public class NotificationDrawer extends SettingsPreferenceFragment  implements
     private static final String TAG = "NotificationDrawer";
 
     private static final String UI_COLLAPSE_BEHAVIOUR = "notification_drawer_collapse_on_dismiss";
-    private static final String BRIGHTNESS_SLIDER = "show_brightness_slider";
-    private static final String SLIDER_TRANSPARENT = "show_brightness_slider_transparent";
+    private static final String VOLUME_SLIDER_MODE = "volume_slider_input_mode";
 
     private ListPreference mCollapseOnDismiss;
-    private ListPreference mShowBrightnessSlider;
-    private SystemSettingCheckBoxPreference mSliderTransparent;
+    
+    private ListPreference mVolumeSliderMode;
+    
+    private int mVSliderMode;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,20 +54,14 @@ public class NotificationDrawer extends SettingsPreferenceFragment  implements
         mCollapseOnDismiss.setValue(String.valueOf(collapseBehaviour));
         mCollapseOnDismiss.setOnPreferenceChangeListener(this);
         updateCollapseBehaviourSummary(collapseBehaviour);
-
-        int mode = Settings.System.getIntForUser(getContentResolver(),
-                    Settings.System.SHOW_BRIGHTNESS_SLIDER, 0, UserHandle.USER_CURRENT);
-        mShowBrightnessSlider = (ListPreference) findPreference(BRIGHTNESS_SLIDER);
-        mShowBrightnessSlider.setValue(String.valueOf(mode));
-        mShowBrightnessSlider.setOnPreferenceChangeListener(this);
-        updateBrightnessSlider(mode);
-
-        boolean transparent = Settings.System.getIntForUser(getContentResolver(),
-                    Settings.System.SHOW_BRIGHTNESS_SLIDER_TRANSPARENT, 0, UserHandle.USER_CURRENT) == 1;
-        mSliderTransparent = (SystemSettingCheckBoxPreference) findPreference(SLIDER_TRANSPARENT);
-        mSliderTransparent.setChecked(transparent);
-        mSliderTransparent.setOnPreferenceChangeListener(this);
-        mSliderTransparent.setEnabled(mode == 1 || mode == 2);
+        
+        mVSliderMode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.SHOW_VOLUME_SLIDER, -1, UserHandle.USER_CURRENT);
+        
+        mVolumeSliderMode = (ListPreference)findPreference(VOLUME_SLIDER_MODE);
+        mVolumeSliderMode.setValueIndex(mVSliderMode);
+        mVolumeSliderMode.setOnPreferenceChangeListener(this);
+        updateStreamSummary(mVSliderMode);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
@@ -83,17 +71,13 @@ public class NotificationDrawer extends SettingsPreferenceFragment  implements
                     Settings.System.STATUS_BAR_COLLAPSE_ON_DISMISS, value);
             updateCollapseBehaviourSummary(value);
             return true;
-        } else if(preference == mShowBrightnessSlider) {
+        } else if (preference == mVolumeSliderMode) {
             int value = Integer.valueOf((String) objValue);
+            mVSliderMode = value;
+            mVolumeSliderMode.setSummary(mVolumeSliderMode.getValue());
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.SHOW_BRIGHTNESS_SLIDER, value);
-            updateBrightnessSlider(value);
-            mSliderTransparent.setEnabled(value == 1 || value == 2);
-            return true;
-        } else if(preference == mSliderTransparent) {
-            int value = objValue.toString().equals("true") ? 1 : 0;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.SHOW_BRIGHTNESS_SLIDER_TRANSPARENT, value);
+                    Settings.System.VOLUME_SLIDER_INPUT_MODE, value);
+            updateStreamSummary(mVSliderMode);
             return true;
         }
 
@@ -105,10 +89,10 @@ public class NotificationDrawer extends SettingsPreferenceFragment  implements
                 R.array.notification_drawer_collapse_on_dismiss_summaries);
         mCollapseOnDismiss.setSummary(summaries[setting]);
     }
-
-    private void updateBrightnessSlider(int setting) {
+    
+    private void updateStreamSummary(int setting) {
         String[] summaries = getResources().getStringArray(
-                R.array.show_brightness_slider_entries);
-        mShowBrightnessSlider.setSummary(summaries[setting]);
+                R.array.stream_volume_slider_entries);
+        mVolumeSliderMode.setSummary(summaries[setting]);
     }
 }
