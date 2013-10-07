@@ -39,8 +39,8 @@ Consulte la Licencia para los permisos específicos del lenguaje y limitaciones 
 <!-- Color Picker -->
 <string name="dialog_color_picker">Selector de Color</string>
 <string name="press_color_to_apply">Presione un Color para aplicar</string>
-<string name="arrow_right">?</string>
-<string name="arrow_down">?</string>
+<string name="arrow_right">→</string>
+<string name="arrow_down">↓</string>
 <string name="hex">Hex:</string>
 <string name="hex_hint">#FF000000</string>
 <string name="set">Establecer</string>

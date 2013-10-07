@@ -19,7 +19,7 @@
     <string name="tonyp_settings_title">Paramètres TheROM</string>
     <string name="display_hybrid_options_title">HYBRID</string>
     <string name="display_notifications_options_title">NOTIFICATIONS</string>
-    <string name="display_statusbar_options_title">BARRE DE STATUT & TIROIR D'APPLICATION</string>
+    <string name="display_statusbar_options_title">BARRE DE STATUT &amp; TIROIR D\'APPLICATION</string>
     <string name="display_various_options_title">DIVERS</string>
     <string name="display_donate_options_title">DONATION &lt;3</string>
     <string name="display_animation_options_title">ANIMATIONS</string>
@@ -33,12 +33,12 @@
 
     <!-- Custom carrier -->
     <string name="custom_carrier_label_title">Support de texte personnalisé</string>
-    <string name="custom_carrier_label_explain">Entrez s'il vous plait un nouveau texte. N'entrez rien pour revenir au texte d'origine.</string>
-    <string name="custom_carrier_label_notset">Le support de texte personnalisé n'est pas encore appliqué.</string>
+    <string name="custom_carrier_label_explain">Entrez s\'il vous plait un nouveau texte. N\'entrez rien pour revenir au texte d\'origine.</string>
+    <string name="custom_carrier_label_notset">Le support de texte personnalisé n\'est pas encore appliqué.</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Sélection des couleurs</string>
-    <string name="press_color_to_apply">Appuyez sur 'Couleur' pour appliquer</string>
+    <string name="press_color_to_apply">Appuyez sur \'Couleur\' pour appliquer</string>
     <string name="arrow_right">â†’</string>
     <string name="arrow_down">â†“</string>
     <string name="hex">Hex:</string>
@@ -54,15 +54,15 @@
     <string name="halo_settings_title">Options Halo</string>
     <string name="halo_behavior_title">Comportement de Halo</string>
     <string name="halo_hide_title">Cacher Halo après utilisation</string>
-    <string name="halo_hide_summary">Halo s'affiche pour les taches entrantes et disparé après un certain temps</string>
+    <string name="halo_hide_summary">Halo s\'affiche pour les taches entrantes et disparé après un certain temps</string>
     <string name="halo_reversed_title">Halo inversé</string>
     <string name="halo_reversed_summary">Appliqué pour les changements de taches et les gestes</string>
     <string name="halo_state_title">Police Halo</string>
     <string name="halo_state_summary">Activé les listes noire/blanche de notifications</string>
     <string name="halo_state_black">Liste Noire</string>
     <string name="halo_state_white">Liste Blanche</string>
-    <string name="halo_pause_title">Mettre en pause l'application active</string>
-    <string name="halo_pause_summary">Quand vous ouvrez une pplication avec Halo, l'application sous-jacente se met en pause</string>
+    <string name="halo_pause_title">Mettre en pause l\'application active</string>
+    <string name="halo_pause_summary">Quand vous ouvrez une pplication avec Halo, l\'application sous-jacente se met en pause</string>
     <string name="halo_ninja_title">Mode Ninja</string>
     <string name="halo_ninja_summary">Halo disparaitra complètement quand il sera vide</string>
     <string name="halo_notification_msgbox_title">Activer les messages en pop-up</string>
@@ -98,8 +98,8 @@
     <string name="status_bar_center_clock_title">Horloge Centrée</string>
 
     <!-- Home screen widgets -->
-    <string name="home_screen_widgets_title">Widgets de la page d'acceuil</string>
-    <string name="home_screen_widgets_summary">Accepter que les widgets de la page d'acceuil soit ajouté sur l'écran de verrouillage</string>
+    <string name="home_screen_widgets_title">Widgets de la page d\'acceuil</string>
+    <string name="home_screen_widgets_summary">Accepter que les widgets de la page d\'acceuil soit ajouté sur l\'écran de verrouillage</string>
 
     <!-- Hybrid -->
     <string name="uimode_title">UIMode</string>
@@ -111,7 +111,7 @@
     <string name="system_dpi_title">Densité système</string>
     <string name="system_dpi_summary">Densité système actuelle:</string>
     <string name="system_dpi_standar_title">Densité standard</string>
-    <string name="system_dpi_standar_summary">Sélectionner la densité à partir d'une liste</string>
+    <string name="system_dpi_standar_summary">Sélectionner la densité à partir d\'une liste</string>
     <string name="system_dpi_custom_title">Specifier une densité personnalisé</string>
     <string name="system_dpi_custom_hint">De 120 à 240</string>
     <string name="system_dpi_custom_summary">Sélectionner une densité personnalisé de 120 à 240</string>
@@ -119,7 +119,7 @@
     <string name="appsuimode_title">Applications UIMode</string>
 
     <string name="apps_dpi_title">Densité applications</string>
-    <string name="apps_dpi_summary">Densité de l'application actuelle:</string>
+    <string name="apps_dpi_summary">Densité de l\'application actuelle:</string>
     <string name="apps_dpi_custom_title">Spécifié une densité</string>
     <string name="apps_dpi_custom_hint">De 120 à 240</string>
     <string name="apps_dpi_custom_summary">Sélectionnez une densité de 120 à 240</string>
@@ -132,7 +132,7 @@
     <string name="dpi_group_app_list">Liste des applications</string>
     <string name="dpi_group_alert_add_app_title">Choisir une application</string>
     <string name="dpi_groups_alert_remove_app">Supprimer une application</string>
-    <string name="dpi_groups_remove_app">Supprimer l'application %s du groupe?</string>
+    <string name="dpi_groups_remove_app">Supprimer l\'application %s du groupe?</string>
     <string name="dpi_groups_backuprestore_title">Sauvegarder et restaurer</string>
     <string name="dpi_groups_auto_backup">Sauvegarde automatique</string>
     <string name="dpi_groups_auto_backup_summary">Sauvegarder votre configuration avec chaque changement</string>
@@ -152,7 +152,7 @@
     <string name="customdpigroup_group_exists">Le groupe DPI personnalisé selectionné existe déjà.</string>
     <string name="per_app_layout_title">>Rangement par application</string>
     <string name="per_app_layout_summary">Définir une disposition pour chaque application</string>
-    <string name="per_app_layout_list_title">Liste d'applications</string>
+    <string name="per_app_layout_list_title">Liste d\'applications</string>
     <string name="per_app_layout_alert_title">Sélectionner une disposition</string>
     <string name="widgets_title">Widgets</string>
     <string name="widgets_summary">Definir la liste des Widgets</string>
@@ -166,7 +166,7 @@
     <string name="navbar_height_summary">Préciser la hauteur de la barre de navigation</string>
 
     <string name="alert_reboot">Redémarrage nécessaire</string>
-    <string name="alert_reboot_message">Ces changements ont besoin d'un redémarrage pour être appliqué. Voulez-vous redémarrer maintenant?</string>
+    <string name="alert_reboot_message">Ces changements ont besoin d\'un redémarrage pour être appliqué. Voulez-vous redémarrer maintenant?</string>
 
     <!-- Donate -->
     <string name="donate_tonyp_title">Donation pour Tonyp</string>
@@ -190,7 +190,7 @@
 
     <!-- Active Display -->
     <string name="ad_settings_title">Affichage actif</string>
-    <string name="ad_settings_summary">Changer les paramètres de l'affichage actif</string>
+    <string name="ad_settings_summary">Changer les paramètres de l\'affichage actif</string>
     <string name="ad_enable_title">Activé</string>
     <string name="ad_enable_summary_on">Affichage actif activé</string>
     <string name="ad_enable_summary_off">Affichage actif désactivé</string>
@@ -199,15 +199,15 @@
     <string name="ad_all_notifications_title">Toutes les notifications</string>
     <string name="ad_all_notifications_summary">Montrer toutes les notifications, y compris, les notifications non effacable en cours.</string>
     <string name="ad_pocket_mode_title">Pocket mode</string>
-    <string name="ad_pocket_mode_summary">Montre les notifications de l'affichage actif quand vous sortez votre portable de votre poche.</string>
+    <string name="ad_pocket_mode_summary">Montre les notifications de l\'affichage actif quand vous sortez votre portable de votre poche.</string>
     <string name="ad_redisplay_title">Réafficher les notifications</string>
     <string name="ad_customizations_title">Personnalisations</string>
     <string name="ad_brightness_title">Luminosité de notification</string>
-    <string name="ad_brightness_summary">Niveau de luminosité pour les notifications affichés lorsue la luminosité automatique n'est pas activé.</string>
+    <string name="ad_brightness_summary">Niveau de luminosité pour les notifications affichés lorsue la luminosité automatique n\'est pas activé.</string>
     <string name="ad_show_date_title">Montrer la date</string>
-    <string name="ad_show_date_summary">Montrer la date au dessus de l'heure</string>
+    <string name="ad_show_date_summary">Montrer la date au dessus de l\'heure</string>
     <string name="ad_show_ampm_title">Montrer AM/PM</string>
-    <string name="ad_show_ampm_summary">Afficher l'indicateur AM/PM à coté de l'heure si lorsque vous utilisé le format 12 heures</string>
+    <string name="ad_show_ampm_summary">Afficher l\'indicateur AM/PM à coté de l\'heure si lorsque vous utilisé le format 12 heures</string>
     <string name="ad_redisplay_never">jamais</string>
     <string name="ad_redisplay_1m">1 minute</string>
     <string name="ad_redisplay_5m">5 minutes</string>
@@ -218,20 +218,20 @@
     <string name="ad_redisplay_5h">5 hours</string>
 
     <!-- Notification drawer settings  -->
-    <string name="notification_drawer_title">Notification du tiroir d'application</string>
+    <string name="notification_drawer_title">Notification du tiroir d\'application</string>
     <string name="notification_style_grouptitle">Style</string>
-    <string name="notification_style_title">Style des notifications du tiroir d'application</string>
-    <string name="notification_style_summary">Changer le style de vos notifications du tiroir d'application</string>
+    <string name="notification_style_title">Style des notifications du tiroir d\'application</string>
+    <string name="notification_style_summary">Changer le style de vos notifications du tiroir d\'application</string>
     <string name="notification_widgets">Widgets</string>
     <string name="notification_show_wifi_ssid_title">Montrer le nom du réseau WIFI</string>
     <string name="notification_show_wifi_ssid_summary">Affiché le nom du réseau WIFI actuellement connecté</string>
-    <string name="notification_wallpaper_title">Arrière plan des notifications du tiroir d'application</string>
-    <string name="notification_wallpaper_landscape_title">Différent Fond d'écran en paysage</string>
+    <string name="notification_wallpaper_title">Arrière plan des notifications du tiroir d\'application</string>
+    <string name="notification_wallpaper_landscape_title">Différent Fond d\'écran en paysage</string>
     <string name="notification_background_color_fill">Couleur de remplissage</string>
     <string name="notification_background_custom_image">Image personnalisée</string>
     <string name="notification_background_default_wallpaper">Arrière plan par défaut</string>
     <string name="notification_drawer_custom_background_dialog_title">Choisir la couleur</string>
-    <string name="notif_wallpaper_alpha_title">Transparence de l'arrière plan de la notificatin</string>
+    <string name="notif_wallpaper_alpha_title">Transparence de l\'arrière plan de la notificatin</string>
     <string name="notif_alpha_title">Niveau de transparence de la notification</string>
 
     <!-- Vold Switchable Pair -->
@@ -242,8 +242,8 @@
     <string name="reboot_prompt_message">Pour appliquer la nouvelle configuration, un redémarrage est nécessaire.\n\nVoulez-vous redémarrer maintenant?</string>
 
     <!-- additional hardware buttons -->
-    <string name="hardware_keys_action_screen_off">Eteindre l'écran</string>
-    <string name="hardware_keys_action_power_menu">Ouvrir le menu d'alimentation</string>
+    <string name="hardware_keys_action_screen_off">Eteindre l\'écran</string>
+    <string name="hardware_keys_action_power_menu">Ouvrir le menu d\'alimentation</string>
     <string name="hardware_keys_action_last_app">Basculer sur la dernière application</string>
     <string name="hardware_keys_action_torch">Allumer la torche</string>
     <string name="hardware_keys_action_screenshot">Prendre un screenshot</string>
@@ -293,19 +293,19 @@
     <!-- Animation Controls -->
     <string name="title_animation_controls">Animation système personnalisé</string>
     <string name="activity_open_title">Ouvrir animatin In-App Activity</string>
-    <string name="activity_close_title">Fermer l'animation In-App Activity</string>
+    <string name="activity_close_title">Fermer l\'animation In-App Activity</string>
     <string name="task_open_title">Démarrer In-App Animation</string>
-    <string name="task_close_title">Retourner à l'animation précédente</string>
-    <string name="task_move_to_front_title">Passer à l'animation suivante</string>
-    <string name="task_move_to_back_title">Passer à l'animation précédente</string>
-    <string name="wallpaper_open_title">Retourner à l'animation de la page d'acceuil</string>
-    <string name="wallpaper_close_title">Démarrer l'animation de la page d'acceuil</string>
+    <string name="task_close_title">Retourner à l\'animation précédente</string>
+    <string name="task_move_to_front_title">Passer à l\'animation suivante</string>
+    <string name="task_move_to_back_title">Passer à l\'animation précédente</string>
+    <string name="wallpaper_open_title">Retourner à l\'animation de la page d\'acceuil</string>
+    <string name="wallpaper_close_title">Démarrer l\'animation de la page d\'acceuil</string>
     <string name="wallpaper_intra_open_title">Animation des pages récemments ouvertes</string>
     <string name="wallpaper_intra_close_title">Animation des pages récemments fermées</string>
-    <string name="animation_duration_title">Durée de l'animation</string>
-    <string name="title_animation_no_override">Empecher que l'application soit prioritaire</string>
+    <string name="animation_duration_title">Durée de l\'animation</string>
+    <string name="title_animation_no_override">Empecher que l\'application soit prioritaire</string>
     <string name="summary_animation_no_override">Empecher les transitions des applications prioritaires.</string>
     <string name="animation_duration_default">Defaut</string>
-    <string name="header_summary_animation">@Invalide</string>
+    <string name="header_summary_animation">@null</string>
 
 </resources>

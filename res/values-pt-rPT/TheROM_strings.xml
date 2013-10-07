@@ -2,16 +2,16 @@
 <!-- Copyright (C) 2013 TheROM
    
      Licenciado sob a Licença Apache, Versão 2.0 (a "Licença");
-     não pode usar este arquivo exceto em conformidade com a Licença.
-     Obtenha uma cópia da Licença em
+     não pode usar este arquivo exceto em conformidade com a Licença.
+     Obtenha uma cópia da Licença em
 
-           http://www.apache.org/licenses/LICENSE-2.0
+           http://www.apache.org/licenses/LICENSE-2.0
 
-     A menos que exigido pela lei aplicável ou por acordo escrito, o software
-     distribuído sob a Licença é distribuído "COMO ESTÁ",
-     SEM GARANTIAS OU CONDIÇÕES DE QUALQUER TIPO, expressa ou implícita.
-     Consulte a licença para as permissões que regem a linguagem específica e
-     limitações de acordo com a licença.
+     A menos que exigido pela lei aplicável ou por acordo escrito, o software
+     distribuído sob a Licença é distribuído "COMO ESTÁ",
+     SEM GARANTIAS OU CONDIÇÕES DE QUALQUER TIPO, expressa ou implícita.
+     Consulte a licença para as permissões que regem a linguagem específica e
+     limitações de acordo com a licença.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
@@ -169,7 +169,7 @@
     <string name="alert_reboot_message">Esta alteração necessita de reinicialização de forma a ser aplicada. Reinicializar agora?</string>
 
     <!-- Donate -->
-    <string name="donate_tonyp_title">Doar</string>
+    <string name="donate_tonyp_title">Doar/string</string>
     <string name="donate_tonyp_summary">Se gosta do meu trabalho mostre a sua apreciação doando</string>
     <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick\u0026hosted_button_id=RL7NJSUDNQNZU</string>
 
