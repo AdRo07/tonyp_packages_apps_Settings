@@ -66,6 +66,7 @@
     <uses-permission android:name="android.permission.SET_TIME" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.CHANGE_PRIVACY_GUARD_STATE" />
+    <uses-permission android:name="android.permission.REBOOT" />
 
     <permission
         android:name="android.permission.REQUEST_SUPERUSER"
@@ -179,6 +180,7 @@
 
         <activity android:name=".SubSettings"
                 android:taskAffinity="com.android.settings"
+                android:configChanges="orientation|keyboardHidden|screenSize"
                 android:parentActivityName="Settings">
         </activity>
 
@@ -1084,6 +1086,8 @@
         <!-- Lock screen settings -->
         <activity android:name="ConfirmLockPattern"/>
 
+        <activity android:name="ConfirmLockGesture"/>
+
         <activity android:name="ConfirmLockPassword"
             android:windowSoftInputMode="stateVisible|adjustResize"/>
 
@@ -1099,6 +1103,8 @@
         <activity android:name="ChooseLockPatternSize" android:exported="false"/>
 
         <activity android:name="ChooseLockPattern" android:exported="false"/>
+
+        <activity android:name="ChooseLockGesture" android:exported="false"/>
 
         <activity android:name="ChooseLockPassword" android:exported="false"
             android:windowSoftInputMode="stateVisible|adjustResize"/>
@@ -1702,6 +1708,8 @@
 
         <activity android:name=".cyanogenmod.QuickSettings" />
 
+        <activity android:name=".cyanogenmod.StatusBarStyle" />
+
         <activity android:name=".cyanogenmod.NotificationDrawer" />
 
         <activity android:name=".cyanogenmod.MoreDeviceSettings" />
@@ -1709,6 +1717,7 @@
         <!-- "Blacklist settings" UI, used only on voice-capable phone devices. -->
         <activity android:name="Settings$BlacklistSettingsActivity"
                 android:theme="@android:style/Theme.Holo.DialogWhenLarge"
+                android:uiOptions="splitActionBarWhenNarrow"
                 android:label="@string/blacklist_title"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
@@ -1746,7 +1755,28 @@
         </activity>
 
         <!-- CyanogenMod activities End -->
-
+        
+        <!-- Based on CyanogenMod's CIDCircus, Android's easteregg -->
+        <activity android:name=".tonyp.tonyLogoActivity"
+                android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
+                android:process=":ui">
+        </activity>
+        <activity
+            android:name=".tonyp.tonyCircus"
+            android:exported="true"
+            android:label="tonyCircus"
+            android:icon="@drawable/empty_icon"
+            android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name=".tonyp.TONYLOGO" />
+            </intent-filter>
+        </activity>
+        
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
@@ -1809,6 +1839,8 @@
                 android:resource="@id/user_settings" />
         </activity>
 
+        <activity android:name=".hybrid.HybridSettings" />
+
         <activity android:name="Settings$NotificationAccessSettingsActivity"
                   android:label="@string/manage_notification_access"
                   android:taskAffinity=""
@@ -1832,6 +1864,17 @@
             <intent-filter>
                 <action android:name="android.settings.SHOW_REGULATORY_INFO" />
                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".tonyp.tonypSettings" />
+        <activity android:name=".slim.NotificationDrawerStyle" />
+        <activity	
+            android:name=".fragments.AnimationControls"	
+            android:label="@string/title_animation_controls">
+            <intent-filter>	
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.android.settings.SHORTCUT"/>
             </intent-filter>
         </activity>
 

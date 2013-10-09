@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 TheROM
+
+Licenciado bajo la Licencia Apache, Version 2.0 (la "Licencia");
+Usted no puede utilizar este archivo a menos que este de acuerdo con la Licencia.
+Puede obtener una copia de la Licencia en
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+A menos que sea requerido por la ley aplicable o por un acuerdo escrito, el software
+distribuido bajo la Licencia es distribuido "TAL COMO VIENE",
+SIN GARANTÍAS NI CONDICIONES DE NINGÚN TIPO, ni expresadas ni implícitas.
+Consulte la Licencia para los permisos específicos del lenguaje y limitaciones en la Licencia.
+
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- TheROM settings -->
+<string name="tonyp_settings_title">Ajustes de TheROM</string>
+<string name="display_hybrid_options_title">HYBRID</string>
+<string name="display_notifications_options_title">NOTIFICACIONES</string>
+<string name="display_statusbar_options_title">BARRA DE ESTADO Y NOTIFICACIONES</string>
+<string name="display_various_options_title">VARIOS</string>
+<string name="display_donate_options_title">DONAR &lt;3</string>
+<string name="display_animation_options_title">ANIMACIONES</string> 
+
+<string name="hybrid_settings_title">Ajustes de Hybrid</string>
+<string name="title_show_brightness_slider">Deslizador de brillo</string>
+
+<!-- tonyp minfree -->
+<string name="pref_tonyp_minfree_title">Optimizaciones de memoria</string>
+<string name="pref_tonyp_minfree_summary">Libera memoria un poco más agresivamente. Sólo requerido si hay retrasos mientras realiza varias tareas a la vez(requiere reinicio)</string>
+
+<!-- Custom carrier -->
+<string name="custom_carrier_label_title">Texto personalizado del operador</string>
+<string name="custom_carrier_label_explain">Por favor ingrese una nueva etiqueta. Ingrese una vacía para revertir la etiqueta predefinida.</string>
+<string name="custom_carrier_label_notset">Texto personalizado del operador no ha sido especificado</string>
+
+<!-- Color Picker -->
+<string name="dialog_color_picker">Selector de Color</string>
+<string name="press_color_to_apply">Presione un Color para aplicar</string>
+<string name="arrow_right">→</string>
+<string name="arrow_down">↓</string>
+<string name="hex">Hex:</string>
+<string name="hex_hint">#FF000000</string>
+<string name="set">Establecer</string>
+<string name="ics_color">!!!</string>
+    
+<!-- HALO -->
+<!-- Label for are-notifications-enabled checkbox in app details [CHAR LIMIT=20] -->
+<string name="app_halo_label_black">Lista negra de notificaciones de HALO</string>
+<string name="app_halo_label_white">Lista blanca de notificaciones de HALO</string>
+
+<string name="halo_settings_title">Ajustes de Halo</string>
+<string name="halo_behavior_title">Comportamiento de Halo</string>
+<string name="halo_hide_title">Ocultar Halo después de actividad</string>
+<string name="halo_hide_summary">Halo aparecerá para tareas entrantes y desaparecerá después de un momento</string>
+<string name="halo_reversed_title">Halo Reverso</string>
+<string name="halo_reversed_summary">Aplica para intercambio de tareas y gestos de movimiento</string>
+<string name="halo_state_title">Políticas de Halo</string>
+<string name="halo_state_summary">Habilita notificaciones de lista negra/blanca</string>
+<string name="halo_state_black">Lista negra</string>
+<string name="halo_state_white">Lista blanca</string>
+<string name="halo_pause_title">Pausar aplicación activa</string>
+<string name="halo_pause_summary">Al abrir una aplicación con Halo la aplicación inferior será pausada</string>
+<string name="halo_ninja_title">Modo ninja</string>
+<string name="halo_ninja_summary">Halo desaparecerá completamente cuando esté vacío</string>
+<string name="halo_notification_msgbox_title">Habilitar mensajes emergentes</string>
+<string name="halo_notification_msgbox_summary">Mostrar caja de mensajes para notificaciones entrantes</string>
+<string name="halo_unlock_ping_title">Sonido al desbloquear</string>
+<string name="halo_unlock_ping_summary">Halo hará un sonido cuando el teléfono sea desbloqueado si nuevas notificaciones fueron recibidas</string>
+
+<string name="halo_size_title">Tamaño de Halo</string>
+<string name="halo_size_summary">Define que tan grande será Halo</string>
+<string name="halo_size_miniscule">Minúsculo</string>
+<string name="halo_size_small">Pequeño</string>
+<string name="halo_size_default">Por defecto</string>
+<string name="halo_size_large">Grande</string>
+<string name="halo_size_gigantic">Gigante</string>
+<string name="halo_size_monster">Monstruoso</string>
+
+<string name="halo_notification_count_title">Conteo de notificaciones</string>
+<string name="halo_notification_count_summary">Mostrar conteo de notificaciones en Halo</string>
+<string name="halo_notification_count_none">Ninguno</string>
+<string name="halo_notification_count_total">Total</string>
+<string name="halo_notification_count_individual">Por aplicación</string>
+<string name="halo_notification_count_both">Ambos</string>
+
+<string name="halo_msgbox_animation_title">Animación de caja de mensajes</string>
+<string name="halo_msgbox_animation_summary">Animación de caja de mensajes de Halo para notificaciones entrantes</string>
+<string name="halo_msgbox_animation_none">Ninguno</string>
+<string name="halo_msgbox_animation_flip">Voltear</string>
+
+<string name="title_floating_window">Ventana flotante</string>
+<string name="summary_floating_window">Abrir casillas de Ajustes Rápidos en ventana flotante</string>
+
+<!-- Center Clock -->
+<string name="status_bar_center_clock_title">Centrar reloj</string>
+
+<!-- Home screen widgets -->
+<string name="home_screen_widgets_title">Widgets de pantalla de inicio</string>
+<string name="home_screen_widgets_summary">Permitir que widgets de la pantalla de inicio sean añadidos a la pantalla de bloqueo</string>
+
+<!-- Hybrid -->
+<string name="uimode_title">ModoUI</string>
+<string name="uimode_phone">Teléfono</string>
+<string name="uimode_phablet">Tableteléfono</string>
+<string name="uimode_tablet">Tableta</string>
+
+<string name="dpi_settings_title">Densidad de sistema</string>
+<string name="system_dpi_title">Densidad de sistema</string>
+<string name="system_dpi_summary">Densidad actual de sistema:</string>
+<string name="system_dpi_standar_title">Densidad estándar</string>
+<string name="system_dpi_standar_summary">Seleccionar la densidad desde una lista</string>
+<string name="system_dpi_custom_title">Especificar densidad personalizada </string>
+<string name="system_dpi_custom_hint">De 120 a 240</string>
+<string name="system_dpi_custom_summary">Seleccionar una densidad personalizada de 120 a 240</string>
+
+<string name="appsuimode_title">Aplicaciones ModoUI</string>
+
+<string name="apps_dpi_title">Densidad de aplicaciones</string>
+<string name="apps_dpi_summary">Densidad de aplicación actual:</string>
+<string name="apps_dpi_custom_title">Especificar densidad</string>
+<string name="apps_dpi_custom_hint">De 120 a 240</string>
+<string name="apps_dpi_custom_summary">Seleccione una densidad de 120 a 240</string>
+
+<string name="dpi_groups_title">Grupos de PPP (Puntos por pulgada)</string>
+<string name="dpi_groups_summary">Definir grupo de PPP para cada aplicación</string>
+<string name="dpi_group_title">Grupo de PPP</string>
+<string name="dpi_groups_apps">aplicaciones</string>
+<string name="dpi_group_add_app">Añadir aplicación</string>
+<string name="dpi_group_app_list">Lista de aplicaciones</string>
+<string name="dpi_group_alert_add_app_title">Seleccione una aplicación</string>
+<string name="dpi_groups_alert_remove_app">Eliminar aplicación</string>
+<string name="dpi_groups_remove_app">¿Eliminar %s aplicación del grupo?</string>
+<string name="dpi_groups_backuprestore_title">Respaldar y restaurar</string>
+<string name="dpi_groups_auto_backup">Auto respaldar</string>
+<string name="dpi_groups_auto_backup_summary">Guardar su configuración con cada cambio</string>
+<string name="dpi_groups_backup_title">Respaldar</string>
+<string name="dpi_groups_backup_summary">Respalde su configuración</string>
+<string name="dpi_groups_restore_title">Restaurar</string>
+<string name="dpi_groups_restore_summary">Restaurar su configuración</string>
+<string name="dpi_groups_backup_done">Respaldo de archivo de configuración terminado</string>
+<string name="dpi_groups_restore_done">Archivo de configuración restaurado</string>
+<string name="dpi_groups_restore_default_title">Restaurar grupos predefinidos</string>
+<string name="dpi_groups_restore_default_summary">Eliminar grupos de PPP y dejar los grupos predefinidos</string>
+<string name="dpi_groups_delete_title">Eliminar grupo de PPP</string>
+<string name="dpi_groups_delete_summary">¿Quiere eliminar este grupo de PPP?</string>
+<string name="customdpigroup">Añadir grupo</string>
+<string name="customdpigroup_summary">Añadir un grupo de PPP personalizado</string>
+<string name="custom_dpi">PPP actual:</string>
+<string name="customdpigroup_group_exists">El grupo de PPP seleccionado ya existe.</string>
+<string name="per_app_layout_title">Disposición por aplicación</string>
+<string name="per_app_layout_summary">Definir disposición de cada aplicación</string>
+<string name="per_app_layout_list_title">Lista de aplicaciones</string>
+<string name="per_app_layout_alert_title">Seleccione una disposición</string>
+<string name="widgets_title">Widgets</string>
+<string name="widgets_summary">Defina la lista de widgets</string>
+<string name="add_widget">Añadir widget</string>
+<string name="widget_list">Lista de widgets</string>
+<string name="widget_alert_remove_widget">Eliminar widget</string>
+<string name="widget_remove_widget">¿Eliminar %s widget de la lista?</string>
+<string name="widget_add_title">Seleccionar una aplicación</string>
+
+<string name="navbar_height_title">Altura de la barra de navegación</string>
+<string name="navbar_height_summary">Especificar la altura de la barra de navegación</string>
+
+<string name="alert_reboot">Es necesario reiniciar</string>
+<string name="alert_reboot_message">Este cambio necesita un reinicio para ser aplicado. ¿Quiere reiniciar ahora?</string>
+
+<!-- Donate -->
+<string name="donate_tonyp_title">Donar a tonyp</string>
+<string name="donate_tonyp_summary">Si te gusta mi trabajo considera mostrar tu apoyo donando</string>
+<string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick\u0026hosted_button_id=RL7NJSUDNQNZU</string>
+
+<!-- Brightness Slider -->
+<string name="show_brightness_slider_dont">Desactivar</string>
+<string name="show_brightness_slider_above">Mostrar (sobre las cintas)</string>
+<string name="show_brightness_slider_below">Mostrar (debajo de las cintas)</string>
+
+<!-- Advanced low battery indicator -->
+<string name="pref_low_battery_warning_policy_title">Advertencia de batería baja</string>
+<string name="pref_low_battery_warning_policy_dialog_title">Indicar advertencia de batería baja con</string>
+<string name="low_battery_warning_policy_popup_sound">Mensaje emergente y sonido</string>
+<string name="low_battery_warning_policy_notif_sound">Notificación y sonido</string>
+<string name="low_battery_warning_policy_popup">Sólo mensaje emergente</string>
+<string name="low_battery_warning_policy_notif">Sólo notificación</string>
+<string name="low_battery_warning_policy_sound">Sólo sonido</string>
+<string name="low_battery_warning_policy_disabled">Deshabilitado</string>
+
+<!-- Active Display -->
+<string name="ad_settings_title">Visualización activa</string>
+<string name="ad_settings_summary">Cambiar ajustes de visualización activa</string>
+<string name="ad_enable_title">Enable</string>
+<string name="ad_enable_summary_on">Visualización activa habilitada</string>
+<string name="ad_enable_summary_off">Visualización activa deshabilitada</string>
+<string name="ad_text_title">Texto de notificación</string>
+<string name="ad_text_summary">Mostrar el texto de notificación alrededor del círculo.</string>
+<string name="ad_all_notifications_title">Todas las notificaciones</string>
+<string name="ad_all_notifications_summary">Mostrar todas las notificationes incluyendo las continuas, no limpiables.</string>
+<string name="ad_pocket_mode_title">Modo bolsillo</string>
+<string name="ad_pocket_mode_summary">Ver notificaciones de visualización activa cuando se saca el dispositivo del bolsillo.</string>
+<string name="ad_redisplay_title">Volver a mostrar notificaciones</string>
+<string name="ad_customizations_title">Personalizaciones</string>
+<string name="ad_brightness_title">Brillo de notificación</string>
+<string name="ad_brightness_summary">Nivel de brillo para notificaciones mostradas cuando el brillo automático no esté activado.</string>
+<string name="ad_show_date_title">Mostrar fecha</string>
+<string name="ad_show_date_summary">Mostrar fecha sobre el reloj</string>
+<string name="ad_show_ampm_title">Mostrar AM/PM</string>
+<string name="ad_show_ampm_summary">Mostrar indicador AM/PM al lado de la hora cuando se use el formato de 12 horas</string>
+<string name="ad_redisplay_never">Nunca</string>
+<string name="ad_redisplay_1m">1 minuto</string>
+<string name="ad_redisplay_5m">5 minutos</string>
+<string name="ad_redisplay_15m">15 minutos</string>
+<string name="ad_redisplay_30m">30 minutos</string>
+<string name="ad_redisplay_1h">1 hora</string>
+<string name="ad_redisplay_2h">2 horas</string>
+<string name="ad_redisplay_5h">5 horas</string>
+
+<!-- Notification drawer settings -->
+<string name="notification_drawer_title">Cajón de notificaciones</string>
+<string name="notification_style_grouptitle">Estilo</string>
+<string name="notification_style_title">Estilo de cajón de notificaciones</string>
+<string name="notification_style_summary">Cambiar el estilo de su cajón de notificaciones</string>
+<string name="notification_widgets">Widgets</string>
+<string name="notification_show_wifi_ssid_title">Mostrar nombre de red WiFi</string>
+<string name="notification_show_wifi_ssid_summary">Mostrar el nombre de la red WiFi conectada actualmente</string>
+<string name="notification_wallpaper_title">Fondo de cajón de notificaciones</string>
+<string name="notification_wallpaper_landscape_title">Fondo apaisado diferente </string>
+<string name="notification_background_color_fill">Color de relleno</string>
+<string name="notification_background_custom_image">Fondo personalizado</string>
+<string name="notification_background_default_wallpaper">Fondo por defecto</string>
+<string name="notification_drawer_custom_background_dialog_title">Seleccionar color</string>
+<string name="notif_wallpaper_alpha_title">Transparencia del fondo de las notificaciones</string>
+<string name="notif_alpha_title">Transparencia de las filas de notificación</string>
+
+<!-- Vold Switchable Pair -->
+<string name="storage_switch_title">Usar SD externa como principal</string>
+<string name="storage_switch_summary_off">Utilizar almacenamiento interno para aplicaciones y medios</string>
+<string name="storage_switch_summary_on">Utilizar tarjeta SD para aplicaciones y medios</string>
+<string name="reboot_prompt_title">Es necesario reiniciar</string>
+<string name="reboot_prompt_message">Para aplicar los cambios de configuración, es necesario un reinicio.\n\n¿Quiere reiniciar ahora?</string>
+
+<!-- additional hardware buttons -->
+<string name="hardware_keys_action_screen_off">Pantalla apagada</string>
+<string name="hardware_keys_action_power_menu">Abrir menú de energía</string>
+<string name="hardware_keys_action_last_app">Cambiar a aplicación previa</string>
+<string name="hardware_keys_action_torch">Encender/apagar linterna</string>
+<string name="hardware_keys_action_screenshot">Captura de pantalla</string>
+
+<!-- text-only battery style -->
+<string name="status_bar_battery_status_text">Solo texto</string>
+
+<!-- Status bar background style -->
+    <string name="status_bar_transparency_title">Transparencia de la barra de estado</string>
+    <string name="status_bar_color_title">Color de la barra de estado</string>
+    <string name="status_bar_background_style">Estilo de la barra de estado</string>
+    <string name="status_bar_alpha_mode_dialog_text_title">Mostrar transparencia de la barra de estado</string>
+    <string name="status_bar_alpha_mode_text_title">Modo de transparencia</string>
+    <string name="status_bar_alpha_mode_home">En el lanzador</string>
+    <string name="status_bar_alpha_mode_default">En el lanzador y pantalla de bloqueo</string>
+    <string name="status_bar_style_reset">Reestablecer</string>
+
+    <!-- ListView animation -->
+    <string name="listview_animation_title">Animación de la lista</string>
+    <string name="listview_off">Apagada (por defecto en Android)</string>
+    <string name="listview_wave_left">Ola (Izquierda)</string>
+    <string name="listview_wave_right">Ola (Derecha)</string>
+    <string name="listview_alpha">Alfa</string>
+    <string name="listview_scale">Escalar</string>
+    <string name="listview_stack_top">Apilar (Arriba)</string>
+    <string name="listview_stack_bottom">Apilar (Abajo)</string>
+    <string name="listview_unfold">Desplegar</string>
+    <string name="listview_fold">Plegar</string>
+    <string name="listview_translate_left">Trasladar (Izquierda)</string>
+    <string name="listview_translate_right">Trasladar (Derecha)</string>
+
+    <!-- ListView interpolator -->
+    <string name="listview_interpolator_title">Interpolador de lista</string>
+    <string name="listview_accelerate_interpolator">acelerar_interpolador</string>
+    <string name="listview_decelerate_interpolator">desacelerar_interpolador</string>
+    <string name="listview_accelerate_decelerate_interpolator">acelerar_desacelerar_interpolador</string>
+    <string name="listview_anticipate_interpolator">anticipar_interpolador</string>
+    <string name="listview_overshoot_interpolator">exceder_interpolador</string>
+    <string name="listview_anticipate_overshoot_interpolator">anticipar_exceder_interpolador</string>
+    <string name="listview_bounce_interpolator">rebotar_interpolador</string>
+
+    <!-- Restart SystemUI -->
+    <string name="restart_systemui">Reiniciar SystemUI</string>
+    <string name="restart_systemui_summary">para aplicar cambios</string>
+
+    <!-- Animation Controls -->
+    <string name="title_animation_controls">Animaciones de sistema personalizadas</string>
+    <string name="activity_open_title">Animación de Abrir actividad dentro de la aplicación</string>
+    <string name="activity_close_title">Animación de Cerrar actividad dentro de la aplicación</string>
+    <string name="task_open_title">Animación de Abrir dentro de la aplicación</string>
+    <string name="task_close_title">Animación de Regresar al anterior</string>
+    <string name="task_move_to_front_title">Animación de Mover al frente</string>
+    <string name="task_move_to_back_title">Animación de Mover al fondo</string>
+    <string name="wallpaper_open_title">Animación de Regresar a la pantalla de inicio</string>
+    <string name="wallpaper_close_title">Animación de Abrir desde pantalla de inicio</string>
+    <string name="wallpaper_intra_open_title">Animación de Abrir página de recientes</string>
+    <string name="wallpaper_intra_close_title">Animación de Cerrar página de recientes</string>
+    <string name="animation_duration_title">Duración de Animación</string>
+    <string name="title_animation_no_override">Prevenir sobreescritura por aplicaciones</string>
+    <string name="summary_animation_no_override">Prevenir que otras aplicaciones sobreescriban las animaciones.</string>
+    <string name="animation_duration_default">Por defecto</string>
+    <string name="header_summary_animation">@null</string>
+
+</resources>

@@ -39,7 +39,7 @@ import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceDrawerActivity;
 import android.preference.PreferenceFragment;
 import android.text.TextUtils;
 import android.util.Log;
@@ -79,7 +79,7 @@ import java.util.List;
 /**
  * Top-level settings activity to handle single pane and double pane UI layout.
  */
-public class Settings extends PreferenceActivity
+public class Settings extends PreferenceDrawerActivity
         implements ButtonBarHandler, OnAccountsUpdateListener {
 
     private static final String LOG_TAG = "Settings";
@@ -103,6 +103,7 @@ public class Settings extends PreferenceActivity
     private Header mFirstHeader;
     private Header mCurrentHeader;
     private Header mParentHeader;
+    private Header tonypHeader;
     private boolean mInLocalHeaderSwitch;
 
     // Show only these settings for restricted users
@@ -111,6 +112,7 @@ public class Settings extends PreferenceActivity
             R.id.wifi_settings,
             R.id.bluetooth_settings,
             R.id.data_usage_settings,
+            R.id.button_settings,
             R.id.wireless_settings,
             R.id.device_section,
             R.id.sound_settings,
@@ -434,7 +436,7 @@ public class Settings extends PreferenceActivity
     private void updateHeaderList(List<Header> target) {
         final boolean showDev = mDevelopmentPreferences.getBoolean(
                 DevelopmentSettings.PREF_SHOW,
-                android.os.Build.TYPE.equals("eng"));
+                android.os.Process.myUserHandle().equals(UserHandle.OWNER));
         int i = 0;
 
         final UserManager um = (UserManager) getSystemService(Context.USER_SERVICE);
@@ -445,6 +447,8 @@ public class Settings extends PreferenceActivity
             int id = (int) header.id;
             if (id == R.id.operator_settings || id == R.id.manufacturer_settings) {
                 Utils.updateHeaderToSpecificActivityFromMetaDataOrRemove(this, target, header);
+            } else if (id == R.id.tonyp_settings) {
+                tonypHeader = header;
             } else if (id == R.id.homescreen_settings) {
                 Intent launcherIntent = new Intent(Intent.ACTION_MAIN);
                 launcherIntent.addCategory(Intent.CATEGORY_HOME);
@@ -530,7 +534,7 @@ public class Settings extends PreferenceActivity
                 // Hold on to the first header, when we need to reset to the top-level
                 if (mFirstHeader == null &&
                         HeaderAdapter.getHeaderType(header) != HeaderAdapter.HEADER_TYPE_CATEGORY) {
-                    mFirstHeader = header;
+                    mFirstHeader = tonypHeader;
                 }
                 mHeaderIndexMap.put(id, i);
                 i++;
@@ -822,6 +826,13 @@ public class Settings extends PreferenceActivity
             highlightHeader((int) mLastHeader.id);
         } else {
             mLastHeader = header;
+        }
+        if (onIsMultiPane()) {
+            try {
+                setTitle(mLastHeader.titleRes);
+            } catch (Throwable t) {
+                setTitle(R.string.settings_label);
+            }
         }
     }
 

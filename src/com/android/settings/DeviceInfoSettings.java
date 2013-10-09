@@ -17,7 +17,9 @@
 package com.android.settings;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -70,6 +72,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
     private static final String KEY_DEVICE_CPU = "device_cpu";
     private static final String KEY_DEVICE_MEMORY = "device_memory";
     private static final String KEY_CM_UPDATES = "cm_updates";
+    private static final String KEY_TONYP_VERSION = "tonyp_version";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
     long[] mHits = new long[3];
@@ -94,6 +97,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
         setValueSummary(KEY_MOD_VERSION, "ro.cm.version");
         findPreference(KEY_MOD_VERSION).setEnabled(true);
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
+        setValueSummary(KEY_TONYP_VERSION, "ro.tonyp.version");
+        findPreference(KEY_TONYP_VERSION).setEnabled(true);
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
@@ -253,21 +258,67 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
                     Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
                 }
             }
+        } else if (preference.getKey().equals(KEY_TONYP_VERSION)) {
+            System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
+            mHits[mHits.length-1] = SystemClock.uptimeMillis();
+            if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setClassName("com.android.settings",
+                        com.android.settings.tonyp.tonyLogoActivity.class.getName());
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
+                }
+            }
         } else if (preference.getKey().equals(KEY_SELINUX_STATUS)) {
             System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
             mHits[mHits.length-1] = SystemClock.uptimeMillis();
             if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
-                    SELinux.setSELinuxEnforce(!SELinux.isSELinuxEnforced());
-                    if (!SELinux.isSELinuxEnabled()) {
-                            String status = getResources().getString(R.string.selinux_status_disabled);
-                            setStringSummary(KEY_SELINUX_STATUS, status);
-                    } else if (!SELinux.isSELinuxEnforced()) {
-                            String status = getResources().getString(R.string.selinux_status_permissive);
-                            setStringSummary(KEY_SELINUX_STATUS, status);
-                    } else if (SELinux.isSELinuxEnforced()) {
-                            String status = getResources().getString(R.string.selinux_status_enforcing);
-                            setStringSummary(KEY_SELINUX_STATUS, status);
+                if (SELinux.isSELinuxEnabled()) {
+                    if (!SELinux.isSELinuxEnforced()) {
+                        /* Display the warning dialog */
+                        AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+                        alertDialog.setTitle(R.string.selinux_enable_title);
+                        alertDialog.setMessage(getResources()
+                            .getString(R.string.selinux_enable_warning));
+                        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE,
+                            getResources().getString(com.android.internal.R.string.ok),
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    SELinux.setSELinuxEnforce(true);
+                                    String status = getResources()
+                                        .getString(R.string.selinux_status_enforcing);
+                                    setStringSummary(KEY_SELINUX_STATUS, status);
+                                }
+                            });
+                        alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+                            getResources().getString(com.android.internal.R.string.cancel),
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            });
+                        alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                            public void onCancel(DialogInterface dialog) {
+                            }
+                        });
+                        alertDialog.show();
+
+                    } else {
+                        SELinux.setSELinuxEnforce(false);
                     }
+                }
+
+                if (!SELinux.isSELinuxEnabled()) {
+                    String status = getResources().getString(R.string.selinux_status_disabled);
+                    setStringSummary(KEY_SELINUX_STATUS, status);
+                } else if (!SELinux.isSELinuxEnforced()) {
+                    String status = getResources().getString(R.string.selinux_status_permissive);
+                    setStringSummary(KEY_SELINUX_STATUS, status);
+                } else if (SELinux.isSELinuxEnforced()) {
+                    String status = getResources().getString(R.string.selinux_status_enforcing);
+                    setStringSummary(KEY_SELINUX_STATUS, status);
+                }
             }
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

@@ -26,6 +26,7 @@ import java.util.Set;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.MultiSelectListPreference;
 import android.preference.Preference;
@@ -52,6 +53,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String GENERAL_SETTINGS = "pref_general_settings";
     private static final String STATIC_TILES = "static_tiles";
     private static final String DYNAMIC_TILES = "pref_dynamic_tiles";
+    private static final String FLOATING_WINDOW ="floating_window";
 
     private MultiSelectListPreference mRingMode;
     private ListPreference mNetworkMode;
@@ -60,6 +62,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private PreferenceCategory mGeneralSettings;
     private PreferenceCategory mStaticTiles;
     private PreferenceCategory mDynamicTiles;
+    private CheckBoxPreference mFloatingWindow;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,6 +93,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             updatePulldownSummary(quickPulldownValue);
         }
 
+        mFloatingWindow = (CheckBoxPreference) prefSet.findPreference(FLOATING_WINDOW);
+        mFloatingWindow.setChecked(Settings.System.getInt(resolver, Settings.System.QS_FLOATING_WINDOW, 0) == 1);
+
         // Add the sound mode
         mRingMode = (MultiSelectListPreference) prefSet.findPreference(EXP_RING_MODE);
         String storedRingMode = Settings.System.getString(resolver,
@@ -114,16 +120,21 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mScreenTimeoutMode.setOnPreferenceChangeListener(this);
 
         // Remove unsupported options
+        // NPE workaround: make sure they're added before trying to remove them
         if (!QSUtils.deviceSupportsDockBattery(getActivity())) {
+            if (findPreference(Settings.System.QS_DYNAMIC_DOCK_BATTERY) != null)
             mDynamicTiles.removePreference(findPreference(Settings.System.QS_DYNAMIC_DOCK_BATTERY));
         }
         if (!QSUtils.deviceSupportsImeSwitcher(getActivity())) {
+            if (findPreference(Settings.System.QS_DYNAMIC_IME) != null)
             mDynamicTiles.removePreference(findPreference(Settings.System.QS_DYNAMIC_IME));
         }
         if (!QSUtils.deviceSupportsUsbTether(getActivity())) {
+            if (findPreference(Settings.System.QS_DYNAMIC_USBTETHER) != null)
             mDynamicTiles.removePreference(findPreference(Settings.System.QS_DYNAMIC_USBTETHER));
         }
         if (!QSUtils.deviceSupportsWifiDisplay(getActivity())) {
+            if (findPreference(Settings.System.QS_DYNAMIC_WIFI) != null)
             mDynamicTiles.removePreference(findPreference(Settings.System.QS_DYNAMIC_WIFI));
         }
     }
@@ -140,6 +151,16 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 mStaticTiles.removePreference(mNetworkMode);
             }
         }
+    }
+
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mFloatingWindow) {
+            Settings.System.putInt(resolver, Settings.System.QS_FLOATING_WINDOW,
+                    mFloatingWindow.isChecked() ? 1 : 0);
+            return true;            
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     private class MultiSelectListPreferenceComparator implements Comparator<String> {

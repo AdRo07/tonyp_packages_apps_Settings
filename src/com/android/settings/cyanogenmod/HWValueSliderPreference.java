@@ -26,6 +26,8 @@ import android.graphics.LightingColorFilter;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.preference.DialogPreference;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
@@ -43,6 +45,7 @@ public abstract class HWValueSliderPreference extends DialogPreference implement
     private TextView mValue;
     private TextView mWarning;
     private int mOriginalValue;
+    private int mMin;
 
     private HardwareInterface mHw;
 
@@ -63,6 +66,7 @@ public abstract class HWValueSliderPreference extends DialogPreference implement
     public HWValueSliderPreference(Context context, AttributeSet attrs, HardwareInterface hw) {
         super(context, attrs);
         mHw = hw;
+        mMin = hw.getMinValue();
     }
 
     @Override
@@ -86,7 +90,7 @@ public abstract class HWValueSliderPreference extends DialogPreference implement
         int warningThreshold = mHw.getWarningThreshold();
         if (warningThreshold > 0) {
             String message = getContext().getResources().getString(
-                    R.string.vibrator_warning, hwValueToPercent(warningThreshold, mHw));
+                    R.string.vibrator_warning, hwValueToPercent(warningThreshold));
             mWarning.setText(message);
         } else if (mWarning != null) {
             mWarning.setVisibility(View.GONE);
@@ -106,11 +110,11 @@ public abstract class HWValueSliderPreference extends DialogPreference implement
 
         // Restore percent value from SharedPreferences object
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
-        int percent = settings.getInt(mHw.getPreferenceName(),
-                hwValueToPercent(mHw.getDefaultValue(), mHw));
+        int value = settings.getInt(mHw.getPreferenceName(), mHw.getDefaultValue());
 
         mSeekBar.setOnSeekBarChangeListener(this);
-        mSeekBar.setProgress(percent);
+        mSeekBar.setMax(mHw.getMaxValue() - mMin);
+        mSeekBar.setProgress(value - mMin);
     }
 
     @Override
@@ -124,7 +128,7 @@ public abstract class HWValueSliderPreference extends DialogPreference implement
         defaultsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSeekBar.setProgress(hwValueToPercent(mHw.getDefaultValue(), mHw));
+                mSeekBar.setProgress(mHw.getDefaultValue() - mMin);
             }
         });
     }
@@ -134,29 +138,60 @@ public abstract class HWValueSliderPreference extends DialogPreference implement
         super.onDialogClosed(positiveResult);
 
         if (positiveResult) {
-            // Store percent value in SharedPreferences object
+            // Store HW value in SharedPreferences object
             SharedPreferences.Editor editor =
                     PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
-            editor.putInt(mHw.getPreferenceName(), mSeekBar.getProgress());
+            editor.putInt(mHw.getPreferenceName(), mSeekBar.getProgress() + mMin);
             editor.commit();
-        } else {
+        } else if (mOriginalValue >= mMin) {
             mHw.setValue(mOriginalValue);
         }
     }
 
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        final Parcelable superState = super.onSaveInstanceState();
+        if (getDialog() == null || !getDialog().isShowing()) {
+            return superState;
+        }
+
+        // Save the dialog state
+        final SavedState myState = new SavedState(superState);
+        myState.value = mSeekBar.getProgress();
+        myState.originalValue = mOriginalValue;
+
+        // Restore the old state when the activity or dialog is being paused
+        mHw.setValue(mOriginalValue);
+        mOriginalValue = Integer.MIN_VALUE;
+
+        return myState;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        if (state == null || !state.getClass().equals(SavedState.class)) {
+            // Didn't save state for us in onSaveInstanceState
+            super.onRestoreInstanceState(state);
+            return;
+        }
+
+        SavedState myState = (SavedState) state;
+        super.onRestoreInstanceState(myState.getSuperState());
+        mOriginalValue = myState.originalValue;
+        mSeekBar.setProgress(myState.value);
+    }
+
     protected static void restore(Context context, HardwareInterface hw) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        int defaultValue = hwValueToPercent(hw.getDefaultValue(), hw);
-        int percent = prefs.getInt(hw.getPreferenceName(), defaultValue);
+        int value = prefs.getInt(hw.getPreferenceName(), hw.getDefaultValue());
 
-        hw.setValue(percentToHwValue(percent, hw));
+        hw.setValue(value);
     }
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         int warningThreshold = mHw.getWarningThreshold();
-        boolean shouldWarn =
-                warningThreshold > 0 && progress >= hwValueToPercent(warningThreshold, mHw);
+        boolean shouldWarn = warningThreshold > 0 && progress >= (warningThreshold - mMin);
 
         if (mProgressDrawable != null) {
             mProgressDrawable.setColorFilter(shouldWarn ? mRedFilter : null);
@@ -165,8 +200,8 @@ public abstract class HWValueSliderPreference extends DialogPreference implement
             mProgressThumb.setColorFilter(shouldWarn ? mRedFilter : null);
         }
 
-        mHw.setValue(percentToHwValue(progress, mHw));
-        mValue.setText(String.format("%d%%", progress));
+        mHw.setValue(progress + mMin);
+        mValue.setText(String.format("%d%%", hwValueToPercent(progress + mMin)));
     }
 
     @Override
@@ -179,9 +214,9 @@ public abstract class HWValueSliderPreference extends DialogPreference implement
         // Do nothing here
     }
 
-    private static int hwValueToPercent(int value, HardwareInterface hw) {
-        double maxValue = hw.getMaxValue();
-        double minValue = hw.getMinValue();
+    private int hwValueToPercent(int value) {
+        double maxValue = mHw.getMaxValue();
+        double minValue = mHw.getMinValue();
         double percent = (value - minValue) * (100 / (maxValue - minValue));
 
         if (percent > 100) {
@@ -193,17 +228,37 @@ public abstract class HWValueSliderPreference extends DialogPreference implement
         return (int) percent;
     }
 
-    private static int percentToHwValue(int percent, HardwareInterface hw) {
-        int maxValue = hw.getMaxValue();
-        int minValue = hw.getMinValue();
-        int value = Math.round((((maxValue - minValue) * percent) / 100) + minValue);
+    private static class SavedState extends BaseSavedState {
+        int value;
+        int originalValue;
 
-        if (value > maxValue) {
-            value = maxValue;
-        } else if (value < minValue) {
-            value = minValue;
+        public SavedState(Parcelable superState) {
+            super(superState);
         }
 
-        return value;
+        public SavedState(Parcel source) {
+            super(source);
+            value = source.readInt();
+            originalValue = source.readInt();
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            super.writeToParcel(dest, flags);
+            dest.writeInt(value);
+            dest.writeInt(originalValue);
+        }
+
+        public static final Parcelable.Creator<SavedState> CREATOR =
+                new Parcelable.Creator<SavedState>() {
+
+            public SavedState createFromParcel(Parcel in) {
+                return new SavedState(in);
+            }
+
+            public SavedState[] newArray(int size) {
+                return new SavedState[size];
+            }
+        };
     }
 }

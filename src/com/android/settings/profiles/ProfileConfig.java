@@ -38,7 +38,7 @@ import android.net.wimax.WimaxHelper;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceDrawerActivity;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.telephony.TelephonyManager;
@@ -184,7 +184,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
     }
 
     private void startNFCProfileWriter() {
-        PreferenceActivity pa = (PreferenceActivity) getActivity();
+        PreferenceDrawerActivity pa = (PreferenceDrawerActivity) getActivity();
         Intent i = new Intent(this.getActivity(), NFCProfileWriter.class);
         i.putExtra(NFCProfileWriter.EXTRA_PROFILE_UUID, mProfile.getUuid().toString());
         i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -192,7 +192,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
     }
 
     private void startTriggerFragment() {
-        final PreferenceActivity pa = (PreferenceActivity) getActivity();
+        final PreferenceDrawerActivity pa = (PreferenceDrawerActivity) getActivity();
         final Bundle args = new Bundle();
         args.putParcelable("profile", mProfile);
 
@@ -391,7 +391,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
         args.putParcelable("Profile", mProfile);
 
         String header = mProfile.getName().toString() + ": " + title.toString();
-        PreferenceActivity pa = (PreferenceActivity) getActivity();
+        PreferenceDrawerActivity pa = (PreferenceDrawerActivity) getActivity();
         pa.startPreferencePanel(ProfileGroupConfig.class.getName(), args,
                 0, header, this, PROFILE_GROUP_DETAILS);
     }

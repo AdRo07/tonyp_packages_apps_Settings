@@ -95,7 +95,6 @@
     <string name="lockscreen_target_title">Accesos directos</string>
     <string name="lockscreen_target_summary">Añadir o configurar accesos directos</string>
     <string name="lockscreen_target_reset">Valores por defecto restaurados</string>
-    <string name="lockscreen_target_save">Accesos directos guardados</string>
     <string name="lockscreen_target_reset_title">Restaurar valores por defecto</string>
     <string name="lockscreen_target_reset_message">¿Eliminar todos los accesos directos y restaurar valores por defecto?</string>
     <string name="lockscreen_target_empty">Vacío</string>
@@ -106,6 +105,7 @@
     <string name="lockscreen_battery_status_title">Estado de la batería</string>
     <string name="lockscreen_battery_status_charging">Solamente en carga</string>
     <string name="lockscreen_battery_status_alwayson">Siempre</string>
+    <string name="lockscreen_battery_status_alwaysoff">Nunca</string>
     <string name="profiles_settings_title">Perfiles</string>
     <string name="profiles_add">Añadir</string>
     <string name="profile_menu_delete">Eliminar</string>
@@ -201,20 +201,13 @@
     <string name="performance_settings_warning_title">Procede con precaución</string>
     <string name="performance_settings_warning">Estos ajustes han sido incluidos a modo de experimentación y cualquier cambio realizado sobre ellos puede causar inestabilidad, cierre de aplicaciones, pérdida de datos o fallos de hardware.\n\nNo comuniques informes de errores si has cambiado alguno de los valores definidos por defecto.</string>
     <string name="processor_title">Procesador</string>
-    <string name="processor_summary">Cambiar el patrón de CPU y la velocidad del reloj</string>
     <string name="cpu_cur_freq_title">Frecuencia actual de la CPU</string>
     <string name="cpu_governors_title">Patrones CPU</string>
     <string name="cpu_min_freq_title">Frecuencia mínima de la CPU</string>
     <string name="cpu_max_freq_title">Frecuencia máxima de la CPU</string>
-    <string name="cpu_set_on_boot">Establecer al iniciar</string>
-    <string name="cpu_set_on_boot_summary">Restaurar la configuración del procesador al iniciar el sistema</string>
     <string name="io_scheds_title">Planificador de E/S</string>
-    <string name="io_scheds_summary">Cambiar planificador de E/S</string>
     <string name="io_sched_title">Planificador E/S</string>
-    <string name="io_sched_set_on_boot">Establecer al iniciar</string>
-    <string name="io_sched_set_on_boot_summary">Restaurar la configuración del planificador al iniciar el sistema</string>
     <string name="memory_management_title">Gestión de la memoria</string>
-    <string name="memory_management_summary">Personalizar el uso de la memoria para cambiar el rendimiento del sistema</string>
     <string name="pref_zram_title">zRam</string>
     <string name="pref_zram_summary">Comprimir memoria para incrementar la capacidad virtual. (requiere reiniciar)</string>
     <string name="pref_ksm_title">Memoria compartida de Kernel (KMS)</string>
@@ -347,6 +340,7 @@
     <string name="hardware_keys_menu_key_title">Botón Menú</string>
     <string name="hardware_keys_assist_key_title">Botón Búsqueda</string>
     <string name="hardware_keys_appswitch_key_title">Botón Recientes</string>
+    <string name="hardware_keys_camera_key_title">Botón Cámara</string>
     <string name="hardware_keys_volume_keys_title">Botones de volumen</string>
     <string name="hardware_keys_short_press_title">Acción pulsación corta</string>
     <string name="hardware_keys_long_press_title">Acción pulsación larga</string>
@@ -361,11 +355,12 @@
     <string name="hardware_keys_action_search">Asistente de búsqueda</string>
     <string name="hardware_keys_action_voice_search">Búsqueda por voz</string>
     <string name="hardware_keys_action_in_app_search">Búsqueda dentro de la aplicación</string>
+    <string name="hardware_keys_action_launch_camera">Iniciar Cámara</string>
     <string name="home_wake_title">Despertar</string>
     <string name="home_wake_summary">Presionando el botón Inicio, el dispositivo saldrá del modo en espera</string>
     <string name="volume_wake_title">Despertar</string>
     <string name="volume_wake_summary">Presionando los botones de control de volumen, el dispositivo saldrá del modo en espera</string>
-    <string name="swap_volume_buttons_title">Intercambiar botones</string>
+    <string name="swap_volume_buttons_title">Reorientar botones</string>
     <string name="swap_volume_buttons_summary">Intercambiar los botones de control de volumen al rotar la pantalla</string>
     <string name="navigation_bar_category">Barra de navegación</string>
     <string name="navigation_bar_title">Botones y disposición</string>
@@ -429,13 +424,14 @@
     <string name="adb_notify">Notificar depuración USB</string>
     <string name="adb_notify_summary">Mostrar una notificación cuando el modo de depuración USB esté conectado</string>
     <string name="development_tools_title">Iniciar Herramientas</string>
+    <string name="allow_mock_sms">Permitir SMS simulados</string>
     <string name="usb_mass_storage_title">Almacenamiento masivo</string>
     <string name="usb_mass_storage_summary">Habilitar el almacenamiento masivo USB</string>
     <string name="storage_rescan_media">Refrescar contenido multimedia</string>
     <string name="storage_rescan_media_complete">Refresco completado</string>
-    <string name="adb_over_network">ADB sobre TCP/IP</string>
+    <string name="adb_over_network">ADB sobre red</string>
     <string name="adb_over_network_summary">Activar la depuración TCP/IP sobre las interfaces de red (Wi-Fi, redes USB). Esta configuración se restablece al reiniciar el dispositivo</string>
-    <string name="adb_over_network_warning">AVISO: ¡Cuando ADB sobre TCP/IP esté activo, el dispositivo estará abierto a intrusiones en todas las redes conectadas, incluida la red de datos GSM!\n\nUsa solo esta característica cuando estés conectado a redes de confianza.\n\n¿Deseas realmente activar esta función?</string>
+    <string name="adb_over_network_warning">AVISO: ¡Cuando ADB sobre red esté activo, el dispositivo estará abierto a intrusiones en todas las redes conectadas, incluida la red de datos GSM!\n\nUsa solo esta característica cuando estés conectado a redes de confianza.\n\n¿Deseas realmente activar esta función?</string>
     <string name="lockscreen_buttons_title">Acciones de botones</string>
     <string name="lockscreen_buttons_summary">Ver o cambiar las acciones de los botones durante el bloqueo de pantalla</string>
     <string name="lockscreen_long_press_back_title">Pulsación larga para botón Atrás</string>
@@ -447,6 +443,7 @@
     <string name="lockscreen_buttons_previous">Pista anterior</string>
     <string name="lockscreen_buttons_playpause">Reproducir/Pausar</string>
     <string name="lockscreen_buttons_toggle_sound">Alternar sonido</string>
+    <string name="lockscreen_buttons_sleep">Bloquear</string>
     <string name="quick_settings_panel_title">Panel de ajustes rápidos</string>
     <string name="title_static_tiles">Controles estáticos</string>
     <string name="tile_picker_title">Controles y disposición</string>
@@ -477,6 +474,7 @@
     <string name="title_tile_quiet_hours">Modo descanso</string>
     <string name="title_tile_volume">Volumen</string>
     <string name="title_tile_expanded_desktop">Extender escritorio</string>
+    <string name="title_tile_network_adb">ADB sobre red</string>
     <string name="title_dynamic_tiles">Controles dinámicos</string>
     <string name="dynamic_tiles_note_title">Nota</string>
     <string name="dynamic_tiles_note_summary">Los controles dinámicos no siempre estarán visibles y solo se mostrarán por un evento del sistema</string>
@@ -593,7 +591,6 @@ podrás crear una nueva línea con el fin de insertar puntos de control adiciona
     <string name="navigation_ring_title">Accesos rápidos</string>
     <string name="navring_target_reset_message">¿Restablecer la configuración por defecto?</string>
     <string name="navring_target_reset">Accesos rápidos restablecidos</string>
-    <string name="navring_target_save">Accesos rápidos guardados</string>
     <string name="navring_action_open_ime_switcher">Abrir selector IME</string>
     <string name="navring_action_kill_app">Cerrar aplicación</string>
     <string name="navring_action_none">Nada</string>
@@ -701,11 +698,33 @@ podrás crear una nueva línea con el fin de insertar puntos de control adiciona
     <string name="color_red_title">Rojo</string>
     <string name="color_green_title">Verde</string>
     <string name="color_blue_title">Azul</string>
-    <string name="category_gamma_title">Gamma</string>
+    <string name="button_backlight_title">Retroiluminación</string>
+    <string name="button_backlight_enabled">Iluminar botones</string>
+    <string name="keyboard_backlight_enabled">Iluminar teclado</string>
+    <string name="button_backlight_seekbar_title">Brillo de los botones</string>
+    <string name="keyboard_backlight_seekbar_title">Brillo del teclado</string>
+    <string name="backlight_timeout_title">Tiempo de iluminación</string>
+    <string name="backlight_timeout_unlimited">No apagar</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> segundo</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> segundos</item>
+    </plurals>
+    <string name="backlight_summary_disabled">Deshabilitado</string>
+    <string name="backlight_summary_enabled_with_timeout">Habilitado durante <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Habilitado</string>
     <string name="gamma_tuning_title_head">Corrección gamma</string>
     <string name="gamma_tuning_summary_head">Ajustar la corrección gamma de la pantalla</string>
+    <string name="gamma_tuning_contrast">Contraste</string>
+    <string name="gamma_tuning_brightness">Brillo</string>
     <string name="more_device_controls_title">Más\u2026</string>
     <string name="more_device_settings_title">Otros ajustes del dispositivo</string>
     <string name="sensors_motors_title">Sensores y vibración</string>
     <string name="display_calibration_title">Calibración de pantalla</string>
+    <string name="category_quick_access">Cinta de ajustes rápidos</string>
+    <string name="title_quick_access">Mostrar cinta</string>
+    <string name="title_quick_access_linked">Disposición vinculada</string>
+    <string name="summary_quick_access_linked">Usar la misma disposición que en el panel de ajustes rápidos</string>
+    <string name="font_size_sample">Muestra</string>
+    <string name="selinux_enable_title">Seguridad mejorada de Android</string>
+    <string name="selinux_enable_warning">Estás a punto de habilitar SEAndroid, un mecanismo de seguridad avanzada.\n\nEsta opción existe exclusivamente con fines de depuración, y es muy probable que tu dispositivo no esté preparado para ello y pueda llegar a colgarse o bloquearse, total o parcialmente.\n\n¿Estás seguro de que quieres continuar?</string>
 </resources>

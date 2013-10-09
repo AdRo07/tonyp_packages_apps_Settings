@@ -37,7 +37,7 @@ public class AnonymousStats extends SettingsPreferenceFragment implements
     private static final String VIEW_STATS = "pref_view_stats";
 
     private static final String PREF_FILE_NAME = "CMStats";
-    /* package */ static final String ANONYMOUS_OPT_IN = "pref_anonymous_opt_in";
+    /* package */ static final String ANONYMOUS_OPT_IN = "pref_anonymous_opt_in_new";
     /* package */ static final String ANONYMOUS_LAST_CHECKED = "pref_anonymous_checked_in";
 
     private CheckBoxPreference mEnableReporting;

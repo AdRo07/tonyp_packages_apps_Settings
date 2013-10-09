@@ -93,7 +93,6 @@
     <string name="lockscreen_target_title">Genveje</string>
     <string name="lockscreen_target_summary">Se eller ændre egne genveje for skærmlåsen</string>
     <string name="lockscreen_target_reset">Genveje for skærmlåsen nulstilles til standard</string>
-    <string name="lockscreen_target_save">Genveje for skærmlåsen er gemt</string>
     <string name="lockscreen_target_reset_title">Nulstil</string>
     <string name="lockscreen_target_reset_message">Slet egne genveje for skærmlåsen og nulstil til standard?</string>
     <string name="lockscreen_target_empty">Tom</string>
@@ -199,20 +198,13 @@
     <string name="performance_settings_warning_title">Fortsæt med forsigtighed</string>
     <string name="performance_settings_warning">Disse indstillinger er inkluderet for at eksperimentere og eventuelle ændringer til dem har potentiale til at forårsage ustabilitet, nedbrud, tab af data eller hardware fejl.\n\nVi beder dig om ikke at indsende fejlrapporter, hvis nogen af ​​disse indstillinger er blevet ændret fra standardindstillingerne.</string>
     <string name="processor_title">Processor</string>
-    <string name="processor_summary">Skift guvernør- og clockfrekvens</string>
     <string name="cpu_cur_freq_title">Aktuel CPU-frekvens</string>
     <string name="cpu_governors_title">CPU-guvernør</string>
     <string name="cpu_min_freq_title">Laveste CPU-frekvens</string>
     <string name="cpu_max_freq_title">Højeste CPU-frekvens</string>
-    <string name="cpu_set_on_boot">Indstil ved opstart</string>
-    <string name="cpu_set_on_boot_summary">Gendan CPU-indstillinger ved opstart</string>
     <string name="io_scheds_title">I/O-planlægger</string>
-    <string name="io_scheds_summary">Skift I/O-planlægger</string>
     <string name="io_sched_title">I/O-planlægger</string>
-    <string name="io_sched_set_on_boot">Indstil ved opstart</string>
-    <string name="io_sched_set_on_boot_summary">Gendan indstillinger for I/O-planlægger ved opstart</string>
     <string name="memory_management_title">Hukommelsesstyring</string>
-    <string name="memory_management_summary">Tilpas brugen af ​​hukommelse for at ændre systemets ydeevne</string>
     <string name="pref_zram_title">zRam</string>
     <string name="pref_zram_summary">Komprimér hukommelse for øget virtuel kapacitet (kræver genstart)</string>
     <string name="pref_ksm_title">KSM</string>
@@ -590,7 +582,6 @@ to for at indsætte yderligere kontrolpunkter. \'Fjern\' sletter den valgte linj
     <string name="navigation_ring_title">Genveje til hurtig start</string>
     <string name="navring_target_reset_message">Slet alle brugeroprettede genveje til navigationslinje og gendan til standard?</string>
     <string name="navring_target_reset">Genveje til navigationslinje nulstillet til standard</string>
-    <string name="navring_target_save">Genveje til navigationslinje gemt</string>
     <string name="navring_action_open_ime_switcher">Åbn IME-skifter</string>
     <string name="navring_action_kill_app">Luk app ned</string>
     <string name="navring_action_none">Ingen</string>
@@ -698,7 +689,6 @@ to for at indsætte yderligere kontrolpunkter. \'Fjern\' sletter den valgte linj
     <string name="color_red_title">Rød</string>
     <string name="color_green_title">Grøn</string>
     <string name="color_blue_title">Blå</string>
-    <string name="category_gamma_title">Gamma</string>
     <string name="gamma_tuning_title_head">Gamma-kalibrering</string>
     <string name="gamma_tuning_summary_head">Finindstil gammaværdier</string>
     <string name="more_device_controls_title">Mere\u2026</string>

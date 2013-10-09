@@ -81,7 +81,6 @@
     <string name="lockscreen_target_title">Skratky posuvníka</string>
     <string name="lockscreen_target_summary">Zobrazí alebo zmení vlastné skratky na uzamykacej obrazovke</string>
     <string name="lockscreen_target_reset">Skratky uzamykacej obrazovky boli znovunastavené na predvolené</string>
-    <string name="lockscreen_target_save">Skratky uzamykacej obrazovky boli uložené</string>
     <string name="lockscreen_target_reset_title">Vrátenie pôvodných skratiek</string>
     <string name="lockscreen_target_reset_message">Odstrániť všetky používateľské skratky uzamykacej obrazovky a obnoviť predvolené?</string>
     <string name="lockscreen_target_empty">Prázdne</string>
@@ -180,20 +179,13 @@
     <string name="performance_settings_warning_title">Výstraha pred pokračovaním</string>
     <string name="performance_settings_warning">Tieto nastavenia sú zahrnuté pre experimentovanie a akékoľvek vykonané zmeny môžu prípadne spôsobiť nestabilitu, pády, stratu údajov, alebo zlyhania hardvéru.\n\nŽiadame vás, aby ste nenahlasovali chyby, ak boli akékoľvek z týchto nastavení zmenené.</string>
     <string name="processor_title">Procesor</string>
-    <string name="processor_summary">Zmení frekvenciu a správcu frekvencie CPU</string>
     <string name="cpu_cur_freq_title">Aktuálna frekvencia CPU</string>
     <string name="cpu_governors_title">Správca frekvencie CPU</string>
     <string name="cpu_min_freq_title">Minimálny frekvencia CPU</string>
     <string name="cpu_max_freq_title">Maximálna frekvencia CPU</string>
-    <string name="cpu_set_on_boot">Nastaviť pri spustení</string>
-    <string name="cpu_set_on_boot_summary">Obnoví nastavenia procesora pri spustení</string>
     <string name="io_scheds_title">Plánovač I/O</string>
-    <string name="io_scheds_summary">Zmení plánovač I/O</string>
     <string name="io_sched_title">Plánovač I/O</string>
-    <string name="io_sched_set_on_boot">Nastaviť pri spustení</string>
-    <string name="io_sched_set_on_boot_summary">Obnoví plánovač I/O pri spustení</string>
     <string name="memory_management_title">Správa pamäte</string>
-    <string name="memory_management_summary">Prispôsobí využitie pamäte na zmenu systémového výkonu</string>
     <string name="pref_zram_title">zRam</string>
     <string name="pref_zram_summary">Skomprimuje pamäť na zvýšenú virtuálnu kapacitu (vyžaduje reštart)</string>
     <string name="pref_ksm_title">Zlúčiť Kernel samepage</string>
@@ -389,40 +381,6 @@
     <string name="navigation_bar_reset_toast">Nastavenia navigačnej lišty boli obnovené na predvolené</string>
     <string name="navigation_bar_menu_editable">Upraviteľné</string>
     <string name="navigation_bar_menu_locked">Zamknuté</string>
-    <string name="power_widget_title">Výkonná miniaplikácia</string>
-    <string name="title_expanded_widget">Výkonná miniaplikácia</string>
-    <string name="title_expanded_hide_onchange">Skryť oblasť po zmene</string>
-    <string name="title_expanded_hide_scrollbar">Skryť posuvník</string>
-    <string name="title_widget_picker">Tlačidlá miniaplikácie</string>
-    <string name="summary_widget_picker">Zobraziť alebo zmeniť tlačidlá na zobrazenie</string>
-    <string name="title_widget_order">Poradie tlačidiel miniaplikácie</string>
-    <string name="summary_widget_order">Zobraziť alebo zmeniť poradie tlačidiel miniaplikácie</string>
-    <string name="title_buttons">Tlačidlá</string>
-    <string name="title_toggle_wifi">Wi-Fi</string>
-    <string name="title_toggle_bluetooth">Bluetooth</string>
-    <string name="title_toggle_gps">GPS</string>
-    <string name="title_toggle_sound">Zvuk</string>
-    <string name="title_toggle_brightness">Jas</string>
-    <string name="title_toggle_sync">Synchronizácia</string>
-    <string name="title_toggle_wifiap">Wi-Fi AP</string>
-    <string name="title_toggle_screentimeout">Čas. limit obrazovky</string>
-    <string name="title_toggle_mobiledata">Mobilné dáta</string>
-    <string name="title_toggle_lockscreen">Uzamykacia obrazovka</string>
-    <string name="title_toggle_networkmode">Režim siete</string>
-    <string name="title_toggle_autorotate">Orientácia</string>
-    <string name="title_toggle_airplane">Režim V lietadle</string>
-    <string name="title_toggle_flashlight">Svietidlo</string>
-    <string name="title_toggle_sleep">Spánok</string>
-    <string name="title_toggle_media_play_pause">Médiá: Prehrať/Pozastaviť</string>
-    <string name="title_toggle_media_previous">Médiá: Skočiť na predchádzajúcu</string>
-    <string name="title_toggle_media_next">Médiá: Skočiť na ďalšiu</string>
-    <string name="title_toggle_lte">LTE</string>
-    <string name="title_toggle_wimax">WiMAX</string>
-    <string name="title_button_modes">Režimy tlačidiel</string>
-    <string name="pref_brightness_mode_title">Režimy jasu</string>
-    <string name="pref_brightness_mode_summary">Zobraziť alebo zmeniť režimy tlačidla jasu</string>
-    <string name="cm_brightness_mode_auto">Automaticky</string>
-    <string name="cm_brightness_mode_dim">Stmavnutie</string>
     <string name="pref_network_mode_title">Režimy siete</string>
     <string name="pref_screentimeout_mode_title">Režimy čas. limitu obrazovky</string>
     <string name="pref_ring_mode_title">Režimy zvuku</string>
@@ -431,8 +389,6 @@
     <string name="cm_sound_mode_vibrate">Vibrácie</string>
     <string name="cm_sound_mode_sound">Zvuk</string>
     <string name="cm_sound_mode_soundVibrate">Zvuk a vibrácie</string>
-    <string name="pref_flash_mode_title">Režim svietidla</string>
-    <string name="expanded_haptic_feedback_title">Hmatová odozva</string>
     <string name="kill_app_longpress_back">Ukončiť aplikáciu tlačidlom Späť</string>
     <string name="kill_app_longpress_back_summary">Dlhé stlačenie tlačidla Späť ukončí aplikáciu na popredí</string>
     <string name="changelog_title">Zobraziť zoznam zmien</string>
@@ -496,7 +452,6 @@
     <string name="lockscreen_buttons_playpause">Prehrať/pozastaviť hudbu</string>
     <string name="lockscreen_buttons_toggle_sound">Prepnúť zvuk</string>
     <string name="quick_settings_panel_title">Panel rýchleho nastavenia</string>
-    <string name="quick_settings_title">Rýchle nastavenia</string>
     <string name="title_static_tiles">Statické dlaždice</string>
     <string name="tile_picker_title">Dlaždice a rozloženie</string>
     <string name="tile_picker_summary">Zobraziť, vybrať alebo zmeniť dlaždice na zobrazenie</string>
@@ -638,7 +593,6 @@ zmaže zvolený riadok.
     <string name="navigation_ring_title">Skratky rýchleho spustenia</string>
     <string name="navring_target_reset_message">Odstrániť všetky používateľom vytvorené skratky v navigačnej lište a obnoviť do predvolených nastavení?</string>
     <string name="navring_target_reset">Skratky navigačnej lišty boli obnovené</string>
-    <string name="navring_target_save">Skratky navigačnej lišty boli uložené</string>
     <string name="navring_action_open_ime_switcher">Otvoriť prepínač IME</string>
     <string name="navring_action_kill_app">Ukončiť aplikáciu</string>
     <string name="navring_action_none">Žiadna</string>
@@ -729,11 +683,35 @@ zmaže zvolený riadok.
     <string name="color_red_title">Červená</string>
     <string name="color_green_title">Zelená</string>
     <string name="color_blue_title">Modrá</string>
-    <string name="key_backlight_title">Podsvietenie</string>
     <string name="button_backlight_title">Jas podsvietenia tlačidiel</string>
-    <string name="keyboard_backlight_title">Jas podsvietenia klávesnice</string>
     <string name="more_device_controls_title">Viac\u2026</string>
     <string name="more_device_settings_title">Ďalšie voľby zariadenia</string>
     <string name="sensors_motors_title">Snímače a motorčeky</string>
     <string name="display_calibration_title">Kalibrácia zariadenia</string>
+    <string name="profile_triggers">Prepínače</string>
+    <string name="intent_sender_data_label"><xliff:g id="data">Dáta:</xliff:g></string>
+    <string name="adaptive_backlight_title">Adaptívne podsvietenie</string>
+    <string name="adaptive_backlight_summary">Inteligentne meniť jas podsvietenia displeja a tým maximalizovať životnosť batérie</string>
+    <string name="allow_mock_sms">Povoliť falošné SMS správy</string>
+    <string name="button_backlight_enabled">Podsvietené tlačidlá</string>
+    <string name="keyboard_backlight_enabled">Podsvietená klávesnica</string>
+    <string name="button_backlight_seekbar_title">Jas tlačidiel</string>
+    <string name="keyboard_backlight_seekbar_title">Jas klávesnice</string>
+    <string name="backlight_timeout_title">Časový limit podsvietenia</string>
+    <string name="backlight_timeout_unlimited">Nevypínať</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> sekunda</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> sekundy</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> sekúnd</item>
+    </plurals>
+    <string name="backlight_summary_disabled">Zakázané</string>
+    <string name="backlight_summary_enabled_with_timeout">Povolené na <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Povolené</string>
+    <string name="gamma_tuning_title_head">Gama kalibrácia</string>
+    <string name="gamma_tuning_summary_head">Zlepšiť gama hodnoty</string>
+    <string name="category_quick_access">Panel rýchleho prístupu</string>
+    <string name="title_quick_access">Zobraziť v ponuke</string>
+    <string name="title_quick_access_linked">Spojené rozloženie</string>
+    <string name="summary_quick_access_linked">Použiť rovnaké dlaždice a rozloženie ako u panela rýchleho nastavenia</string>
+    <string name="font_size_sample">Ukážka</string>
 </resources>

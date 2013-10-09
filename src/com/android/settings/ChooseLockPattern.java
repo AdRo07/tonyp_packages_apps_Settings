@@ -227,7 +227,6 @@ public class ChooseLockPattern extends PreferenceActivity {
          * Keep track internally of where the user is in choosing a pattern.
          */
         protected enum Stage {
-
             Introduction(
                     R.string.lockpattern_recording_intro_header,
                     LeftButtonMode.Cancel, RightButtonMode.ContinueDisabled,

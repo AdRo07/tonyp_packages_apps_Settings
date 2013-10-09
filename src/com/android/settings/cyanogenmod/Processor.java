@@ -28,6 +28,9 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import android.util.Log;
+import com.android.settings.CMDProcessor;
+
 //
 // CPU Related Settings
 //
@@ -53,6 +56,8 @@ public class Processor extends SettingsPreferenceFragment implements
     public static String FREQ_MAX_FILE = null;
     public static String FREQ_MIN_FILE = null;
     public static final String SOB_PREF = "pref_cpu_set_on_boot";
+    public static final String TEGRA_MAX_FREQ_PATH = "/sys/module/cpu_tegra/parameters/cpu_user_cap";
+    public static final String NUM_OF_CPUS_PATH = "/sys/devices/system/cpu/present";
 
     public static final String[] SCHED_PS_MODES = new String[]{
         "No power saving load balance",
@@ -281,6 +286,8 @@ public class Processor extends SettingsPreferenceFragment implements
         initFreqCapFiles();
 
         String fname = "";
+        boolean success = false;
+        boolean mIsTegra = Utils.fileExists(Processor.TEGRA_MAX_FREQ_PATH);
 
         if (newValue != null) {
             if (preference == mGovernorPref) {
@@ -299,13 +306,28 @@ public class Processor extends SettingsPreferenceFragment implements
                 fname = SCHED_PS_FILE;
             }
 
-            if (Utils.fileWriteOneLine(fname, (String) newValue)) {
+            Process process = null;
+            for (int i = 0; i < getNumOfCpus(); i++) {
+                try {
+                    new CMDProcessor().su.runWaitFor("busybox echo "
+                            + (String) newValue + " > "
+                            + fname.replace("cpu0", "cpu" + i));
+                    success = true;
+                } catch (Exception ex) {
+                    Log.d(TAG, "Applying " + fname.replace("cpu0", "cpu" + i) + " failed!");
+                    success = false;
+                }
+            }
+            if (success) {
                 if (preference == mGovernorPref) {
                     mGovernorPref.setSummary(String.format(mGovernorFormat, (String) newValue));
                 } else if (preference == mMinFrequencyPref) {
                     mMinFrequencyPref.setSummary(String.format(mMinFrequencyFormat,
                             toMHz((String) newValue)));
                 } else if (preference == mMaxFrequencyPref) {
+                    if (mIsTegra) {
+                        Utils.fileWriteOneLine(Processor.TEGRA_MAX_FREQ_PATH, (String) newValue);
+                    }
                     mMaxFrequencyPref.setSummary(String.format(mMaxFrequencyFormat,
                             toMHz((String) newValue)));
                 } else if (preference == mSchedPSPref) {
@@ -323,5 +345,25 @@ public class Processor extends SettingsPreferenceFragment implements
     private String toMHz(String mhzString) {
         return new StringBuilder().append(Integer.valueOf(mhzString) / 1000).append(" MHz")
                 .toString();
+    }
+
+    public static int getNumOfCpus() {
+        int numOfCpu = 1;
+        String numOfCpus = Utils.fileReadOneLine(NUM_OF_CPUS_PATH);
+        String[] cpuCount = numOfCpus.split("-");
+        if (cpuCount.length > 1) {
+            try {
+                int cpuStart = Integer.parseInt(cpuCount[0]);
+                int cpuEnd = Integer.parseInt(cpuCount[1]);
+
+                numOfCpu = cpuEnd - cpuStart + 1;
+
+                if (numOfCpu < 0)
+                    numOfCpu = 1;
+            } catch (NumberFormatException ex) {
+                numOfCpu = 1;
+            }
+        }
+        return numOfCpu;
     }
 }

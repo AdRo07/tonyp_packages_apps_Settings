@@ -29,7 +29,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceDrawerActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
@@ -56,12 +56,22 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
 
     private String mHelpUrl;
 
+    protected Context mContext;
+
+    // Need to use AOKP Custom system animation
+    protected ContentResolver mContentRes;  
+
     // Cache the content resolver for async callbacks
     private ContentResolver mContentResolver;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+	
+	mContext = getActivity().getApplicationContext();
+
+	// Need to use AOKP Custom system animation
+	mContentRes = getActivity().getContentResolver(); 
 
         // Prepare help url and enable menu if necessary
         int helpResource = getHelpResource();
@@ -312,13 +322,13 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
 
     public boolean startFragment(
             Fragment caller, String fragmentClass, int requestCode, Bundle extras) {
-        if (getActivity() instanceof PreferenceActivity) {
-            PreferenceActivity preferenceActivity = (PreferenceActivity)getActivity();
+        if (getActivity() instanceof PreferenceDrawerActivity) {
+            PreferenceDrawerActivity preferenceActivity = (PreferenceDrawerActivity)getActivity();
             preferenceActivity.startPreferencePanel(fragmentClass, extras,
                     R.string.lock_settings_picker_title, null, caller, requestCode);
             return true;
         } else {
-            Log.w(TAG, "Parent isn't PreferenceActivity, thus there's no way to launch the "
+            Log.w(TAG, "Parent isn't PreferenceDrawerActivity, thus there's no way to launch the "
                     + "given Fragment (name: " + fragmentClass + ", requestCode: " + requestCode
                     + ")");
             return false;
@@ -357,4 +367,9 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
 
         return false;
     }
+
+    // Need to AOKP Custom system animation
+    public void setTitle(int resId) {
+        getActivity().setTitle(resId);
+    }	
 }

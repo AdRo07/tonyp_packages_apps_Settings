@@ -386,7 +386,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private boolean removeRootOptionsIfRequired() {
         // user builds don't get root, and eng always gets root
-        if (!Build.IS_DEBUGGABLE || "eng".equals(Build.TYPE)) {
+        if (!(Build.IS_DEBUGGABLE || "eng".equals(Build.TYPE))) {
             if (mRootAccess != null) {
                 getPreferenceScreen().removePreference(mRootAccess);
                 return true;
@@ -557,7 +557,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private void updateAdvancedRebootOptions() {
         mAdvancedReboot.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.ADVANCED_REBOOT, 0) != 0);
+                Settings.Secure.ADVANCED_REBOOT, 1) != 0);
     }
 
     private void updateAdbOverNetwork() {

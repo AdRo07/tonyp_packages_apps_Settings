@@ -88,7 +88,6 @@
     <string name="lockscreen_target_title">Scorciatoie di sblocco</string>
     <string name="lockscreen_target_summary">Visualizza o modifica le scorciatoie di sblocco dello schermo</string>
     <string name="lockscreen_target_reset">Scorciatoie di sblocco ripristinate</string>
-    <string name="lockscreen_target_save">Scorciatoie di sblocco salvate</string>
     <string name="lockscreen_target_reset_title">Ripristino</string>
     <string name="lockscreen_target_reset_message">Eliminare tutte le funzioni veloci e ripristinare quelle predefinite?</string>
     <string name="lockscreen_target_empty">Vuoto</string>
@@ -114,9 +113,9 @@
     <string name="duplicate_profile_name">Nome profilo già esistente!</string>
     <string name="duplicate_appgroup_name">Nome gruppo applicazioni già esistente!</string>
     <string name="profile_reset_title">Reset</string>
-    <string name="profile_reset_message">Cancellare tutti i profili e i gruppi applicazioni creati dall\'utente e riportarli ai valori di fabbrica?</string>
+    <string name="profile_reset_message">Cancellare tutti i profili e i gruppi di app creati dall\'utente e riportarli ai valori di fabbrica?</string>
     <string name="profile_delete_confirm">Cancellare questo profilo?</string>
-    <string name="profile_app_delete_confirm">Rimuovi questa applicazione?</string>
+    <string name="profile_app_delete_confirm">Rimuovi questa app?</string>
     <string name="profile_cannot_delete">Un profilo attivo non può essere cancellato.</string>
     <string name="profile_networkmode_2g">2G</string>
     <string name="profile_networkmode_3g">3G</string>
@@ -141,13 +140,13 @@
     <string name="choose_soundtone">Scegli suoneria notifiche</string>
     <string name="choose_ringtone">Scegli suoneria telefono</string>
     <string name="soundtone_title">Suoneria notifiche</string>
-    <string name="profile_appgroups_title">Gruppi applicazioni</string>
-    <string name="profile_applist_title">Applicazioni</string>
-    <string name="profile_new_appgroup">Nuovo gruppo applicazioni</string>
-    <string name="profile_delete_appgroup">Cancellare questo gruppo applicazioni?</string>
-    <string name="profile_appgroup_name_prompt">Inserisci un nome per un nuovo gruppo applicazioni</string>
+    <string name="profile_appgroups_title">Gruppi di app</string>
+    <string name="profile_applist_title">App</string>
+    <string name="profile_new_appgroup">Nuovo gruppo di app</string>
+    <string name="profile_delete_appgroup">Cancellare questo gruppo di app?</string>
+    <string name="profile_appgroup_name_prompt">Inserisci un nome per un nuovo gruppo di app</string>
     <string name="profile_appgroup_name_title">Nome</string>
-    <string name="profile_choose_app">Scegli applicazione</string>
+    <string name="profile_choose_app">Scegli app</string>
     <string name="profile_system_settings_title">Impostazioni sistema</string>
     <string name="profile_lockmode_title">Modalità blocco schermo</string>
     <string name="profile_lockmode_default">Predefinito</string>
@@ -194,20 +193,13 @@
     <string name="performance_settings_warning_title">Procedere con cautela</string>
     <string name="performance_settings_warning">Queste impostazioni sono sperimentali e qualsiasi loro cambiamento potrebbe causare instabilità, crash, perdita di dati e danni all\'hardware.\n\nNon inviate segnalazioni di bug se una qualsiasi di queste impostazioni è stata modificata.</string>
     <string name="processor_title">Processore</string>
-    <string name="processor_summary">Seleziona il governor e la velocità della CPU</string>
     <string name="cpu_cur_freq_title">Frequenza CPU attuale</string>
     <string name="cpu_governors_title">Governor CPU</string>
     <string name="cpu_min_freq_title">Frequenza minima CPU</string>
     <string name="cpu_max_freq_title">Frequenza massima CPU</string>
-    <string name="cpu_set_on_boot">Imposta all\'avvio</string>
-    <string name="cpu_set_on_boot_summary">Reimposta i parametri selezionati ad ogni riavvio</string>
     <string name="io_scheds_title">Schedulatore I/O</string>
-    <string name="io_scheds_summary">Cambia lo schedulatore I/O</string>
     <string name="io_sched_title">Schedulatore I/O</string>
-    <string name="io_sched_set_on_boot">Imposta all\'avvio</string>
-    <string name="io_sched_set_on_boot_summary">Reimposta le impostazioni dello schedulatore I/O ad ogni riavvio</string>
     <string name="memory_management_title">Gestione memoria</string>
-    <string name="memory_management_summary">Personalizza l\'uso della memoria per modificare le prestazioni del sistema</string>
     <string name="pref_zram_title">zRam</string>
     <string name="pref_zram_summary">Comprime la memoria RAM per aumentarne virtualmente la capacità (Richiede il riavvio)</string>
     <string name="pref_ksm_title">Fusione pagine Kernel</string>
@@ -421,6 +413,7 @@
     <string name="adb_notify">Notifica debug USB</string>
     <string name="adb_notify_summary">Visualizza una notifica quando il debug USB è collegato</string>
     <string name="development_tools_title">Esegui dev. tools</string>
+    <string name="allow_mock_sms">Consenti SMS fittizi</string>
     <string name="usb_mass_storage_title">Memoria di massa</string>
     <string name="usb_mass_storage_summary">Attiva la memoria di massa USB</string>
     <string name="storage_rescan_media">Riesegui la scansione dei media sulla memoria di massa</string>
@@ -439,7 +432,7 @@
     <string name="lockscreen_buttons_previous">Brano precedente</string>
     <string name="lockscreen_buttons_playpause">Riproduci/Pausa</string>
     <string name="lockscreen_buttons_toggle_sound">Suono On/Off</string>
-    <string name="quick_settings_panel_title">Pannello Impostazioni veloci</string>
+    <string name="quick_settings_panel_title">Pannello Impostazioni rapide</string>
     <string name="title_static_tiles">Tile statici</string>
     <string name="tile_picker_title">Tile e disposizione</string>
     <string name="tile_picker_summary">Guarda, scegli o cambia la disposizione dei tile mostrati</string>
@@ -469,6 +462,7 @@
     <string name="title_tile_quiet_hours">Periodo quiete</string>
     <string name="title_tile_volume">Volume</string>
     <string name="title_tile_expanded_desktop">Desktop esteso</string>
+    <string name="title_tile_network_adb">ADB attraverso la rete</string>
     <string name="title_dynamic_tiles">Tile dinamici</string>
     <string name="dynamic_tiles_note_title">Nota</string>
     <string name="dynamic_tiles_note_summary">I tile dinamici vengono visualizzati solamente se un evento di sistema li attiva</string>
@@ -479,8 +473,8 @@
     <string name="title_dynamic_usbtether">Tether USB</string>
     <string name="title_dynamic_wifi">Visualizza Wi-Fi</string>
     <string name="title_general">Generale</string>
-    <string name="title_quick_pulldown">Impostazioni veloci</string>
-    <string name="summary_quick_pulldown">Il bordo laterale %1$s della barra di stato mostra le Impostazioni veloci</string>
+    <string name="title_quick_pulldown">Impostazioni rapide</string>
+    <string name="summary_quick_pulldown">Il bordo laterale %1$s della barra di stato mostra le Impostazioni rapide</string>
     <string name="quick_pulldown_summary_left">sinistro</string>
     <string name="quick_pulldown_summary_right">destro</string>
     <string name="quick_pulldown_off">Disattivato</string>
@@ -582,7 +576,6 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' cancella la riga selezionata
     <string name="navigation_ring_title">Scorciatoie di avvio rapido</string>
     <string name="navring_target_reset_message">Cancellare le impostazioni correnti e ripristinare le predefinite?</string>
     <string name="navring_target_reset">Avvio rapido ripristinato</string>
-    <string name="navring_target_save">Impostazioni per l\'avvio rapido salvate</string>
     <string name="navring_action_open_ime_switcher">Apri selettore metodo di immissione</string>
     <string name="navring_action_kill_app">Termina applicazione</string>
     <string name="navring_action_none">Nessuna</string>
@@ -695,11 +688,31 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' cancella la riga selezionata
     <string name="color_red_title">Rosso</string>
     <string name="color_green_title">Verde</string>
     <string name="color_blue_title">Blu</string>
-    <string name="category_gamma_title">Gamma</string>
+    <string name="button_backlight_title">Retroilluminazione</string>
+    <string name="button_backlight_enabled">Illumina pulsanti</string>
+    <string name="keyboard_backlight_enabled">Illumina tastiera</string>
+    <string name="button_backlight_seekbar_title">Luminosità pulsanti</string>
+    <string name="keyboard_backlight_seekbar_title">Luminosità tastiera</string>
+    <string name="backlight_timeout_title">Timeout illuminazione</string>
+    <string name="backlight_timeout_unlimited">Non spegnere</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> secondo</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> secondi</item>
+    </plurals>
+    <string name="backlight_summary_disabled">Disattivata</string>
+    <string name="backlight_summary_enabled_with_timeout">Attiva per <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Attivata</string>
     <string name="gamma_tuning_title_head">Calibrazione gamma</string>
     <string name="gamma_tuning_summary_head">Modifica valori gamma</string>
     <string name="more_device_controls_title">Altro\u2026</string>
     <string name="more_device_settings_title">Altre opzioni del dispositivo</string>
     <string name="sensors_motors_title">Sensori &amp; Motori</string>
     <string name="display_calibration_title">Calibrazione display</string>
+    <string name="category_quick_access">Barra accesso rapido</string>
+    <string name="title_quick_access">Mostra nel drawer</string>
+    <string name="title_quick_access_linked">Disposizione collegata</string>
+    <string name="summary_quick_access_linked">Utilizza gli stessi tile e lo stesso layout del pannello Impostazioni rapide</string>
+    <string name="font_size_sample">Esempio</string>
+    <string name="selinux_enable_title">Sicurezza avanzata Android</string>
+    <string name="selinux_enable_warning">Si sta per attivare SEAndroid, un meccanismo di sicurezza avanzata, sul dispositivo.\n\nQuesta opzione esiste solo per scopi di debug, probabilmente il dispositivo non è ancora completamente pronto per questo, può quindi causare blocchi.\n\nSi è sicuri di voler procedere?</string>
 </resources>

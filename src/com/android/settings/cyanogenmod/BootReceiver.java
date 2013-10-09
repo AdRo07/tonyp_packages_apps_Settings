@@ -20,6 +20,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.SystemProperties;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -37,10 +38,12 @@ public class BootReceiver extends BroadcastReceiver {
 
     private static final String CPU_SETTINGS_PROP = "sys.cpufreq.restored";
     private static final String IOSCHED_SETTINGS_PROP = "sys.iosched.restored";
+    private static final String PERF_PROFILE_SETTINGS_PROP = "sys.perf.profile.restored";
     private static final String KSM_SETTINGS_PROP = "sys.ksm.restored";
 
     @Override
     public void onReceive(Context ctx, Intent intent) {
+        /*
         if (SystemProperties.getBoolean(CPU_SETTINGS_PROP, false) == false
                 && intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
             SystemProperties.set(CPU_SETTINGS_PROP, "true");
@@ -48,6 +51,8 @@ public class BootReceiver extends BroadcastReceiver {
         } else {
             SystemProperties.set(CPU_SETTINGS_PROP, "false");
         }
+        */
+        SystemProperties.set(CPU_SETTINGS_PROP, "false");
 
         if (SystemProperties.getBoolean(IOSCHED_SETTINGS_PROP, false) == false
                 && intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
@@ -55,6 +60,14 @@ public class BootReceiver extends BroadcastReceiver {
             configureIOSched(ctx);
         } else {
             SystemProperties.set(IOSCHED_SETTINGS_PROP, "false");
+        }
+
+        if (SystemProperties.getBoolean(PERF_PROFILE_SETTINGS_PROP, false) == false
+                && intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
+            SystemProperties.set(PERF_PROFILE_SETTINGS_PROP, "true");
+            configurePerfProfile(ctx);
+        } else {
+            SystemProperties.set(PERF_PROFILE_SETTINGS_PROP, "false");
         }
 
         if (Utils.fileExists(MemoryManagement.KSM_RUN_FILE)) {
@@ -86,7 +99,7 @@ public class BootReceiver extends BroadcastReceiver {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
 
         if (prefs.getBoolean(Processor.SOB_PREF, false) == false) {
-            Log.i(TAG, "Restore disabled by user preference.");
+            Log.i(TAG, "CPU restore disabled by user preference.");
             return;
         }
 
@@ -115,13 +128,23 @@ public class BootReceiver extends BroadcastReceiver {
                 frequencies = Arrays.asList(availableFrequenciesLine.split(" "));
             }
             if (maxFrequency != null && frequencies != null && frequencies.contains(maxFrequency)) {
-                Utils.fileWriteOneLine(Processor.FREQ_MAX_FILE, maxFrequency);
+                for (int i = 0; i < Processor.getNumOfCpus(); i++) {
+                    Utils.fileWriteOneLine(Processor.FREQ_MAX_FILE.replace("cpu0", "cpu" + i), maxFrequency);
+                }
+                boolean mIsTegra = Utils.fileExists(Processor.TEGRA_MAX_FREQ_PATH);
+                if (mIsTegra) {
+                    Utils.fileWriteOneLine(Processor.TEGRA_MAX_FREQ_PATH, maxFrequency);
+                }
             }
             if (minFrequency != null && frequencies != null && frequencies.contains(minFrequency)) {
-                Utils.fileWriteOneLine(Processor.FREQ_MIN_FILE, minFrequency);
+                for (int i = 0; i < Processor.getNumOfCpus(); i++) {
+                    Utils.fileWriteOneLine(Processor.FREQ_MIN_FILE.replace("cpu0", "cpu" + i), minFrequency);
+                }
             }
             if (governor != null && governors != null && governors.contains(governor)) {
-                Utils.fileWriteOneLine(Processor.GOV_FILE, governor);
+                for (int i = 0; i < Processor.getNumOfCpus(); i++) {
+                    Utils.fileWriteOneLine(Processor.GOV_FILE.replace("cpu0", "cpu" + i), governor);
+                }
             }
             if(schedPS != null) {
                 Utils.fileWriteOneLine(Processor.SCHED_PS_FILE, schedPS);
@@ -140,7 +163,7 @@ public class BootReceiver extends BroadcastReceiver {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
 
         if (prefs.getBoolean(IOScheduler.SOB_PREF, false) == false) {
-            Log.i(TAG, "Restore disabled by user preference.");
+            Log.i(TAG, "IOSched restore disabled by user preference.");
             return;
         }
 
@@ -159,6 +182,29 @@ public class BootReceiver extends BroadcastReceiver {
                 Utils.fileWriteOneLine(IOScheduler.IOSCHED_LIST_FILE, ioscheduler);
             }
             Log.d(TAG, "I/O scheduler settings restored.");
+        }
+    }
+
+    private void configurePerfProfile(Context ctx) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+        final Resources res = ctx.getResources();
+
+        if (prefs.getBoolean(PerformanceProfile.SOB_PREF, false) == false) {
+            Log.i(TAG, "Performance profile restore disabled by user preference.");
+            return;
+        }
+
+        String perfProfileProp = res.getString(R.string.config_perf_profile_prop);
+        if (perfProfileProp == null) {
+            Log.d(TAG, "Performance profiles are not supported by the device. Nothing to restore.");
+        }
+
+        String perfProfile = prefs.getString(PerformanceProfile.PERF_PROFILE_PREF, null);
+        if (perfProfile == null) {
+            Log.d(TAG, "No performance profile settings saved. Nothing to restore.");
+        } else {
+            SystemProperties.set(perfProfileProp, perfProfile);
+            Log.d(TAG, "Performance profile settings restored.");
         }
     }
 

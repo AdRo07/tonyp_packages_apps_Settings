@@ -28,7 +28,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceDrawerActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -333,7 +333,7 @@ public class AppOpsCategory extends ListFragment implements
         Bundle args = new Bundle();
         args.putString(AppOpsDetails.ARG_PACKAGE_NAME, mCurrentPkgName);
 
-        PreferenceActivity pa = (PreferenceActivity)getActivity();
+        PreferenceDrawerActivity pa = (PreferenceDrawerActivity)getActivity();
         pa.startPreferencePanel(AppOpsDetails.class.getName(), args,
                 R.string.app_ops_settings, null, this, RESULT_APP_DETAILS);
     }

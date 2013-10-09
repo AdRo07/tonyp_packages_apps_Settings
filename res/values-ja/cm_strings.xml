@@ -200,7 +200,6 @@
     <string name="lockscreen_target_title">ロック画面のショートカット</string>
     <string name="lockscreen_target_summary">ロック画面にショートカットを追加したり編集する</string>
     <string name="lockscreen_target_reset">ロック画面のショートカットをデフォルトに戻す</string>
-    <string name="lockscreen_target_save">ロック画面のショートカットを保存しました</string>
     <string name="lockscreen_target_reset_title">リセット</string>
     <string name="lockscreen_target_reset_message">全てのロック画面ショートカットを削除してデフォルトに戻しますか?</string>
     <string name="lockscreen_target_empty">なし</string>
@@ -319,20 +318,13 @@
     <string name="performance_settings_warning_title">注意してください</string>
     <string name="performance_settings_warning">これらの設定は実験中のものを含み、変更により不安定、クラッシュ、データの損失、あるいはハードウェアの故障を引き起こす可能性があります。\n\nこれらの設定を変更した後にバグリポートをしないでください。</string>
     <string name="processor_title">プロセッサ</string>
-    <string name="processor_summary">調整タイプとクロックの設定</string>
     <string name="cpu_cur_freq_title">現在のCPUクロック</string>
     <string name="cpu_governors_title">CPU調整</string>
     <string name="cpu_min_freq_title">最小CPUクロック</string>
     <string name="cpu_max_freq_title">最大CPUクロック</string>
-    <string name="cpu_set_on_boot">起動時に適用</string>
-    <string name="cpu_set_on_boot_summary">起動時にCPU設定を適用する</string>
     <string name="io_scheds_title">I/O スケジューラ</string>
-    <string name="io_scheds_summary">I/O スケジューラを変更する</string>
     <string name="io_sched_title">I/O スケジューラ</string>
-    <string name="io_sched_set_on_boot">起動時に設定</string>
-    <string name="io_sched_set_on_boot_summary">I/O スケジューラの変更を起動時に適用する</string>
     <string name="memory_management_title">メモリマネジメント</string>
-    <string name="memory_management_summary">システムパフォーマンスを変更するためにメモリの利用をカスタマイズする</string>
     <string name="pref_zram_title">zRam</string>
     <string name="pref_zram_summary">メモリを圧縮して仮想領域を増やす(要再起動)</string>
     <string name="pref_ksm_title">Kernel samepage merging</string>
@@ -550,7 +542,6 @@
     <string name="navigation_ring_title">クイック起動ショートカット</string>
     <string name="navring_target_reset_message">作成したナビゲーションバーのショートカットを全て削除してデフォルトに戻しますか?</string>
     <string name="navring_target_reset">ナビゲーションバーショートカットをリセットしました</string>
-    <string name="navring_target_save">ナビゲーションバーショートカットを保存しました</string>
     <string name="navring_action_open_ime_switcher">入力方法の切り替え</string>
     <string name="navring_action_kill_app">アプリの強制終了</string>
     <string name="navring_action_none">なし</string>
