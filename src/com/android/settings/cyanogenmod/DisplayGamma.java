@@ -56,6 +56,7 @@ public class DisplayGamma extends DialogPreference {
     private String[][] mCurrentColors;
     private String[] mOriginalColors;
     private int mNumberOfControls;
+    private int mMin;
 
     public DisplayGamma(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -65,6 +66,8 @@ public class DisplayGamma extends DialogPreference {
         }
 
         mNumberOfControls = DisplayGammaCalibration.getNumberOfControls();
+        mMin = DisplayGammaCalibration.getMinValue(0);
+
         mSeekBars = new GammaSeekBar[mNumberOfControls][BAR_COLORS.length];
 
         mOriginalColors = new String[mNumberOfControls];
@@ -306,7 +309,7 @@ public class DisplayGamma extends DialogPreference {
             TextView label = (TextView) container.findViewById(R.id.color_text);
             label.setText(container.getContext().getString(BAR_COLORS[colorIndex]));
 
-            mSeekBar.setMax(DisplayGammaCalibration.getMaxValue(controlIndex) - mMin);
+            mSeekBar.setMax(DisplayGammaCalibration.getMaxValue(0) - mMin);
             mSeekBar.setProgress(0);
             mValue.setText(String.valueOf(mSeekBar.getProgress() + mMin));
 
