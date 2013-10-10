@@ -1032,6 +1032,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <string name="add_statusbar_toggle">Add Extension</string>
     <string name="show_as_transparent">Transparent</string>
+    <string name="notification_drawer_summary">Customize the Notification Drawer, by using Quick Access Extensions (Ribbons, Brightness/Volume Slider)</string>
 
     <string name="toggles_picker_title">Quick Access Extensions</string>
     <string name="toggles_picker_summary">Add, delete or change the position of a Extention, like Ribbons or Sliders, in the Notification Drawer</string>

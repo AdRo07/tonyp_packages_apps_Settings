@@ -66,7 +66,7 @@ public class DisplayGamma extends DialogPreference {
         }
 
         mNumberOfControls = DisplayGammaCalibration.getNumberOfControls();
-        mMin = DisplayGammaCalibration.getMinValue();
+        mMin = DisplayGammaCalibration.getMinValue(0);
 
         mSeekBars = new GammaSeekBar[mNumberOfControls][BAR_COLORS.length];
 
@@ -303,7 +303,7 @@ public class DisplayGamma extends DialogPreference {
                 label.setText(color + " " + (controlIndex + 1));
             }
 
-            mSeekBar.setMax(DisplayGammaCalibration.getMaxValue() - mMin);
+            mSeekBar.setMax(DisplayGammaCalibration.getMaxValue(0) - mMin);
             mSeekBar.setProgress(0);
             mValue.setText(String.valueOf(mSeekBar.getProgress() + mMin));
 

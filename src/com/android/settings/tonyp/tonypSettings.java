@@ -54,14 +54,12 @@ public class tonypSettings extends SettingsPreferenceFragment implements OnPrefe
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
     private static final String KEY_COS_DONATE= "donate";
-    private static final String BRIGHTNESS_SLIDER = "show_brightness_slider";
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
 
     private PreferenceCategory mMisc;
     private Preference mCustomLabel;
     private ListPreference mLowBatteryWarning;
-    private ListPreference mShowBrightnessSlider;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
 
@@ -96,13 +94,6 @@ public class tonypSettings extends SettingsPreferenceFragment implements OnPrefe
                                     Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, 0);
         mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
         mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
-        
-        int mode = Settings.System.getIntForUser(getContentResolver(),
-                    Settings.System.SHOW_BRIGHTNESS_SLIDER, 0, UserHandle.USER_CURRENT);
-        mShowBrightnessSlider = (ListPreference) findPreference(BRIGHTNESS_SLIDER);
-        mShowBrightnessSlider.setValue(String.valueOf(mode));
-        mShowBrightnessSlider.setOnPreferenceChangeListener(this);
-        updateBrightnessSlider(mode);
 
         //ListView Animations
         mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
@@ -138,12 +129,6 @@ public class tonypSettings extends SettingsPreferenceFragment implements OnPrefe
                     Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY,
                     lowBatteryWarning);
             mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
-            return true;
-        } else if(preference == mShowBrightnessSlider) {
-            int value = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.SHOW_BRIGHTNESS_SLIDER, value);
-            updateBrightnessSlider(value);
             return true;
         } else if (preference == mListViewAnimation) {
             int listviewanimation = Integer.valueOf((String) newValue);
@@ -209,10 +194,4 @@ public class tonypSettings extends SettingsPreferenceFragment implements OnPrefe
             return true;
         }
     };
-
-    private void updateBrightnessSlider(int setting) {
-        String[] summaries = getResources().getStringArray(
-                R.array.show_brightness_slider_entries);
-        mShowBrightnessSlider.setSummary(summaries[setting]);
-    }
 }
