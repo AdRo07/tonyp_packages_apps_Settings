@@ -24,9 +24,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
+import android.os.Vibrator;
 import android.preference.ListPreference;
 import android.preference.MultiSelectListPreference;
 import android.preference.Preference;
@@ -98,14 +100,20 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         // Add the sound mode
         mRingMode = (MultiSelectListPreference) prefSet.findPreference(EXP_RING_MODE);
-        String storedRingMode = Settings.System.getString(resolver,
-                Settings.System.EXPANDED_RING_MODE);
-        if (storedRingMode != null) {
-            String[] ringModeArray = TextUtils.split(storedRingMode, SEPARATOR);
-            mRingMode.setValues(new HashSet<String>(Arrays.asList(ringModeArray)));
-            updateSummary(storedRingMode, mRingMode, R.string.pref_ring_mode_summary);
+
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        if (vibrator.hasVibrator()) {
+            String storedRingMode = Settings.System.getString(resolver,
+                    Settings.System.EXPANDED_RING_MODE);
+            if (storedRingMode != null) {
+                String[] ringModeArray = TextUtils.split(storedRingMode, SEPARATOR);
+                mRingMode.setValues(new HashSet<String>(Arrays.asList(ringModeArray)));
+                updateSummary(storedRingMode, mRingMode, R.string.pref_ring_mode_summary);
+            }
+            mRingMode.setOnPreferenceChangeListener(this);
+        } else {
+            mStaticTiles.removePreference(mRingMode);
         }
-        mRingMode.setOnPreferenceChangeListener(this);
 
         // Add the network mode preference
         mNetworkMode = (ListPreference) prefSet.findPreference(EXP_NETWORK_MODE);
@@ -120,22 +128,29 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mScreenTimeoutMode.setOnPreferenceChangeListener(this);
 
         // Remove unsupported options
-        // NPE workaround: make sure they're added before trying to remove them
         if (!QSUtils.deviceSupportsDockBattery(getActivity())) {
-            if (findPreference(Settings.System.QS_DYNAMIC_DOCK_BATTERY) != null)
-            mDynamicTiles.removePreference(findPreference(Settings.System.QS_DYNAMIC_DOCK_BATTERY));
+            Preference pref = findPreference(Settings.System.QS_DYNAMIC_DOCK_BATTERY);
+            if (pref != null) {
+                mDynamicTiles.removePreference(pref);
+            }
         }
         if (!QSUtils.deviceSupportsImeSwitcher(getActivity())) {
-            if (findPreference(Settings.System.QS_DYNAMIC_IME) != null)
-            mDynamicTiles.removePreference(findPreference(Settings.System.QS_DYNAMIC_IME));
+            Preference pref = findPreference(Settings.System.QS_DYNAMIC_IME);
+            if (pref != null) {
+                mDynamicTiles.removePreference(pref);
+            }
         }
         if (!QSUtils.deviceSupportsUsbTether(getActivity())) {
-            if (findPreference(Settings.System.QS_DYNAMIC_USBTETHER) != null)
-            mDynamicTiles.removePreference(findPreference(Settings.System.QS_DYNAMIC_USBTETHER));
+            Preference pref = findPreference(Settings.System.QS_DYNAMIC_USBTETHER);
+            if (pref != null) {
+                mDynamicTiles.removePreference(pref);
+            }
         }
         if (!QSUtils.deviceSupportsWifiDisplay(getActivity())) {
-            if (findPreference(Settings.System.QS_DYNAMIC_WIFI) != null)
-            mDynamicTiles.removePreference(findPreference(Settings.System.QS_DYNAMIC_WIFI));
+            Preference pref = findPreference(Settings.System.QS_DYNAMIC_WIFI);
+            if (pref != null) {
+                mDynamicTiles.removePreference(pref);
+            }
         }
     }
 
