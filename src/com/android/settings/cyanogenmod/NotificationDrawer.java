@@ -56,7 +56,7 @@ public class NotificationDrawer extends SettingsPreferenceFragment  implements
         updateCollapseBehaviourSummary(collapseBehaviour);
         
         mVSliderMode = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.SHOW_VOLUME_SLIDER, -1, UserHandle.USER_CURRENT);
+                Settings.System.SHOW_VOLUME_SLIDER, 0, UserHandle.USER_CURRENT);
         
         mVolumeSliderMode = (ListPreference)findPreference(VOLUME_SLIDER_MODE);
         mVolumeSliderMode.setValueIndex(mVSliderMode);
