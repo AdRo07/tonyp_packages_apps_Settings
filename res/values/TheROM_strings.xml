@@ -173,10 +173,36 @@
     <string name="donate_tonyp_summary">If you like my work consider to show your support by donating</string>
     <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick\u0026hosted_button_id=RL7NJSUDNQNZU</string>
 
-    <!-- Brightness Slider -->
-    <string name="show_brightness_slider_dont">Disable</string>
-    <string name="show_brightness_slider_above">Show (above ribbons)</string>
-    <string name="show_brightness_slider_below">Show (below ribbons)</string>
+    <!-- Sliders -->
+    <string name="shortcut_app_target_info"></string>
+    <string name="shortcut_app_target_title">Slider shortcuts</string>
+    <string name="shortcut_app_target_summary">View or change custom app shortcuts</string>
+    <string name="shortcut_app_target_save">App shortcuts saved</string>
+
+    <string name="category_quick_access">Quick Access ribbon</string>
+    <string name="title_quick_access">Show in drawer</string>
+    <string name="title_quick_access_linked">Linked layout</string>
+    <string name="summary_quick_access_linked">Use the same tiles and layout as the Quick Settings panel</string>
+
+    <string name="summary_quick_access">Show the QuickSettings Ribbon in the Notification Drawer</string>
+
+    <string name="title_brightness_slider">Brightness Slider</string>
+    <string name="summary_brightness_slider">Show a Brightness Slider in Notifications, to control the Brightness through a slider</string>
+
+    <string name="title_volume_slider">Volume Slider</string>
+    <string name="summary_volume_slider">Show a Volume Slider in Notifications, to control the volume of phone, music or alarm</string>
+    <string name="title_show_volume_slider_stream">Volume Slider Mode</string>
+
+    <string name="stream_volume_slider_ring">Ring / Phone</string>
+    <string name="stream_volume_slider_music">Music / Media</string>
+    <string name="stream_volume_slider_notifications">Alarm</string>
+
+    <string name="add_statusbar_toggle">Add Extension</string>
+    <string name="show_as_transparent">Transparent</string>
+    <string name="notification_drawer_summary">Customize the Notification Drawer, by using Quick Access Extensions (Ribbons, Brightness/Volume Slider)</string>
+
+    <string name="toggles_picker_title">Quick Access Extensions</string>
+    <string name="toggles_picker_summary">Add, delete or change the position of a Extention, like Ribbons or Sliders, in the Notification Drawer</string>
 
     <!--  Advanced low battery indicator -->
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
