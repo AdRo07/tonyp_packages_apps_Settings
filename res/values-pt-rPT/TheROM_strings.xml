@@ -169,7 +169,7 @@
     <string name="alert_reboot_message">Esta alteração necessita de reinicialização de forma a ser aplicada. Reinicializar agora?</string>
 
     <!-- Donate -->
-    <string name="donate_tonyp_title">Doar/string</string>
+    <string name="donate_tonyp_title">Doar</string>
     <string name="donate_tonyp_summary">Se gosta do meu trabalho mostre a sua apreciação doando</string>
     <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick\u0026hosted_button_id=RL7NJSUDNQNZU</string>
 

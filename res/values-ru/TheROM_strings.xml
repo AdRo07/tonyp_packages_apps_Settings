@@ -16,7 +16,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- TheROM settings -->
-    <string name="tonyp_settings_title">Настройки TheROM settings</string>
+    <string name="tonyp_settings_title">Настройки TheROM</string>
     <string name="display_hybrid_options_title">HYBRID</string>
     <string name="display_notifications_options_title">УВЕДОМЛЕНИЯ</string>
     <string name="display_statusbar_options_title">СТРОКА СОСТОЯНИЯ И ШТОРКА</string>
