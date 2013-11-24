@@ -248,8 +248,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         //dynamically add QuickMemo support
         mActions = new ListPreference[] {
             mHomeLongPressAction, mHomeDoubleTapAction, mMenuPressAction, mMenuLongPressAction, 
-            mAssistPressAction, mAssistLongPressAction, mAppSwitchPressAction, mAppSwitchLongPressAction, 
-            mCameraPressAction, mCameraLongPressAction
+            mAssistPressAction, mAssistLongPressAction, mAppSwitchPressAction, mAppSwitchLongPressAction
         };
         for (ListPreference pref : mActions) {
             if (pref != null) {
