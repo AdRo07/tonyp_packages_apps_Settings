@@ -44,6 +44,7 @@
     <string name="quiet_hours_note_summary">注意：安静时段将不会影响来电的正常行为</string>
     <string name="quiet_hours_enabled">开启安静时段</string>
     <string name="quiet_hours_mute">静音提醒</string>
+    <string name="quiet_hours_system">禁用系统声音</string>
     <string name="quiet_hours_still">禁用震动</string>
     <string name="quiet_hours_dim">禁用指示灯</string>
     <string name="quiet_hours_haptic">禁用触控反馈</string>
@@ -69,6 +70,8 @@
     <string name="preview_data_title">预览数据</string>
     <string name="view_stats_title">查看统计</string>
     <string name="anonymous_learn_more">查看更多</string>
+    <string name="app_ops_allowed">允许</string>
+    <string name="app_ops_ignored">拒绝</string>
     <string name="anonymous_notification_desc">启用或禁用 CyanogenMod 统计</string>
     <string name="preview_id_title">独特 ID</string>
     <string name="preview_device_title">设备</string>
@@ -176,6 +179,8 @@
     <string name="unlock_menu_unlock_summary">按下菜单键即可解锁设备</string>
     <string name="unlock_home_unlock_title">Home 键解锁</string>
     <string name="unlock_home_unlock_summary">按下 Home 键即可解锁设备</string>
+    <string name="unlock_camera_unlock_title">相机键解锁</string>
+    <string name="unlock_camera_unlock_summary">按下相机键解锁设备</string>
     <string name="unlock_quick_unlock_control_title">快速解锁</string>
     <string name="unlock_quick_unlock_control_summary">当正确的 PIN 或密码被输入后，设备将自动解锁</string>
     <string name="delay_and_timeout_title">锁定延迟</string>
@@ -330,7 +335,6 @@
     <string name="ring_mode_mute">静音</string>
     <string name="automation_effects_title">自动化 &amp; 音效</string>
     <string name="button_settings">按键</string>
-    <string name="hardware_keys_enable_custom_title">允许自定义的行为</string>
     <string name="hardware_keys_home_key_title">Home 键</string>
     <string name="hardware_keys_menu_key_title">菜单键</string>
     <string name="hardware_keys_assist_key_title">搜索键</string>
@@ -351,6 +355,13 @@
     <string name="hardware_keys_action_in_app_search">程序内搜索</string>
     <string name="home_wake_title">Home 键唤醒</string>
     <string name="home_wake_summary">按 Home 键唤醒设备</string>
+    <string name="camera_wake_title">相机键唤醒</string>
+    <string name="camera_wake_summary">按下相机键将唤醒你的设备</string>
+    <string name="camera_sleep_on_release_title">屏幕窥探</string>
+    <string name="camera_sleep_on_release_summary">仅当按钮被按下的时候，半按将会保持屏幕点亮</string>
+    <string name="camera_music_controls_title">相机键音乐控制</string>
+    <string name="camera_music_controls_summary">当屏幕变暗的时候，长按相机键将播放/暂停当前的音乐</string>
+
     <string name="volume_wake_title">音量键唤醒</string>
     <string name="volume_wake_summary">按音量键唤醒设备</string>
     <string name="swap_volume_buttons_title">交换音量键</string>
@@ -700,4 +711,17 @@
     <string name="font_size_sample">示例</string>
     <string name="selinux_enable_title">安全增强式 Android</string>
     <string name="selinux_enable_warning">您将在您的设备上启用 SEAndroid，一个增强安全性的高级机制。此选项纯粹用于调试目的，并很有可能不完全在您的设备上工作，导致一部分 (或所有) 硬件阻塞或挂起。您确定要继续吗？</string>
+    <string name="app_ops_summaries_alarm_wakeup">唤醒</string>
+    <string name="app_ops_labels_alarm_wakeup">唤醒</string>
+    <string name="app_ops_show_user_apps">显示用户应用</string>
+    <string name="app_ops_show_system_apps">显示内建应用</string>
+    <string name="app_ops_summaries_wifi_change">wifi 更改</string>
+    <string name="app_ops_labels_wifi_change">Wi-Fi 更改</string>
+    <string name="app_ops_summaries_bluetooth_change">蓝牙更改</string>
+    <string name="app_ops_labels_bluetooth_change">蓝牙更改</string>
+    <string name="app_ops_summaries_data_change">数据更改</string>
+    <string name="app_ops_labels_data_change">数据更改</string>
+    <string name="app_ops_reset_counters">重置 允许/拒绝 计数器</string>
+    <string name="app_ops_reset_confirm_title">确认计数器重置</string>
+    <string name="app_ops_reset_confirm_mesg">你确定希望重置 AppOps 计数器？</string>
 </resources>

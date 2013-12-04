@@ -17,6 +17,13 @@
     <string name="bluetooth_mas_request">"Anmodning om beskeder"</string>
     <string name="bluetooth_mas_acceptance_dialog_text">%1$s vil gerne have adgang til dine beskeder. Vil du give %2$s adgang?</string>
     <string name="bluetooth_mas_remember_choice">Spørg ikke igen</string>
+    <string name="bluetooth_enter_pin_msg_hs">For at parre med:<xliff:g id="bold">&lt;br>&lt;b></xliff:g><xliff:g id="device_name">%1$s</xliff:g><xliff:g id="end_bold">&lt;/b>&lt;br>&lt;br></xliff:g>Skriv enhedens påkrævet PIN-kode (16 cifre eller mere):</string>
+    <string name="bluetooth_profile_sap">SIM-adgang</string>
+    <string name="bluetooth_sap_profile_summary_connected">Forbundet til SIM-adgangsserver</string>
+    <string name="bluetooth_sap_profile_summary_use_for">Bruges til SIM-adgang</string>
+    <string name="bluetooth_profile_dun">Dial-up-netværksadgang</string>
+    <string name="bluetooth_dun_profile_summary_connected">Forbundet til DUN-server</string>
+    <string name="bluetooth_dun_profile_summary_use_for">Anvend til dial-up-netværksadgang</string>
     <string name="wifi_mode">Tilstand</string>
     <string name="wifi_mode_ibss">Ad-Hoc (IBSS)-netværk</string>
     <string name="wifi_mode_ibss_short">Ad-Hoc</string>
@@ -25,6 +32,7 @@
     <string name="wifi_setting_countrycode_error">Der opstod et problem med indstillingen af regionskoden.</string>
     <string name="wifi_setting_priority_title">Wi-Fi-prioritet</string>
     <string name="wifi_setting_priority_summary">Angiv prioriteten af Wi-Fi-netværkene</string>
+    <string name="wifi_disabled_association_rejected">Tilknytning afvist </string>
     <string name="volume_adjust_sounds_enable_title">Lydstyrkejusteringslyd</string>
     <string name="volume_adjust_sounds_enable_summary">Afspil lyd, når lydstyrke ændres på lydstyrkeknap</string>
     <string name="lockpattern_settings_enable_error_path_title">Vis mønsterfejl</string>
@@ -44,9 +52,10 @@
     <string name="quiet_hours_note_summary">Bemærk: Indgående opkald vil opføre sig som normalt i stille timer</string>
     <string name="quiet_hours_enabled">Aktivér stille timer</string>
     <string name="quiet_hours_mute">Lydløse meddelelser</string>
-    <string name="quiet_hours_still">Deaktiver vibrationer</string>
-    <string name="quiet_hours_dim">Deaktiver meddelelses-LED</string>
-    <string name="quiet_hours_haptic">Deaktiver berøringsvibration</string>
+    <string name="quiet_hours_system">Deaktivér systemlyde</string>
+    <string name="quiet_hours_still">Deaktivér vibrationer</string>
+    <string name="quiet_hours_dim">Deaktivér meddelelses-LED</string>
+    <string name="quiet_hours_haptic">Deaktivér berøringsvibration</string>
     <string name="quiet_hours_active_from">Aktiv fra</string>
     <string name="quiet_hours_active_to">til</string>
     <string name="start_time_title">Start</string>
@@ -103,6 +112,7 @@
     <string name="lockscreen_battery_status_title">Batteristatus</string>
     <string name="lockscreen_battery_status_charging">Kun under opladning</string>
     <string name="lockscreen_battery_status_alwayson">Altid til</string>
+    <string name="lockscreen_battery_status_alwaysoff">Altid fra</string>
     <string name="profiles_settings_title">Profiler</string>
     <string name="profiles_add">Tilføj</string>
     <string name="profile_menu_delete">Slet</string>
@@ -130,7 +140,7 @@
     <string name="profile_networkmode_2g3g">2G/3G</string>
     <string name="profile_connectionoverrides_title">Tilsidesættelser for forbindelse</string>
     <string name="profile_volumeoverrides_title">Tilsidesættelser for lydstyrke</string>
-    <string name="connection_state_disabled">Deaktiver</string>
+    <string name="connection_state_disabled">Deaktivér</string>
     <string name="connection_state_enabled">Aktivér</string>
     <string name="volume_override_summary">Indstil til</string>
     <string name="profile_profiles_manage">Profiler</string>
@@ -178,6 +188,8 @@
     <string name="unlock_menu_unlock_summary">Tryk på knappen Menu låser enheden op</string>
     <string name="unlock_home_unlock_title">Start-oplåsning</string>
     <string name="unlock_home_unlock_summary">Tryk på knappen Start låser enheden op</string>
+    <string name="unlock_camera_unlock_title">Oplåsning af kamera</string>
+    <string name="unlock_camera_unlock_summary">Tryk på kamera-knappen låser enheden op</string>
     <string name="unlock_quick_unlock_control_title">Hurtig-oplåsning</string>
     <string name="unlock_quick_unlock_control_summary">Lås automatisk op, når det korrekte PIN/kodeord er indtastet</string>
     <string name="delay_and_timeout_title">Låseforsinkelse</string>
@@ -197,6 +209,8 @@
     <string name="performance_settings_title">Ydeevne</string>
     <string name="performance_settings_warning_title">Fortsæt med forsigtighed</string>
     <string name="performance_settings_warning">Disse indstillinger er inkluderet for at eksperimentere og eventuelle ændringer til dem har potentiale til at forårsage ustabilitet, nedbrud, tab af data eller hardware fejl.\n\nVi beder dig om ikke at indsende fejlrapporter, hvis nogen af ​​disse indstillinger er blevet ændret fra standardindstillingerne.</string>
+    <string name="performance_set_on_boot">Indstil ved opstart</string>
+    <string name="performance_set_on_boot_summary">Gendan indstillingerne ved opstart</string>
     <string name="processor_title">Processor</string>
     <string name="cpu_cur_freq_title">Aktuel CPU-frekvens</string>
     <string name="cpu_governors_title">CPU-guvernør</string>
@@ -204,6 +218,7 @@
     <string name="cpu_max_freq_title">Højeste CPU-frekvens</string>
     <string name="io_scheds_title">I/O-planlægger</string>
     <string name="io_sched_title">I/O-planlægger</string>
+    <string name="perf_profile_title">Profil</string>
     <string name="memory_management_title">Hukommelsesstyring</string>
     <string name="pref_zram_title">zRam</string>
     <string name="pref_zram_summary">Komprimér hukommelse for øget virtuel kapacitet (kræver genstart)</string>
@@ -333,11 +348,11 @@
     <string name="button_settings">Knapper</string>
     <string name="headset_connect_player_title">Start musik-app ved tilslutning</string>
     <string name="headset_connect_player_summary">Start standard-app til musik, når headset tilsluttes</string>
-    <string name="hardware_keys_enable_custom_title">Aktivér brugerdefinerede handlinger</string>
     <string name="hardware_keys_home_key_title">Knappen Start</string>
     <string name="hardware_keys_menu_key_title">Knappen Menu</string>
     <string name="hardware_keys_assist_key_title">Knappen Søg</string>
     <string name="hardware_keys_appswitch_key_title">Knappen Senest anvendt</string>
+    <string name="hardware_keys_camera_key_title">Kamera-knap</string>
     <string name="hardware_keys_volume_keys_title">Lydstyrkeknapper</string>
     <string name="hardware_keys_short_press_title">Handling ved kort tryk</string>
     <string name="hardware_keys_long_press_title">Handling ved langt tryk</string>
@@ -352,8 +367,15 @@
     <string name="hardware_keys_action_search">Søgeassistent</string>
     <string name="hardware_keys_action_voice_search">Stemmesøgning</string>
     <string name="hardware_keys_action_in_app_search">Søgning i app</string>
+    <string name="hardware_keys_action_launch_camera">Start Kamera</string>
     <string name="home_wake_title">Væk med startknap</string>
     <string name="home_wake_summary">At trykke på startknappen vil vække enheden</string>
+    <string name="camera_wake_title">Væk med kameraknap</string>
+    <string name="camera_wake_summary">At trykke på kameraknappen vil vække enheden</string>
+    <string name="camera_sleep_on_release_title">Skærm smugkig</string>
+    <string name="camera_sleep_on_release_summary">Et halvt tryk vil holde skærmen tændt, men kun mens knappen holdes nede</string>
+    <string name="camera_music_controls_title">Afspilningskontrol</string>
+    <string name="camera_music_controls_summary">Når skærmen er slukket, vil et langt tryk på kameraknappen afspille/pause nuværende musiknummer</string>
     <string name="volume_wake_title">Væk med lydstyrkeknap</string>
     <string name="volume_wake_summary">At trykke på en lydstyrkeknap vil vække enheden</string>
     <string name="swap_volume_buttons_title">Ombyt lydstyrkeknapper</string>
@@ -419,6 +441,7 @@
     <string name="adb_notify">Meddelelse for USB-fejlretning</string>
     <string name="adb_notify_summary">Vis en meddelelse, når USB-fejlretning er tilsluttet</string>
     <string name="development_tools_title">Start Værktøjer</string>
+    <string name="allow_mock_sms">Tillad simulerings-SMS</string>
     <string name="usb_mass_storage_title">USB-lager</string>
     <string name="usb_mass_storage_summary">Aktivér USB-lager</string>
     <string name="storage_rescan_media">Scan lagerenheden igen for medier</string>
@@ -437,6 +460,7 @@
     <string name="lockscreen_buttons_previous">Forrige sang</string>
     <string name="lockscreen_buttons_playpause">Afspil/Pause musik</string>
     <string name="lockscreen_buttons_toggle_sound">Ringetilstand</string>
+    <string name="lockscreen_buttons_sleep">Gå i dvale</string>
     <string name="quick_settings_panel_title">Hurtige indstillinger-panel</string>
     <string name="title_static_tiles">Statiske felter</string>
     <string name="tile_picker_title">Felter og layout</string>
@@ -454,6 +478,7 @@
     <string name="title_tile_lte">LTE</string>
     <string name="title_tile_mobiledata">Mobildata</string>
     <string name="title_tile_profile">Profil</string>
+    <string name="title_tile_performance_profile">Ydeevne-profil</string>
     <string name="title_tile_autorotate">Orientering</string>
     <string name="title_tile_settings">Indstillinger</string>
     <string name="title_tile_sound">Lyd</string>
@@ -467,6 +492,7 @@
     <string name="title_tile_quiet_hours">Stille timer</string>
     <string name="title_tile_volume">Lydstyrke</string>
     <string name="title_tile_expanded_desktop">Udvidet skrivebord</string>
+    <string name="title_tile_network_adb">ADB via netværk</string>
     <string name="title_dynamic_tiles">Dynamiske felter</string>
     <string name="dynamic_tiles_note_title">NB:</string>
     <string name="dynamic_tiles_note_summary">Dynamiske felter er ikke altid synlige, og vil kun vises, hvis de udløses af en systembegivenhed</string>
@@ -689,12 +715,90 @@ to for at indsætte yderligere kontrolpunkter. \'Fjern\' sletter den valgte linj
     <string name="color_red_title">Rød</string>
     <string name="color_green_title">Grøn</string>
     <string name="color_blue_title">Blå</string>
+    <string name="button_backlight_title">Baggrundslys</string>
+    <string name="button_backlight_enabled">Oplyse knapper</string>
+    <string name="keyboard_backlight_enabled">Oplyse tastatur</string>
+    <string name="button_backlight_seekbar_title">Knap-lysstyrke</string>
+    <string name="keyboard_backlight_seekbar_title">Tastatur-lysstyrke</string>
+    <string name="backlight_timeout_title">Oplysnings-timeout</string>
+    <string name="backlight_timeout_unlimited">Slå ikke fra</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> sekund</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> sekunder</item>
+    </plurals>
+    <string name="backlight_summary_disabled">Deaktiveret</string>
+    <string name="backlight_summary_enabled_with_timeout">Aktiveret for <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Aktiveret</string>
     <string name="gamma_tuning_title_head">Gamma-kalibrering</string>
     <string name="gamma_tuning_summary_head">Finindstil gammaværdier</string>
+    <string name="gamma_tuning_control_set_header">Gruppe <xliff:g id="index">%d</xliff:g></string>
+    <string name="gamma_tuning_contrast">Kontrast</string>
+    <string name="gamma_tuning_brightness">Lysstyrke</string>
+    <string name="gamma_tuning_saturation">Farvemætning</string>
     <string name="more_device_controls_title">Mere\u2026</string>
     <string name="more_device_settings_title">Andre enhedsindstillinger</string>
     <string name="sensors_motors_title">Sensorer &amp; motorer</string>
     <string name="display_calibration_title">Skærmkalibrering</string>
+    <string name="category_quick_access">Hurtig Adgangs-ribbon</string>
+    <string name="title_quick_access">Vis i meddelelsespanel</string>
+    <string name="title_quick_access_linked">Linket layout</string>
+    <string name="summary_quick_access_linked">Brug de samme fliser og layout som panelet Hurtig-Indstillinger</string>
+    <string name="font_size_sample">Eksempel</string>
+    <string name="selinux_enable_title">SE-Android</string>
+    <string name="selinux_enable_warning">Du er ved at aktivere Security Enhanced Android, en avanceret sikkerhedsmekanisme på din enhed.\n\nDenne mulighed eksisterer kun til fejlretning, og det er meget sandsynligt, at din enhed ikke er helt klar til det. Det kan få dele af (eller alt) din hardware til at blokere eller hænge.\n\nEr du sikker på, du vil fortsætte?</string>
+    <string name="gps_download_data_wifi_only">Download kun GPS-assisteret data over Wi-Fi-netværk</string>
     <string name="intent_sender_data_label"><xliff:g id="data">Data:</xliff:g></string>
+    <string name="sim_absent">Ingen SIM/RUIM</string>
+    <string name="sim_pin_change_failed_enable_sim_lock">Aktivér SIM/RUIM-lås før du ændrer PIN</string>
+    <string name="sim_enable_disable_lock_not_supported">Lås er ikke understøttet af dette SIM/RUIM</string>
+    <string name="sim_pin_attempts">\nResterende forsøg :</string>
+    <string name="sim_pin_enabled">PIN aktiveret</string>
+    <string name="sim_pin_disabled">PIN deaktiveret</string>
+    <string name="device_status_summary" product="default">Batteristatus, batteriniveau, etc.</string>
+    <string name="device_additional_status">Supplerende statusinformation</string>
+    <string name="device_additional_status_summary">Telefonnummer, signal, IMEI, etc.</string>
+    <string name="data_usage_tab_slot">SIM </string>
+    <string name="sel_sub_title">Konfigurér abonnementer </string>
+    <string name="sel_sub_summary">Vælg abonnementet ABN1, ABN2, etc.</string>
+    <string name="select_subscription">Vælg abonnement</string>
+    <string name="subs_settings">Abonnementsstatus</string>
+    <string name="multi_sim_settings_title">Multi-sim-indstillinger</string>
+    <string name="multi_sim_settings_summary">Opsæt multi-sim-indstillinger for tale, data og SMS</string>
+    <string name="voice_title">Voice/USSD/MMI</string>
+    <string name="voice_summary">Vælg abonnement for taleopkald</string>
+    <string name="data_title">Dataopkald</string>
+    <string name="data_summary">Vælg abonnement for dataopkald</string>
+    <string name="sms_title">SMS</string>
+    <string name="sms_summary">Vælg abonnementet for afsendelse af SMS</string>
+    <string name="set_data_subscription_progress">Indstilling af data-abonnement..</string>
+    <string name="set_dds_success">Data-abonnement indstillet</string>
+    <string name="set_dds_failed">Kan ikke indstille data-abonnement. Fjern alle eksisterende dataforbindelser og prøv igen.</string>
+    <string name="set_dds_error">Kan ikke indstille data-abonnement</string>
+    <string name="set_sms_error">Kan ikke indstille SMS-abonnement, abonnementet er ikke aktivt</string>
+    <string name="set_voice_error">Kan ikke instille tale-abonnement, abonnementet er ikke aktivt</string>
+    <string name="set_priority_sub_error">Kan ikke indstille prioriteret abonnement, abonnementet er ikke aktivt</string>
+    <string name="prompt">Spørg</string>
+    <string name="prompt_user">Spørg bruger</string>
+    <string name="tune_away_title">Tune Away</string>
+    <string name="tune_away_Default">Deaktivér</string>
+    <string name="tune_away_enabled">TuneAway Aktiveret!</string>
+    <string name="tune_away_disabled">TuneAway Deaktiveret!</string>
+    <string name="priority_sub_title">Prioriteret abonnement</string>
+    <string name="priority_sub_summary">Vælg Prioriteret Abonnement</string>
+    <string name="label_global_roaming_settings">Globale roaming-indstillinger</string>
+    <string name="app_ops_allowed">Tilladt</string>
+    <string name="app_ops_ignored">Nægtet</string>
+    <string name="app_ops_summaries_wifi_change">ændring af wifi</string>
+    <string name="app_ops_labels_wifi_change">Ændring af Wi-Fi</string>
+    <string name="app_ops_summaries_bluetooth_change">ændring af bluetooth</string>
+    <string name="app_ops_labels_bluetooth_change">Ændring af Bluetooth</string>
+    <string name="app_ops_summaries_data_change">ændring af data</string>
+    <string name="app_ops_labels_data_change">Ændring af Data</string>
+    <string name="app_ops_summaries_alarm_wakeup">vågn op</string>
+    <string name="app_ops_labels_alarm_wakeup">Vågn op</string>
+    <string name="app_ops_show_user_apps">Vis bruger-apps</string>
+    <string name="app_ops_show_system_apps">Vis indbyggede apps</string>
+    <string name="app_ops_reset_counters">Nulstil tillad/nægte-tællere</string>
+    <string name="app_ops_reset_confirm_title">Bekræft nulstilling af tællere</string>
+    <string name="app_ops_reset_confirm_mesg">Er du sikker på at du vil nulstille AppOps tællerne ?</string>
 </resources>
-
