@@ -33,7 +33,7 @@
 
     <!-- Custom carrier -->
     <string name="custom_carrier_label_title">Своё название оператора</string>
-    <string name="custom_carrier_label_explain">Введите новую надпись. Отсутствие текста возвратит заводскую надпись.</string>
+    <string name="custom_carrier_label_explain">Введите новую надпись. Удалите для возврата стандартной надписи.</string>
     <string name="custom_carrier_label_notset">Собственное название оператора не задано</string>
 
     <!-- Color Picker -->
@@ -64,10 +64,10 @@
     <string name="halo_pause_title">Пауза активного приложения</string>
     <string name="halo_pause_summary">При открытии приложения в HALO основное приложение будет приостановлено</string>
     <string name="halo_ninja_title">Режим ниндзя</string>
-    <string name="halo_ninja_summary">HALO будет исчезать полностью при остутствии уведомлений</string>
-    <string name="halo_notification_msgbox_title">Включить поп-ап сообщений</string>
+    <string name="halo_ninja_summary">HALO будет исчезать полностью при отсутствии уведомлений</string>
+    <string name="halo_notification_msgbox_title">Включить всплывающие сообщения</string>
     <string name="halo_notification_msgbox_summary">Показывать окно входящего сообщения</string>
-    <string name="halo_unlock_ping_title">Пинг при разблокировке</string>
+    <string name="halo_unlock_ping_title">Появление при разблокировке</string>
     <string name="halo_unlock_ping_summary">HALO будет появляться при разблокировке если были получены сообщения</string>
 
     <string name="halo_size_title">Размер HALO</string>
@@ -107,22 +107,22 @@
     <string name="uimode_phablet">Фаблет</string>
     <string name="uimode_tablet">Планшет</string>
 
-    <string name="dpi_settings_title">Системная плотность</string>
-    <string name="system_dpi_title">Системная плотность</string>
-    <string name="system_dpi_summary">Текущая системная плотность:</string>
-    <string name="system_dpi_standar_title">Стандартная плотность</string>
-    <string name="system_dpi_standar_summary">Выбрать плотность из списка</string>
-    <string name="system_dpi_custom_title">Определить плотность вручную</string>
+    <string name="dpi_settings_title">Системный DPI</string>
+    <string name="system_dpi_title">Системный DPI</string>
+    <string name="system_dpi_summary">Текущий системный DPI:</string>
+    <string name="system_dpi_standar_title">Стандартный DPI</string>
+    <string name="system_dpi_standar_summary">Выбрать DPI из списка</string>
+    <string name="system_dpi_custom_title">Определить DPI вручную</string>
     <string name="system_dpi_custom_hint">от 120 до 240</string>
-    <string name="system_dpi_custom_summary">Выберите плотность от 120 до 240</string>
+    <string name="system_dpi_custom_summary">Выберите DPI от 120 до 240</string>
 
     <string name="appsuimode_title">Режим интерфейса приложений</string>
 
     <string name="apps_dpi_title">Плотность приложений</string>
-    <string name="apps_dpi_summary">Текущая плотность приложений:</string>
-    <string name="apps_dpi_custom_title">Указать плотность</string>
+    <string name="apps_dpi_summary">Текущая DPI приложений:</string>
+    <string name="apps_dpi_custom_title">Указать DPI</string>
     <string name="apps_dpi_custom_hint">от 120 до 240</string>
-    <string name="apps_dpi_custom_summary">Выберите плотность от 120 до 240</string>
+    <string name="apps_dpi_custom_summary">Выберите DPI от 120 до 240</string>
 
     <string name="dpi_groups_title">Группы DPI</string>
     <string name="dpi_groups_summary">Определение группы DPI для каждого приложения</string>
@@ -179,13 +179,13 @@
     <string name="show_brightness_slider_below">Показать (ниже лент)</string>
 
     <!--  Advanced low battery indicator -->
-    <string name="pref_low_battery_warning_policy_title">Сигнал низкого заряда батареи</string>
-    <string name="pref_low_battery_warning_policy_dialog_title">Отображать уведомление о низком заряде бтарареи с помощью:</string>
-    <string name="low_battery_warning_policy_popup_sound">Поп-апа и звука</string>
-    <string name="low_battery_warning_policy_notif_sound">Уведомления и звука</string>
-    <string name="low_battery_warning_policy_popup">Только поп-апа</string>
-    <string name="low_battery_warning_policy_notif">Только уведомления</string>
-    <string name="low_battery_warning_policy_sound">Только звука</string>
+    <string name="pref_low_battery_warning_policy_title">Сигнал разрядки батареи</string>
+    <string name="pref_low_battery_warning_policy_dialog_title">Отображать уведомление о разраядке бтарареи:</string>
+    <string name="low_battery_warning_policy_popup_sound">Всплывающим окном и звуком</string>
+    <string name="low_battery_warning_policy_notif_sound">Уведомлением и звуком</string>
+    <string name="low_battery_warning_policy_popup">Только всплывающим окном</string>
+    <string name="low_battery_warning_policy_notif">Только уведомленем</string>
+    <string name="low_battery_warning_policy_sound">Только звуком</string>
     <string name="low_battery_warning_policy_disabled">Отключено</string>
 
     <!-- Active Display -->

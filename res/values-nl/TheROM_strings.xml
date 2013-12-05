@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 TheROM
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- TheROM settings -->
+    <string name="tonyp_settings_title">TheROM instellingen</string>
+    <string name="display_hybrid_options_title">HYBRID</string>
+    <string name="display_notifications_options_title">NOTIFICATIES</string>
+    <string name="display_statusbar_options_title">STATUSBAR AND MENU</string>
+    <string name="display_various_options_title">DIVERSE</string>
+    <string name="display_donate_options_title">DONATIE &lt;3</string>
+    <string name="display_animation_options_title">ANIMATIES</string>
+
+    <string name="hybrid_settings_title">Hybrid instellingen</string>
+    <string name="title_show_brightness_slider">Helderheid slider</string>
+
+    <!-- tonyp minfree -->
+    <string name="pref_tonyp_minfree_title">Geheugen optimalisaties</string>
+    <string name="pref_tonyp_minfree_summary">Maakt het geheugen een beetje aggresief vrij. Alleen nodig als je last hebt van veel lag bij het multitasken. (Herstarten vereist)</string>
+
+    <!-- Custom carrier -->
+    <string name="custom_carrier_label_title">Eigen provider tekst.</string>
+    <string name="custom_carrier_label_explain">Voeg je eigen nieue titel toe. Laat het veld leeg voor de standaart (provider) titel.</string>
+    <string name="custom_carrier_label_notset">Je hebt geen eigen label ingesteld</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Kleurenkiezer</string>
+    <string name="press_color_to_apply">Klik op de kleur om te bevestigen</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Instellen</string>
+    <string name="ics_color">!!!</string>
+    
+    <!-- HALO -->
+    <!-- Label for are-notifications-enabled checkbox in app details [CHAR LIMIT=20] -->
+    <string name="app_halo_label_black">Zwarte lijst HALO notificaties</string>
+    <string name="app_halo_label_white">Witte lijst HALO notificaties</string>
+
+    <string name="halo_settings_title">Halo instellingen</string>
+    <string name="halo_behavior_title">Halo gedrag</string>
+    <string name="halo_hide_title">Verberg Halo na activiteit</string>
+    <string name="halo_hide_summary">Halo wordt weergegeven bij inkomende notificaties/taken, en verschuift uit beeld na een tijdje</string>
+    <string name="halo_reversed_title">Omgekeeerde Halo</string>
+    <string name="halo_reversed_summary">Geldt voor bewegingen voor het wisselen en verplaatsen van Halo</string>
+    <string name="halo_state_title">Halo beleid</string>
+    <string name="halo_state_summary">Zwarte en Wittelijst voor notificaties worden ingeschakeld</string>
+    <string name="halo_state_black">Zwarte lijst</string>
+    <string name="halo_state_white">Witte lijst</string>
+    <string name="halo_pause_title">Pauzeer de huidige activiteit.</string>
+    <string name="halo_pause_summary">Wanneer je een app opent met Halo zou de onderliggende app pauzeren</string>
+    <string name="halo_ninja_title">Ninja modus</string>
+    <string name="halo_ninja_summary">Halo verdwijnt volledig wanneer er geen taken zijn</string>
+    <string name="halo_notification_msgbox_title">Zet bericht-popup aan</string>
+    <string name="halo_notification_msgbox_summary">Geef een bericht-box weer bij inkomende notificaties</string>
+    <string name="halo_unlock_ping_title">Ping wanneer je het apparaat inschakeld</string>
+    <string name="halo_unlock_ping_summary">Halo geeft een ping wanneer het apparaar wordt ingeschakeld en nieuwe notificaties zijn ontvangen</string>
+
+    <string name="halo_size_title">Formaat Halo</string>
+    <string name="halo_size_summary">Defineer hoe groot Halo moet zijn</string>
+    <string name="halo_size_miniscule">Heel klein</string>
+    <string name="halo_size_small">Klein</string>
+    <string name="halo_size_default">Normaal</string>
+    <string name="halo_size_large">Groot</string>
+    <string name="halo_size_gigantic">Heel groot</string>
+    <string name="halo_size_monster">Monsterlijk groot</string>
+
+    <string name="halo_notification_count_title">Hoeveelheid notificaties</string>
+    <string name="halo_notification_count_summary">Hoeveelheid notificaties weergeven bij Halo</string>
+    <string name="halo_notification_count_none">Niet weergeven</string>
+    <string name="halo_notification_count_total">Totaal aantal notificaties</string>
+    <string name="halo_notification_count_individual">Totaal aantal notificaties per app</string>
+    <string name="halo_notification_count_both">Beide</string>
+
+    <string name="halo_msgbox_animation_title">Bericht-box animatie</string>
+    <string name="halo_msgbox_animation_summary">Hallo bericht-box animatie voor inkomende notificaties</string>
+    <string name="halo_msgbox_animation_none">Geen animatie</string>
+    <string name="halo_msgbox_animation_flip">Flip animatie</string>
+
+    <string name="title_floating_window">Zwevend scherm</string>
+    <string name="summary_floating_window">Open in zwevend scherm bij snelle instellingen</string> 
+
+    <!-- Center Clock -->
+    <string name="status_bar_center_clock_title">Klok in het midden</string>
+
+    <!-- Home screen widgets -->
+    <string name="home_screen_widgets_title">Startcherm widgets</string>
+    <string name="home_screen_widgets_summary">Sta toe dat widgets van het startscherm ook toegevoegd kunnen worden aan het vergrendelscherm</string>
+
+    <!-- Hybrid -->
+    <string name="uimode_title">UIModus</string>
+    <string name="uimode_phone">Mobiel</string>
+    <string name="uimode_phablet">Phablet</string>
+    <string name="uimode_tablet">Tablet</string>
+
+    <string name="dpi_settings_title">Schermdichtheid (DPI)</string>
+    <string name="system_dpi_title">Schermdichtheid (DPI)</string>
+    <string name="system_dpi_summary">Huidige schermdichtheid:</string>
+    <string name="system_dpi_standar_title">Standaart schermdichtheid</string>
+    <string name="system_dpi_standar_summary">Selecteer een dichtheid van de lijst</string>
+    <string name="system_dpi_custom_title">Specifeer aangepaste dichtheid</string>
+    <string name="system_dpi_custom_hint">120 tot 240</string>
+    <string name="system_dpi_custom_summary">Selecteer een aangepaste dichtheid van 120 tot 240 Select a custom density from 120 to 240</string>
+
+    <string name="appsuimode_title">Apps UIMode</string>
+
+    <string name="apps_dpi_title">Apps dichtheid</string>
+    <string name="apps_dpi_summary">Huidige apps dichtheid:</string>
+    <string name="apps_dpi_custom_title">Specificeer dichtheid</string>
+    <string name="apps_dpi_custom_hint">120 tot 240</string>
+    <string name="apps_dpi_custom_summary">Selecteer een dichtheid van 120 tot 240</string>
+
+    <string name="dpi_groups_title">DPI groepen</string>
+    <string name="dpi_groups_summary">Defineer een DPI groep voor elke applicatie</string>
+    <string name="dpi_group_title">DPI groep</string>
+    <string name="dpi_groups_apps">applicaties</string>
+    <string name="dpi_group_add_app">Voeg een applicatie toe</string>
+    <string name="dpi_group_app_list">Applicatielijst</string>
+    <string name="dpi_group_alert_add_app_title">Kies een applicatie</string>
+    <string name="dpi_groups_alert_remove_app">Verwijder applicatie</string>
+    <string name="dpi_groups_remove_app">Wil je %s verwijderen van groep?</string>
+    <string name="dpi_groups_backuprestore_title">Backup en herstel</string>
+    <string name="dpi_groups_auto_backup">Automatische backup</string>
+    <string name="dpi_groups_auto_backup_summary">Sla configuratie op na elke wijziging</string>
+    <string name="dpi_groups_backup_title">Backup</string>
+    <string name="dpi_groups_backup_summary">Backup je configuratie</string>
+    <string name="dpi_groups_restore_title">Herstellen</string>
+    <string name="dpi_groups_restore_summary">Herstel je configuratie</string>
+    <string name="dpi_groups_backup_done">Backup van configuratie-bestand compleet</string>
+    <string name="dpi_groups_restore_done">Configuratie-bestand hersteld</string>
+    <string name="dpi_groups_restore_default_title">Herstel de normale groepen</string>
+    <string name="dpi_groups_restore_default_summary">Verwijder aangepaste DPI groepen en laat de normale groepen staan</string>
+    <string name="dpi_groups_delete_title">Verwidjer DPI groep</string>
+    <string name="dpi_groups_delete_summary">Wil je deze DPI groep verwijderen?</string>
+    <string name="customdpigroup">Voeg groep toe</string>
+    <string name="customdpigroup_summary">Voeg een aangepaste DPI groep toe</string>
+    <string name="custom_dpi">Huidige DPI:</string>
+    <string name="customdpigroup_group_exists">De geselecteerde aangepaste DPI groep bestaat al.</string>
+    <string name="per_app_layout_title">Layout per app</string>
+    <string name="per_app_layout_summary">Defineer layout voor elke app</string>
+    <string name="per_app_layout_list_title">Applicatie lijst</string>
+    <string name="per_app_layout_alert_title">Selecteer een layout</string>
+    <string name="widgets_title">Widgets</string>
+    <string name="widgets_summary">Defineer een groep van widgets</string>
+    <string name="add_widget">Voeg widget toe</string>
+    <string name="widget_list">Widgets lijst</string>
+    <string name="widget_alert_remove_widget">Verwijder widget</string>
+    <string name="widget_remove_widget">Wil je widget: %s verwijderen van de lijst?</string>
+    <string name="widget_add_title">Selecteer een applicatie</string>
+
+    <string name="navbar_height_title">NavigationBar hoogte</string>
+    <string name="navbar_height_summary">Specificeer de hoogte van de navigationBar</string>
+
+    <string name="alert_reboot">Herstartten vereist</string>
+    <string name="alert_reboot_message">Voor het toepassen van deze wijziging is herstarten vereist. Wil je nu opnieuw opstarten?</string>
+
+    <!-- Donate -->
+    <string name="donate_tonyp_title">Doneer aan tonyp</string>
+    <string name="donate_tonyp_summary">Laat zien dat je het werk van tonyp wardeert door een donatie te geven voor bijvoorbeeld een kop koffie</string>
+    <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick\u0026hosted_button_id=RL7NJSUDNQNZU</string>
+
+    <!-- Brightness Slider -->
+    <string name="show_brightness_slider_dont">Niet weergeven</string>
+    <string name="show_brightness_slider_above">Weergeven (Boven de instelling-knoppen)</string>
+    <string name="show_brightness_slider_below">Weergeven (Onder de instelling-knoppen)</string>
+
+    <!--  Advanced low battery indicator -->
+    <string name="pref_low_battery_warning_policy_title">Batterij bijna leeg waarschuwing</string>
+    <string name="pref_low_battery_warning_policy_dialog_title">Indicate van waarschuwing batterij bijna leeg met</string>
+    <string name="low_battery_warning_policy_popup_sound">Pop-up en geluid</string>
+    <string name="low_battery_warning_policy_notif_sound">Notificatie en geluid</string>
+    <string name="low_battery_warning_policy_popup">Aleen pop-up</string>
+    <string name="low_battery_warning_policy_notif">Alleen notificatie</string>
+    <string name="low_battery_warning_policy_sound">Alleen geluid</string>
+    <string name="low_battery_warning_policy_disabled">Geen waarschuwing geven</string>
+
+    <!-- Active Display -->
+    <string name="ad_settings_title">Schermactiviteit</string>
+    <string name="ad_settings_summary">Wijzig de instellingen van het schermactiviteit</string>
+    <string name="ad_enable_title">Inschakelen</string>
+    <string name="ad_enable_summary_on">Activiteit scherm ingeschakel.</string>
+    <string name="ad_enable_summary_off">Activiteit scherm uitgeschakeld</string>
+    <string name="ad_text_title">Notificatie tekst</string>
+    <string name="ad_text_summary">Geef de notificatie tekst rond de ring.</string>
+    <string name="ad_all_notifications_title">All notificaties</string>
+    <string name="ad_all_notifications_summary">Geef alle notificaties inclusief de sticky-notificaties weer.</string>
+    <string name="ad_pocket_mode_title">Zakmodus</string>
+    <string name="ad_pocket_mode_summary">Geef de actieve notificaties weer wanneer je het apparaat uit je broekzak haalt.</string>
+    <string name="ad_redisplay_title">Geef notificaties opnieuw weer</string>
+    <string name="ad_customizations_title">Aanpassingen</string>
+    <string name="ad_brightness_title">Notificatie helderheid</string>
+    <string name="ad_brightness_summary">Helderheid-level voor het weergeven van notificaties wanneer automatische helderheid niet is ingeschakeld.</string>
+    <string name="ad_show_date_title">Geef datum weer</string>
+    <string name="ad_show_date_summary">Geef de datum boven de klok weer</string>
+    <string name="ad_show_ampm_title">Geef AM/PM weer</string>
+    <string name="ad_show_ampm_summary">Laat de AM/PM indicatie naast de tijs zien wanneer het 12-uurs systeem wordt gebruikt</string>
+    <string name="ad_redisplay_never">Nooit</string>
+    <string name="ad_redisplay_1m">1 minuut</string>
+    <string name="ad_redisplay_5m">5 minuten</string>
+    <string name="ad_redisplay_15m">15 minuten</string>
+    <string name="ad_redisplay_30m">30 minuten</string>
+    <string name="ad_redisplay_1h">1 uur</string>
+    <string name="ad_redisplay_2h">2 uren</string>
+    <string name="ad_redisplay_5h">5 uren</string>
+
+    <!-- Notification drawer settings  -->
+    <string name="notification_drawer_title">Notificatie-drawer</string>
+    <string name="notification_style_grouptitle">Stijl</string>
+    <string name="notification_style_title">Notificatie-drawer stijl</string>
+    <string name="notification_style_summary">Wijzig de notificatie-drawer stijl</string>
+    <string name="notification_widgets">Widgets</string>
+    <string name="notification_show_wifi_ssid_title">Laat Wifi-naam zien</string>
+    <string name="notification_show_wifi_ssid_summary">Laat de naam van de huidig verbonden Wifi-netwerk zien.</string>
+    <string name="notification_wallpaper_title">Notificatie-drawer achtergrond</string>
+    <string name="notification_wallpaper_landscape_title">Aangepaste achtergrond bij landscape</string>
+    <string name="notification_background_color_fill">Achtergrondkleur</string>
+    <string name="notification_background_custom_image">Aangepaste afbeelding</string>
+    <string name="notification_background_default_wallpaper">Normale achtergrond</string>
+    <string name="notification_drawer_custom_background_dialog_title">Kies je kleur</string>
+    <string name="notif_wallpaper_alpha_title">Notificatie achtergrond transparantie</string>
+    <string name="notif_alpha_title">Notificatie-rij transparantie</string>
+
+    <!-- Vold Switchable Pair -->
+    <string name="storage_switch_title">Gebruik externe SD als hoofd-opslag</string>
+    <string name="storage_switch_summary_off">Gebruik je uitgebreide interne opslag voor applicaties en media</string>
+    <string name="storage_switch_summary_on">Gebruik de SD-kaart voor applicaties en media</string>
+    <string name="reboot_prompt_title">Herstarten vereist</string>
+    <string name="reboot_prompt_message">Om de aangepaste instellingen toe te pasen in opnieuw opstarten vereist.\n\nWil je nu opnieuw opstarten?</string>
+
+    <!-- additional hardware buttons -->
+    <string name="hardware_keys_action_screen_off">Scherm-uit</string>
+    <string name="hardware_keys_action_power_menu">Open Power menu</string>
+    <string name="hardware_keys_action_last_app">Schakel na laatste applicatie</string>
+    <string name="hardware_keys_action_torch">Zaklamp aan/uit</string>
+    <string name="hardware_keys_action_screenshot">Neem een screenshot</string>
+
+    <!-- text-only battery style -->
+    <string name="status_bar_battery_status_text">Alleen tekst</string>
+
+
+    <!-- Status bar background style -->
+    <string name="status_bar_transparency_title">Statusbar transparantie</string>
+    <string name="status_bar_color_title">Statusbar kleur</string>
+    <string name="status_bar_background_style">Statusbar stijl</string>
+    <string name="status_bar_alpha_mode_dialog_text_title">Geef transpirantie van statusbar weer</string>
+    <string name="status_bar_alpha_mode_text_title">Transparantie modus</string>
+    <string name="status_bar_alpha_mode_home">Bij de launcher</string>
+    <string name="status_bar_alpha_mode_default">Bij de launcher en keyguard</string>
+    <string name="status_bar_style_reset">Reset</string>
+
+    <!-- ListView animation -->
+    <string name="listview_animation_title">ListView animatie</string>
+    <string name="listview_off">Uit (Stock-Android)</string>
+    <string name="listview_wave_left">Wave (Link)</string>
+    <string name="listview_wave_right">Wave (Rechts)</string>
+    <string name="listview_alpha">Rransparantie</string>
+    <string name="listview_scale">Schalen</string>
+    <string name="listview_stack_top">Opstapelen (Boven)</string>
+    <string name="listview_stack_bottom">Opstapelen (Onder)</string>
+    <string name="listview_unfold">Uitvouwen</string>
+    <string name="listview_fold">Vouwen</string>
+    <string name="listview_translate_left">Translate (Links)</string>
+    <string name="listview_translate_right">Translate (Rechts)</string>
+
+    <!-- ListView interpolator -->
+    <string name="listview_interpolator_title">ListView interpolator</string>
+    <string name="listview_accelerate_interpolator">accelerate_interpolator</string>
+    <string name="listview_decelerate_interpolator">decelerate_interpolator</string>
+    <string name="listview_accelerate_decelerate_interpolator">accelerate_decelerate_interpolator</string>
+    <string name="listview_anticipate_interpolator">anticipate_interpolator</string>
+    <string name="listview_overshoot_interpolator">overshoot_interpolator</string>
+    <string name="listview_anticipate_overshoot_interpolator">anticipate_overshoot_interpolator</string>
+    <string name="listview_bounce_interpolator">bounce_interpolator</string>
+
+    <!-- Restart SystemUI -->
+    <string name="restart_systemui">Herstart het SystemUI</string>
+    <string name="restart_systemui_summary">Om instellingen toe te passen</string>
+
+    <!-- Animation Controls -->
+    <string name="title_animation_controls">Aangepaste systeem animaties</string>
+    <string name="activity_open_title">Open een In-App activiteit animatie</string>
+    <string name="activity_close_title">Sluit een In-App activiteit animatie</string>
+    <string name="task_open_title">Start op van In-App animatie</string>
+    <string name="task_close_title">Keer terug naar vorige activiteit animatie</string>
+    <string name="task_move_to_front_title">Ga naar front animatie</string>
+    <string name="task_move_to_back_title">Ga naar back animatie</string>
+    <string name="wallpaper_open_title">Terug naar startscherm animatie</string>
+    <string name="wallpaper_close_title">Lanceer van startscherm animatie</string>
+    <string name="wallpaper_intra_open_title">Recente applicaties open animatie</string>
+    <string name="wallpaper_intra_close_title">Recente applicaties sluiten animatie</string>
+    <string name="animation_duration_title">Animatie lengte (tijd)</string>
+    <string name="title_animation_no_override">Voorkom app overrulen</string>
+    <string name="summary_animation_no_override">Voorkom dat apps de overgangen overrulen.</string>
+    <string name="animation_duration_default">Standaart</string>
+    <string name="header_summary_animation">@null</string>
+
+</resources>

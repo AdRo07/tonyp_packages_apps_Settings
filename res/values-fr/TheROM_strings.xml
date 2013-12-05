@@ -39,8 +39,8 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Sélection des couleurs</string>
     <string name="press_color_to_apply">Appuyez sur \'Couleur\' pour appliquer</string>
-    <string name="arrow_right">â†’</string>
-    <string name="arrow_down">â†“</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
     <string name="set">Set</string>
@@ -57,17 +57,17 @@
     <string name="halo_hide_summary">Halo s\'affiche pour les taches entrantes et disparé après un certain temps</string>
     <string name="halo_reversed_title">Halo inversé</string>
     <string name="halo_reversed_summary">Appliqué pour les changements de taches et les gestes</string>
-    <string name="halo_state_title">Police Halo</string>
+    <string name="halo_state_title">Liste Halo</string>
     <string name="halo_state_summary">Activé les listes noire/blanche de notifications</string>
     <string name="halo_state_black">Liste Noire</string>
     <string name="halo_state_white">Liste Blanche</string>
     <string name="halo_pause_title">Mettre en pause l\'application active</string>
-    <string name="halo_pause_summary">Quand vous ouvrez une pplication avec Halo, l\'application sous-jacente se met en pause</string>
+    <string name="halo_pause_summary">Quand vous ouvrez une application avec Halo, l\'application sous-jacente se met en pause</string>
     <string name="halo_ninja_title">Mode Ninja</string>
     <string name="halo_ninja_summary">Halo disparaitra complètement quand il sera vide</string>
     <string name="halo_notification_msgbox_title">Activer les messages en pop-up</string>
     <string name="halo_notification_msgbox_summary">Montrer une boite de message pour les notifications entrantes</string>
-    <string name="halo_unlock_ping_title">Sonner au déverrouillage</string>
+    <string name="halo_unlock_ping_title">Son au déverrouillage</string>
     <string name="halo_unlock_ping_summary">Halo sonnera quand le téléphone est déverrouillé si une nouvelle notification est recu</string>
 
     <string name="halo_size_title">Taille Halo</string>
@@ -135,10 +135,10 @@
     <string name="dpi_groups_remove_app">Supprimer l\'application %s du groupe?</string>
     <string name="dpi_groups_backuprestore_title">Sauvegarder et restaurer</string>
     <string name="dpi_groups_auto_backup">Sauvegarde automatique</string>
-    <string name="dpi_groups_auto_backup_summary">Sauvegarder votre configuration avec chaque changement</string>
+    <string name="dpi_groups_auto_backup_summary">Sauvegarder votre configuration après chaque changement</string>
     <string name="dpi_groups_backup_title">Sauvegarder</string>
     <string name="dpi_groups_backup_summary">Sauvegarder votre configuration</string>
-    <string name="dpi_groups_restore_title">restaurer</string>
+    <string name="dpi_groups_restore_title">Restaurer</string>
     <string name="dpi_groups_restore_summary">Restaurer votre configuration</string>
     <string name="dpi_groups_backup_done">Sauvegarder du fichier de configuration effectué</string>
     <string name="dpi_groups_restore_done">Fichier de configuration restauré</string>
@@ -150,7 +150,7 @@
     <string name="customdpigroup_summary">Ajouter un groupe DPI personnalisé</string>
     <string name="custom_dpi">DPI actuel:</string>
     <string name="customdpigroup_group_exists">Le groupe DPI personnalisé selectionné existe déjà.</string>
-    <string name="per_app_layout_title">>Rangement par application</string>
+    <string name="per_app_layout_title">Rangement par application</string>
     <string name="per_app_layout_summary">Définir une disposition pour chaque application</string>
     <string name="per_app_layout_list_title">Liste d\'applications</string>
     <string name="per_app_layout_alert_title">Sélectionner une disposition</string>
@@ -203,36 +203,36 @@
     <string name="ad_redisplay_title">Réafficher les notifications</string>
     <string name="ad_customizations_title">Personnalisations</string>
     <string name="ad_brightness_title">Luminosité de notification</string>
-    <string name="ad_brightness_summary">Niveau de luminosité pour les notifications affichés lorsue la luminosité automatique n\'est pas activé.</string>
+    <string name="ad_brightness_summary">Niveau de luminosité pour les notifications affichés lorsque la luminosité automatique n\'est pas activé.</string>
     <string name="ad_show_date_title">Montrer la date</string>
     <string name="ad_show_date_summary">Montrer la date au dessus de l\'heure</string>
     <string name="ad_show_ampm_title">Montrer AM/PM</string>
-    <string name="ad_show_ampm_summary">Afficher l\'indicateur AM/PM à coté de l\'heure si lorsque vous utilisé le format 12 heures</string>
+    <string name="ad_show_ampm_summary">Afficher l\'indicateur AM/PM à coté de l\'heure lorsque vous utilisez le format 12 heures</string>
     <string name="ad_redisplay_never">jamais</string>
     <string name="ad_redisplay_1m">1 minute</string>
     <string name="ad_redisplay_5m">5 minutes</string>
     <string name="ad_redisplay_15m">15 minutes</string>
     <string name="ad_redisplay_30m">30 minutes</string>
-    <string name="ad_redisplay_1h">1 hour</string>
-    <string name="ad_redisplay_2h">2 hours</string>
-    <string name="ad_redisplay_5h">5 hours</string>
+    <string name="ad_redisplay_1h">1 heure</string>
+    <string name="ad_redisplay_2h">2 heures</string>
+    <string name="ad_redisplay_5h">5 heures</string>
 
     <!-- Notification drawer settings  -->
-    <string name="notification_drawer_title">Notification du tiroir d\'application</string>
+    <string name="notification_drawer_title">Notification du volet de notification</string>
     <string name="notification_style_grouptitle">Style</string>
-    <string name="notification_style_title">Style des notifications du tiroir d\'application</string>
-    <string name="notification_style_summary">Changer le style de vos notifications du tiroir d\'application</string>
+    <string name="notification_style_title">Style des notifications du volet de notification</string>
+    <string name="notification_style_summary">Changer le style de vos notifications du volet d\'application</string>
     <string name="notification_widgets">Widgets</string>
     <string name="notification_show_wifi_ssid_title">Montrer le nom du réseau WIFI</string>
     <string name="notification_show_wifi_ssid_summary">Affiché le nom du réseau WIFI actuellement connecté</string>
-    <string name="notification_wallpaper_title">Arrière plan des notifications du tiroir d\'application</string>
-    <string name="notification_wallpaper_landscape_title">Différent Fond d\'écran en paysage</string>
+    <string name="notification_wallpaper_title">Arrière plan des notifications du volet d\'application</string>
+    <string name="notification_wallpaper_landscape_title">Différent fond d\'écran en paysage</string>
     <string name="notification_background_color_fill">Couleur de remplissage</string>
     <string name="notification_background_custom_image">Image personnalisée</string>
     <string name="notification_background_default_wallpaper">Arrière plan par défaut</string>
     <string name="notification_drawer_custom_background_dialog_title">Choisir la couleur</string>
-    <string name="notif_wallpaper_alpha_title">Transparence de l\'arrière plan de la notificatin</string>
-    <string name="notif_alpha_title">Niveau de transparence de la notification</string>
+    <string name="notif_wallpaper_alpha_title">Transparence de l\'arrière plan du volet de notification</string>
+    <string name="notif_alpha_title">Transparence des notifications</string>
 
     <!-- Vold Switchable Pair -->
     <string name="storage_switch_title">Utiliser la SD externe en principal</string>
@@ -253,10 +253,10 @@
 
 
     <!-- Status bar background style -->
-    <string name="status_bar_transparency_title">Transparence de la barre de statut</string>
-    <string name="status_bar_color_title">Couleur de la barre de statut</string>
-    <string name="status_bar_background_style">Style de la barre de statut</string>
-    <string name="status_bar_alpha_mode_dialog_text_title">Montrer la transparence de la barre de statut</string>
+    <string name="status_bar_transparency_title">Transparence de la barre de notification</string>
+    <string name="status_bar_color_title">Couleur de la barre de notification</string>
+    <string name="status_bar_background_style">Style de la barre de notification</string>
+    <string name="status_bar_alpha_mode_dialog_text_title">Montrer la transparence de la barre de notification</string>
     <string name="status_bar_alpha_mode_text_title">Mode transparent</string>
     <string name="status_bar_alpha_mode_home">Sur le launcher</string>
     <string name="status_bar_alpha_mode_default">Sur le launcher et le clavier</string>
@@ -267,7 +267,7 @@
     <string name="listview_off">Désactivé (Android defaut)</string>
     <string name="listview_wave_left">Vague (Gauche)</string>
     <string name="listview_wave_right">Vague (Droite)</string>
-    <string name="listview_alpha">Alpha</string>
+    <string name="listview_alpha">Transparence</string>
     <string name="listview_scale">Echelle</string>
     <string name="listview_stack_top">Empilement (Haut)</string>
     <string name="listview_stack_bottom">Empilement (Bas)</string>
