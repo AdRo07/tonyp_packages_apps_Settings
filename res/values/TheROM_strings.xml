@@ -47,6 +47,8 @@
     <string name="ics_color">!!!</string>
     
     <!-- HALO -->
+    <string name="title_tile_halo">Halo</string>
+
     <!-- Label for are-notifications-enabled checkbox in app details [CHAR LIMIT=20] -->
     <string name="app_halo_label_black">Blacklist HALO notifications</string>
     <string name="app_halo_label_white">Whitelist HALO notifications</string>
