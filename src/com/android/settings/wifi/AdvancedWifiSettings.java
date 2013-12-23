@@ -109,7 +109,7 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
         CheckBoxPreference suspendOptimizations =
             (CheckBoxPreference) findPreference(KEY_SUSPEND_OPTIMIZATIONS);
         suspendOptimizations.setChecked(Global.getInt(getContentResolver(),
-                Global.WIFI_SUSPEND_OPTIMIZATIONS_ENABLED, 0) == 1);
+                Global.WIFI_SUSPEND_OPTIMIZATIONS_ENABLED, 1) == 1);
 
         ListPreference frequencyPref = (ListPreference) findPreference(KEY_FREQUENCY_BAND);
 
