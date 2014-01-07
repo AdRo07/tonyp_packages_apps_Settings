@@ -48,11 +48,17 @@ public class AdvancedStorageSettings extends SettingsPreferenceFragment {
 
     private static final String TAG = "AdvancedStorageSettings";
 
+    private static final String KEY_PRIMARY_STORAGE_WARNING = "as_primary_storage_warning";
     private static final String KEY_SYS_SWAP = "as_sys_swap";
+    private static final String KEY_ENV_SWAP = "as_env_swap";
+    private static final String ENVVOLD_SWITCH_PERSIST_PROP = "persist.sys.env.switchexternal";
     private static final String SYSVOLD_SWITCH_PERSIST_PROP = "persist.sys.vold.switchexternal";
     private static final String VOLD_SWITCHABLEPAIR_PROP = "persist.sys.vold.switchablepair";
     private static boolean mSwitchablePairFound = false;
+    private static boolean mPrimaryEmulated = Environment.isExternalStorageEmulated();
+    private Preference mPrimaryStorageWarning;
     private CheckBoxPreference mSysSwap;
+    private CheckBoxPreference mEnvSwap;
 
     private PreferenceScreen createPreferenceHierarchy() {
         PreferenceScreen root = getPreferenceScreen();
@@ -62,7 +68,9 @@ public class AdvancedStorageSettings extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.advanced_storage_settings);
         root = getPreferenceScreen();
 
+        mPrimaryStorageWarning = (Preference)root.findPreference(KEY_PRIMARY_STORAGE_WARNING);
         mSysSwap = (CheckBoxPreference)root.findPreference(KEY_SYS_SWAP);
+        mEnvSwap = (CheckBoxPreference)root.findPreference(KEY_ENV_SWAP);
         updateToggles();
 
         return root;
@@ -86,40 +94,95 @@ public class AdvancedStorageSettings extends SettingsPreferenceFragment {
     }
 
     private boolean setSwitchablePair() {
-        String[] primaryPath = System.getenv("EXTERNAL_STORAGE").split(File.separator);
-        String[] secondaryPath = System.getenv("SECONDARY_STORAGE").split(File.separator);
-        String primaryDir = primaryPath[primaryPath.length-1];
-        String secondaryDir = secondaryPath[secondaryPath.length-1];
+        String primaryPath = System.getenv("EXTERNAL_STORAGE");
+        String[] secondaryPaths = System.getenv("SECONDARY_STORAGE").split(":");
+        boolean[] sdxFound = { false, false };
 
-        if (TextUtils.isEmpty(primaryDir)) {
-            Log.e(TAG,"Unable to find primary storage device for vold swap");
-            return false;
-        }
-        if (Environment.isExternalStorageEmulated()) {
-            Log.e(TAG,"Vold swap does not support emulated primary storage");
-            return false;
-        }
-        if (!TextUtils.equals(secondaryDir, "sdcard1")) {
-            Log.e(TAG,"Unable to find secondary storage device sdcard1 for vold swap");
-            return false;
+        if (TextUtils.equals(primaryPath, "/storage/sdcard0")) {
+            sdxFound[0] = true;
+        } else {
+            Log.e(TAG,"/storage/sdcard0 was not found");
+            Log.e(TAG,"System vold swap unavailable");
         }
 
-        SystemProperties.set(VOLD_SWITCHABLEPAIR_PROP, primaryDir + ','
-            + secondaryDir);
-        Log.i(TAG, "System property set: " + VOLD_SWITCHABLEPAIR_PROP + "="
-            + primaryDir + ',' + secondaryDir);
+        for (String secondaryPath : secondaryPaths) {
+            if (TextUtils.equals(secondaryPath, "/storage/sdcard1")) {
+                sdxFound[1] = true;
+            }
+        }
+
+        if (!sdxFound[1]) {
+            Log.e(TAG,"/storage/sdcard1 was not found");
+            Log.e(TAG,"System vold swap unavailable");
+            Log.e(TAG,"Environment primary swap unavailable");
+
+            return false;
+        }
+
+        if (sdxFound[0] && sdxFound[1]) {
+            SystemProperties.set(VOLD_SWITCHABLEPAIR_PROP, "sdcard0,sdcard1");
+            Log.i(TAG, "System property set: " + VOLD_SWITCHABLEPAIR_PROP
+                    + "=sdcard0,sdcard1");
+        }
+
         return true;
     }
 
     private void updateToggles() {
-        if (mSwitchablePairFound) {
-            if(SystemProperties.get(SYSVOLD_SWITCH_PERSIST_PROP).equals("1")) {
+        mPrimaryStorageWarning.setEnabled(false);
+        if (!SystemProperties.get(SYSVOLD_SWITCH_PERSIST_PROP).equals("1") ||
+                !SystemProperties.get(ENVVOLD_SWITCH_PERSIST_PROP).equals("1")) {
+            removePreference(KEY_PRIMARY_STORAGE_WARNING);
+        }
+
+        if (mSwitchablePairFound && !mPrimaryEmulated) {
+            if (SystemProperties.get(SYSVOLD_SWITCH_PERSIST_PROP).equals("1") &&
+                    SystemProperties.get(ENVVOLD_SWITCH_PERSIST_PROP).equals("1")) {
+                // This case should not be encountered if system properties are
+                // set via this Settings menu
+                mEnvSwap.setSummary(R.string.as_env_swap_summary);
+                mEnvSwap.setChecked(true);
+                mEnvSwap.setEnabled(true);
+                mSysSwap.setSummary(R.string.as_sys_swap_summary);
                 mSysSwap.setChecked(true);
-            } else {
+                mSysSwap.setEnabled(true);
+            } else if (SystemProperties.get(SYSVOLD_SWITCH_PERSIST_PROP).equals("1")) {
+                mEnvSwap.setSummary(R.string.as_env_swap_sysenabled);
+                mEnvSwap.setChecked(false);
+                mEnvSwap.setEnabled(false);
+                mSysSwap.setSummary(R.string.as_sys_swap_summary);
+                mSysSwap.setChecked(true);
+                mSysSwap.setEnabled(true);
+            } else if (SystemProperties.get(ENVVOLD_SWITCH_PERSIST_PROP).equals("1")) {
+                mEnvSwap.setSummary(R.string.as_env_swap_summary);
+                mEnvSwap.setChecked(true);
+                mEnvSwap.setEnabled(true);
+                mSysSwap.setSummary(R.string.as_sys_swap_envenabled);
                 mSysSwap.setChecked(false);
+                mSysSwap.setEnabled(false);
+            } else {
+                mEnvSwap.setSummary(R.string.as_env_swap_summary);
+                mEnvSwap.setChecked(false);
+                mEnvSwap.setEnabled(true);
+                mSysSwap.setSummary(R.string.as_sys_swap_summary);
+                mSysSwap.setChecked(false);
+                mSysSwap.setEnabled(true);
             }
-            mSysSwap.setEnabled(true);
+        } else if (mSwitchablePairFound && mPrimaryEmulated) {
+            mSysSwap.setSummary(R.string.as_sys_swap_noemulated);
+            mSysSwap.setChecked(false);
+            mSysSwap.setEnabled(false);
+            if (SystemProperties.get(ENVVOLD_SWITCH_PERSIST_PROP).equals("1")) {
+                mEnvSwap.setChecked(true);
+                mEnvSwap.setEnabled(true);
+            } else {
+                mEnvSwap.setChecked(false);
+                mEnvSwap.setEnabled(true);
+            }
         } else {
+            mEnvSwap.setChecked(false);
+            mEnvSwap.setSummary(R.string.as_swap_unavailable);
+            mEnvSwap.setEnabled(false);
             mSysSwap.setChecked(false);
             mSysSwap.setSummary(R.string.as_swap_unavailable);
             mSysSwap.setEnabled(false);
@@ -157,6 +220,11 @@ public class AdvancedStorageSettings extends SettingsPreferenceFragment {
                 mSysSwap.isChecked() ? "1" : "0");
             Log.i(TAG, "System property set: " + SYSVOLD_SWITCH_PERSIST_PROP
                   + "=" + SystemProperties.get(SYSVOLD_SWITCH_PERSIST_PROP));
+        } else if (preference == mEnvSwap) {
+            SystemProperties.set(ENVVOLD_SWITCH_PERSIST_PROP,
+                mEnvSwap.isChecked() ? "1" : "0");
+            Log.i(TAG, "System property set: " + ENVVOLD_SWITCH_PERSIST_PROP
+                  + "=" + SystemProperties.get(ENVVOLD_SWITCH_PERSIST_PROP));
         }
         updateToggles();
         showRebootPrompt();

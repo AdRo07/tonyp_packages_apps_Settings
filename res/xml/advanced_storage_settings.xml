@@ -20,9 +20,18 @@
     <PreferenceCategory
         android:title="@string/as_primary_storage_category" />
 
+    <Preference
+        android:key="as_primary_storage_warning"
+        android:summary="@string/as_primary_storage_warning" />
+
     <CheckBoxPreference
         android:key="as_sys_swap"
         android:title="@string/as_sys_swap_title"
         android:summary="@string/as_sys_swap_summary" />
+
+    <CheckBoxPreference
+        android:key="as_env_swap"
+        android:title="@string/as_env_swap_title"
+        android:summary="@string/as_env_swap_summary" />
 
 </PreferenceScreen>

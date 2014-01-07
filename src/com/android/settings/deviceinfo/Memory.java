@@ -182,10 +182,16 @@ public class Memory extends SettingsPreferenceFragment {
         usb.setVisible(usbItemVisible);
 
         final MenuItem advStorage = menu.findItem(R.id.storage_advanced);
-        String secondaryPath = System.getenv("SECONDARY_STORAGE");
-        boolean advStorageItemVisibleSec = TextUtils.equals(secondaryPath, "/storage/sdcard1");
-        boolean advStorageItemVisibleEmu = !Environment.isExternalStorageEmulated();
-        advStorage.setVisible(advStorageItemVisibleSec && advStorageItemVisibleEmu);
+        boolean advStorageItemVisible = false;
+        String secondaryPaths = System.getenv("SECONDARY_STORAGE");
+        if (!TextUtils.isEmpty(secondaryPaths)) {
+            for (String secondaryPath : secondaryPaths.split(":")) {
+                if (TextUtils.equals(secondaryPath, "/storage/sdcard1")) {
+                    advStorageItemVisible = true;
+                }
+            }
+        }
+        advStorage.setVisible(advStorageItemVisible);
     }
 
     @Override
