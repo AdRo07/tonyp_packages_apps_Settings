@@ -72,7 +72,7 @@ public class tonyLogoActivity extends Activity {
         tv.setTextSize(1.25f*size);
         tv.setTextColor(0xFFFFFFFF);
         tv.setShadowLayer(4*metrics.density, 0, 2*metrics.density, 0x66000000);
-        tv.setText("CM10.1 - by tonyp");
+        tv.setText("CM11 - by tonyp");
         view.addView(tv, lp);
    
         tv = new TextView(this);
@@ -80,7 +80,7 @@ public class tonyLogoActivity extends Activity {
         tv.setTextSize(size);
         tv.setTextColor(0xFFFFFFFF);
         tv.setShadowLayer(4*metrics.density, 0, 2*metrics.density, 0x66000000);
-        tv.setText("T-Build #" + tonyVersion);
+        tv.setText("build #" + tonyVersion);
         view.addView(tv, lp);
 
         return view;
