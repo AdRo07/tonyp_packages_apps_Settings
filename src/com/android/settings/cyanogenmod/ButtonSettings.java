@@ -16,14 +16,11 @@
 
 package com.android.settings.cyanogenmod;
 
-import java.util.ArrayList;
-
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.Handler;
@@ -102,8 +99,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mVolumeKeyCursorControl;
     private CheckBoxPreference mSwapVolumeButtons;
     private CheckBoxPreference mDisableNavigationKeys;
-    private ListPreference[] mActions;
-    private CheckBoxPreference mShowActionOverflow;
 
     private Handler mHandler;
 
@@ -288,33 +283,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
                 getPreferenceScreen(), KEY_BLUETOOTH_INPUT_SETTINGS);
-
-        //dynamically add QuickMemo support
-        mActions = new ListPreference[] {
-            mHomeLongPressAction, mHomeDoubleTapAction, mMenuPressAction, mMenuLongPressAction, 
-            mAssistPressAction, mAssistLongPressAction, mAppSwitchPressAction, mAppSwitchLongPressAction
-        };
-        for (ListPreference pref : mActions) {
-            if (pref != null) {
-                if (isAppInstalled("com.lge.QuickClip")) {
-                    final CharSequence[] oldEntries = pref.getEntries();
-                    final CharSequence[] oldValues = pref.getEntryValues();
-                    ArrayList<CharSequence> newEntries = new ArrayList<CharSequence>();
-                    ArrayList<CharSequence> newValues = new ArrayList<CharSequence>();
-                    for (int i = 0; i < oldEntries.length; i++) {
-                        newEntries.add(oldEntries[i].toString());
-                        newValues.add(oldValues[i].toString());
-                    }
-                    newEntries.add("Quickmemo");
-                    newValues.add("99"); // dummy value for PWM
-                    pref.setEntries(
-                            newEntries.toArray(new CharSequence[newEntries.size()]));
-                    pref.setEntryValues(
-                            newValues.toArray(new CharSequence[newValues.size()]));
-                }
-                pref.setOnPreferenceChangeListener(this);
-            }
-        }
     }
 
     private ListPreference initActionList(String key, int value) {
@@ -482,15 +450,5 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
-    private boolean isAppInstalled(String uri) {
-        PackageManager pm = mContext.getPackageManager();
-        try {
-            pm.getPackageInfo(uri, PackageManager.GET_ACTIVITIES);
-        } catch (PackageManager.NameNotFoundException e) {
-            return false;
-        }
-        return true;
     }
 }
