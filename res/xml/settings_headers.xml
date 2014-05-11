@@ -36,6 +36,20 @@
         android:title="@string/bluetooth_settings_title"
         android:icon="@drawable/ic_settings_bluetooth2" />
 
+    <!-- Mobile networks -->
+    <header
+        android:id="@+id/mobile_network_settings"
+        android:icon="@drawable/ic_settings_mobilenetworks"
+        android:title="@string/network_settings_title"
+        android:dependency="toggle_airplane">
+        <intent
+            android:action="android.settings.DATA_ROAMING_SETTINGS" >
+        <extra android:name="PACKAGE" android:value="com.android.phone" />
+        <extra android:name="TARGET_CLASS"
+               android:value="com.android.phone.MSimMobileNetworkSubSettings" />
+        </intent>
+    </header>
+
     <!-- Data Usage -->
     <header
         android:id="@+id/data_usage_settings"
@@ -48,6 +62,17 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:id="@+id/operator_settings">
         <intent android:action="com.android.settings.OPERATOR_APPLICATION_SETTING" />
+    </header>
+
+    <!-- Multi Sim Settings - this is in the settings process -->
+    <header
+        android:id="@+id/multi_sim_settings"
+        android:icon="@drawable/ic_settings_sim"
+        android:title="@string/multi_sim_settings_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.settings"
+            android:targetClass="com.android.settings.MultiSimSettings" />
     </header>
 
     <!-- Other wireless and network controls -->
@@ -78,14 +103,11 @@
 
     <!-- Themes -->
     <header
-        android:id="@+id/themes_settings"
-        android:icon="@drawable/ic_settings_themes"
-        android:title="@string/themes_settings_title">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.tmobile.themechooser"
-            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
-    </header>
+        android:id="@+id/theme_settings"
+        android:title="@string/themes_settings_title"
+        android:breadCrumbTitle="@string/themes_settings_title"
+        android:fragment="com.android.settings.ThemeSettings"
+        android:icon="@drawable/prd_ic_themepacks" />
 
     <!-- System UI -->
     <header
@@ -186,6 +208,13 @@
         android:icon="@drawable/ic_settings_location"
         android:title="@string/location_settings_title"
         android:id="@+id/location_settings" />
+
+     <!-- Voice Wakeup -->
+    <header
+        android:fragment="com.android.settings.voicewakeup.VoiceWakeupSettings"
+        android:icon="@drawable/ic_voice_wakeup"
+        android:title="@string/voice_wakeup_settings_title"
+        android:id="@+id/voice_wakeup_settings" />
 
     <!-- Security -->
     <header

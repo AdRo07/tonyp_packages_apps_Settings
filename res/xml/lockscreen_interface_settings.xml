@@ -51,6 +51,10 @@
             android:title="@string/lockscreen_buttons_title"
             android:summary="@string/lockscreen_buttons_summary" />
 
+        <CheckBoxPreference
+            android:key="lockscreen_modlock_enabled"
+            android:title="@string/lockscreen_enable_modlock_title" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -81,4 +85,18 @@
             android:title="@string/lockscreen_maximize_widgets_title" />
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lockscreen_background_category"
+        android:title="@string/lockscreen_background">
+
+        <Preference
+            android:id="@+id/lockscreen_wallpaper_settings"
+            android:title="@string/lockscreen_wallpaper_settings_title">
+            <intent android:targetPackage="com.android.wallpapercropper"
+                    android:targetClass="com.android.wallpapercropper.LockWallpaperPickerActivity" />
+        </Preference>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

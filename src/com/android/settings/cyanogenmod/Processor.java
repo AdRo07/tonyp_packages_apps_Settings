@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2012-2014 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,16 +19,18 @@ package com.android.settings.cyanogenmod;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemProperties;
+import android.os.SystemService;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
+import android.util.Log;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import android.util.Log;
-import com.android.settings.CMDProcessor;
+import java.lang.Runtime;
 
 //
 // CPU Related Settings
@@ -36,6 +38,7 @@ import com.android.settings.CMDProcessor;
 public class Processor extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    public static final String CPU_ONLINE = "/sys/devices/system/cpu/cpu0/online";
     public static final String FREQ_CUR_PREF = "pref_cpu_freq_cur";
     public static final String SCALE_CUR_FILE = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq";
     public static final String FREQINFO_CUR_FILE = "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq";
@@ -49,8 +52,6 @@ public class Processor extends SettingsPreferenceFragment implements
     public static String FREQ_MAX_FILE = null;
     public static String FREQ_MIN_FILE = null;
     public static final String SOB_PREF = "pref_cpu_set_on_boot";
-    public static final String TEGRA_MAX_FREQ_PATH = "/sys/module/cpu_tegra/parameters/cpu_user_cap";
-    public static final String NUM_OF_CPUS_PATH = "/sys/devices/system/cpu/present";
 
     protected static boolean freqCapFilesInitialized = false;
 
@@ -229,12 +230,11 @@ public class Processor extends SettingsPreferenceFragment implements
         }
     }
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
+    public boolean onPreferenceChange(Preference preference, Object value) {
         initFreqCapFiles();
 
+        final String newValue = (String) value;
         String fname = "";
-        boolean success = false;
-        boolean mIsTegra = Utils.fileExists(Processor.TEGRA_MAX_FREQ_PATH);
 
         if (newValue != null) {
             if (preference == mGovernorPref) {
@@ -245,30 +245,84 @@ public class Processor extends SettingsPreferenceFragment implements
                 fname = FREQ_MAX_FILE;
             }
 
-            Process process = null;
-            for (int i = 0; i < getNumOfCpus(); i++) {
-                try {
-                    new CMDProcessor().su.runWaitFor("busybox echo "
-                            + (String) newValue + " > "
-                            + fname.replace("cpu0", "cpu" + i));
-                    success = true;
-                } catch (Exception ex) {
-                    Log.d(TAG, "Applying " + fname.replace("cpu0", "cpu" + i) + " failed!");
-                    success = false;
+            if (Utils.fileWriteOneLine(fname, newValue)) {
+                final String file = fname;
+                final int nrcpus = Runtime.getRuntime().availableProcessors();
+                if (nrcpus > 1) {
+                    new Thread() {
+                        public void run() {
+                            int count = 0;
+                            int maxcount = 5;
+                            String on = "1";
+                            String off = "0";
+                            String onfile = "";
+                            String cpufile = "";
+                            String savedstate = "";
+                            String state = "";
+                            String mpdec = "mpdecision";
+                            SystemService.State mpdecstate = SystemService.getState(mpdec);
+                            // Dumb down to a running mpdecision service
+                            if (mpdecstate.equals(SystemService.State.RUNNING)) {
+                                SystemService.stop(mpdec);
+                            }
+                            try {
+                                for (int i = 1; i < nrcpus; i++) {
+                                    onfile = CPU_ONLINE.replace("cpu0", "cpu" + i);
+                                    cpufile = file.replace("cpu0", "cpu" + i);
+                                    savedstate = Utils.fileReadOneLine(onfile);
+                                    // Writing on to already online cpu throws EINVAL exception
+                                    if (savedstate.equals(off)) {
+                                        if (Utils.fileIsWritable(onfile)) {
+                                            Utils.fileWriteOneLine(onfile, on);
+                                        } else {
+                                            String hw = SystemProperties.get("ro.hardware");
+                                            Log.e(TAG, onfile +
+                                            " not writable, did you set ownership in init." +
+                                            hw + ".rc?");
+                                        }
+                                    }
+                                    // Give ueventd a little time to set perms
+                                    while (count < maxcount) {
+                                        Thread.sleep(10);
+                                        if (Utils.fileExists(cpufile)) {
+                                            if (Utils.fileIsWritable(cpufile)) {
+                                                Utils.fileWriteOneLine(cpufile, newValue);
+                                                break;
+                                            } else {
+                                                Log.e(TAG, cpufile +
+                                                " not writable, did you set ueventd rules?");
+                                            }
+                                        }
+                                        count++;
+                                        if (count == maxcount) {
+                                            Log.e(TAG, "Failed setting new value to " + cpufile);
+                                        }
+                                    }
+                                    count = 0;
+                                    state = Utils.fileReadOneLine(onfile);
+                                    // Restore prior state of onlined cpu
+                                    if (state.equals(on) && !state.equals(savedstate)) {
+                                        Utils.fileWriteOneLine(onfile, off);
+                                    }
+                                }
+                            } catch (InterruptedException e) {
+                            }
+                            // Restart mpdec
+                            if (mpdecstate.equals(SystemService.State.RUNNING)) {
+                                SystemService.start(mpdec);
+                            }
+                        }
+                    }.start();
                 }
-            }
-            if (success) {
+
                 if (preference == mGovernorPref) {
-                    mGovernorPref.setSummary(String.format(mGovernorFormat, (String) newValue));
+                    mGovernorPref.setSummary(String.format(mGovernorFormat, newValue));
                 } else if (preference == mMinFrequencyPref) {
                     mMinFrequencyPref.setSummary(String.format(mMinFrequencyFormat,
-                            toMHz((String) newValue)));
+                            toMHz(newValue)));
                 } else if (preference == mMaxFrequencyPref) {
-                    if (mIsTegra) {
-                        Utils.fileWriteOneLine(Processor.TEGRA_MAX_FREQ_PATH, (String) newValue);
-                    }
                     mMaxFrequencyPref.setSummary(String.format(mMaxFrequencyFormat,
-                            toMHz((String) newValue)));
+                            toMHz(newValue)));
                 }
                 return true;
             } else {
@@ -281,25 +335,5 @@ public class Processor extends SettingsPreferenceFragment implements
     private String toMHz(String mhzString) {
         return new StringBuilder().append(Integer.valueOf(mhzString) / 1000).append(" MHz")
                 .toString();
-    }
-
-    public static int getNumOfCpus() {
-        int numOfCpu = 1;
-        String numOfCpus = Utils.fileReadOneLine(NUM_OF_CPUS_PATH);
-        String[] cpuCount = numOfCpus.split("-");
-        if (cpuCount.length > 1) {
-            try {
-                int cpuStart = Integer.parseInt(cpuCount[0]);
-                int cpuEnd = Integer.parseInt(cpuCount[1]);
-
-                numOfCpu = cpuEnd - cpuStart + 1;
-
-                if (numOfCpu < 0)
-                    numOfCpu = 1;
-            } catch (NumberFormatException ex) {
-                numOfCpu = 1;
-            }
-        }
-        return numOfCpu;
     }
 }

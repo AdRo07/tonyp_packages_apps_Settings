@@ -25,6 +25,8 @@ import android.app.admin.DevicePolicyManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
@@ -74,6 +76,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
     private static final String KEY_SCREEN_ANIMATION_OFF = "screen_off_animation";
     private static final String KEY_SCREEN_ANIMATION_STYLE = "screen_animation_style";
+    private static final String KEY_SCREEN_COLOR_SETTINGS = "screencolor_settings";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -86,6 +89,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mNotificationPulse;
     private PreferenceScreen mBatteryPulse;
     private PreferenceScreen mDisplayRotationPreference;
+    private PreferenceScreen mScreenColorSettings;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -164,24 +168,32 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_screenOffAnimation);
         boolean requiresFadeAnimation = res.getBoolean(
                 com.android.internal.R.bool.config_animateScreenLights);
-        mScreenOffAnimation = (CheckBoxPreference) findPreference(KEY_SCREEN_ANIMATION_OFF);
+        mScreenOffAnimation = (CheckBoxPreference)
+                findPreference(KEY_SCREEN_ANIMATION_OFF);
         mScreenAnimationStylePreference =
                 (ListPreference) findPreference(KEY_SCREEN_ANIMATION_STYLE);
 
         if (allowsScreenOffAnimation) {
             if (!requiresFadeAnimation) {
+                getPreferenceScreen().removePreference(mScreenOffAnimation);
+                final boolean animationEnabled =
+                        Settings.System.getInt(resolver,
+                                Settings.System.SCREEN_OFF_ANIMATION, 1) != 0;
                 final int currentAnimation =
                         Settings.System.getInt(resolver, SCREEN_ANIMATION_STYLE, 0);
-                mScreenAnimationStylePreference.setValue(String.valueOf(currentAnimation));
+
                 mScreenAnimationStylePreference.setOnPreferenceChangeListener(this);
-                updateScreenAnimationStylePreferenceDescription(currentAnimation);
+                if (animationEnabled) {
+                    mScreenAnimationStylePreference.setValue(String.valueOf(currentAnimation));
+                    updateScreenAnimationStylePreferenceDescription(currentAnimation + 1);
+                } else {
+                    mScreenAnimationStylePreference.setValue(String.valueOf(-1));
+                    updateScreenAnimationStylePreferenceDescription(0);
+                }
             } else {
                 getPreferenceScreen().removePreference(mScreenAnimationStylePreference);
-                mScreenAnimationStylePreference.setValue(String.valueOf(1));
             }
         } else {
-            mScreenOffAnimation.setChecked(false);
-            getPreferenceScreen().removePreference(mScreenOffAnimation);
             getPreferenceScreen().removePreference(mScreenAnimationStylePreference);
         }
 
@@ -207,6 +219,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
         } else {
             getPreferenceScreen().removePreference(lightPrefs);
+        }
+
+        mScreenColorSettings = (PreferenceScreen) findPreference(KEY_SCREEN_COLOR_SETTINGS);
+        if (!isPostProcessingSupported()) {
+            getPreferenceScreen().removePreference(mScreenColorSettings);
         }
     }
 
@@ -496,8 +513,22 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (KEY_SCREEN_ANIMATION_STYLE.equals(key)) {
             int value = Integer.parseInt((String) objValue);
             try {
-                Settings.System.putInt(getContentResolver(), SCREEN_ANIMATION_STYLE, value);
-                updateScreenAnimationStylePreferenceDescription(value);
+                if (value == -1) {
+                    // disabled
+                    Settings.System.putInt(getContentResolver(),
+                            Settings.System.SCREEN_OFF_ANIMATION, 0);
+                    updateScreenAnimationStylePreferenceDescription(0);
+                } else {
+                    // enabled
+                    Settings.System.putInt(getContentResolver(),
+                            Settings.System.SCREEN_OFF_ANIMATION, 1);
+                    Settings.System.putInt(getContentResolver(),
+                            SCREEN_ANIMATION_STYLE, value);
+
+                    // the indexing here is off by one since the first (disabled)
+                    // value is -1 and the method expects an index.
+                    updateScreenAnimationStylePreferenceDescription(value + 1);
+                }
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist screen animation style setting", e);
             }
@@ -542,6 +573,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Log.d(TAG, "Tap-to-wake settings restored.");
             }
         }
+    }
+
+    private boolean isPostProcessingSupported() {
+        boolean ret = true;
+        final PackageManager pm = getPackageManager();
+        try {
+            pm.getPackageInfo("com.qualcomm.display", PackageManager.GET_META_DATA);
+        } catch (NameNotFoundException e) {
+            ret = false;
+        }
+        return ret;
     }
 
     private static boolean isAdaptiveBacklightSupported() {
