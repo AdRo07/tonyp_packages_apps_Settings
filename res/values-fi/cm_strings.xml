@@ -349,11 +349,16 @@ Lisää asetuksia on saaavilla painamalla riviä pitkään. Valitsemalla \'Muokk
   <string name="quiet_hours_summary">Määritä aikaväli, jolloin haluat puhelimen olevan äänetön</string>
   <string name="quiet_hours_enabled">Pakota hiljaisuusaika</string>
   <string name="quiet_hours_ringer">Puhelimen soidessa</string>
-  <string name="quiet_hours_mute">Hiljennä ilmoitukset</string>
-  <string name="quiet_hours_system">Estä järjestelmän äänet</string>
-  <string name="quiet_hours_still">Estä värinä</string>
-  <string name="quiet_hours_dim">Estä ilmoitusvalo</string>
-  <string name="quiet_hours_haptic">Estä haptinen palaute</string>
+  <string name="quiet_hours_mute">Ilmoitukset</string>
+  <string name="quiet_hours_mute_summary">Hiljennä ilmoitukset</string>
+  <string name="quiet_hours_system">Järjestelmän äänet</string>
+  <string name="quiet_hours_system_summary">Estä järjestelmän äänet</string>
+  <string name="quiet_hours_still">Värinä</string>
+  <string name="quiet_hours_still_summary">Estä värinä</string>
+  <string name="quiet_hours_dim">Ilmoitusvalo</string>
+  <string name="quiet_hours_dim_summary">Estä ilmoitusvalo</string>
+  <string name="quiet_hours_haptic">Haptinen palaute</string>
+  <string name="quiet_hours_haptic_summary">Estä haptinen palaute</string>
   <string name="quiet_hours_active_from">Aktiivisena</string>
   <string name="quiet_hours_active_to">-</string>
   <string name="quiet_hours_ringer_allow_all">Soi kenen tahansa soittaessa</string>
@@ -421,6 +426,7 @@ Lisää asetuksia on saaavilla painamalla riviä pitkään. Valitsemalla \'Muokk
   <string name="changelog_error">Muutoslokin lataus ei onnistu</string>
   <string name="changelog_unknown">Tuntematon</string>
   <string name="changelog_version">Versio</string>
+  <string name="contributor_cloud_title">Näytä kehittäjät ja osallistujat</string>
   <string name="cmupdate_settings_title">CyanogenMod-päivitykset</string>
   <string name="cmupdate_settings_summary">Tarkista, katso tai asenna saatavilla olevat päivitykset</string>
   <string name="advanced_settings_title">Lisäasetukset</string>
@@ -636,6 +642,7 @@ Lisää asetuksia on saaavilla painamalla riviä pitkään. Valitsemalla \'Muokk
   <string name="hardware_keys_action_voice_search">Äänihaku</string>
   <string name="hardware_keys_action_in_app_search">Haku sovelluksessa</string>
   <string name="hardware_keys_action_launch_camera">Kamera</string>
+  <string name="button_wake_title">Herätys</string>
   <string name="home_wake_summary">Painamalla kotinäppäintä laite herää</string>
   <string name="camera_wake_summary">Painamalla kameranäppäintä laite herää</string>
   <string name="camera_sleep_on_release_title">Vilauta näyttöä</string>
@@ -649,7 +656,7 @@ Lisää asetuksia on saaavilla painamalla riviä pitkään. Valitsemalla \'Muokk
   <string name="volbtn_cursor_control_off">Pois käytöstä</string>
   <string name="volbtn_cursor_control_on">Äänenvoimakkuus ylös/alas ohjaa kursoria vasemmalle/oikealle</string>
   <string name="volbtn_cursor_control_on_reverse">Äänenvoimakkuus ylös/alas ohjaa kursoria oikealle/vasemmalle</string>
-  <string name="swap_volume_buttons_title">Vaihda äänenvoimakkuusnäppäimien paikkoja</string>
+  <string name="swap_volume_buttons_title">Käännä</string>
   <string name="swap_volume_buttons_summary">Vaihda äänenvoimakkuusnäppäimien paikkoja näytön ollessa käännetty</string>
   <string name="button_backlight_title">Taustavalo</string>
   <string name="button_backlight_enabled">Valaise painikkeet</string>
@@ -854,4 +861,14 @@ Lisää asetuksia on saaavilla painamalla riviä pitkään. Valitsemalla \'Muokk
   <string name="voice_wakeup_activity_title">Avattava toiminto</string>
   <string name="voice_wakeup_default_activity">Google Now</string>
   <string name="sub_no_sim">Ei SIMiä</string>
+  <string name="multi_sim_settings_title">Multi SIM</string>
+  <string name="multi_sim_settings_group_summary">Oletus-SIM:in valinta</string>
+  <string name="voice_title">Äänipuhelut</string>
+  <string name="data_title">Datapuhelut</string>
+  <string name="sms_title">Tekstiviestin lähetys</string>
+  <string name="priority_sub_title">Ensisijainen tilaus</string>
+  <string name="bluetooth_accept_all_files">Hyväksy kaikki tiedostotyypit</string>
+  <string name="autoperf_title">Ota sovelluskohtaiset profiilit käyttöön</string>
+  <string name="autoperf_summary">Valitse automaattisesti sopiva suorituskykyprofiili eri sovelluksille</string>
+  <string name="graphics_title">Grafiikat ja mallinnus</string>
 </resources>

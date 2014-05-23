@@ -112,9 +112,12 @@
   <string name="toggleWifi">Wi-Fi</string>
   <string name="toggleWifiAp">Přenosný Wi-Fi hotspot</string>
   <string name="toggleBluetooth">Bluetooth</string>
+  <string name="toggleGPS">GPS</string>
   <string name="toggleData">Mobilní data</string>
   <string name="toggleSync">Synchronizace</string>
+  <string name="toggle2g3g">2G/3G</string>
   <string name="toggleWimax">WiMAX</string>
+  <string name="toggleNfc">NFC</string>
   <string name="volume_ring_only_description">Vyzvánění</string>
   <string name="link_volume_ringtones">Hlasitost vyzvánění a oznamování</string>
   <string name="link_volume_mutes">Tichý režim ovlivňuje oznamování</string>
@@ -232,8 +235,10 @@
   <string name="title_tile_brightness">Jas</string>
   <string name="title_tile_camera">Fotoaparát</string>
   <string name="title_tile_sleep">Uspat</string>
+  <string name="title_tile_gps">GPS</string>
   <string name="title_tile_torch">Svítilna</string>
   <string name="title_tile_lockscreen">Zámek obrazovky</string>
+  <string name="title_tile_lte">LTE</string>
   <string name="title_tile_mobiledata">Mobilní data</string>
   <string name="title_tile_profile">Profil</string>
   <string name="title_tile_performance_profile">Profil výkonu</string>
@@ -241,8 +246,11 @@
   <string name="title_tile_settings">Nastavení</string>
   <string name="title_tile_sound">Zvuk</string>
   <string name="title_tile_sync">Synchronizace</string>
+  <string name="title_tile_wifiap">Wi-Fi AP</string>
+  <string name="title_tile_wifi">Wi-Fi</string>
   <string name="title_tile_user">Přepnutí uživatele</string>
   <string name="title_tile_networkmode">Režim sítě</string>
+  <string name="title_tile_nfc">NFC</string>
   <string name="title_tile_screen_timeout">Zhasínání obrazovky</string>
   <string name="title_tile_quiet_hours">Režim klidu</string>
   <string name="title_tile_volume">Hlasitost</string>
@@ -344,15 +352,21 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. „Odstranit“ s
   <string name="root_access_apps">Pouze aplikace</string>
   <string name="root_access_adb">Pouze ADB</string>
   <string name="root_access_all">Aplikace a ADB</string>
+  <string name="ok">OK</string>
   <string name="quiet_hours_title">Režim klidu</string>
   <string name="quiet_hours_summary">Nastavení hodin, kdy má být zařízení v režimu klidu</string>
   <string name="quiet_hours_enabled">Povolit režim klidu</string>
   <string name="quiet_hours_ringer">Telofonní vyzvánění</string>
-  <string name="quiet_hours_mute">Ztišit upozornění</string>
-  <string name="quiet_hours_system">Vypnout systémové zvuky</string>
-  <string name="quiet_hours_still">Vypnout vibrace</string>
-  <string name="quiet_hours_dim">Vypnout světelné upozornění</string>
-  <string name="quiet_hours_haptic">Vypnout hmatovou odezvu</string>
+  <string name="quiet_hours_mute">Upozornění</string>
+  <string name="quiet_hours_mute_summary">Ztišit upozornění</string>
+  <string name="quiet_hours_system">Systémové zvuky</string>
+  <string name="quiet_hours_system_summary">Vypnout systémové zvuky</string>
+  <string name="quiet_hours_still">Vibrace</string>
+  <string name="quiet_hours_still_summary">Vypnout vibrace</string>
+  <string name="quiet_hours_dim">Světelná signalizace</string>
+  <string name="quiet_hours_dim_summary">Vypnout světelné upozornění</string>
+  <string name="quiet_hours_haptic">Hmatová odezva</string>
+  <string name="quiet_hours_haptic_summary">Vypnout hmatovou odezvu</string>
   <string name="quiet_hours_active_from">Aktivovat od</string>
   <string name="quiet_hours_active_to">do</string>
   <string name="quiet_hours_ringer_allow_all">Pro všechny</string>
@@ -420,6 +434,7 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. „Odstranit“ s
   <string name="changelog_error">Chyba při načítání seznamu změn</string>
   <string name="changelog_unknown">Neznámý</string>
   <string name="changelog_version">Verze</string>
+  <string name="contributor_cloud_title">Zobrazit přispěvatele</string>
   <string name="cmupdate_settings_title">Aktualizace CyanogenMod</string>
   <string name="cmupdate_settings_summary">Zjištění dostupnosti nové aktualizace</string>
   <string name="advanced_settings_title">Rozšířené</string>
@@ -635,6 +650,7 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. „Odstranit“ s
   <string name="hardware_keys_action_voice_search">Hlasové vyhledávání</string>
   <string name="hardware_keys_action_in_app_search">Hledat v aplikacích</string>
   <string name="hardware_keys_action_launch_camera">Spustit fotoaparát</string>
+  <string name="button_wake_title">Probudit</string>
   <string name="home_wake_summary">Stiskem tlačítka Domů bude zařízení probuzeno</string>
   <string name="camera_wake_summary">Stiskem tlačítka fotoaparátu bude zařízení probuzeno</string>
   <string name="camera_sleep_on_release_title">Náhled obrazovky</string>
@@ -648,7 +664,7 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. „Odstranit“ s
   <string name="volbtn_cursor_control_off">Zakázáno</string>
   <string name="volbtn_cursor_control_on">Tlačítka hlasitosti nahoru/dolu posunou kurzor vlevo/vpravo</string>
   <string name="volbtn_cursor_control_on_reverse">Tlačítka hlasitosti nahoru/dolu posunou kurzor vpravo/vlevo</string>
-  <string name="swap_volume_buttons_title">Převrátit smysl tlačítek hlasistosti</string>
+  <string name="swap_volume_buttons_title">Přeorientovat</string>
   <string name="swap_volume_buttons_summary">V případě otočení obrazovky bude převrácen i smysl tlačítek hlasitosti</string>
   <string name="button_backlight_title">Podsvícení</string>
   <string name="button_backlight_enabled">Podsvícení tlačítek</string>
@@ -693,6 +709,7 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. „Odstranit“ s
   <string name="usb_mass_storage_summary">Povolit přenášení dat mezí PC a SD kartou v zařízení pomocí připojení jako zařízení flash</string>
   <string name="storage_rescan_media">Prohledat úložiště pro média</string>
   <string name="storage_rescan_media_complete">Prohledávání dokončeno</string>
+  <string name="whisperpush_title">WhisperPush</string>
   <string name="whisperpush_summary">Spravovat nastavení zabezpečených SMS</string>
   <string name="custom_runtime_warning_title">Upozornění</string>
   <string name="custom_runtime_warning_message">ART není oficiálně podporován CyanogenMod. Toto nastavení je experimentální a může potencionálně způsobit
@@ -712,6 +729,7 @@ z <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> na <xliff:g id="new" exam
   <string name="stylus_icon_enabled_summary">Zobrazit ikonu při najetí kurzoru nebo kreslení pomocí tužky</string>
   <string name="gestures_settings_title">Gesta stylusem</string>
   <string name="category_spen_title">Gesta stylusem</string>
+  <string name="enable_subcat_title">Stylus</string>
   <string name="enable_spen_title_head">Povolit gesta</string>
   <string name="enable_spen_summary_head">Spustit vlastní akci pomocí gesta a podržením tlačítka na stylusu</string>
   <string name="gestures_subcat_title">Gesta</string>
@@ -856,4 +874,11 @@ z <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> na <xliff:g id="new" exam
   <string name="voice_wakeup_activity_title">Aktivita ke spuštění</string>
   <string name="voice_wakeup_default_activity">Chytré karty Google</string>
   <string name="sub_no_sim">Není SIM karta</string>
+  <string name="multi_sim_settings_title">Více SIM</string>
+  <string name="multi_sim_settings_group_summary">Výběr výchozí SIM</string>
+  <string name="voice_title">Hlasová volání</string>
+  <string name="data_title">Datové volání</string>
+  <string name="sms_title">Posílání SMS</string>
+  <string name="priority_sub_title">Priorita poskytovatele</string>
+  <string name="bluetooth_accept_all_files">Přijmout všechny typy souborů</string>
 </resources>

@@ -471,6 +471,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="root_access_adb">ADB only</string>
     <string name="root_access_all">Apps and ADB</string>
 
+    <!-- Settings checkbox for updating CM recovery on boot -->
+    <string name="update_recovery_title">Update CM recovery</string>
+    <string name="update_recovery_summary">Update recovery when installing system updates</string>
+
     <string name="ok">OK</string>
 
     <!-- Quiet hours -->
@@ -1225,4 +1229,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Priority subscription settings -->
     <string name="priority_sub_title">Priority subscription</string>
+
+    <!-- Bluetooth accept all Filestypes -->
+    <string name="bluetooth_accept_all_files">Accept all file types</string>
+
+    <!-- Automatic performance profiles -->
+    <string name="autoperf_title">Enable per-app profiles</string>
+    <string name="autoperf_summary">Automatically choose an appropriate performance profile for various applications</string>
+
+    <!-- Performance menu, graphics options category -->
+    <string name="graphics_title">Graphics and rendering</string>
 </resources>
