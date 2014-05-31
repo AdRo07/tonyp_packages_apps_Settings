@@ -360,6 +360,7 @@
     <string name="title_dynamic_alarm">Alarm clock</string>
     <string name="title_dynamic_bugreport">Bug report</string>
     <string name="title_dynamic_dock_battery">Dock battery</string>
+    <string name="title_dynamic_equalizer">Equalizer</string>
     <string name="title_dynamic_ime">IME changer</string>
     <string name="title_dynamic_usbtether">USB Tether</string>
     <string name="title_dynamic_wifi">Cast screen</string>
@@ -555,7 +556,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="styles_settings_title">Styles</string>
     <string name="icons_settings_title">Icons</string>
     <string name="fonts_settings_title">Fonts</string>
-    <string name="wallpaper_settings_title">Wallpapers</string>
+    <string name="wallpaper_settings_title_cm">Wallpapers</string>
     <string name="lockscreen_wallpaper_settings_title">Lock screen wallpapers</string>
     <string name="bootanim_settings_title">Boot animations</string>
     <string name="soundpack_settings_title">Sound packs</string>
