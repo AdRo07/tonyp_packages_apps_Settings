@@ -609,6 +609,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Purgeable Assets -->
     <string name="pref_purgeable_assets_title">Allow purging of assets</string>
     <string name="pref_purgeable_assets_summary">Purging of bitmap memory assets allows the freeing of more RAM when needed (requires reboot)</string>
+    <!-- tonyp minfree -->
+    <string name="pref_tonyp_minfree_title">Memory optimizations</string>
+    <string name="pref_tonyp_minfree_summary">Free memory a bit more aggressively without messing with active apps (requires reboot)</string>
 
     <!-- Performance Settings : 16bpp Alpha -->
     <string name="pref_use_16bpp_alpha_title">16bit transparency</string>
