@@ -628,6 +628,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pref_force_highend_gfx_title">Force high-end graphics</string>
     <string name="pref_force_highend_gfx_summary">Enables high-end visual effects such as transparent status/navigation bar (requires reboot)</string>
 
+    <!-- Performance : Force translucent bars -->
+    <string name="pref_force_translucent_title">Force translucent bars</string>
+    <string name="pref_force_translucent_summary">Enables transparent status/navigation bar (requires reboot)</string>
+
     <!-- Kill app long press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
     <string name="kill_app_longpress_back_summary">Kill the foreground app by long pressing the back button</string>

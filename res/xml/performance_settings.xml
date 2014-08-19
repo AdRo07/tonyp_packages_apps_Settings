@@ -71,6 +71,11 @@
             android:key="pref_force_highend_gfx"
             android:title="@string/pref_force_highend_gfx_title"
             android:summary="@string/pref_force_highend_gfx_summary" />
+
+        <CheckBoxPreference
+            android:key="pref_force_translucent"
+            android:title="@string/pref_force_translucent_title"
+            android:summary="@string/pref_force_translucent_summary" />
     </PreferenceCategory>
 
 </PreferenceScreen>

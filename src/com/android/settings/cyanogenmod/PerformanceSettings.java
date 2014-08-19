@@ -57,9 +57,13 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
     private static final String FORCE_HIGHEND_GFX_PREF = "pref_force_highend_gfx";
     private static final String FORCE_HIGHEND_GFX_PERSIST_PROP = "persist.sys.force_highendgfx";
 
+    private static final String FORCE_TRANSLUCENT_PREF = "pref_force_translucent";
+    private static final String FORCE_TRANSLUCENT_PERSIST_PROP = "persist.sys.force_transbar";
+
     private ListPreference mPerfProfilePref;
     private CheckBoxPreference mUse16bppAlphaPref;
     private CheckBoxPreference mForceHighEndGfx;
+    private CheckBoxPreference mForceTranslucent;
 
     private String[] mPerfProfileEntries;
     private String[] mPerfProfileValues;
@@ -127,6 +131,10 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
             category.removePreference(findPreference(FORCE_HIGHEND_GFX_PREF));
         }
 
+        mForceTranslucent = (CheckBoxPreference) prefSet.findPreference(FORCE_TRANSLUCENT_PREF);
+        String forceTranslucent = SystemProperties.get(FORCE_TRANSLUCENT_PERSIST_PROP, "true");
+        mForceTranslucent.setChecked("true".equals(forceTranslucent));
+
         /* Display the warning dialog */
         alertDialog = new AlertDialog.Builder(getActivity()).create();
         alertDialog.setTitle(R.string.performance_settings_warning_title);
@@ -170,6 +178,9 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
         } else if (preference == mForceHighEndGfx) {
             SystemProperties.set(FORCE_HIGHEND_GFX_PERSIST_PROP,
                     mForceHighEndGfx.isChecked() ? "true" : "false");
+        } else if (preference == mForceTranslucent) {
+            SystemProperties.set(FORCE_TRANSLUCENT_PERSIST_PROP,
+                    mForceTranslucent.isChecked() ? "true" : "false");
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
