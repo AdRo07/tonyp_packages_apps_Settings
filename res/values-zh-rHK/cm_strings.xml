@@ -310,8 +310,6 @@
   <string name="root_access_apps">僅限應用程式</string>
   <string name="root_access_adb">僅限 ADB</string>
   <string name="root_access_all">應用程式和 ADB</string>
-  <string name="update_recovery_title">升級 CM 修復 (Recovery) 模式</string>
-  <string name="update_recovery_summary">安裝系統更新時升級修復 (Recovery) 模式</string>
   <string name="ok">確定</string>
   <string name="quiet_hours_title">安靜時段</string>
   <string name="quiet_hours_summary">設定裝置應該安靜的時段</string>
@@ -802,6 +800,7 @@
   <string name="graphics_title">圖像和繪製</string>
   <string name="menu_hidden_apps_delete">重設</string>
   <string name="menu_hidden_apps_reset_lock">重設圖案解銷</string>
+  <string name="protected_apps">受保護的應用程式</string>
   <string name="block_notifications_title">過濾器通知</string>
   <string name="block_notifications_summary">管理被忽略的通知和過濾器</string>
   <string name="no_filters_title">沒有過濾器設定。若要過濾通知，長按它並選擇「忽略這樣的訊息」。</string>

@@ -44,11 +44,11 @@
   <string name="profile_menu_delete">Esborra</string>
   <string name="profile_settings_title">Perfil</string>
   <string name="profile_empty_list_profiles_off">Per configurar i utilitzar perfils de sistema, activa els Perfils.</string>
-  <string name="profile_trigger_configure">Configura un esdeveniment</string>
-  <string name="profile_triggers">Esdeveniments</string>
-  <string name="profile_trigger_filter_all">Tots els esdeveniments</string>
+  <string name="profile_trigger_configure">Configura un activador</string>
+  <string name="profile_triggers">Activadors</string>
+  <string name="profile_trigger_filter_all">Tots els activadors</string>
   <string name="profile_trigger_filter_wifi">Activadors Wi\u2011Fi</string>
-  <string name="profile_trigger_filter_bluetooth">Esdeveniments Bluetooth</string>
+  <string name="profile_trigger_filter_bluetooth">Activadors Bluetooth</string>
   <string name="profile_write_nfc_tag">Escriu a l\'etiqueta NFC</string>
   <string name="profile_write_touch_tag">Toca l\'etiqueta per escriure-la</string>
   <string name="profile_write_success">Etiqueta escrita satisfactòriament</string>
@@ -58,6 +58,9 @@
   <string name="profile_unknown_nfc_tag">Perfil desconegut</string>
   <string name="profile_add_nfc_text">Aquesta etiqueta NFC fa referència a un perfil desconegut. Adjuntant aquesta etiqueta NFC a un perfil existent permetrà seleccionar el perfil en el futur.</string>
   <string name="profile_select">Selecciona perfil</string>
+  <string name="profile_remove_dialog_message">Treure perfil %1$s?</string>
+  <string name="profile_populate_profile_from_state">Vols configurar el perfil utilitzant la configuració del dispositiu actual?</string>
+  <string name="profile_menu_fill_from_state">Importa la configuració actual del dispositiu</string>
   <string name="profile_name_title">Nom</string>
   <string name="profile_profile_name_prompt">Introdueix el nom del nou perfil</string>
   <string name="menu_new_profile">Nou perfil</string>
@@ -77,13 +80,13 @@
   <string name="settings_search_action_bar_button">Cerca</string>
   <string name="settings_search_autocompleteview_hint">Configuració de la cerca</string>
   <string name="settings_search_loading_text">S\'estan carregant les dades de cerca\u2026</string>
-  <string name="profile_connectionoverrides_title">Substitueix Connexió</string>
-  <string name="profile_volumeoverrides_title">Substitueix Volum</string>
+  <string name="profile_connectionoverrides_title">Anul·lació de connexió</string>
+  <string name="profile_volumeoverrides_title">Anul·lació de volum</string>
   <string name="connection_state_disabled">Desactiva</string>
   <string name="connection_state_enabled">Activa</string>
   <string name="volume_override_summary">Estableix a %1$s/%2$s</string>
-  <string name="volume_override_summary_no_override">No invalidis</string>
-  <string name="profile_volume_override_checkbox_label">Invalida el volum</string>
+  <string name="volume_override_summary_no_override">No anul·lis</string>
+  <string name="profile_volume_override_checkbox_label">Anul·la el volum</string>
   <string name="profile_profiles_manage">Perfils</string>
   <string name="profile_profile_manage">Gestiona un perfil</string>
   <string name="profile_appgroups_manage">Grups d\'aplicacions</string>
@@ -91,7 +94,7 @@
   <string name="profile_settings">Configuració dels perfils</string>
   <string name="profile_trigger_connect">En connectar</string>
   <string name="profile_trigger_disconnect">En desconnectar</string>
-  <string name="profile_trigger_notrigger">Sense esdeveniment</string>
+  <string name="profile_trigger_notrigger">Sense activador</string>
   <string name="profile_trigger_a2dp_connect">En connectar l\'A2DP</string>
   <string name="profile_trigger_a2dp_disconnect">En desconnectar l\'A2DP</string>
   <string name="sound_mode">Mode de notificació</string>
@@ -354,7 +357,7 @@ Hi ha disponibles opcions addicionals apretant llargament sobre la línia. Selec
   <string name="display_rotation_180_title">180 graus</string>
   <string name="display_rotation_270_title">270 graus</string>
   <string name="advanced_reboot_title">Reinici avançat</string>
-  <string name="advanced_reboot_summary">Quan està desbloquejat, inclou opcions al menú d\'apagat per reiniciar en mode recuperació, bootloader o bé realitzar un reinici</string>
+  <string name="advanced_reboot_summary">Quan està desbloquejat, inclou opcions al menú d\'apagat per reiniciar en mode recuperació, bootloader o bé realitzar un reinici ràpid</string>
   <string name="app_security_title">Seguretat d\'app</string>
   <string name="root_access">Accés Root</string>
   <string name="root_access_warning_title">Vols permetre l\'accés root?</string>
@@ -363,8 +366,10 @@ Hi ha disponibles opcions addicionals apretant llargament sobre la línia. Selec
   <string name="root_access_apps">Només Apps</string>
   <string name="root_access_adb">Només ADB</string>
   <string name="root_access_all">Apps i ADB</string>
-  <string name="update_recovery_title">Actualitza Recovery de CM</string>
-  <string name="update_recovery_summary">Actualitza el recovery quan s\'instal·lin noves actualitzacions del sistema</string>
+  <string name="update_recovery_title">Actualitza la recuperació de Cyanogen</string>
+  <string name="update_recovery_summary">Actualitza la recuperació amb les actualitzacions del sistema</string>
+  <string name="update_recovery_on_warning">AVÍS: Quan aquesta funció estigui activada, la recuperació que tinguis instal·lada serà substituïda per la versió actual inclosa amb el SO instal·lat.\n\nEl teu sistema de recuperació s\'actualitzarà juntament amb les millores del sistema, ajudant a assegurar la compatibilitat amb futures versions.\n\nVols habilitar aquesta característica?</string>
+  <string name="update_recovery_off_warning">ADVERTÈNCIA: Quan aquesta característica està inhabilitada, el teu sistema de recuperació instal·lat no s\'actualitzarà amb les millores del SO.\n\nFutures actualitzacions del SO podrien no instal·lar-se amb sistemes de recuperació obsolets o personalitzats.\n\nRealment vols deshabilitar aquesta característica?</string>
   <string name="ok">D\'acord</string>
   <string name="quiet_hours_title">Hores silencioses</string>
   <string name="quiet_hours_summary">Configura les hores en que el dispositiu hauria d\'estar silenciós</string>
@@ -554,7 +559,7 @@ Hi ha disponibles opcions addicionals apretant llargament sobre la línia. Selec
   <string name="lockscreen_target_edit_title">Edita la drecera i l\'icona</string>
   <string name="lockscreen_target_edit_msg">Selecciona o canvia l\'app desitjada o activitat i la icona associada</string>
   <string name="picker_activities">Activitats</string>
-  <string name="select_custom_app_title">Selecciona una app personalitzada</string>
+  <string name="select_custom_app_title">Selecciona una aplicació personalitzada</string>
   <string name="select_custom_activity_title">Selecciona una activitat personalitzada</string>
   <string name="icon_picker_choose_icon_title">Tria icona</string>
   <string name="icon_picker_alarm">Alarma</string>
@@ -593,6 +598,7 @@ Hi ha disponibles opcions addicionals apretant llargament sobre la línia. Selec
   <string name="lockscreen_buttons_toggle_sound">Activa/Desactiva el so</string>
   <string name="lockscreen_buttons_sleep">Posa en repòs</string>
   <string name="lockscreen_enable_modlock_title">Pantalla de bloqueig personalitzada</string>
+  <string name="lockscreen_buttons_disabled_summary">Els botons de la pantalla de bloqueig no estan disponibles mentre s\'utilitza la barra de Navegació en pantalla</string>
   <string name="navigation_bar_category">Barra de navegació</string>
   <string name="navigation_bar_title">Botons i disposició</string>
   <string name="navigation_bar_left_title">Mode esquerrà</string>
@@ -612,7 +618,7 @@ Hi ha disponibles opcions addicionals apretant llargament sobre la línia. Selec
   <string name="navring_target_reset_message">Vols esborrar totes les dreceres de la barra de navegació creades per l\'usuari i restaurar les predeterminades?</string>
   <string name="navring_target_reset">Reinicia les dreceres de la barra de navegació a les predeterminades</string>
   <string name="navring_action_open_ime_switcher">Obre el canviador d\'IME</string>
-  <string name="navring_action_kill_app">Mata app</string>
+  <string name="navring_action_kill_app">Mata aplicació</string>
   <string name="navring_action_none">Cap</string>
   <string name="navring_action_take_screenshot">Fes captura de pantalla</string>
   <string name="navring_action_ring_vibrate">To/Vibració</string>
@@ -649,12 +655,12 @@ Hi ha disponibles opcions addicionals apretant llargament sobre la línia. Selec
   <string name="hardware_keys_double_tap_title">Acció amb doble pulsació</string>
   <string name="hardware_keys_action_nothing">Cap acció</string>
   <string name="hardware_keys_action_menu">Obre/tanca el menú</string>
-  <string name="hardware_keys_action_app_switch">Intercanviador d\'apps recents</string>
+  <string name="hardware_keys_action_app_switch">Intercanviador d\'aplicacions recents</string>
   <string name="hardware_keys_action_search">Assistent de cerca</string>
   <string name="hardware_keys_action_voice_search">Cerca per veu</string>
-  <string name="hardware_keys_action_in_app_search">Cerca dins l\'app</string>
+  <string name="hardware_keys_action_in_app_search">Cerca dins l\'aplicació</string>
   <string name="hardware_keys_action_launch_camera">Obre la càmera</string>
-  <string name="hardware_keys_action_last_app">Darrera app</string>
+  <string name="hardware_keys_action_last_app">Darrera aplicació</string>
   <string name="hardware_keys_action_sleep">Apaga la pantalla</string>
   <string name="power_end_call_title">Finalitza la trucada</string>
   <string name="power_end_call_summary">Apretant el botó d\'apagat es finalitzarà la trucada actual</string>
@@ -853,8 +859,8 @@ Hi ha disponibles opcions addicionals apretant llargament sobre la línia. Selec
   <string name="app_ops_allowed_count">Permès <xliff:g id="count" example="2 times">%s</xliff:g></string>
   <string name="app_ops_ignored_count">Denegat <xliff:g id="count" example="2 times">%s</xliff:g></string>
   <string name="app_ops_both_count">Permès <xliff:g id="count">%1$s</xliff:g>, denegat <xliff:g id="count">%2$s</xliff:g></string>
-  <string name="app_ops_show_user_apps">Mostra apps de l\'usuari</string>
-  <string name="app_ops_show_system_apps">Mostra les apps integrades</string>
+  <string name="app_ops_show_user_apps">Mostra aplicacions de l\'usuari</string>
+  <string name="app_ops_show_system_apps">Mostra les aplicacions integrades</string>
   <string name="app_ops_reset_counters">Reinicia els comptadors permès/denegat</string>
   <string name="app_ops_reset_confirm_title">Confirma el reinici dels comptadors</string>
   <string name="app_ops_reset_confirm_mesg">Estàs segur que vols reiniciar els comptadors d\'AppOps?</string>
@@ -888,9 +894,9 @@ Hi ha disponibles opcions addicionals apretant llargament sobre la línia. Selec
   <string name="graphics_title">Gràfics i renderitzat</string>
   <string name="menu_hidden_apps_delete">Reinicia</string>
   <string name="menu_hidden_apps_reset_lock">Reinicia el patró de bloqueig</string>
-  <string name="protected_apps">Apps protegides</string>
+  <string name="protected_apps">Aplicacions protegides</string>
   <string name="saving_protected_components">Desant l\'estat del component\u2026</string>
-  <string name="launch_app">Inicia app</string>
+  <string name="launch_app">Inicia aplicació</string>
   <string name="pa_login_username_hint">Nom d\'usuari (correu electrònic)</string>
   <string name="pa_login_password_hint">Contrasenya</string>
   <string name="pa_login_submit_button">Inicia la sessió</string>
@@ -944,6 +950,11 @@ Hi ha disponibles opcions addicionals apretant llargament sobre la línia. Selec
   <string name="sd_media_format_button_text">Esborra la targeta SD</string>
   <string name="sd_media_format_final_desc">Vols esborrar la targeta SD, suprimint tots els fitxers que hi ha? Aquesta acció és irreversible!</string>
   <string name="sd_media_format_gesture_explanation">Has de dibuixar el patró de desbloqueig per confirmar que vols esborrar la targeta SD.</string>
+  <string name="internal_sd_format">Esborra el mitjà d\'emmagatzematge intern</string>
+  <string name="internal_sd_format_summary">Esborra totes les dades al mitjà d\'emmagatzematge intern, com ara la música i les fotos</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nPer netejar de música, d\'imatges i altres dades d\'usuari, el <b>mitjà d\'emmagatzematge intern</b> ha de ser esborrat.</string>
+  <string name="erase_internal_storage">Esborra el mitjà d\'emmagatzematge intern</string>
+  <string name="erase_internal_storage_description">Esborra totes les dades al mitjà d\'emmagatzematge intern, com ara la música o les fotos</string>
   <string name="bluetooth_enter_pin_msg_hs">Per enllaçar amb:<xliff:g id="bold">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="device_name">%1$s</xliff:g><xliff:g id="end_bold">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g>Introdueix el PIN que requereix el dispositiu (16 dígits o més):</string>
   <string name="bluetooth_profile_sap">Accés SIM</string>
   <string name="bluetooth_profile_dun">Accés telèfonic a xarxes</string>
@@ -991,19 +1002,28 @@ Hi ha disponibles opcions addicionals apretant llargament sobre la línia. Selec
   <string name="wifi_ap_client_ap_disabled">Punt d\'accés desactivat</string>
   <string name="wifi_ap_client_none_connected">No hi ha dispositius connectats</string>
   <string name="profile_menu_delete_title">Esborra</string>
-  <string name="profile_menu_triggers_title">Modifica els esdeveniments</string>
+  <string name="profile_menu_triggers_title">Modifica els activadors</string>
   <string name="profile_action_none">Cap acció</string>
   <string name="profile_action_disabled">Desactiva</string>
   <string name="profile_action_enable">Activa</string>
   <string name="profile_tabs_wifi">Wi\u2011Fi</string>
   <string name="profile_tabs_bluetooth">Bluetooth</string>
   <string name="profile_tabs_nfc">NFC</string>
-  <string name="profile_setup_setup_triggers_title">Pas 1: Afegeix esdeveniments</string>
-  <string name="profile_setup_setup_triggers_title_config">Modifica esdeveniments: <xliff:g id="profile_name">%1$s</xliff:g></string>
+  <string name="profile_setup_setup_triggers_title">Pas 1: Afegeix activadors</string>
+  <string name="profile_setup_setup_triggers_title_config">Modifica els activadors: <xliff:g id="profile_name">%1$s</xliff:g></string>
   <string name="profile_setup_actions_title">Pas 2: Configura les accions</string>
   <string name="profile_setup_actions_title_config">Reconfigura les accions</string>
-  <string name="no_bluetooth_triggers">Cap esdeveniment Bluetooth disponible</string>
-  <string name="no_wifi_triggers">No hi ha activadors Wi\u2011Fi disponibles</string>
-  <string name="profile_setup_setup_triggers_description">Si us plau selecciona quins esdeveniments activaran aquest perfil</string>
+  <string name="no_bluetooth_triggers">No hi ha dispositius Bluetooth enllaçats. \nPica per enllaçar el dispositiu Bluetooth abans de configurar els activadors.</string>
+  <string name="no_wifi_triggers">No hi ha punts d\'accés Wi\u2011Fi configurats. \nPica per connectar el Wi\u2011Fi abans de configurar els activadors.</string>
+  <string name="profile_setup_setup_triggers_description">Si us plau selecciona quins activadors activaran aquest perfil</string>
   <string name="profile_setup_actions_description">Configura ara el que passa quan s\'activa el perfil</string>
+  <string name="profile_triggers_header">Activadors que activaran aquest perfil</string>
+  <string name="no_triggers_configured">No hi ha activadors configurats. Pica per afegir-ne més.</string>
+  <string name="no_triggers_configured_nfc">Pica per configurar un nou activador NFC.</string>
+  <string name="sound_ringtone_multisim_options">Canvia els tons de trucada predeterminats</string>
+  <string name="lock_to_cyanogen_title">Protecció del dispositiu</string>
+  <string name="lock_to_cyanogen_summary">Demana la contrasenya del teu compte de Cyanogen OS fins i tot després de que es restableixin els ajustaments de fàbrica</string>
+  <string name="lock_to_cyanogen_create_account_msg">El teu dispositiu utilitza la contrasenya del compte Cyanogen OS per protegir el dispositiu fins i tot en cas d\'un restabliment als ajustaments de fàbrica. Necessitaràs crear un compte de Cyanogen OS.</string>
+  <string name="lock_to_cyanogen_disable_msg">Deshabilitant aquest característica permetràs que usuaris no autoritzats restableixin el teu telèfon als ajustaments de fàbrica en cas de robatori. Les teves dades personals podrien no estar protegides. Vols deshabilitar aquesta funció?</string>
+  <string name="lock_to_cyanogen_master_clear_warning">La protecció del dispositiu està habilitada. Si us plau deshabilita-la per continuar amb la restauració del teu dispositiu.</string>
 </resources>

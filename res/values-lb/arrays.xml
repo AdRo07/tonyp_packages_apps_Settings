@@ -41,7 +41,7 @@
     <item>Ni</item>
     <item>15 Sekonnen</item>
     <item>30 Sekonnen</item>
-    <item>1 minute</item>
+    <item>1 Minutt</item>
     <item>2 Minutten</item>
     <item>5 Minutten</item>
     <item>10 Minutten</item>
@@ -52,7 +52,7 @@
     <item>5 Sekonnen</item>
     <item>15 Sekonnen</item>
     <item>30 Sekonnen</item>
-    <item>1 minute</item>
+    <item>1 Minutt</item>
     <item>2 Minutten</item>
     <item>5 Minutten</item>
     <item>10 Minutten</item>
@@ -110,12 +110,6 @@
     <item>Blockéiert</item>
     <item>Schlecht Internetconnectioun gëtt temporär ignoréiert</item>
   </string-array>
-  <string-array name="wifi_security">
-    <item>@string/wifi_security_none</item>
-    <item>@string/wifi_security_wep</item>
-    <item>@string/wifi_security_psk_generic</item>
-    <item>@string/wifi_security_eap</item>
-  </string-array>
   <string-array name="wifi_security_no_eap">
     <item>@string/wifi_security_none</item>
     <item>@string/wifi_security_wep</item>
@@ -141,7 +135,7 @@
   <string-array name="bluetooth_visibility_timeout_entries">
     <item>2 Minutten</item>
     <item>5 Minutten</item>
-    <item>1 hour</item>
+    <item>1 Stonn</item>
     <item>Keen Timeout</item>
   </string-array>
   <string-array name="wifi_signal">
@@ -160,13 +154,23 @@
     <item>Just wann um Stroum ugeschloss</item>
     <item>Ni</item>
   </string-array>
+  <string-array name="wifi_sleep_policy_values">
+    <item>2</item>
+    <item>1</item>
+    <item>0</item>
+  </string-array>
   <string-array name="wifi_frequency_band_entries">
     <item>Automatesch</item>
     <item>just 5 GHz</item>
     <item>just 2.4 GHz</item>
   </string-array>
+  <string-array name="wifi_frequency_band_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+  </string-array>
   <string-array name="usage_stats_display_order_types">
-    <item>Notzungszäit</item>
+    <item>Benotzungszäit</item>
     <item>Startunzuel</item>
     <item>App-Numm</item>
   </string-array>
@@ -200,6 +204,11 @@
     <item>Aus</item>
     <item>Warnung</item>
     <item>Vibréieren</item>
+  </string-array>
+  <string-array name="emergency_tone_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
   </string-array>
   <string-array name="apn_auth_entries">
     <item>Keng</item>
@@ -260,15 +269,15 @@
     <item>ICC-SMS liesen</item>
     <item>ICC-SMS schreiwen</item>
     <item>Astellungen änneren</item>
-    <item>virun aneren Appen ablenden</item>
-    <item>op Notifikatiounen zougräifen</item>
+    <item>Virun aneren Appen ablenden</item>
+    <item>Op Notifikatiounen zougräifen</item>
     <item>Kamera</item>
     <item>Audio ophuelen</item>
     <item>Toun ofspillen</item>
     <item>Tëschenoflag liesen</item>
     <item>Tëschenoflag änneren</item>
-    <item>Medie-Knäppercher</item>
-    <item>Toun-Fokus</item>
+    <item>Medieknäppercher</item>
+    <item>Tounfokus</item>
     <item>Gesamtlautstäerkt</item>
     <item>Sproochlautstäerkt</item>
     <item>Schelltounlautstäerkt</item>
@@ -298,7 +307,7 @@
     <item>SMS/MMS liesen</item>
     <item>SMS/MMS schreiwen</item>
     <item>SMS/MMS empfänken</item>
-    <item>SMS/MMS empfänkenSMS/MMS empfänken</item>
+    <item>SMS/MMS empfänken</item>
     <item>SMS/MMS empfänken</item>
     <item>SMS/MMS empfänken</item>
     <item>SMS/MMS schécken</item>
@@ -306,8 +315,8 @@
     <item>SMS/MMS schreiwen</item>
     <item>Astellungen änneren</item>
     <item>Virun aneren Appen ablenden</item>
-    <item>op Notifikatiounen zougräifen</item>
-    <item>Fotoapparat</item>
+    <item>Op Notifikatiounen zougräifen</item>
+    <item>Kamera</item>
     <item>Toun ophuelen</item>
     <item>Audio ofspillen</item>
     <item>Tëschenoflag liesen</item>
@@ -428,7 +437,7 @@
   <string-array name="show_non_rect_clip_entries">
     <item>Aus</item>
     <item>Net-rechteckege Clipberäich blo zeechnen</item>
-    <item>Getest Zeechebefehler gréng ervirhiewen</item>
+    <item>Getest Zeechebefeeler gréng ervirhiewen</item>
   </string-array>
   <string-array name="track_frame_time_entries">
     <item>Aus</item>

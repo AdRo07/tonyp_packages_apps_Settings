@@ -58,6 +58,9 @@
   <string name="profile_unknown_nfc_tag">Bilinmeyen profil</string>
   <string name="profile_add_nfc_text">Bu NFC etiketi bilinmeyen bir profile denk geliyor. Bu NFC etiketini bilinen bir profile atamak gelecekte o profilin seçilmesini sağlayabilir.</string>
   <string name="profile_select">Profil seç</string>
+  <string name="profile_remove_dialog_message">%1$s profili kaldırılsın mı?</string>
+  <string name="profile_populate_profile_from_state">Geçerli cihaz ayarları kullanılarak profil yapılandırılsın mı?</string>
+  <string name="profile_menu_fill_from_state">Geçerli cihaz ayarlarını al</string>
   <string name="profile_name_title">İsim</string>
   <string name="profile_profile_name_prompt">Yeni profil için bir isim girin</string>
   <string name="menu_new_profile">Yeni profil</string>
@@ -65,7 +68,7 @@
   <string name="rename_dialog_title">Yeniden adlandır</string>
   <string name="rename_dialog_message">Yeni isim girin</string>
   <string name="duplicate_profile_name">Tekrarlayan profil ismi!</string>
-  <string name="duplicate_appgroup_name">Tekralayan uygulama grup ismi!</string>
+  <string name="duplicate_appgroup_name">Tekrarlayan uygulama grup ismi!</string>
   <string name="profile_reset_title">Sıfırla</string>
   <string name="profile_reset_message">Kullanıcı tarafından oluşturulan tüm profil ve gruplar silinip varsayılana dönülsün mü?</string>
   <string name="profile_delete_confirm">Bu profili sil?</string>
@@ -376,8 +379,10 @@ parlaklık seviyesini ayarlayabilir hem de istediğiniz parlaklık düzeyini ell
   <string name="root_access_apps">Sadece uygulamalar</string>
   <string name="root_access_adb">Sadece ADB</string>
   <string name="root_access_all">Uygulamalar ve ADB</string>
-  <string name="update_recovery_title">CM kurtarma modunu güncelle</string>
-  <string name="update_recovery_summary">Sistem güncellemeleri yüklenirken kurtarma modunu güncelle</string>
+  <string name="update_recovery_title">Cyanogen kurtarma modunu güncelle</string>
+  <string name="update_recovery_summary">Sistem güncellemesi ile kurtarma modunu güncelle</string>
+  <string name="update_recovery_on_warning">DİKKAT: Bu özellik etkinken, yüklü kurtarma modunuz mevcut İS sürümündeki mod ile değiştirilecektir. \n\nKurtarma modunuz sistem güncellemeleri ile birlikte güncellenecektir, böylelikle gelecek sürümler ile uyumluluk sağlanacaktır.\n\nBu özelliği etkinleştirmek ister misiniz?</string>
+  <string name="update_recovery_off_warning">UYARI: Bu özellik devre dışı bırakıldığında, yüklü kurtarma modunuz İS güncellemeleri ile güncellenmeyecektir.\n\nGelecek İS güncellemeleri eskimiş ya da özel kurtarma sürümleri ile yüklenemeyebilir.\n\nBu özelliği gerçekten devre dışı bırakmak istiyor musunuz?</string>
   <string name="ok">Tamam</string>
   <string name="quiet_hours_title">Sessiz saatler</string>
   <string name="quiet_hours_summary">Cihazın sessiz olacağı saatleri ayarlayın</string>
@@ -606,6 +611,7 @@ parlaklık seviyesini ayarlayabilir hem de istediğiniz parlaklık düzeyini ell
   <string name="lockscreen_buttons_toggle_sound">Ses modunu değiştir</string>
   <string name="lockscreen_buttons_sleep">Uyku moduna geç</string>
   <string name="lockscreen_enable_modlock_title">Özel kilit ekranı</string>
+  <string name="lockscreen_buttons_disabled_summary">Ekran üstü dolaşım çubuğu kullanılırken Kilit ekranı tuşları kullanılamaz</string>
   <string name="navigation_bar_category">Dolaşım çubuğu</string>
   <string name="navigation_bar_title">Tuşlar ve düzen</string>
   <string name="navigation_bar_left_title">Solak modu</string>
@@ -957,6 +963,11 @@ parlaklık seviyesini ayarlayabilir hem de istediğiniz parlaklık düzeyini ell
   <string name="sd_media_format_button_text">SD kartı sil</string>
   <string name="sd_media_format_final_desc">SD kart silinsin mi? Depolanan tüm veriler silinecektir. Bu eylemi geri alamazsınız!</string>
   <string name="sd_media_format_gesture_explanation">SD kart birimini silmek istediğinizi onaylamak için kilit açma şeklini çizmeniz gerekir.</string>
+  <string name="internal_sd_format">Dahili ortam belleğini sil</string>
+  <string name="internal_sd_format_summary">Dahili ortam belleğindeki müzik ve fotoğraf gibi tüm verileri siler</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nMüzik, resim ve diğer kullanıcı verilerini temizlemek için <b>dahili ortam belleği</b> silinmeli.</string>
+  <string name="erase_internal_storage">Dahili ortam belleğini sil</string>
+  <string name="erase_internal_storage_description">Dahili ortam belleğindeki müzik ve fotoğraf gibi tüm verileri sil</string>
   <string name="bluetooth_enter_pin_msg_hs"><xliff:g id="bold">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="device_name">%1$s</xliff:g><xliff:g id="end_bold">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g>ile eşleştirmek için cihazın gerekli PIN\'ini (16+ karakter) girin:</string>
   <string name="bluetooth_profile_sap">SIM Erişimi</string>
   <string name="bluetooth_profile_dun">Çevirmeli Ağ Erişimi</string>
@@ -1015,8 +1026,17 @@ parlaklık seviyesini ayarlayabilir hem de istediğiniz parlaklık düzeyini ell
   <string name="profile_setup_setup_triggers_title_config">Tetikleyicileri değiştir: <xliff:g id="profile_name">%1$s</xliff:g></string>
   <string name="profile_setup_actions_title">Adım 2: Eylemleri kurun</string>
   <string name="profile_setup_actions_title_config">Eylemleri tekrar ayarla</string>
-  <string name="no_bluetooth_triggers">Bluetooth tetikleyicisi yok</string>
-  <string name="no_wifi_triggers">Wi\u2011Fi tetikleyicisi yok</string>
+  <string name="no_bluetooth_triggers">Eşleştirilmiş bluetooth aygıtı yok.\nTetikleyicileri yapılandırmadan önce Bluetooth cihazı ile eşleştirmek için dokunun.</string>
+  <string name="no_wifi_triggers">Hiç  Wi\u2011Fi erişim noktası yapılandırılmadı.\nTetikleyicileri yapılandırmadan önce  Wi\u2011Fi ağına bağlanmak için dokunun.</string>
   <string name="profile_setup_setup_triggers_description">Lütfen  bu profili etkinleştirecek tetikleyicileri seçin</string>
   <string name="profile_setup_actions_description">Şimdi profil etkinleştirildiğinde ne olacağını yapılandırın</string>
+  <string name="profile_triggers_header">Bu profili etkinleştirecek tetikleyiciler</string>
+  <string name="no_triggers_configured">Hiç tetikleyici ayarlanmadı. Eklemek için dokunun.</string>
+  <string name="no_triggers_configured_nfc">Yeni bir NFC tetikleyicisi kurmak için dokunun.</string>
+  <string name="sound_ringtone_multisim_options">Varsayılan zil sesleri değiştir</string>
+  <string name="lock_to_cyanogen_title">Cihaz Koruması</string>
+  <string name="lock_to_cyanogen_summary">Fabrika sıfırlamasından sonra bile Cyanogen İS hesap şifresini gerektirir</string>
+  <string name="lock_to_cyanogen_create_account_msg">Cihazınız bir fabrika sıfırlamasından sonra bile cihazı korumak için Cyanogen İS hesap şifresini kullanır. Bir Cyanogen İS hesabı oluşturmanız gerekecek.</string>
+  <string name="lock_to_cyanogen_disable_msg">Bu özelliği kapatmak telefonunuz çalındığında yetkilendirilmemiş kullanıcıların telefonunuzu fabrika ayarlarına sıfırlamasına izin verecektir. Kişisel verileriniz korunamayabilir. Bu özelliği kapatmak istiyor musunuz?</string>
+  <string name="lock_to_cyanogen_master_clear_warning">Cihaz Koruması etkin. Cihazınızı sıfırlamaya devam etmek için lütfen korumayı kapatın.</string>
 </resources>

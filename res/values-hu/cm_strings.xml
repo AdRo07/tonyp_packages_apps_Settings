@@ -58,6 +58,9 @@
   <string name="profile_unknown_nfc_tag">Ismeretlen profil</string>
   <string name="profile_add_nfc_text">Ez az NFC tag egy ismeretlen profilra mutat. Az NFC tag csatolása egy már meglévő profilhoz lehetővé teszi a jövőbeli kiválasztását.</string>
   <string name="profile_select">Válasszon profilt</string>
+  <string name="profile_remove_dialog_message">%1$s profil eltávolítása?</string>
+  <string name="profile_populate_profile_from_state">Konfigurálja a profilt a jelenlegi beállításokat használva?</string>
+  <string name="profile_menu_fill_from_state">Jelenlegi beállítások importálása</string>
   <string name="profile_name_title">Név</string>
   <string name="profile_profile_name_prompt">Adja meg az új profil nevét</string>
   <string name="menu_new_profile">Új profil</string>
@@ -374,6 +377,8 @@ Az \"Eltávolítás\" törli a kiválasztott sort.</string>
   <string name="root_access_all">Alkalmazások és ADB</string>
   <string name="update_recovery_title">CM recovery frissítése</string>
   <string name="update_recovery_summary">Rendszerfrissítések telepítése közben frissítse a recovery-t</string>
+  <string name="update_recovery_on_warning">FIGYELEM: Ha ezen funkció aktiválva van, a telepített recovery le lesz cserélve a jelenleg futó operációs rendszerének megfelelően.\n\nA recovery együtt lesz frissítve a rendszerrel, ezáltal biztosítva a kompatibilitást a jövőbeli verziókkal.\n\nBiztosan aktiválja a funkciót?</string>
+  <string name="update_recovery_off_warning">FIGYELEM: Ha ez a funkció ki van kapcsolva, a telepített recovery nem le lesz cserélve a jelenleg futó operációs rendszerének megfelelően.\n\nAz újabb operációs rendszer frissítések lehet, hogy nem támogatják a régi recovery verziókat.\n\nBiztosan inaktiválja a funkciót?</string>
   <string name="ok">OK</string>
   <string name="quiet_hours_title">Csendes órák</string>
   <string name="quiet_hours_summary">Csendes órák beállításai</string>
@@ -391,7 +396,7 @@ Az \"Eltávolítás\" törli a kiválasztott sort.</string>
   <string name="quiet_hours_haptic_summary">Érintési visszajelzés letiltása</string>
   <string name="quiet_hours_active_period">Aktív innentől: <xliff:g id="start">%1$s</xliff:g> idáig: <xliff:g id="end">%2$s</xliff:g></string>
   <string name="quiet_hours_ringer_allow_all">Összes hívás</string>
-  <string name="quiet_hours_ringer_allow_contacts">Csak kapcsolatok</string>
+  <string name="quiet_hours_ringer_allow_contacts">Csak névjegyek</string>
   <string name="quiet_hours_ringer_allow_starred">Csak kedvencek</string>
   <string name="quiet_hours_ringer_mute_all">Összes hívás némítása</string>
   <string name="start_time_title">Kezdete</string>
@@ -602,6 +607,7 @@ Az \"Eltávolítás\" törli a kiválasztott sort.</string>
   <string name="lockscreen_buttons_toggle_sound">Hang mód</string>
   <string name="lockscreen_buttons_sleep">Alvó mód</string>
   <string name="lockscreen_enable_modlock_title">Egyéni képernyőzár</string>
+  <string name="lockscreen_buttons_disabled_summary">Zárképernyő hivatkozások nem érhetőek el navigációs sáv használata során</string>
   <string name="navigation_bar_category">Navigációs sáv</string>
   <string name="navigation_bar_title">Gombok és kinézet</string>
   <string name="navigation_bar_left_title">Bal kezes mód</string>
@@ -953,6 +959,11 @@ Az \"Eltávolítás\" törli a kiválasztott sort.</string>
   <string name="sd_media_format_button_text">SD kártya törlése</string>
   <string name="sd_media_format_final_desc">SD kártya törlése. Törli az összes ott tárolt fájlt? Ez a művelet nem visszavonható!</string>
   <string name="sd_media_format_gesture_explanation">Az SD kártya törlésének megerősítéséhez meg kell adnia a feloldó mintáját.</string>
+  <string name="internal_sd_format">Belső adattároló törlése</string>
+  <string name="internal_sd_format_summary">Töröl minden adatot a belső tárhelyről, például zenéket és fotókat</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nZenék, képek és egyéb adat törléséhez válassza a <b>belső tárhely</b> törlését.</string>
+  <string name="erase_internal_storage">Belső adattároló törlése</string>
+  <string name="erase_internal_storage_description">Minden adat, például zenék és fotók törlése a belső tárhelyről</string>
   <string name="bluetooth_enter_pin_msg_hs">Társítás a következővel:<xliff:g id="bold">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="device_name">%1$s</xliff:g><xliff:g id="end_bold">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g>Írja be az eszköz által kért PIN kódot (minimum 16 karakter):</string>
   <string name="bluetooth_profile_sap">SIM hozzáférés</string>
   <string name="bluetooth_profile_dun">Telefonos hálózati hozzáférés</string>
@@ -969,7 +980,7 @@ Az \"Eltávolítás\" törli a kiválasztott sort.</string>
   <string name="data_usage_tab_slot">SIM  </string>
   <string name="sel_sub_title">SIM-kártyák beállítása</string>
   <string name="sel_sub_summary">SIM-kártyák kiválasztása</string>
-  <string name="no_sim_info">Nem áll rendelkezésre SIM kártya információ.\nA menü nem hozzáférhető</string>
+  <string name="no_sim_info">Nem áll rendelkezésre SIM-kártya információ.\nA menü nem hozzáférhető</string>
   <string name="subs_settings">SIM-kártya állapota</string>
   <string name="set_data_subscription_progress">Adat előfizetés beállítása\u2026</string>
   <string name="set_dds_success">Adat előfizetés sikeresen beállítva</string>
@@ -1011,8 +1022,17 @@ Az \"Eltávolítás\" törli a kiválasztott sort.</string>
   <string name="profile_setup_setup_triggers_title_config">Triggerek módosítása: <xliff:g id="profile_name">%1$s</xliff:g></string>
   <string name="profile_setup_actions_title">2. lépés: Beállítások elvégzése</string>
   <string name="profile_setup_actions_title_config">Műveletek újrakonfigurálása</string>
-  <string name="no_bluetooth_triggers">Nincs rendelkezésre álló Bluetooth-trigger</string>
-  <string name="no_wifi_triggers">Nincs elérhető Wi\u2011Fi trigger</string>
+  <string name="no_bluetooth_triggers">Nincs párosított Bluetooth eszköz.\nBluetooth eszköz párosításáért érintse meg, mielőtt beállítaná a triggereket.</string>
+  <string name="no_wifi_triggers">Nincs Wi\u2011Fi hozzáférési pont beállítva.\nA Wi\u2011Fi csatlakoztatásához érintse meg, mielőtt beállítaná a triggereket.</string>
   <string name="profile_setup_setup_triggers_description">Kérjük, válassza ki a profilt aktiváló triggert</string>
   <string name="profile_setup_actions_description">Most állítsa be, hogy mi történjen a profil aktiválásakor</string>
+  <string name="profile_triggers_header">Triggerek, amelyek ezt a profilt aktiválni fogják</string>
+  <string name="no_triggers_configured">Nincs trigger beállítva. Új hozzáadásáért érintse meg.</string>
+  <string name="no_triggers_configured_nfc">Érintse meg egy új NFC trigger beállításáért.</string>
+  <string name="sound_ringtone_multisim_options">Alapértelmezett csengőhangok módosítása</string>
+  <string name="lock_to_cyanogen_title">Eszközvédelem</string>
+  <string name="lock_to_cyanogen_summary">Cyanogen OS jelszót igényel még gyári visszaállítás után is</string>
+  <string name="lock_to_cyanogen_create_account_msg">A készüléke Cyanogen OS jelszót használ az eszköz védelme érdekében, még gyári visszaállítás után is. Létre kell hoznia egy Cyanogen OS fiókot.</string>
+  <string name="lock_to_cyanogen_disable_msg">A funkció letiltásával jogosulatlan személyek visszaállíthatják a telefont a gyári beállításokra lopás esetén. Személyes adatai nem lesznek biztonságban. Biztosan letiltja ezt a funkciót?</string>
+  <string name="lock_to_cyanogen_master_clear_warning">Eszközvédelem engedélyezve van. Tiltsa le a készülék visszaállításának folytatásához.</string>
 </resources>

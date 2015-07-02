@@ -58,6 +58,9 @@
   <string name="profile_unknown_nfc_tag">Perfil desconocíu</string>
   <string name="profile_add_nfc_text">Esta etiqueta NFC fai referencia a un perfil desconocíu. Amestar esta etiqueta NFC a un perfil esistente va permitir seleicionar el perfil nel futuru</string>
   <string name="profile_select">Seleicionar perfil</string>
+  <string name="profile_remove_dialog_message">¿Desaniciar el perfil %1$s?</string>
+  <string name="profile_populate_profile_from_state">¿Configurar perfil usando los axustes de preséu actuales?</string>
+  <string name="profile_menu_fill_from_state">Importar la configuración actual del preséu</string>
   <string name="profile_name_title">Nome</string>
   <string name="profile_profile_name_prompt">Introducir un nome pal nuevu perfil</string>
   <string name="menu_new_profile">Perfil nuevu</string>
@@ -362,8 +365,10 @@ Tocando de mou prollongáu cada llinia, van amosase opciones adicionales. Seleic
   <string name="root_access_apps">Namái aplicaciones</string>
   <string name="root_access_adb">Namái ADB</string>
   <string name="root_access_all">Aplicaciones y ADB</string>
-  <string name="update_recovery_title">Anovar recovery de CM</string>
-  <string name="update_recovery_summary">Anovar el recovery cuando s\'instalen anovamientos nuevos del sistema</string>
+  <string name="update_recovery_title">Anovar col recovery de Cyanogen</string>
+  <string name="update_recovery_summary">Anovar recovery colos anovamientos del sistema</string>
+  <string name="update_recovery_on_warning">AVISU: Cuando esta función ta activada, el recovery instaláu va sustituyise por ún incluyíu cola versión actual del SO.\n\nEl recovery va anovase xunto con meyores del sistema, ayudando a garantizar la compatibilidá con futures versiones.\n\n¿Quies activar esta función?</string>
+  <string name="update_recovery_off_warning">AVISU: Cuando esta función está desactivada, el recovery instaláu nun s\'anueva con anovamientos del SO.\n\nVersiones futures del SO podríen non instalase con recoverys non anovaos.\n\n¿Daveres quies deshabilitar esta función?</string>
   <string name="ok">Aceutar</string>
   <string name="quiet_hours_title">Mou descansu</string>
   <string name="quiet_hours_summary">Silenciar o desactivar soníos y notificaciones mientres un periodu de tiempu especificáu</string>
@@ -592,6 +597,7 @@ Tocando de mou prollongáu cada llinia, van amosase opciones adicionales. Seleic
   <string name="lockscreen_buttons_toggle_sound">Alternar soníu</string>
   <string name="lockscreen_buttons_sleep">Bloquiar</string>
   <string name="lockscreen_enable_modlock_title">Pantalla de bloquéu personalizada</string>
+  <string name="lockscreen_buttons_disabled_summary">Los botones de la pantalla de bloquéu nun tán disponibles mentanto s\'use la barra de navegación en pantalla</string>
   <string name="navigation_bar_category">Barra de navegación</string>
   <string name="navigation_bar_title">Botones y disposición</string>
   <string name="navigation_bar_left_title">Mou pa maniegos</string>
@@ -943,6 +949,11 @@ Tocando de mou prollongáu cada llinia, van amosase opciones adicionales. Seleic
   <string name="sd_media_format_button_text">Desaniciar tarxeta SD</string>
   <string name="sd_media_format_final_desc">¿Quies desaniciar la tarxeta SD y desaniciar tolos ficheros? Esta aición nun pue desfacese!</string>
   <string name="sd_media_format_gesture_explanation">Has dibuxar el patrón de desbloquéu pa confirmar que quies desaniciar la tarxeta SD.</string>
+  <string name="internal_sd_format">Desaniciar almacenamientu internu</string>
+  <string name="internal_sd_format_summary">Desaniciar tolos datos del almacenamientu internu, como música y semeyes</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nPa llimpiar la música, imáxenes y otros datos del usuariu, l\'<b>almacenamientu internu</b> precisa de desaniciase.</string>
+  <string name="erase_internal_storage">Desaniciar almacenamientu internu</string>
+  <string name="erase_internal_storage_description">Desaniciar tolos datos del almacenamientu internu, como música y semeyes</string>
   <string name="bluetooth_enter_pin_msg_hs">Pa enllazar con:<xliff:g id="bold">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="device_name">%1$s</xliff:g><xliff:g id="end_bold">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g>Escribi\'l PIN que pide\'l preséu (16 díxitos o más):</string>
   <string name="bluetooth_profile_sap">Accesu SIM</string>
   <string name="bluetooth_profile_dun">Accesu telefónicu a redes</string>
@@ -1001,8 +1012,18 @@ Tocando de mou prollongáu cada llinia, van amosase opciones adicionales. Seleic
   <string name="profile_setup_setup_triggers_title_config">Modificar eventos: <xliff:g id="profile_name">%1$s</xliff:g></string>
   <string name="profile_setup_actions_title">Paso 2: Configurar aiciones</string>
   <string name="profile_setup_actions_title_config">Reconfigurar aiciones</string>
-  <string name="no_bluetooth_triggers">Nun hai eventos de Bluetooth disponibles</string>
-  <string name="no_wifi_triggers">Nun hai eventos Wi\u2011Fi disponibles</string>
+  <string name="no_bluetooth_triggers">Nun hai preseos Bluetooth empareyaos.\n
+Calca pa empareyar el preséu Bluetooth enantes de configurar los disparadores.</string>
+  <string name="no_wifi_triggers">Ensin puntos Wi\u2011Fi d\'acceso configuraos. \nToca p\'activar la conexón Wi\u2011Fi enantes de configurar los eventos.</string>
   <string name="profile_setup_setup_triggers_description">Selecciona qué eventos van activar esti perfil</string>
   <string name="profile_setup_actions_description">Agora configura qué va asoceder cuando s\'active\'l perfil</string>
+  <string name="profile_triggers_header">Los disparadores qu\'activarán esti perfil</string>
+  <string name="no_triggers_configured">Nun se configuraron disparadores. Calca p\'amestar más.</string>
+  <string name="no_triggers_configured_nfc">Calca p\'amestar un disparador NFC nuevu.</string>
+  <string name="sound_ringtone_multisim_options">Cambiar tonos por defeutu</string>
+  <string name="lock_to_cyanogen_title">Proteición de preséu</string>
+  <string name="lock_to_cyanogen_summary">Pidir la contraseña de la cuenta de Cyanogen OS inclusu dempués d\'un restablecimientu de fábrica</string>
+  <string name="lock_to_cyanogen_create_account_msg">El preséu usa una contraseña de cuenta de Cyanogen OS pa protexese inclusu dempués d\'un restablecimientu de fábrica. Vas necesitar crear una cuenta de Cyanogen OS.</string>
+  <string name="lock_to_cyanogen_disable_msg">Deshabilitar esta carauterística va permitir qu\'usuarios non autorizaos puedan restablecer a fábrica el preséu si te lu roben. Los datos personales puen quedar desprotexíos. ¿Quies deshabilitar esta carauterística?</string>
+  <string name="lock_to_cyanogen_master_clear_warning">La proteición del preséu ta habilitada. Por favor, deshabilita la proteición pa siguir col restablecimientu del preséu.</string>
 </resources>

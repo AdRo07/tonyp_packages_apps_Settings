@@ -30,8 +30,8 @@
   <string name="increasing_ring_title">Ansteigender Klingelton</string>
   <string name="checkbox_increasing_ring">Aktivieren</string>
   <string name="increasing_ring_min_volume_title">Anfangslautstärke</string>
-  <string name="increasing_ring_volume_notice">Hinweis:\nDa die Anfangslautstärke größer als die Klingeltonlautstärke ist, wird der Klingelton mit der Klingeltonlautstärke abgespielt.</string>
-  <string name="increasing_ring_interval_title">Intervall ändern</string>
+  <string name="increasing_ring_volume_notice">Hinweis:\nDa die Anfangslautstärke höher als die Klingeltonlautstärke ist, wird der Klingelton mit der Klingeltonlautstärke abgespielt.</string>
+  <string name="increasing_ring_interval_title">Intervall erhöhen</string>
   <string name="increasing_ring_interval_eachring">Bei jedem Klingelton</string>
   <string name="increasing_ring_interval_half_second">0,5 Sekunden</string>
   <string name="increasing_ring_interval_1second">1 Sekunde</string>
@@ -58,6 +58,9 @@
   <string name="profile_unknown_nfc_tag">Unbekanntes Profil</string>
   <string name="profile_add_nfc_text">Der NFC-Tag verweist auf ein unbekanntes Profil. Das Verknüpfen des NFC-Tags mit einem existierenden Profil ermöglicht es, das entsprechende Profil in Zukunft durch eine Berührung zu aktivieren.</string>
   <string name="profile_select">Profil auswählen</string>
+  <string name="profile_remove_dialog_message">Wollen Sie wirklich das Profil %1$s entfernen?</string>
+  <string name="profile_populate_profile_from_state">Profil mit aktuellen Geräteeinstellungen erstellen?</string>
+  <string name="profile_menu_fill_from_state">Aktuelle Geräteeinstellungen importieren</string>
   <string name="profile_name_title">Name</string>
   <string name="profile_profile_name_prompt">Name des neuen Profils</string>
   <string name="menu_new_profile">Neues Profil</string>
@@ -91,7 +94,7 @@
   <string name="profile_settings">Profileinstellungen</string>
   <string name="profile_trigger_connect">Beim Verbinden</string>
   <string name="profile_trigger_disconnect">Beim Trennen</string>
-  <string name="profile_trigger_notrigger">Nicht auslösen</string>
+  <string name="profile_trigger_notrigger">Kein Auslöser</string>
   <string name="profile_trigger_a2dp_connect">Beim Verbinden von A2DP</string>
   <string name="profile_trigger_a2dp_disconnect">Beim Trennen von A2DP</string>
   <string name="sound_mode">Benachrichtigungston</string>
@@ -277,7 +280,7 @@
   <string name="title_dynamic_equalizer">Equalizer</string>
   <string name="title_dynamic_ime">Eingabemethoden-Auswahlwerkzeug</string>
   <string name="title_dynamic_usbtether">USB-Tethering</string>
-  <string name="title_dynamic_wifi">Bildschirminhalt übertragen</string>
+  <string name="title_dynamic_wifi">Bildschirm übertragen</string>
   <string name="title_general">Allgemein</string>
   <string name="title_quick_pulldown">Schnelles Öffnen</string>
   <string name="summary_quick_pulldown">Herunterziehen der Benachrichtigungsleiste am %1$s Rand öffnet die Schnelleinstellungen</string>
@@ -378,6 +381,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
   <string name="root_access_all">Apps &amp; ADB</string>
   <string name="update_recovery_title">CM-Recovery aktualisieren</string>
   <string name="update_recovery_summary">Recovery bei System-Updates aktualisieren</string>
+  <string name="update_recovery_on_warning">HINWEIS: Wenn diese Funktion aktiviert ist, wird Ihr installiertes Recovery-System durch das in der aktuellen Version des Betriebssystems ersetzt.\n\nIhr Recovery-System wird zusammen mit Updates des System aktualisiert werden, wodurch die Kompatibilität mit zukünftigen Versionen gewährleisten wird.\n\nWollen Sie diese Funktion aktivieren?</string>
+  <string name="update_recovery_off_warning">ACHTUNG: Wenn diese Funktion deaktiviert ist, wird das installierte Recovery-System nicht gemeinsam mit dem Betriebssystems aktualisiert.\n\nZukünftige OS-Updates können möglicherweise nicht mit veralteten oder benutzerdefinierten Recovery-Versionen installieren werden.\n\nMöchten sie diese Funktion wirklich deaktivieren?</string>
   <string name="ok">OK</string>
   <string name="quiet_hours_title">Ruhige Stunden</string>
   <string name="quiet_hours_summary">Benachrichtigungen in einem vorgegebenen Zeitraum ändern</string>
@@ -956,9 +961,14 @@ auf <xliff:g id="new" example="libart.so">%2$s</xliff:g> zu ändern?</string>
   <string name="sd_media_format_title">SD-Karte löschen</string>
   <string name="sd_media_format_desc">SD-Karte löschen? Sie werden <b>alle</b> auf der Karte gespeicherten Daten verlieren!</string>
   <string name="sd_media_format_button_text">SD-Karte löschen</string>
-  <string name="sd_media_format_final_desc">SD-Karte mit allen darauf gespeicherten Dateien löschen? Sie können diese Aktion nicht umkehren!</string>
+  <string name="sd_media_format_final_desc">SD-Karte mit allen darauf gespeicherten Dateien löschen? Sie können diese Aktion nicht rückgängig machen!</string>
   <string name="sd_media_format_gesture_explanation">Sie müssen Ihr Entsperrmuster zeichnen, um das Löschen Ihrer SD-Karte zu bestätigen.</string>
-  <string name="bluetooth_enter_pin_msg_hs">Geben Sie zum Pairing mit <xliff:g id="bold">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="device_name">%1$s</xliff:g><xliff:g id="end_bold">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g> die erforderliche, aus mindestens 16 Stellen bestehende, PIN des Geräts ein:</string>
+  <string name="internal_sd_format">Internes Speichermedium löschen</string>
+  <string name="internal_sd_format_summary">Löscht alle Daten wie z.B. Musik und Fotos auf dem internen Speichermedium</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nUm Musik, Bilder und andere Nutzerdaten zu löschen, muss das <b>interne Speichermedium</b> gelöscht werden.</string>
+  <string name="erase_internal_storage">Internes Speichermedium löschen</string>
+  <string name="erase_internal_storage_description">Löscht alle Daten auf dem internen Speichermedium wie z.B. Musik oder Fotos</string>
+  <string name="bluetooth_enter_pin_msg_hs">Geben Sie zum Koppeln mit <xliff:g id="bold">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="device_name">%1$s</xliff:g><xliff:g id="end_bold">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g> die erforderliche, aus mindestens 16 Stellen bestehende, PIN des Geräts ein:</string>
   <string name="bluetooth_profile_sap">SIM-Zugriff</string>
   <string name="bluetooth_profile_dun">Internet-Einwahlverbindung</string>
   <string name="bluetooth_sap_profile_summary_connected">Verbunden mit SIM-Zugriffsserver</string>
@@ -1016,8 +1026,17 @@ auf <xliff:g id="new" example="libart.so">%2$s</xliff:g> zu ändern?</string>
   <string name="profile_setup_setup_triggers_title_config">Auslöser ändern: <xliff:g id="profile_name">%1$s</xliff:g></string>
   <string name="profile_setup_actions_title">Schritt 2: Aktionen bestimmen</string>
   <string name="profile_setup_actions_title_config">Aktionen neu konfigurieren</string>
-  <string name="no_bluetooth_triggers">Keine Bluetooth-Auslöser vorhanden</string>
-  <string name="no_wifi_triggers">Keine WLAN-Auslöser verfügbar</string>
+  <string name="no_bluetooth_triggers">Keine Bluetooth-Geräte gekoppelt.\nTippen Sie, um Bluetooth-Geräte vor dem Konfigurieren von Auslösern zu koppeln.</string>
+  <string name="no_wifi_triggers">Keine WLAN-Zugangspunkte konfiguriert.\nTippen Sie, um sich vor dem Konfigurieren von Auslösern per WLAN  zu verbinden.</string>
   <string name="profile_setup_setup_triggers_description">Auslöser bestimmen, die dieses Profil aktivieren</string>
   <string name="profile_setup_actions_description">Konfigurieren was passiert, wenn das Profil aktiviert ist</string>
+  <string name="profile_triggers_header">Auslöser, die dieses Profil aktivieren</string>
+  <string name="no_triggers_configured">Keine Auslöser konfiguriert. Tippen Sie, um weitere hinzuzufügen.</string>
+  <string name="no_triggers_configured_nfc">Tippen Sie zum Einrichten eines neuen NFC-Auslösers.</string>
+  <string name="sound_ringtone_multisim_options">Standard-Klingeltöne ändern</string>
+  <string name="lock_to_cyanogen_title">Geräteschutz</string>
+  <string name="lock_to_cyanogen_summary">Erfordert Ihr Cyanogen OS-Passwort, auch nach einem Rücksetzen auf Werkseinstellungen</string>
+  <string name="lock_to_cyanogen_create_account_msg">Das Passwort Ihres Cyanogen OS-Kontos wird genutzt, um Ihr Gerät auch beim Rücksetzen auf Werkseinstellungen zu schützen. Dazu müssen Sie ein Cyanogen OS-Konto anlegen.</string>
+  <string name="lock_to_cyanogen_disable_msg">Deaktivieren dieser Funktion erlaubt es nicht autorisierten Benutzern Ihr Telefon auf Werkseinstellungen zurückzusetzen, wenn es gestohlen wird. Ihre persönlichen Daten können nicht sicher sein. Wollen Sie diese Funktion deaktivieren?</string>
+  <string name="lock_to_cyanogen_master_clear_warning">Geräteschutz ist aktiviert. Bitte deaktivieren, um mit dem Zurücksetzen Ihres Gerätes fortzufahren.</string>
 </resources>
